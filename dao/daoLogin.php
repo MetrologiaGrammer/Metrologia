@@ -3,17 +3,11 @@
 
 include_once('db.php');
 
-
-$Nomina=$_GET['nomina'];
-$contra=$_GET['contra'];
-
-cliente($Nomina, $contra);
-
 function cliente($Nomina, $contra)
 {
     $con = new LocalConector();
     $conexion = $con->conectar();
-    $consP = "SELECT nomina, contraseña FROM Usuarios WHERE nomina = '$Nomina' and Contraseña = '$contra'";
+    $consP = "SELECT * FROM `Usuarios` WHERE `IdUsuario` = '$Nomina' and `Password` = '$contra';";
     $rsconsPro = mysqli_query($conexion, $consP);
     mysqli_close($conexion);
     $userData = array();
