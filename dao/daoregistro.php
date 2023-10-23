@@ -19,13 +19,6 @@ function cliente($Usuario, $Password,$Correo,$Cargo,$Nombre,$Area)
     $consP = "INSERT INTO `Usuarios`(IdUsuario,Password,Correo,Nombre,Cargo,Area) VALUES ('$Usuario','$Password','$Correo','$Nombre','$Cargo','$Area')";
     $rsconsPro = mysqli_query($conexion, $consP);
     mysqli_close($conexion);
-    $userData = array();
-
-    if (mysqli_num_rows($rsconsPro) == 1) {
-        return 1;
-    } else {
-        return 0;
-    }
 }
 
 
