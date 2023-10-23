@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<title>Hello, world!</title>
+</head>
+<body>
+<center><img src="images/LogoMetrologi.png" STYLE="width: 70%">
+</center>
+
+<h1>LOG IN</h1>
+<H3>VALIDE SU INGRESO</H3>
+<!-- Optional JavaScript; choose one of the two! -->
+	<div class="input-group mb-3">
+		<span class="input-group-text" >Nómina</span>
+		<input type="text" id="nomina" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	</div>
+
+	<div class="input-group mb-3">
+		<span class="input-group-text" >Correo</span>
+		<input type="text" id="correo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	</div>
+
+	<div class="input-group mb-3">
+		<span class="input-group-text" >Nombre</span>
+		<input type="text" id="nombre" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	</div>
+
+	<div class="input-group mb-3">
+		<span class="input-group-text" >Cargo</span>
+		<input type="text" id="cargo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	</div>
+
+	<div class="input-group mb-3">
+		<span class="input-group-text" >Área</span>
+		<input type="text" id="area" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	</div>
+
+	<div class="input-group mb-3">
+		<span class="input-group-text">contraseña</span>
+		<input type="password" name="password" id="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	</div>
+
+	<div class="input-group mb-3">
+		<span class="input-group-text" >Confirmar Contraseña</span>
+		<input type="password" id="confcontrasena" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+	</div>
+
+<button type="button" onclick="crearusuario()" class="btn btn-primary">Entrar</button>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+-->
+<script>
+	function crearusuario(){
+		var usuario;
+		var password;
+		var correo;
+		var cargo;
+		var nombre;
+		var area;
+		var confcontrasena;
+
+		usuario = document.getElementById("nomina").value;
+		password = document.getElementById("password").value;
+		nombre = document.getElementById("nombre").value;
+		correo = document.getElementById("correo").value;
+		cargo = document.getElementById("cargo").value;
+		area = document.getElementById("area").value;
+		confcontrasena= document.getElementById("confcontrasena").value;
+
+		if(usuario!=""){
+			if (password!=""){
+				if (area!=""){
+					if (nombre!=""){
+						if (correo!=""){
+							if (cargo!=""){
+								if (confcontrasena!=""){
+									if (password==confcontrasena){
+
+										const data = new FormData();
+
+										data.append('usuario',usuario);
+										data.append('password', password);
+										data.append('correo', correo);
+										data.append('cargo', cargo);
+										data.append('nombre', nombre);
+										data.append('area', area);
+
+
+										fetch('dao/daoregistro.php', {
+											method: 'POST',
+											body: data
+										})
+										.then(function (response) {
+											if (response.ok) {
+
+											} else {
+												throw "Error en la llamada Ajax";
+											}
+										})
+										.then(function (texto) {
+											console.log(texto);
+										})
+										.catch(function (err) {
+											console.log(err);
+										});
+
+									}else{
+										alert("incorrecto vulve a intentarlo");
+									}
+								}else{
+									alert("campo de confcontrasena vacio");
+								}
+
+							}else{
+								alert("campo de cargo vacio");
+							}
+						}else{
+							alert("campo de correo vacio");
+						}
+					}else{
+						alert("campo de nombre vacio");
+					}
+				}else{
+					alert("campo de area vacio");
+				}
+			}else {
+				alert("campo de password vacio");
+			}
+		}else {
+			alert("campo de usuario vacio");
+		}
+
+
+
+
+
+
+	}
+</script>
+</body>
+</html>
