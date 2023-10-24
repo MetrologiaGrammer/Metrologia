@@ -1,7 +1,7 @@
 
 <?php
 
-include_once('db_Empleado.php');
+include_once('db.php');
 
 $idreferncia=$_GET['idreferencia'];
 
