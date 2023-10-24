@@ -291,6 +291,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                                     $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
                                         document.getElementById("serie").value = data.data[0].NumSerie;
+                                        document.getElementById("tipo").value = data.data[0].Tipo;
+                                        document.getElementById("sub-tipo").value = data.data[0].SubTipo;
                                     });
 
                                 }
