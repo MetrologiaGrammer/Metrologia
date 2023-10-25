@@ -27,9 +27,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <h1><a href="index.html" id="logo">Metrología</a></h1>
                         <nav id="nav">
                             <a href="inicio.html">inicio</a>
-                            <a href="CONSULTA.html" class="current-page-item">Consulta de Equipos</a>
+                            <a href="CONSULTA.html" >Consulta de Equipos</a>
                             <a href="altaYbaja.html">Ingresos y Bajas De Equipos</a>
-                            <a href="actualizacionYreporte.html">Solicitud De Actualizaciones</a>
+                            <a href="actualizacionYreporte.html"class="current-page-item">Solicitud De Actualizaciones</a>
                             <a href="">Estudios y Certificados de Equipos</a>
 
                         </nav>
@@ -64,20 +64,43 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >ID DE REFERENCIA</span>
-                                <input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                             </div>
 
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >TIPO</span>
-                                <input type="text" id="tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                             </div>
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >SUB-TIPO</span>
-                                <input type="text" id="sub-tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="sub-tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                             </div>
                             <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >FECHA DEL ULTIMO REPORTE</span>
+                                <input type="text" id="ultimo-r" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >USUARIO</span>
+                                <input type="text" id="ultimo-u" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+                                <input type="text" id="desc-problema" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >DESCRIPCION DEL AREA</span>
+                                <input type="text" id="desc-area" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            </div>
+                            <p></p>
+                            <h3>ACTUALIZAR CAMBIO DE AREA O RESPONSABLE DE EQUIPO</h3>
+                            <H6> ¡TRABAJEMOS JUNTOS!</H6>
+                            <H6>ACTUALIZA EL NUEVO DESTINO DEL EQUIPO AQUI</H6>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >AREA/PROCESO</span>
                                 <select class="form-select" aria-label="Default select example">
@@ -87,42 +110,60 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     <option value="3">Three</option>
                                 </select>
                             </div>
-                            <p></p>
+                             <p></p>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" >LINEAS/MAQ</span>
-                                <input type="text" id="linea" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <span class="input-group-text" >LINEA</span>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
                             </div>
+                                <p></p>
+                                <div class="input-group mb-3">
+                                <span class="input-group-text" >OPERACION/MAQ</span>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                </div>
+                                <H3>REPORTA EL EQUIPO</H3>
+                                <H6>
+                                    REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
+                                    DESCRIBELO EN EL CUADRO.
+                                </H6>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" >REPORTE DE ETIQUETA</span>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">ETIQUETA DAÑADA</option>
+                                        <option value="2">NO TIENE ETIQUETA</option>
+                                        <option value="3">NO SE LOGRA LEER EL QR</option>
+                                    </select>
+                                </div>
                             <p></p>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" >REPORTAR EQUIPO</span>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">EQUIPO DAÑADO</option>
+                                        <option value="2">CALIBRACION VENCIDA</option>
+                                        <option value="3">EQUIPO EXTRAVIADO</option>
+                                    </select>
+                                </div>
+                                <p></p>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" >OPERACION</span>
-                                <input type="text" id="operacion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+                                <input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >FECHA DE CALIBRACION</span>
-                                <input type="text" id="fcalibracion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >PROXIMA FECHA DE CALIBRACION</span>
-                                <input type="text" id="proxfecha" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >NUM. DE SERIE</span>
-                                <input type="text" id="serie" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >NUM. DE PARTE</span>
-                                <input type="text" id="parte" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >OBSERVACIONES</span>
-                                <input type="text" id="observacio" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
+
+
+                            <P>¡FAVOR DE TOMAR FOTOS DE LA NUEVA UBICACION!</P>
                             <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
+
                             <!-- PARA CREAR UNA LISTA                    (
 
 
@@ -290,7 +331,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     Equipo=document.getElementById("idrefencia").value;
 
                                     $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
-                                        document.getElementById("serie").value = data.data[0].NumSerie;
+                                        document.getElementById("codigo").value = data.data[0].IdEquipo;
                                         document.getElementById("tipo").value = data.data[0].Tipo;
                                         document.getElementById("sub-tipo").value = data.data[0].SubTipo;
                                     });
@@ -298,6 +339,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 }
 
                             </script>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    </body>
+</body>
 </html>

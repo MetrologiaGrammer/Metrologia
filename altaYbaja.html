@@ -27,8 +27,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <h1><a href="index.html" id="logo">Metrología</a></h1>
                         <nav id="nav">
                             <a href="inicio.html">inicio</a>
-                            <a href="CONSULTA.html" class="current-page-item">Consulta de Equipos</a>
-                            <a href="altaYbaja.html">Ingresos y Bajas De Equipos</a>
+                            <a href="CONSULTA.html">Consulta de Equipos</a>
+                            <a href="altaYbaja.html" class="current-page-item">Ingresos y Bajas De Equipos</a>
                             <a href="actualizacionYreporte.html">Solicitud De Actualizaciones</a>
                             <a href="">Estudios y Certificados de Equipos</a>
 
@@ -57,50 +57,51 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <input type="text" id="idrefencia">
                             <p></p>
                             <button onclick="Buscarequipo()" class="button">BUSCAR EQUIPO</button>
-
+                            <p></p>
+                            <a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" /></a>
                         </center>
 
 
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >ID DE REFERENCIA</span>
-                            <input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
 
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >TIPO</span>
-                            <input type="text" id="tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" id="tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >SUB-TIPO</span>
-                            <input type="text" id="sub-tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" id="sub-tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >AREA/PROCESO</span>
-                            <input type="text" id="areaProceso" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" id="areaProceso" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >LINEAS/MAQ</span>
-                            <input type="text" id="linea" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" id="linea" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >OPERACION</span>
-                            <input type="text" id="operacion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" id="operacion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >FECHA DE CALIBRACION</span>
-                            <input type="text" id="fcalibracion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" id="fcalibracion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >PROXIMA FECHA DE CALIBRACION</span>
-                            <input type="text" id="proxfecha" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" id="pcalibracion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
@@ -114,10 +115,34 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" >OBSERVACIONES</span>
-                            <input type="text" id="observacio" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <span class="input-group-text" >RESOLUCION</span>
+                            <input type="text" id="resolucion" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
+                        <p></p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" >RANGO DEL EQUIPO</span>
+                            <input type="text" id="rango" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                        </div>
+                        <p></p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" >STATUS</span>
+                            <input type="text" id="status" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                        </div>
+                        <p></p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" >OBSERVACIONES</span>
+                            <input type="text" id="observaciones" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                        </div>
+
+                        <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
+
+
                         <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
+                        <P></P>
+                        <H3>SOLO CON ACCESO!</H3>
+                        <P>Puedes Actualizar Algun Movimiento o Reportar Algun Equipo</P>
+                        <a href="actualizacionYreporte.html" class="button">REPORTAR O ACTUALIZAR UN DATO</a>
+
                         <!-- PARA CREAR UNA LISTA                    (
 
 
@@ -189,87 +214,28 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         </div>
                         -->
                         <!-- Footer -->
+
+
                         <!--
-                        <div id="footer-wrapper">
-                        <div class="container">
-                        <div class="row">
-                        <div class="col-8 col-12-medium">
+                    </section>
 
-                        <section>
-                        <h2>How about a truckload of links?</h2>
-                        <div>
-                        <div class="row">
-                        <div class="col-3 col-6-medium col-12-small">
-                        <ul class="link-list">
-                        <li><a href="#">Sed neque nisi consequat</a></li>
-                        <li><a href="#">Dapibus sed mattis blandit</a></li>
-                        <li><a href="#">Quis accumsan lorem</a></li>
-                        <li><a href="#">Suspendisse varius ipsum</a></li>
-                        <li><a href="#">Eget et amet consequat</a></li>
-                        </ul>
-                        </div>
-                        <div class="col-3 col-6-medium col-12-small">
-                        <ul class="link-list">
-                        <li><a href="#">Quis accumsan lorem</a></li>
-                        <li><a href="#">Sed neque nisi consequat</a></li>
-                        <li><a href="#">Eget et amet consequat</a></li>
-                        <li><a href="#">Dapibus sed mattis blandit</a></li>
-                        <li><a href="#">Vitae magna sed dolore</a></li>
-                        </ul>
-                        </div>
-                        <div class="col-3 col-6-medium col-12-small">
-                        <ul class="link-list">
-                        <li><a href="#">Sed neque nisi consequat</a></li>
-                        <li><a href="#">Dapibus sed mattis blandit</a></li>
-                        <li><a href="#">Quis accumsan lorem</a></li>
-                        <li><a href="#">Suspendisse varius ipsum</a></li>
-                        <li><a href="#">Eget et amet consequat</a></li>
-                        </ul>
-                        </div>
-                        <div class="col-3 col-6-medium col-12-small">
-                        <ul class="link-list">
-                        <li><a href="#">Quis accumsan lorem</a></li>
-                        <li><a href="#">Sed neque nisi consequat</a></li>
-                        <li><a href="#">Eget et amet consequat</a></li>
-                        <li><a href="#">Dapibus sed mattis blandit</a></li>
-                        <li><a href="#">Vitae magna sed dolore</a></li>
-                        </ul>
-                        </div>
-                        </div>
-                        </div>
-                        </section>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-12">
 
-                        </div>
-                        <div class="col-4 col-12-medium">
+                    <div id="copyright">
+                    © Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+                    </div>
 
-                        <section>
-                        <h2>Something of interest</h2>
-                        <p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-                        Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
-                        mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-                        lorem ipsum dolor sit blandit.</p>
-                        <footer class="controls">
-                        <a href="#" class="button">Oh, please continue ....</a>
-                        </footer>
-                        </section>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
 
-                        </div>
-                        </div>
-                        <div class="row">
-                        <div class="col-12">
+                    </div>
 
-                        <div id="copyright">
-                        © Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
-                        </div>
-
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-
-                        </div>
-
-                        Scripts -->
+                    Scripts -->
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
                         <script src="assets/js/jquery.min.js"></script>
@@ -285,10 +251,24 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 Equipo=document.getElementById("idrefencia").value;
 
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
+                                    document.getElementById("codigo").value = data.data[0].IdEquipo;
                                     document.getElementById("serie").value = data.data[0].NumSerie;
                                     document.getElementById("tipo").value = data.data[0].Tipo;
                                     document.getElementById("sub-tipo").value = data.data[0].SubTipo;
+                                    document.getElementById("areaProceso").value = data.data[0].AreaProceso;
+                                    document.getElementById("linea").value = data.data[0].MaqLinea;
+                                    document.getElementById("operacion").value = data.data[0].Operacion;
+                                    document.getElementById("fcalibracion").value = data.data[0].FechaInspeccion;
+                                    document.getElementById("pcalibracion").value = data.data[0].FechaVencimiento;
+                                    document.getElementById("serie").value = data.data[0].NumSerie;
+                                    document.getElementById("parte").value = data.data[0].NumParte;
+                                    document.getElementById("resolucion").value = data.data[0].Resolucion;
+                                    document.getElementById("rango").value = data.data[0].RangoInstrumento;
+                                    document.getElementById("status").value = data.data[0].Status;
+                                    document.getElementById("observaciones").value = data.data[0].Observaciones;
+
                                 });
+
 
                             }
 
@@ -297,6 +277,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="col-12">
+    <div id="copyright">
+        &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
     </div>
 </div>
 </body>
