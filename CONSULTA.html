@@ -100,7 +100,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >PROXIMA FECHA DE CALIBRACION</span>
-                            <input type="text" id="proxfecha" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <input type="text" id="pcalibracion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
@@ -114,8 +114,23 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
+                            <span class="input-group-text" >RESOLUCION</span>
+                            <input type="text" id="resolucion" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                        </div>
+                        <p></p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" >RANGO DEL EQUIPO</span>
+                            <input type="text" id="rango" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                        </div>
+                        <p></p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" >STATUS</span>
+                            <input type="text" id="status" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                        </div>
+                        <p></p>
+                        <div class="input-group mb-3">
                             <span class="input-group-text" >OBSERVACIONES</span>
-                            <input type="text" id="observacio" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <input type="text" id="observaciones" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
                         <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
                         <!-- PARA CREAR UNA LISTA                    (
@@ -289,7 +304,19 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     document.getElementById("tipo").value = data.data[0].Tipo;
                                     document.getElementById("sub-tipo").value = data.data[0].SubTipo;
                                     document.getElementById("areaProceso").value = data.data[0].AreaProceso;
+                                    document.getElementById("linea").value = data.data[0].MaqLinea;
+                                    document.getElementById("operacion").value = data.data[0].Operacion;
+                                    document.getElementById("fcalibracion").value = data.data[0].FechaInspeccion;
+                                    document.getElementById("pcalibracion").value = data.data[0].FechaVencimiento;
+                                    document.getElementById("serie").value = data.data[0].NumSerie;
+                                    document.getElementById("parte").value = data.data[0].NumParte;
+                                    document.getElementById("resolucion").value = data.data[0].Resolucion;
+                                    document.getElementById("rango").value = data.data[0].RangoInstrumento;
+                                    document.getElementById("status").value = data.data[0].Status;
+                                    document.getElementById("observaciones").value = data.data[0].Observaciones;
+
                                 });
+
 
                             }
 
