@@ -201,6 +201,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                         function consuktararea(){
                                             var area;
                                             area=document.getElementById("area").value;
+                                            console.log('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area);
                                             $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
                                                 var select = document.getElementById("linea");
                                                 for (var i = 0; i < data.data.length; i++) {
