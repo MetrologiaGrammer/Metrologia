@@ -103,7 +103,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <H6>ACTUALIZA EL NUEVO DESTINO DEL EQUIPO AQUI</H6>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >AREA/PROCESO</span>
-                                <select ID="area" class="form-select" aria-label="Default select example">
+                                <select ID="area" class="form-select" aria-label="Default select example" onchange="consuktararea()">
                                     <option selected>Open this select menu</option>
                                     <option value="INYECCION">INYECCION</option>
                                     <option value="2">Two</option>
@@ -147,7 +147,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" >REPORTAR EQUIPO</span>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select id="linea" class="form-select" aria-label="Default select example">
                                         <option selected>Open this select menu</option>
                                         <option value="1">EQUIPO DAÑADO</option>
                                         <option value="2">CALIBRACION VENCIDA</option>
@@ -202,7 +202,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                             var area;
                                             area=document.getElementById("area").value;
                                             $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
-                                                var select = document.getElementById("area");
+                                                var select = document.getElementById("linea");
                                                 for (var i = 0; i < data.data.length; i++) {
                                                     var createOption = document.createElement("option");
                                                     createOption.text=data.data[i].Linea;
