@@ -27,9 +27,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <h1><a href="index.html" id="logo">Metrología</a></h1>
                         <nav id="nav">
                             <a href="inicio.html">inicio</a>
-                            <a href="CONSULTA.html" class="current-page-item">Consulta de Equipos</a>
+                            <a href="CONSULTA.html" >Consulta de Equipos</a>
                             <a href="altaYbaja.html">Ingresos y Bajas De Equipos</a>
-                            <a href="actualizacionYreporte.html">Solicitud De Actualizaciones</a>
+                            <a href="actualizacionYreporte.html"class="current-page-item">Solicitud De Actualizaciones</a>
                             <a href="">Estudios y Certificados de Equipos</a>
 
                         </nav>
@@ -64,217 +64,105 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >ID DE REFERENCIA</span>
-                                <input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                             </div>
 
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >TIPO</span>
-                                <input type="text" id="tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                             </div>
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >SUB-TIPO</span>
-                                <input type="text" id="sub-tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="sub-tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                             </div>
                             <p></p>
                             <div class="input-group mb-3">
+                                <span class="input-group-text" >FECHA DEL ULTIMO REPORTE</span>
+                                <input type="text" id="ultimo-r" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >USUARIO</span>
+                                <input type="text" id="ultimo-u" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+                                <input type="text" id="desc-problema" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >DESCRIPCION DEL AREA</span>
+                                <input type="text" id="desc-area" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            </div>
+                            <p></p>
+                            <h3>ACTUALIZAR CAMBIO DE AREA O RESPONSABLE DE EQUIPO</h3>
+                            <H6> ¡TRABAJEMOS JUNTOS!</H6>
+                            <H6>ACTUALIZA EL NUEVO DESTINO DEL EQUIPO AQUI</H6>
+                            <div class="input-group mb-3">
                                 <span class="input-group-text" >AREA/PROCESO</span>
-                                <select class="form-select" aria-label="Default select example">
+                                <select ID="area" class="form-select" aria-label="Default select example" onchange="consuktararea()">
                                     <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
+                                    <option value="INYECCION">INYECCION</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
                             </div>
-                            <p></p>
+                             <p></p>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" >LINEAS/MAQ</span>
-                                <input type="text" id="linea" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <span class="input-group-text" >LINEA</span>
+                                <select class="form-select" aria-label="Default select example">
+                                </select>
                             </div>
+                                <p></p>
+                                <div class="input-group mb-3">
+                                <span class="input-group-text" >OPERACION/MAQ</span>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value=""></option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                </div>
+                                <H3>REPORTA EL EQUIPO</H3>
+                                <H6>
+                                    REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
+                                    DESCRIBELO EN EL CUADRO.
+                                </H6>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" >REPORTE DE ETIQUETA</span>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="">ETIQUETA DAÑADA</option>
+                                        <option value="">NO TIENE ETIQUETA</option>
+                                        <option value="">NO SE LOGRA LEER EL QR</option>
+                                    </select>
+                                </div>
                             <p></p>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" >REPORTAR EQUIPO</span>
+                                    <select id="linea" class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">EQUIPO DAÑADO</option>
+                                        <option value="2">CALIBRACION VENCIDA</option>
+                                        <option value="3">EQUIPO EXTRAVIADO</option>
+                                    </select>
+                                </div>
+                                <p></p>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" >OPERACION</span>
-                                <input type="text" id="operacion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+                                <input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >FECHA DE CALIBRACION</span>
-                                <input type="text" id="fcalibracion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >PROXIMA FECHA DE CALIBRACION</span>
-                                <input type="text" id="proxfecha" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >NUM. DE SERIE</span>
-                                <input type="text" id="serie" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >NUM. DE PARTE</span>
-                                <input type="text" id="parte" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >OBSERVACIONES</span>
-                                <input type="text" id="observacio" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
+
+
+                            <P>¡FAVOR DE TOMAR FOTOS DE LA NUEVA UBICACION!</P>
                             <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
-                            <!-- PARA CREAR UNA LISTA                    (
+                            <P></P>
+                            <button onclick="" class="button">ENVIAR DATOS</button>
 
 
-                                                        <form action="#">
-                                                            <label for="lang">Lenguaje</label>
-                                                            <select name="lenguajes" id="lang">
-                                                                <option value="javascript">JavaScript</option>
-                                                                <option value="php">PHP</option>
-                                                                <option value="java">Java</option>
-                                                                <option value="golang">Golang</option>
-                                                                <option value="python">Python</option>
-                                                                <option value="c#">C#</option>
-                                                                <option value="C++">C++</option>
-                                                                <option value="erlang">Erlang</option>
-                                                            </select>
-                                                            <input type="submit" value="Enviar" />
-                                                        </form>
-                            -->
-                            <!--
-                            </section>
-
-                            </div>
-                            <div class="col-4 col-12-medium">
-                            <section>
-                            <h2>Who are you guys?</h2>
-                            <ul class="small-image-list">
-                            <li>
-                            <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
-                            <h4>Jane Anderson</h4>
-                            <p>Varius nibh. Suspendisse vitae magna eget et amet mollis justo facilisis amet quis.</p>
-                            </li>
-                            <li>
-                            <a href="#"><img src="images/pic1.jpg" alt="" class="left" /></a>
-                            <h4>James Doe</h4>
-                            <p>Vitae magna eget odio amet mollis justo facilisis amet quis. Sed sagittis consequat.</p>
-                            </li>
-                            </ul>
-                            </section>
-
-                            <section>
-                            <h2>How about some links?</h2>
-                            <div>
-                            <div class="row">
-                            <div class="col-6 col-12-small">
-                            <ul class="link-list">
-                            <li><a href="#">Sed neque nisi consequat</a></li>
-                            <li><a href="#">Dapibus sed mattis blandit</a></li>
-                            <li><a href="#">Quis accumsan lorem</a></li>
-                            <li><a href="#">Suspendisse varius ipsum</a></li>
-                            <li><a href="#">Eget et amet consequat</a></li>
-                            </ul>
-                            </div>
-                            <div class="col-6 col-12-small">
-                            <ul class="link-list">
-                            <li><a href="#">Quis accumsan lorem</a></li>
-                            <li><a href="#">Sed neque nisi consequat</a></li>
-                            <li><a href="#">Eget et amet consequat</a></li>
-                            <li><a href="#">Dapibus sed mattis blandit</a></li>
-                            <li><a href="#">Vitae magna sed dolore</a></li>
-                            </ul>
-                            </div>
-                            </div>
-                            </div>
-                            </section>
-
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-                            -->
-                            <!-- Footer -->
-                            <!--
-                            <div id="footer-wrapper">
-                            <div class="container">
-                            <div class="row">
-                            <div class="col-8 col-12-medium">
-
-                            <section>
-                            <h2>How about a truckload of links?</h2>
-                            <div>
-                            <div class="row">
-                            <div class="col-3 col-6-medium col-12-small">
-                            <ul class="link-list">
-                            <li><a href="#">Sed neque nisi consequat</a></li>
-                            <li><a href="#">Dapibus sed mattis blandit</a></li>
-                            <li><a href="#">Quis accumsan lorem</a></li>
-                            <li><a href="#">Suspendisse varius ipsum</a></li>
-                            <li><a href="#">Eget et amet consequat</a></li>
-                            </ul>
-                            </div>
-                            <div class="col-3 col-6-medium col-12-small">
-                            <ul class="link-list">
-                            <li><a href="#">Quis accumsan lorem</a></li>
-                            <li><a href="#">Sed neque nisi consequat</a></li>
-                            <li><a href="#">Eget et amet consequat</a></li>
-                            <li><a href="#">Dapibus sed mattis blandit</a></li>
-                            <li><a href="#">Vitae magna sed dolore</a></li>
-                            </ul>
-                            </div>
-                            <div class="col-3 col-6-medium col-12-small">
-                            <ul class="link-list">
-                            <li><a href="#">Sed neque nisi consequat</a></li>
-                            <li><a href="#">Dapibus sed mattis blandit</a></li>
-                            <li><a href="#">Quis accumsan lorem</a></li>
-                            <li><a href="#">Suspendisse varius ipsum</a></li>
-                            <li><a href="#">Eget et amet consequat</a></li>
-                            </ul>
-                            </div>
-                            <div class="col-3 col-6-medium col-12-small">
-                            <ul class="link-list">
-                            <li><a href="#">Quis accumsan lorem</a></li>
-                            <li><a href="#">Sed neque nisi consequat</a></li>
-                            <li><a href="#">Eget et amet consequat</a></li>
-                            <li><a href="#">Dapibus sed mattis blandit</a></li>
-                            <li><a href="#">Vitae magna sed dolore</a></li>
-                            </ul>
-                            </div>
-                            </div>
-                            </div>
-                            </section>
-
-                            </div>
-                            <div class="col-4 col-12-medium">
-
-                            <section>
-                            <h2>Something of interest</h2>
-                            <p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-                            Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
-                            mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-                            lorem ipsum dolor sit blandit.</p>
-                            <footer class="controls">
-                            <a href="#" class="button">Oh, please continue ....</a>
-                            </footer>
-                            </section>
-
-                            </div>
-                            </div>
-                            <div class="row">
-                            <div class="col-12">
-
-                            <div id="copyright">
-                            © Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
-                            </div>
-
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-
-                            </div>
-
-                            Scripts -->
                             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
                             <script src="assets/js/jquery.min.js"></script>
@@ -290,7 +178,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     Equipo=document.getElementById("idrefencia").value;
 
                                     $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
-                                        document.getElementById("serie").value = data.data[0].NumSerie;
+                                        document.getElementById("codigo").value = data.data[0].IdEquipo;
                                         document.getElementById("tipo").value = data.data[0].Tipo;
                                         document.getElementById("sub-tipo").value = data.data[0].SubTipo;
                                     });
@@ -298,6 +186,28 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 }
 
                             </script>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                    <script>
 
-    </body>
+                                        function consuktararea(){
+                                            var area;
+                                            area=document.getElementById("area").value;
+                                            console.log('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area);
+                                            $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
+                                                var select = document.getElementById("linea");
+                                                for (var i = 0; i < data.data.length; i++) {
+                                                    var createOption = document.createElement("option");
+                                                    createOption.text=data.data[i].Linea;
+                                                    createOption.value=data.data[i].Linea;
+                                                }
+                                            });
+                                        }
+
+                                    </script>
+</body>
 </html>
