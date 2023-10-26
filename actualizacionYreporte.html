@@ -7,7 +7,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 <html>
 <head>
-    <title>Consulta De equipos</title>
+    <title>Reporte de equipos</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -29,7 +29,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <a href="inicio.html">inicio</a>
                             <a href="CONSULTA.html" >Consulta de Equipos</a>
                             <a href="altaYbaja.html">Ingresos y Bajas De Equipos</a>
-                            <a href="actualizacionYreporte.html"class="current-page-item">Solicitud De Actualizaciones</a>
+                            <a href=""class="current-page-item">Solicitud De Actualizaciones</a>
                             <a href="">Estudios y Certificados de Equipos</a>
 
                         </nav>
@@ -47,10 +47,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 <div class="col-8 col-12-medium">
 
                     <section>
-                        <h2>Consulta de equipos</h2>
-                        <h4>¡Bienvenido!</h4>
-                        <p> Puedes consultar los datos y especificaciones para cada instrumento de medición resgistrado en
-                            nuestro laboratorio de metrología solo ingresa el ID correspondiente al equipo.</p>
+                        <h2>Reporte de equipos</h2>
+
+                        <p> Puedes actualizar datos el area para cada instrumento de medición resgistrado en
+                            nuestro laboratorio de metrología solo ingresa el ID correspondiente al equipo y presiona el boton.</p>
                         <center>
 
                             <label>Ingrese el ID del equipo  </label>
@@ -204,6 +204,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                                     var createOption = document.createElement("option");
                                                     createOption.text=data.data[i].Linea;
                                                     createOption.value=data.data[i].Linea;
+                                                    select.appendChild(createOption);
                                                 }
                                             });
                                         }
