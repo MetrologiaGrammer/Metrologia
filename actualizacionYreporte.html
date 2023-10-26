@@ -113,7 +113,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                              <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >LINEA</span>
-                                <select class="form-select" aria-label="Default select example">
+                                <select id="operacion" class="form-select" aria-label="Default select example">
                                 </select>
                             </div>
                                 <p></p>
@@ -199,7 +199,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                             area=document.getElementById("area").value;
                                             console.log('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area);
                                             $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
-                                                var select = document.getElementById("linea");
+                                                var select = document.getElementById("operacion");
                                                 for (var i = 0; i < data.data.length; i++) {
                                                     var createOption = document.createElement("option");
                                                     createOption.text=data.data[i].Linea;
