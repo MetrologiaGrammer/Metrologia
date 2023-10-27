@@ -5,13 +5,13 @@ include_once('db.php');
 
 Contador();
 
-function Contador($area){
+function Contador(){
 
     $con = new LocalConector();
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT Proceso FROM `Areas` GROUP BY `Proceso`;");
+    $datos = mysqli_query($conex, "SELECT `Proceso` FROM `Areas` GROUP BY `Proceso`;");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 
