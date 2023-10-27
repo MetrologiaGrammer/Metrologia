@@ -44,7 +44,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <div id="main">
         <div class="container">
             <div class="row main-row">
-                <div class="col-8 col-12-medium">
+                <div class="col-12 col-12-medium col-12-small">
 
                     <section>
                         <h2>Reporte de equipos</h2>
@@ -126,41 +126,65 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     <option value="3">Three</option>
                                 </select>
                                 </div>
-                                <H3>REPORTA EL EQUIPO</H3>
-                                <H6>
-                                    REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
-                                    DESCRIBELO EN EL CUADRO.
-                                </H6>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" >REPORTE DE ETIQUETA</span>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Open this select menu</option>
-                                        <option value="">ETIQUETA DAÑADA</option>
-                                        <option value="">NO TIENE ETIQUETA</option>
-                                        <option value="">NO SE LOGRA LEER EL QR</option>
-                                    </select>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Reportar problema
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">REPORTAR PROBLEMA</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <H6>
+                                            REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
+                                            DESCRIBELO EN EL CUADRO.
+                                        </H6>
+                                        <hr>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" >REPORTE DE ETIQUETA</span>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Open this select menu</option>
+                                                <option value="">ETIQUETA DAÑADA</option>
+                                                <option value="">NO TIENE ETIQUETA</option>
+                                                <option value="">NO SE LOGRA LEER EL QR</option>
+                                            </select>
+                                        </div>
+                                        <p></p>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" >REPORTAR EQUIPO</span>
+                                            <select id="linea" class="form-select" aria-label="Default select example">
+                                                <option selected>Open this select menu</option>
+                                                <option value="1">EQUIPO DAÑADO</option>
+                                                <option value="2">CALIBRACION VENCIDA</option>
+                                                <option value="3">EQUIPO EXTRAVIADO</option>
+                                            </select>
+                                        </div>
+                                        <p></p>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+                                            <input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Enviar</button>
+                                    </div>
                                 </div>
-                            <p></p>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" >REPORTAR EQUIPO</span>
-                                    <select id="linea" class="form-select" aria-label="Default select example">
-                                        <option selected>Open this select menu</option>
-                                        <option value="1">EQUIPO DAÑADO</option>
-                                        <option value="2">CALIBRACION VENCIDA</option>
-                                        <option value="3">EQUIPO EXTRAVIADO</option>
-                                    </select>
-                                </div>
-                                <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
-                                <input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
+                        </div>
+
 
 
                             <P>¡FAVOR DE TOMAR FOTOS DE LA NUEVA UBICACION!</P>
                             <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
                             <P></P>
-                            <button onclick="" class="button">ENVIAR DATOS</button>
+                        <button type="button" class="btn btn-lg btn-success">Enviar Datos</button>
 
 
                             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -183,6 +207,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                         document.getElementById("sub-tipo").value = data.data[0].SubTipo;
                                     });
 
+                                }
+
+                                function reportar(){
+                                    document.getElementById("reporte").style.display='block';
                                 }
 
                             </script>
