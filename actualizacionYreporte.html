@@ -104,21 +104,17 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >AREA/PROCESO</span>
                                 <select ID="area" class="form-select" aria-label="Default select example" onchange="consuktararea()">
-                                    <option selected>Open this select menu</option>
-                                    <option value="INYECCION">INYECCION</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
                                 </select>
                             </div>
                              <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >LINEA</span>
-                                <select id="operacion" class="form-select" aria-label="Default select example">
+                                <select id="Linea" class="form-select" aria-label="Default select example">
                                 </select>
                             </div>
                                 <p></p>
                                 <div class="input-group mb-3">
-                                <span class="input-group-text" >OPERACION/MAQ</span>
+                                <span class="input-group-text" >OPERACIO/MAQ</span>
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Open this select menu</option>
                                     <option value=""></option>
@@ -158,7 +154,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                         <p></p>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" >REPORTAR EQUIPO</span>
-                                            <select id="linea" class="form-select" aria-label="Default select example">
+                                            <select id="aa" class="form-select" aria-label="Default select example">
                                                 <option selected>Open this select menu</option>
                                                 <option value="1">EQUIPO DAÑADO</option>
                                                 <option value="2">CALIBRACION VENCIDA</option>
@@ -227,11 +223,23 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                             area=document.getElementById("area").value;
                                             console.log('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area);
                                             $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
-                                                var select = document.getElementById("operacion");
+                                                var select = document.getElementById("Linea");
                                                 for (var i = 0; i < data.data.length; i++) {
                                                     var createOption = document.createElement("option");
                                                     createOption.text=data.data[i].Linea;
                                                     createOption.value=data.data[i].Linea;
+                                                    select.appendChild(createOption);
+                                                }
+                                            });
+                                        }
+                                        llenarProceso();
+                                        function llenarProceso() {
+                                            $.getJSON('https://arketipo.mx/Metrologia/dao/daoProceso.php', function (data) {
+                                                var select = document.getElementById("area");
+                                                for (var i = 0; i < data.data.length; i++) {
+                                                    var createOption = document.createElement("option");
+                                                    createOption.text=data.data[i].Proceso;
+                                                    createOption.value=data.data[i].Proceso;
                                                     select.appendChild(createOption);
                                                 }
                                             });
