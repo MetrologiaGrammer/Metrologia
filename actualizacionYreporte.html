@@ -233,7 +233,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                                         function consuktarOpEstacion(){
                                             var area;
-                                            area=document.getElementById("linea").value;
+                                            area=document.getElementById("Linea").value;
                                             console.log('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area);
                                             $.getJSON('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area, function (data) {
                                                 var selectOperacion = document.getElementById("operacion");
