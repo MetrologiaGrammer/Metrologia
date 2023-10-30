@@ -217,19 +217,28 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                         function consuktararea(){
                                             var area;
                                             area=document.getElementById("area").value;
-                                            console.log('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area);
                                             $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
                                                 var select = document.getElementById("Linea");
-                                                var selectOperacion = document.getElementById("operacion");
-
                                                 select.innerHTML="";
-                                                selectOperacion.innerHTML="";
                                                 for (var i = 0; i < data.data.length; i++) {
 
                                                     var createOption = document.createElement("option");
                                                     createOption.text=data.data[i].Linea;
                                                     createOption.value=data.data[i].Linea;
                                                     select.appendChild(createOption);
+
+                                                }
+                                                consuktarOpEstacion(area);
+                                            });
+                                        }
+
+                                        function consuktarOpEstacion(area){
+
+                                            $.getJSON('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area, function (data) {
+                                                var selectOperacion = document.getElementById("operacion");
+
+                                                selectOperacion.innerHTML="";
+                                                for (var i = 0; i < data.data.length; i++) {
 
                                                     var createOptionOperacion = document.createElement("option");
                                                     createOptionOperacion.text=data.data[i].OpEstacion;
@@ -239,6 +248,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                                 }
                                             });
                                         }
+
                                         llenarProceso();
                                         function llenarProceso() {
                                             $.getJSON('https://arketipo.mx/Metrologia/dao/daoProceso.php', function (data) {
@@ -251,6 +261,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                                 }
                                             });
                                         }
+
 
                                     </script>
 </body>
