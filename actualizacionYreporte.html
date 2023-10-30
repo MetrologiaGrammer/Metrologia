@@ -109,7 +109,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                              <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >LINEA</span>
-                                <select id="Linea" class="form-select" aria-label="Default select example">
+                                <select id="Linea" class="form-select" aria-label="Default select example" onchange="consuktarOpEstacion()">
                                 </select>
                             </div>
                                 <p></p>
@@ -228,11 +228,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                                     select.appendChild(createOption);
 
                                                 }
-                                                consuktarOpEstacion(area);
                                             });
                                         }
 
-                                        function consuktarOpEstacion(area){
+                                        function consuktarOpEstacion(){
+                                            var area;
+                                            area=document.getElementById("linea").value;
                                             console.log('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area);
                                             $.getJSON('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area, function (data) {
                                                 var selectOperacion = document.getElementById("operacion");
