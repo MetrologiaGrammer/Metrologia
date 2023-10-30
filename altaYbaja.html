@@ -46,7 +46,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <div class="row main-row">
                 <div class="col-8 col-12-medium">
 
-                    <section>
+                    <section >
                         <h2>Consulta de equipos</h2>
                         <h4>¡Bienvenido!</h4>
                         <p> Puedes consultar los datos y especificaciones para cada instrumento de medición resgistrado en
@@ -58,10 +58,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                             <button onclick="Buscarequipo()" class="button">BUSCAR EQUIPO</button>
                             <p></p>
-                            <a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" style="width: 100%"/></a>
                         </center>
-
-
+                        <div id="inicio" style="display: none">
+                        <center><a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" style="width: 100%"/></a></center>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >ID DE REFERENCIA</span>
@@ -155,7 +154,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <H3>SOLO CON ACCESO!</H3>
                         <P>Puedes Actualizar Algun Movimiento o Reportar Algun Equipo</P>
                         <a href="actualizacionYreporte.html" class="button">REPORTAR O ACTUALIZAR UN DATO</a>
-
+                        </div>
 
                         <!-- Footer -->
 
@@ -180,44 +179,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                     Scripts -->
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-                        <script src="assets/js/jquery.min.js"></script>
-                        <script src="assets/js/browser.min.js"></script>
-                        <script src="assets/js/breakpoints.min.js"></script>
-                        <script src="assets/js/util.js"></script>
-                        <script src="assets/js/main.js"></script>
-
-                        <script>
-
-                            function Buscarequipo(){
-                                var Equipo;
-                                Equipo=document.getElementById("idrefencia").value;
-
-                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
-                                    document.getElementById("codigo").value = data.data[0].IdEquipo;
-                                    document.getElementById("serie").value = data.data[0].NumSerie;
-                                    //document.getElementById("tipo").value = data.data[0].Tipo;
-                                    //document.getElementById("sub-tipo").value = data.data[0].SubTipo;
-                                    //document.getElementById("areaProceso").value = data.data[0].AreaProceso;
-                                    //document.getElementById("linea").value = data.data[0].MaqLinea;
-                                    //document.getElementById("operacion").value = data.data[0].Operacion;
-                                    //document.getElementById("fcalibracion").value = data.data[0].FechaInspeccion;
-                                    //document.getElementById("pcalibracion").value = data.data[0].FechaVencimiento;
-                                    //document.getElementById("serie").value = data.data[0].NumSerie;
-                                    document.getElementById("parte").value = data.data[0].NumParte;
-                                    document.getElementById("resolucion").value = data.data[0].Resolucion;
-                                    document.getElementById("rango").value = data.data[0].RangoInstrumento;
-                                    //document.getElementById("status").value = data.data[0].Status;
-                                    document.getElementById("observaciones").value = data.data[0].Observaciones;
-                                    document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-
-                                });
-
-
-                            }
-
-                        </script>
                     </section>
                 </div>
             </div>
@@ -229,6 +191,45 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+
+    function Buscarequipo(){
+        var Equipo;
+        Equipo=document.getElementById("idrefencia").value;
+        document.getElementById("inicio").style.display="block";
+        $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
+            document.getElementById("codigo").value = data.data[0].IdEquipo;
+            document.getElementById("serie").value = data.data[0].NumSerie;
+            //document.getElementById("tipo").value = data.data[0].Tipo;
+            //document.getElementById("sub-tipo").value = data.data[0].SubTipo;
+            //document.getElementById("areaProceso").value = data.data[0].AreaProceso;
+            //document.getElementById("linea").value = data.data[0].MaqLinea;
+            //document.getElementById("operacion").value = data.data[0].Operacion;
+            //document.getElementById("fcalibracion").value = data.data[0].FechaInspeccion;
+            //document.getElementById("pcalibracion").value = data.data[0].FechaVencimiento;
+            //document.getElementById("serie").value = data.data[0].NumSerie;
+            document.getElementById("parte").value = data.data[0].NumParte;
+            document.getElementById("resolucion").value = data.data[0].Resolucion;
+            document.getElementById("rango").value = data.data[0].RangoInstrumento;
+            //document.getElementById("status").value = data.data[0].Status;
+            document.getElementById("observaciones").value = data.data[0].Observaciones;
+            document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+
+        });
+
+
+    }
+
+</script>
 
 
                         <script>
