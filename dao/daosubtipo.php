@@ -12,7 +12,7 @@ function Contador(){
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT `Sub-Tipo` FROM `Tipos` GROUP BY `Sub-Tipo`;");
+    $datos = mysqli_query($conex, "SELECT `Sub-Tipo`  AS SubTipo FROM `Tipos` GROUP BY `Sub-Tipo`;;");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 
