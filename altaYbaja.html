@@ -429,6 +429,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 tipoEquipo = document.getElementById("tipoEquipo").value;
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo, function (data) {
                                     document.getElementById("idReferencia").value=data.data[0].IdEquipo;
+                                    document.getElementById("idReferencia").style.display='block';
                                 });
                             }
 
