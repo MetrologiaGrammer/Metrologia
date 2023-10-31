@@ -62,7 +62,113 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <button ONCLICK="Buscarequipo()" type="button" class="btn btn-primary btn-lg">Buscar Equipo</button>
                             <p></p>
                         </center>
-                        <div id="inicio" style="display: none">
+
+                        <div id="ingreso">
+                            <h1>Registro de nuevo equipo</h1>
+                            <center><a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" style="width: 100%"/></a></center>
+                            <input type="file" id="" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >TIPO</span>
+                                <select ID="tipoEquipo" class="form-select" aria-label="Default select example" onchange="buscarId()">
+                                    <option value="ER">Equipo de referencia</option>
+                                    <option value="IM">Internos</option>
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3" style="display: none">
+                                <span class="input-group-text" >ID DE REFERENCIA</span>
+                                <input type="text" id="idReferencia" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            </div>
+
+
+                            <p></p>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >SUB-TIPO</span>
+                                <select ID="" class="form-select" aria-label="Default select example" >
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >AREA/PROCESO</span>
+                                <select ID="" class="form-select" aria-label="Default select example" onchange="consultararea()">
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >LINEA</span>
+                                <select ID="" class="form-select" aria-label="Default select example" onchange="consultarOpEstacion()">
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >OP./MAQ.</span>
+                                <select ID="" class="form-select" aria-label="Default select example">
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >FECHA DE CALIBRACION</span>
+                                <input type="date" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >FRECUENCIA DE CALIBRACION</span>
+                                <input type="number" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >PROX. FECHA DE CALIBRACION</span>
+                                <input type="date" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
+
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >NUM. DE SERIE</span>
+                                <input type="text" id="" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >NUM. DE PARTE</span>
+                                <input type="text" id="" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >RESOLUCION</span>
+                                <input type="text" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >RANGO DEL EQUIPO</span>
+                                <input type="text" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >STATUS</span>
+                                <select ID="" class="form-select" aria-label="Default select example" onchange="consuktararea()">
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >OBSERVACIONES</span>
+                                <input type="text" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+
+                            <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
+
+
+                            <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
+                            <P></P>
+                            <H3>SOLO CON ACCESO!</H3>
+                            <P>Puedes Actualizar Algun Movimiento o Reportar Algun Equipo</P>
+
+                        </div>
+
+                        <div id="consulta" style="display: none">
                         <center><a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" style="width: 100%"/></a></center>
                             <input type="file" id="aaz" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 
@@ -211,7 +317,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     function Buscarequipo(){
         var Equipo;
         Equipo=document.getElementById("idrefencia").value;
-        document.getElementById("inicio").style.display="block";
+        document.getElementById("consulta").style.display="block";
         $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
             document.getElementById("codigo").value = data.data[0].IdEquipo;
             //document.getElementById("serie").value = data.data[0].NumSerie;
@@ -318,7 +424,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 });
                             }
 
-
+                            function buscarId() {
+                                var tipoEquipo;
+                                tipoEquipo = document.getElementById("tipoEquipo").value;
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo, function (data) {
+                                    document.getElementById("idReferencia").value=data.data[0].IdEquipo;
+                                });
+                            }
 
 
 
