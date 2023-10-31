@@ -7,264 +7,263 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 <html>
 <head>
-    <title>Reporte de equipos</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Reporte de equipos</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 <body>
 <div id="page-wrapper">
 
-    <!-- Header -->
-    <div id="header-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
+	<!-- Header -->
+	<div id="header-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
 
-                    <header id="header">
-                        <h1><a href="index.html" id="logo">Metrología</a></h1>
-                        <nav id="nav">
-                            <a href="inicio.html">inicio</a>
-                            <a href="CONSULTA.html" >Consulta de Equipos</a>
-                            <a href="altaYbaja.html">Ingresos y Bajas De Equipos</a>
-                            <a href=""class="current-page-item">Solicitud De Actualizaciones</a>
-                            <a href="">Estudios y Certificados de Equipos</a>
+					<header id="header">
+						<h1><a href="index.html" id="logo">Metrología</a></h1>
+						<nav id="nav">
+							<a href="inicio.html">inicio</a>
+							<a href="CONSULTA.html" >Consulta de Equipos</a>
+							<a href="altaYbaja.html">Ingresos y Bajas De Equipos</a>
+							<a href=""class="current-page-item">Solicitud De Actualizaciones</a>
+							<a href="">Estudios y Certificados de Equipos</a>
 
-                        </nav>
-                    </header>
+						</nav>
+					</header>
 
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- Main -->
-    <div id="main">
-        <div class="container">
-            <div class="row main-row">
-                <div class="col-12 col-12-medium col-12-small">
+	<!-- Main -->
+	<div id="main">
+		<div class="container">
+			<div class="row main-row">
+				<div class="col-12 col-12-medium col-12-small">
 
-                    <section>
-                        <h2>Reporte de equipos</h2>
+					<section>
+						<h2>Reporte de equipos</h2>
 
-                        <p> Puedes actualizar datos el area para cada instrumento de medición resgistrado en
-                            nuestro laboratorio de metrología solo ingresa el ID correspondiente al equipo y presiona el boton "BUSCAR EQUIPO" .</p>
-                        <center>
+						<p> Puedes actualizar datos el area para cada instrumento de medición resgistrado en
+							nuestro laboratorio de metrología solo ingresa el ID correspondiente al equipo y presiona el boton "BUSCAR EQUIPO" .</p>
+						<center>
 
-                            <label>Ingrese el ID del equipo  </label>
-                            <input type="text" id="idrefencia">
-                            <p></p>
-                            <button ONCLICK="Buscarequipo()" type="button" class="btn btn-primary btn-lg">Buscar Equipo</button>
-                        </center>
-
-
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >ID DE REFERENCIA</span>
-                                <input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
-                            </div>
-
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >TIPO</span>
-                                <input type="text" id="tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >SUB-TIPO</span>
-                                <input type="text" id="sub-tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >FECHA DEL ULTIMO REPORTE</span>
-                                <input type="text" id="ultimo-r" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >USUARIO</span>
-                                <input type="text" id="ultimo-u" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
-                                <input type="text" id="desc-problema" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >DESCRIPCION DEL AREA</span>
-                                <input type="text" id="desc-area" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
-                            </div>
-                            <p></p>
-                            <h3>ACTUALIZAR CAMBIO DE AREA O RESPONSABLE DE EQUIPO</h3>
-                            <H6> ¡TRABAJEMOS JUNTOS!</H6>
-                            <H6>ACTUALIZA EL NUEVO DESTINO DEL EQUIPO AQUI</H6>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >AREA/PROCESO</span>
-                                <select ID="area" class="form-select" aria-label="Default select example" onchange="consuktararea()">
-                                </select>
-                            </div>
-                             <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >LINEA</span>
-                                <select id="Linea" class="form-select" aria-label="Default select example" onchange="consuktarOpEstacion()">
-                                </select>
-                            </div>
-                                <p></p>
-                                <div class="input-group mb-3">
-                                <span class="input-group-text" >OPERACIO/MAQ</span>
-                                <select id="operacion" class="form-select" aria-label="Default select example">
-                                </select>
-                                </div>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Reportar problema
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">REPORTAR PROBLEMA</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <H6>
-                                            REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
-                                            DESCRIBELO EN EL CUADRO.
-                                        </H6>
-                                        <hr>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" >REPORTE DE ETIQUETA</span>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Open this select menu</option>
-                                                <option value="">ETIQUETA DAÑADA</option>
-                                                <option value="">NO TIENE ETIQUETA</option>
-                                                <option value="">NO SE LOGRA LEER EL QR</option>
-                                            </select>
-                                        </div>
-                                        <p></p>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" >REPORTAR EQUIPO</span>
-                                            <select id="aa" class="form-select" aria-label="Default select example">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">EQUIPO DAÑADO</option>
-                                                <option value="2">CALIBRACION VENCIDA</option>
-                                                <option value="3">EQUIPO EXTRAVIADO</option>
-                                            </select>
-                                        </div>
-                                        <p></p>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
-                                            <input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Enviar</button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+							<label>Ingrese el ID del equipo  </label>
+							<input type="text" id="idrefencia">
+							<p></p>
+							<button ONCLICK="Buscarequipo()" type="button" class="btn btn-primary btn-lg">Buscar Equipo</button>
+						</center>
 
 
+						<p></p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >ID DE REFERENCIA</span>
+							<input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+						</div>
 
-                            <P>¡FAVOR DE TOMAR FOTOS DE LA NUEVA UBICACION!</P>
-                        <input type="file" id="" name="usuario" accept="image/*"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+						<p></p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >TIPO</span>
+							<input type="text" id="tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+						</div>
+						<p></p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >SUB-TIPO</span>
+							<input type="text" id="sub-tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+						</div>
+						<p></p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >FECHA DEL ULTIMO REPORTE</span>
+							<input type="text" id="ultimo-r" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+						</div>
+						<p></p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >USUARIO</span>
+							<input type="text" id="ultimo-u" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+						</div>
+						<p></p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+							<input type="text" id="desc-problema" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+						</div>
+						<p></p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >DESCRIPCION DEL AREA</span>
+							<input type="text" id="desc-area" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+						</div>
+						<p></p>
+						<h3>ACTUALIZAR CAMBIO DE AREA O RESPONSABLE DE EQUIPO</h3>
+						<H6> ¡TRABAJEMOS JUNTOS!</H6>
+						<H6>ACTUALIZA EL NUEVO DESTINO DEL EQUIPO AQUI</H6>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >AREA/PROCESO</span>
+							<select ID="area" class="form-select" aria-label="Default select example" onchange="consuktararea()">
+							</select>
+						</div>
+						<p></p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >LINEA</span>
+							<select id="Linea" class="form-select" aria-label="Default select example" onchange="consuktarOpEstacion()">
+							</select>
+						</div>
+						<p></p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" >OPERACIO/MAQ</span>
+							<select id="operacion" class="form-select" aria-label="Default select example">
+							</select>
+						</div>
 
-                        <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
-                            <P></P>
-                        <button type="button" class="btn btn-lg btn-success">Enviar Datos</button>
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							Reportar problema
+						</button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">REPORTAR PROBLEMA</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<H6>
+											REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
+											DESCRIBELO EN EL CUADRO.
+										</H6>
+										<hr>
+										<div class="input-group mb-3">
+											<span class="input-group-text" >REPORTE DE ETIQUETA</span>
+											<select class="form-select" aria-label="Default select example">
+												<option selected>Open this select menu</option>
+												<option value="">ETIQUETA DAÑADA</option>
+												<option value="">NO TIENE ETIQUETA</option>
+												<option value="">NO SE LOGRA LEER EL QR</option>
+											</select>
+										</div>
+										<p></p>
+										<div class="input-group mb-3">
+											<span class="input-group-text" >REPORTAR EQUIPO</span>
+											<select id="aa" class="form-select" aria-label="Default select example">
+												<option selected>Open this select menu</option>
+												<option value="1">EQUIPO DAÑADO</option>
+												<option value="2">CALIBRACION VENCIDA</option>
+												<option value="3">EQUIPO EXTRAVIADO</option>
+											</select>
+										</div>
+										<p></p>
+										<div class="input-group mb-3">
+											<span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+											<input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Enviar</button>
+
+									</div>
+								</div>
+							</div>
+						</div>
 
 
-                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-                            <script src="assets/js/jquery.min.js"></script>
-                            <script src="assets/js/browser.min.js"></script>
-                            <script src="assets/js/breakpoints.min.js"></script>
-                            <script src="assets/js/util.js"></script>
-                            <script src="assets/js/main.js"></script>
+						<P>¡FAVOR DE TOMAR FOTOS DE LA NUEVA UBICACION!</P>
+						<input type="file" id="" name="usuario" accept="image/*"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 
-                            <script>
+						<a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
+						<P></P>
+						<button type="button" class="btn btn-lg btn-success">Enviar Datos</button>
 
-                                function Buscarequipo(){
-                                    var Equipo;
-                                    Equipo=document.getElementById("idrefencia").value;
 
-                                    $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
-                                        document.getElementById("codigo").value = data.data[0].IdEquipo;
-                                        document.getElementById("tipo").value = data.data[0].Tipo;
-                                        document.getElementById("sub-tipo").value = data.data[0].SubTipo;
-                                    });
+						<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-                                }
+						<script src="assets/js/jquery.min.js"></script>
+						<script src="assets/js/browser.min.js"></script>
+						<script src="assets/js/breakpoints.min.js"></script>
+						<script src="assets/js/util.js"></script>
+						<script src="assets/js/main.js"></script>
 
-                                function reportar(){
-                                    document.getElementById("reporte").style.display='block';
-                                }
+						<script>
 
-                            </script>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
+							function Buscarequipo(){
+								var Equipo;
+								Equipo=document.getElementById("idrefencia").value;
+
+								$.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
+									document.getElementById("codigo").value = data.data[0].IdEquipo;
+									document.getElementById("tipo").value = data.data[0].Tipo;
+									document.getElementById("sub-tipo").value = data.data[0].SubTipo;
+								});
+
+							}
+
+							function reportar(){
+								document.getElementById("reporte").style.display='block';
+							}
+
+						</script>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-                                    <script>
+<script>
 
-                                        function consuktararea(){
-                                            var area;
-                                            area=document.getElementById("area").value;
-                                            $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
-                                                var select = document.getElementById("Linea");
-                                                select.innerHTML="";
-                                                for (var i = 0; i < data.data.length; i++) {
+	function consuktararea(){
+		var area;
+		area=document.getElementById("area").value;
+		$.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
+			var select = document.getElementById("Linea");
+			select.innerHTML="";
+			for (var i = 0; i < data.data.length; i++) {
 
-                                                    var createOption = document.createElement("option");
-                                                    createOption.text=data.data[i].Linea;
-                                                    createOption.value=data.data[i].Linea;
-                                                    select.appendChild(createOption);
+				var createOption = document.createElement("option");
+				createOption.text=data.data[i].Linea;
+				createOption.value=data.data[i].Linea;
+				select.appendChild(createOption);
 
-                                                }
-                                            });
-                                        }
+			}
+		});
+	}
 
-                                        function consuktarOpEstacion(){
-                                            var area;
-                                            area=document.getElementById("Linea").value;
-                                            $.getJSON('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area, function (data) {
-                                                var selectOperacion = document.getElementById("operacion");
+	function consuktarOpEstacion(){
+		var area;
+		area=document.getElementById("Linea").value;
+		$.getJSON('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area, function (data) {
+			var selectOperacion = document.getElementById("operacion");
 
-                                                selectOperacion.innerHTML="";
-                                                for (var i = 0; i < data.data.length; i++) {
+			selectOperacion.innerHTML="";
+			for (var i = 0; i < data.data.length; i++) {
 
-                                                    var createOptionOperacion = document.createElement("option");
-                                                    createOptionOperacion.text=data.data[i].OpEstacion;
-                                                    createOptionOperacion.value=data.data[i].OpEstacion;
-                                                    selectOperacion.appendChild(createOptionOperacion);
+				var createOptionOperacion = document.createElement("option");
+				createOptionOperacion.text=data.data[i].OpEstacion;
+				createOptionOperacion.value=data.data[i].OpEstacion;
+				selectOperacion.appendChild(createOptionOperacion);
 
-                                                }
-                                            });
-                                        }
+			}
+		});
+	}
 
-                                        llenarProceso();
-                                        function llenarProceso() {
-                                            $.getJSON('https://arketipo.mx/Metrologia/dao/daoProceso.php', function (data) {
-                                                var select = document.getElementById("area");
-                                                for (var i = 0; i < data.data.length; i++) {
-                                                    var createOption = document.createElement("option");
-                                                    createOption.text=data.data[i].Proceso;
-                                                    createOption.value=data.data[i].Proceso;
-                                                    select.appendChild(createOption);
-                                                }
-                                            });
-                                        }
+	llenarProceso();
+	function llenarProceso() {
+		$.getJSON('https://arketipo.mx/Metrologia/dao/daoProceso.php', function (data) {
+			var select = document.getElementById("area");
+			for (var i = 0; i < data.data.length; i++) {
+				var createOption = document.createElement("option");
+				createOption.text=data.data[i].Proceso;
+				createOption.value=data.data[i].Proceso;
+				select.appendChild(createOption);
+			}
+		});
+	}
 
-
-                                    </script>
+</script>
 </body>
 </html>
