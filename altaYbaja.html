@@ -47,16 +47,19 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 <div class="col-8 col-12-medium">
 
                     <section >
-                        <h2>Consulta de equipos</h2>
+                        <h2>Ingresa tus Equipos</h2>
                         <h4>¡Bienvenido!</h4>
-                        <p> Puedes consultar los datos y especificaciones para cada instrumento de medición resgistrado en
-                            nuestro laboratorio de metrología solo ingresa el ID correspondiente al equipo.</p>
+                        <p> Ingresa el código de referencia seguido del numero consecutivo<br>
+                            ER-000 Equipo de Referencia<br>
+                            IM-000 Calibración Interna<br>
+                            EM-000 Calibración Externa<br>
+                            Consulta el registro de altas para saber el consecutivo</p>
                         <center>
 
                             <label>Ingrese el ID del equipo  </label>
                             <input type="text" id="idrefencia">
                             <p></p>
-                            <button onclick="Buscarequipo()" class="button">BUSCAR EQUIPO</button>
+                            <button ONCLICK="Buscarequipo()" type="button" class="btn btn-primary btn-lg">Buscar Equipo</button>
                             <p></p>
                         </center>
                         <div id="inicio" style="display: none">
@@ -106,16 +109,17 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                         </div>
                         <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >FRECUENCIA DE CALIBRACION</span>
+                                <input type="number" id="frecuencia" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >PROX. FECHA DE CALIBRACION</span>
                             <input type="date" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-
                         </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" >FRECUENCIA DE CALIBRACION</span>
-                            <input type="number" id="frecuencia" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <p></p>
 
-                        </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >NUM. DE SERIE</span>
@@ -155,7 +159,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <P></P>
                         <H3>SOLO CON ACCESO!</H3>
                         <P>Puedes Actualizar Algun Movimiento o Reportar Algun Equipo</P>
-                        <a href="actualizacionYreporte.html" class="button">REPORTAR O ACTUALIZAR UN DATO</a>
+
                         </div>
 
                         <!-- Footer -->
@@ -211,7 +215,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
             document.getElementById("codigo").value = data.data[0].IdEquipo;
             //document.getElementById("serie").value = data.data[0].NumSerie;
-            document.getElementById("tipo").value = data.data[0].Tipo;
+            //document.getElementById("tipo").value = data.data[0].Tipo;
             //document.getElementById("sub-tipo").value = data.data[0].SubTipo;
             //document.getElementById("areaProceso").value = data.data[0].AreaProceso;
             //document.getElementById("linea").value = data.data[0].MaqLinea;
