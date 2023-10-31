@@ -84,19 +84,19 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >AREA/PROCESO</span>
-                            <select ID="area" class="form-select" aria-label="Default select example" onchange="consuktararea()">
+                            <select ID="area" class="form-select" aria-label="Default select example" onchange="consultararea()">
                             </select>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >LINEA</span>
-                            <select ID="Linea" class="form-select" aria-label="Default select example" onchange="consuktararea()">
+                            <select ID="Linea" class="form-select" aria-label="Default select example" onchange="consultarOpEstacion()">
                             </select>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >OP./MAQ.</span>
-                            <select ID="Operacion" class="form-select" aria-label="Default select example" onchange="consuktararea()">
+                            <select ID="Operacion" class="form-select" aria-label="Default select example">
                             </select>
                         </div>
                         <p></p>
@@ -235,7 +235,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 
                         <script>
-                            function consuktararea(){
+                            function consultararea(){
                                 var area;
                                 area=document.getElementById("area").value;
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
@@ -252,7 +252,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 });
                             }
 
-                            function consuktarOpEstacion(){
+                            function consultarOpEstacion(){
                                 var area;
                                 area=document.getElementById("Linea").value;
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area, function (data) {
