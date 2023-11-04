@@ -1,24 +1,24 @@
 
+
 <?php
 
 include_once('db.php');
 
-$area=$_GET['area'];
+Contador();
 
-Contador($area);
-
-function Contador($area){
+function Contador(){
 
     $con = new LocalConector();
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT `Linea` FROM `Areas`where `Proceso` = '$area' GROUP by `Linea`;");
+    $datos = mysqli_query($conex, "SELECT `Sub-Tipo`  AS SubTipo FROM `Tipos` GROUP BY `Sub-Tipo`;;");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 
     echo json_encode(array("data"=>$resultado));
 
 }
+
 
 ?>

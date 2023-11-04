@@ -13,7 +13,7 @@ function Contador($area){
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT `Linea` FROM `Areas`where `Proceso` = '$area' GROUP by `Linea`;");
+    $datos = mysqli_query($conex, "SELECT `OpEstacion` FROM `Areas`where `Linea` = '$area' GROUP by `OpEstacion`;");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 

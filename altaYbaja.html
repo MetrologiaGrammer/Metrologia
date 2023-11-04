@@ -46,92 +46,216 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <div class="row main-row">
                 <div class="col-8 col-12-medium">
 
-                    <section>
-                        <h2>Consulta de equipos</h2>
+                    <section >
+                        <h2>Ingresa tus Equipos</h2>
                         <h4>¡Bienvenido!</h4>
-                        <p> Puedes consultar los datos y especificaciones para cada instrumento de medición resgistrado en
-                            nuestro laboratorio de metrología solo ingresa el ID correspondiente al equipo.</p>
+                        <p> Ingresa el código de referencia seguido del numero consecutivo<br>
+                            ER-000 Equipo de Referencia<br>
+                            IM-000 Calibración Interna<br>
+                            EM-000 Calibración Externa<br>
+                            Consulta el registro de altas para saber el consecutivo</p>
                         <center>
 
                             <label>Ingrese el ID del equipo  </label>
                             <input type="text" id="idrefencia">
                             <p></p>
-                            <button onclick="Buscarequipo()" class="button">BUSCAR EQUIPO</button>
+                            <button ONCLICK="Buscarequipo()" type="button" class="btn btn-primary btn-lg">Buscar Equipo</button>
                             <p></p>
-                            <a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" /></a>
                         </center>
 
+                        <div id="ingreso">
+                            <h1>Registro de nuevo equipo</h1>
+                            <center><a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" style="width: 100%"/></a></center>
+                            <input type="file" id="" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 
-                        <p></p>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >TIPO</span>
+                                <select ID="tipoEquipo" class="form-select" aria-label="Default select example" onchange="buscarId()">
+                                    <option value="ER">Equipo de referencia</option>
+                                    <option value="IM">Internos</option>
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3" id="referenciaDiv" style="display: none">
+                                <span class="input-group-text" >ID DE REFERENCIA</span>
+                                <input type="text" id="idReferencia" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            </div>
+
+
+                            <p></p>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >SUB-TIPO</span>
+                                <select ID="" class="form-select" aria-label="Default select example" >
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >AREA/PROCESO</span>
+                                <select ID="" class="form-select" aria-label="Default select example" onchange="consultararea()">
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >LINEA</span>
+                                <select ID="" class="form-select" aria-label="Default select example" onchange="consultarOpEstacion()">
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >OP./MAQ.</span>
+                                <select ID="" class="form-select" aria-label="Default select example">
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >FECHA DE CALIBRACION</span>
+                                <input type="date" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >FRECUENCIA DE CALIBRACION</span>
+                                <input type="number" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >PROX. FECHA DE CALIBRACION</span>
+                                <input type="date" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
+
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >NUM. DE SERIE</span>
+                                <input type="text" id="" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >NUM. DE PARTE</span>
+                                <input type="text" id="" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >RESOLUCION</span>
+                                <input type="text" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >RANGO DEL EQUIPO</span>
+                                <input type="text" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >STATUS</span>
+                                <select ID="" class="form-select" aria-label="Default select example" onchange="consuktararea()">
+                                </select>
+                            </div>
+                            <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >OBSERVACIONES</span>
+                                <input type="text" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+
+                            <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
+
+
+                            <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
+                            <P></P>
+                            <H3>SOLO CON ACCESO!</H3>
+                            <P>Puedes Actualizar Algun Movimiento o Reportar Algun Equipo</P>
+
+                        </div>
+
+                        <div id="consulta" style="display: none">
+                        <center><a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" style="width: 100%"/></a></center>
+                            <input type="file" id="aaz" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+                            <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >ID DE REFERENCIA</span>
                             <input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
 
-                        <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >TIPO</span>
-                            <input type="text" id="tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <select ID="Tipo" class="form-select" aria-label="Default select example">
+                            </select>
                         </div>
+                        <p></p>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >SUB-TIPO</span>
-                            <input type="text" id="sub-tipo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <select ID="Subtipo" class="form-select" aria-label="Default select example" >
+                            </select>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >AREA/PROCESO</span>
-                            <input type="text" id="areaProceso" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <select ID="area" class="form-select" aria-label="Default select example" onchange="consultararea()">
+                            </select>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" >LINEAS/MAQ</span>
-                            <input type="text" id="linea" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <span class="input-group-text" >LINEA</span>
+                            <select ID="Linea" class="form-select" aria-label="Default select example" onchange="consultarOpEstacion()">
+                            </select>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" >OPERACION</span>
-                            <input type="text" id="operacion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <span class="input-group-text" >OP./MAQ.</span>
+                            <select ID="Operacion" class="form-select" aria-label="Default select example">
+                            </select>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >FECHA DE CALIBRACION</span>
-                            <input type="text" id="fcalibracion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <input type="date" id="aa" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
                         </div>
                         <p></p>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" >FRECUENCIA DE CALIBRACION</span>
+                                <input type="number" id="frecuencia" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <p></p>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" >PROXIMA FECHA DE CALIBRACION</span>
-                            <input type="text" id="pcalibracion" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <span class="input-group-text" >PROX. FECHA DE CALIBRACION</span>
+                            <input type="date" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         </div>
+                            <p></p>
+
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >NUM. DE SERIE</span>
-                            <input type="text" id="serie" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                            <input type="text" id="serie" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >NUM. DE PARTE</span>
-                            <input type="text" id="parte" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                            <input type="text" id="parte" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >RESOLUCION</span>
-                            <input type="text" id="resolucion" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <input type="text" id="resolucion" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >RANGO DEL EQUIPO</span>
-                            <input type="text" id="rango" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <input type="text" id="rango" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >STATUS</span>
-                            <input type="text" id="status" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <select ID="status" class="form-select" aria-label="Default select example" onchange="consuktararea()">
+                            </select>
                         </div>
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >OBSERVACIONES</span>
-                            <input type="text" id="observaciones" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                            <input type="text" id="observaciones" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         </div>
 
                         <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
@@ -141,78 +265,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <P></P>
                         <H3>SOLO CON ACCESO!</H3>
                         <P>Puedes Actualizar Algun Movimiento o Reportar Algun Equipo</P>
-                        <a href="actualizacionYreporte.html" class="button">REPORTAR O ACTUALIZAR UN DATO</a>
-
-                        <!-- PARA CREAR UNA LISTA                    (
-
-
-                                                    <form action="#">
-                                                        <label for="lang">Lenguaje</label>
-                                                        <select name="lenguajes" id="lang">
-                                                            <option value="javascript">JavaScript</option>
-                                                            <option value="php">PHP</option>
-                                                            <option value="java">Java</option>
-                                                            <option value="golang">Golang</option>
-                                                            <option value="python">Python</option>
-                                                            <option value="c#">C#</option>
-                                                            <option value="C++">C++</option>
-                                                            <option value="erlang">Erlang</option>
-                                                        </select>
-                                                        <input type="submit" value="Enviar" />
-                                                    </form>
-                        -->
-                        <!--
-                        </section>
 
                         </div>
-                        <div class="col-4 col-12-medium">
-                        <section>
-                        <h2>Who are you guys?</h2>
-                        <ul class="small-image-list">
-                        <li>
-                        <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
-                        <h4>Jane Anderson</h4>
-                        <p>Varius nibh. Suspendisse vitae magna eget et amet mollis justo facilisis amet quis.</p>
-                        </li>
-                        <li>
-                        <a href="#"><img src="images/pic1.jpg" alt="" class="left" /></a>
-                        <h4>James Doe</h4>
-                        <p>Vitae magna eget odio amet mollis justo facilisis amet quis. Sed sagittis consequat.</p>
-                        </li>
-                        </ul>
-                        </section>
 
-                        <section>
-                        <h2>How about some links?</h2>
-                        <div>
-                        <div class="row">
-                        <div class="col-6 col-12-small">
-                        <ul class="link-list">
-                        <li><a href="#">Sed neque nisi consequat</a></li>
-                        <li><a href="#">Dapibus sed mattis blandit</a></li>
-                        <li><a href="#">Quis accumsan lorem</a></li>
-                        <li><a href="#">Suspendisse varius ipsum</a></li>
-                        <li><a href="#">Eget et amet consequat</a></li>
-                        </ul>
-                        </div>
-                        <div class="col-6 col-12-small">
-                        <ul class="link-list">
-                        <li><a href="#">Quis accumsan lorem</a></li>
-                        <li><a href="#">Sed neque nisi consequat</a></li>
-                        <li><a href="#">Eget et amet consequat</a></li>
-                        <li><a href="#">Dapibus sed mattis blandit</a></li>
-                        <li><a href="#">Vitae magna sed dolore</a></li>
-                        </ul>
-                        </div>
-                        </div>
-                        </div>
-                        </section>
-
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        -->
                         <!-- Footer -->
 
 
@@ -236,43 +291,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                     Scripts -->
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-                        <script src="assets/js/jquery.min.js"></script>
-                        <script src="assets/js/browser.min.js"></script>
-                        <script src="assets/js/breakpoints.min.js"></script>
-                        <script src="assets/js/util.js"></script>
-                        <script src="assets/js/main.js"></script>
-
-                        <script>
-
-                            function Buscarequipo(){
-                                var Equipo;
-                                Equipo=document.getElementById("idrefencia").value;
-
-                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
-                                    document.getElementById("codigo").value = data.data[0].IdEquipo;
-                                    document.getElementById("serie").value = data.data[0].NumSerie;
-                                    document.getElementById("tipo").value = data.data[0].Tipo;
-                                    document.getElementById("sub-tipo").value = data.data[0].SubTipo;
-                                    document.getElementById("areaProceso").value = data.data[0].AreaProceso;
-                                    document.getElementById("linea").value = data.data[0].MaqLinea;
-                                    document.getElementById("operacion").value = data.data[0].Operacion;
-                                    document.getElementById("fcalibracion").value = data.data[0].FechaInspeccion;
-                                    document.getElementById("pcalibracion").value = data.data[0].FechaVencimiento;
-                                    document.getElementById("serie").value = data.data[0].NumSerie;
-                                    document.getElementById("parte").value = data.data[0].NumParte;
-                                    document.getElementById("resolucion").value = data.data[0].Resolucion;
-                                    document.getElementById("rango").value = data.data[0].RangoInstrumento;
-                                    document.getElementById("status").value = data.data[0].Status;
-                                    document.getElementById("observaciones").value = data.data[0].Observaciones;
-
-                                });
-
-
-                            }
-
-                        </script>
                     </section>
                 </div>
             </div>
@@ -284,5 +303,140 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+
+    function Buscarequipo(){
+        var Equipo;
+        Equipo=document.getElementById("idrefencia").value;
+        document.getElementById("consulta").style.display="block";
+        $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
+            document.getElementById("codigo").value = data.data[0].IdEquipo;
+            //document.getElementById("serie").value = data.data[0].NumSerie;
+            //document.getElementById("tipo").value = data.data[0].Tipo;
+            //document.getElementById("sub-tipo").value = data.data[0].SubTipo;
+            //document.getElementById("areaProceso").value = data.data[0].AreaProceso;
+            //document.getElementById("linea").value = data.data[0].MaqLinea;
+            //document.getElementById("operacion").value = data.data[0].Operacion;
+            //document.getElementById("fcalibracion").value = data.data[0].FechaInspeccion;
+            //document.getElementById("pcalibracion").value = data.data[0].FechaVencimiento;
+            //document.getElementById("serie").value = data.data[0].NumSerie;
+            document.getElementById("parte").value = data.data[0].NumParte;
+            document.getElementById("resolucion").value = data.data[0].Resolucion;
+            document.getElementById("rango").value = data.data[0].RangoInstrumento;
+            //document.getElementById("status").value = data.data[0].Status;
+            document.getElementById("observaciones").value = data.data[0].Observaciones;
+            document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+
+        });
+
+
+    }
+
+</script>
+
+
+                        <script>
+                            function consultararea(){
+                                var area;
+                                area=document.getElementById("area").value;
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
+                                    var select = document.getElementById("Linea");
+                                    select.innerHTML="";
+                                    for (var i = 0; i < data.data.length; i++) {
+
+                                        var createOption = document.createElement("option");
+                                        createOption.text=data.data[i].Linea;
+                                        createOption.value=data.data[i].Linea;
+                                        select.appendChild(createOption);
+
+                                    }
+                                });
+                            }
+
+                            function consultarOpEstacion(){
+                                var area;
+                                area=document.getElementById("Linea").value;
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area, function (data) {
+                                    var selectOperacion = document.getElementById("Operacion");
+
+                                    selectOperacion.innerHTML="";
+                                    for (var i = 0; i < data.data.length; i++) {
+
+                                        var createOptionOperacion = document.createElement("option");
+                                        createOptionOperacion.text=data.data[i].OpEstacion;
+                                        createOptionOperacion.value=data.data[i].OpEstacion;
+                                        selectOperacion.appendChild(createOptionOperacion);
+
+                                    }
+                                });
+                            }
+
+                            llenarProceso();
+                            function llenarProceso() {
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoProceso.php', function (data) {
+                                    var select = document.getElementById("area");
+                                    for (var i = 0; i < data.data.length; i++) {
+                                        var createOption = document.createElement("option");
+                                        createOption.text=data.data[i].Proceso;
+                                        createOption.value=data.data[i].Proceso;
+                                        select.appendChild(createOption);
+                                    }
+                                });
+                            }
+
+
+
+                            llenarsubtipo()
+
+                            function llenarsubtipo() {
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php', function (data) {
+                                    var select = document.getElementById("Subtipo");
+                                    for (var i = 0; i < data.data.length; i++) {
+                                        var createOption = document.createElement("option");
+                                        createOption.text=data.data[i].SubTipo;
+                                        createOption.value=data.data[i].SubTipo;
+                                        select.appendChild(createOption);
+                                    }
+                                });
+                            }
+
+
+
+                            llenarTipo()
+                            function llenarTipo() {
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daotipo.php', function (data) {
+                                    var select = document.getElementById("Tipo");
+                                    for (var i = 0; i < data.data.length; i++) {
+                                        var createOption = document.createElement("option");
+                                        createOption.text=data.data[i].Tipo;
+                                        createOption.value=data.data[i].Tipo;
+                                        select.appendChild(createOption);
+                                    }
+                                });
+                            }
+
+                            function buscarId() {
+                                var tipoEquipo;
+                                tipoEquipo = document.getElementById("tipoEquipo").value;
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo, function (data) {
+                                    document.getElementById("idReferencia").value=data.data[0].IdEquipo;
+                                    document.getElementById("referenciaDiv").style.display='block';
+                                });
+                            }
+
+
+
+
+
+                        </script>
 </body>
 </html>
