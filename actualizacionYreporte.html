@@ -62,7 +62,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 						<p></p>
 						<div class="input-group mb-3">
-							<span class="input-group-text" >ID DE REFERENCIA</span>
+							<span class="input-group-text" aria-selected="" >ID DE REFERENCIA</span>
 							<input type="text" id="codigo" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
 						</div>
 
@@ -219,9 +219,19 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	function consuktararea(){
 		var area;
 		area=document.getElementById("area").value;
+
+		var selectOperacion = document.getElementById("operacion");
+		selectOperacion.innerHTML="";
+
 		$.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
 			var select = document.getElementById("Linea");
 			select.innerHTML="";
+
+			var createOptionAux = document.createElement("option");
+			createOptionAux.text="Seleccione Linea";
+			createOptionAux.value="";
+			select.appendChild(createOptionAux);
+
 			for (var i = 0; i < data.data.length; i++) {
 
 				var createOption = document.createElement("option");
@@ -253,6 +263,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 	llenarProceso();
 	function llenarProceso() {
+
+
 		$.getJSON('https://arketipo.mx/Metrologia/dao/daoProceso.php', function (data) {
 			var select = document.getElementById("area");
 			for (var i = 0; i < data.data.length; i++) {

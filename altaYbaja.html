@@ -76,10 +76,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     <option value="IM">Internos</option>
                                 </select>
                             </div>
-                            <p></p>
-                            <div class="input-group mb-3" id="referenciaDiv" style="display: none">
+                            <p id="referenciaAux"></p>
+                            <div class="input-group mb-3">
                                 <span class="input-group-text" >ID DE REFERENCIA</span>
-                                <input type="text" id="idReferencia" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
+                                <input type="text" id="codigoAux" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                             </div>
 
 
@@ -427,9 +427,16 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             function buscarId() {
                                 var tipoEquipo;
                                 tipoEquipo = document.getElementById("tipoEquipo").value;
+                                console.log('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo)
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo, function (data) {
-                                    document.getElementById("idReferencia").value=data.data[0].IdEquipo;
-                                    document.getElementById("referenciaDiv").style.display='block';
+                                    //document.getElementById("referenciaDiv").style.display='block';
+                                    const chars = data.data[0].IdEquipo.split('-');
+
+                                    var numero = chars[1];
+                                    var suma = parseInt(numero, 10)+1;
+                                    var referencia = chars[0]+"-"+suma;
+                                    document.getElementById("codigoAux").value = referencia;
+                                    document.getElementById("referenciaAux").innerHTML=referencia;
                                 });
                             }
 

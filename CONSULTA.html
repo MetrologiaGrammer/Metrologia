@@ -153,7 +153,41 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <script src="assets/js/main.js"></script>
 
                         <script>
+                            function getParameterByName(name) {
+                                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                                    results = regex.exec(location.search);
 
+
+                                var cadena = results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+                                var arrTerminos = cadena.split(',');
+
+
+                                return arrTerminos[0];
+                            }
+
+                            buscarQR(getParameterByName("referencia"));
+                            function buscarQR(id) {
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+id, function (data) {
+                                    document.getElementById("codigo").value = data.data[0].IdEquipo;
+                                    document.getElementById("serie").value = data.data[0].NumSerie;
+                                    document.getElementById("tipo").value = data.data[0].Tipo;
+                                    document.getElementById("sub-tipo").value = data.data[0].SubTipo;
+                                    document.getElementById("areaProceso").value = data.data[0].AreaProceso;
+                                    document.getElementById("linea").value = data.data[0].MaqLinea;
+                                    document.getElementById("operacion").value = data.data[0].Operacion;
+                                    document.getElementById("fcalibracion").value = data.data[0].FechaInspeccion;
+                                    document.getElementById("pcalibracion").value = data.data[0].FechaVencimiento;
+                                    document.getElementById("serie").value = data.data[0].NumSerie;
+                                    document.getElementById("parte").value = data.data[0].NumParte;
+                                    document.getElementById("resolucion").value = data.data[0].Resolucion;
+                                    document.getElementById("rango").value = data.data[0].RangoInstrumento;
+                                    document.getElementById("status").value = data.data[0].Status;
+                                    document.getElementById("observaciones").value = data.data[0].Observaciones;
+
+                                });
+                            }
                             function Buscarequipo(){
                                 var Equipo;
                                 Equipo=document.getElementById("idrefencia").value;
@@ -176,8 +210,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     document.getElementById("observaciones").value = data.data[0].Observaciones;
 
                                 });
-
-
                             }
 
                         </script>
