@@ -157,17 +157,15 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
                                 var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
                                     results = regex.exec(location.search);
-
-
                                 var cadena = results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-
                                 var arrTerminos = cadena.split(',');
-
-
                                 return arrTerminos[0];
                             }
 
                             buscarQR(getParameterByName("referencia"));
+
+                            alert(getParameterByName("nomina"));
+
                             function buscarQR(id) {
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+id, function (data) {
                                     document.getElementById("codigo").value = data.data[0].IdEquipo;
