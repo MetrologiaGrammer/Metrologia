@@ -28,7 +28,7 @@ function cliente($IdEquipo,$Nomina, $Preoceso,$Linea,$Operacion,$Imagen)
     $imagenCodificada = $Imagen; //ejemplo de imagen en base64
     $imagenDecodificada = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imagenCodificada));
     $nombreArchivo = "imagen.png";
-    $rutaArchivo =  __DIR__ . "../images/imagenActualizacion/".$imagenRegistro.".png";
+    $rutaArchivo =  __DIR__ . "/images/imagenActualizacion/".$imagenRegistro.".png";
     file_put_contents($rutaArchivo, $imagenDecodificada);
 
 }
