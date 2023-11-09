@@ -301,16 +301,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		data.append('Idimagen', IdImagen);
 
 
-		fetch('https://arketipo.mx//MailerMetrologia.php', {
+		fetch('https://arketipo.mx//MailerMetrologiaAct.php', {
 			method: 'POST',
 			body: data
 		})
 				.then(function (response) {
 					if (response.ok) {
-						document.getElementById("cerrarModal").click();
-						document.getElementById("carga").style.display="none";
-						document.getElementById("contenidoReporte").style.display="block";
-						document.getElementById("nomina").value ="";
 					} else {
 						throw "Error";
 					}
