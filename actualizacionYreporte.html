@@ -101,6 +101,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 						<H6> ¡TRABAJEMOS JUNTOS!</H6>
 						<H6>ACTUALIZA EL NUEVO DESTINO DEL EQUIPO AQUI</H6>
 						<div class="input-group mb-3">
+							<span class="input-group-text" >NOMINA</span>
+							<input type="nomina" id="desc-area" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+						</div>
+						<p></p>
+						<div class="input-group mb-3">
 							<span class="input-group-text" >AREA/PROCESO</span>
 							<select ID="area" class="form-select" aria-label="Default select example" onchange="consuktararea()">
 							</select>
@@ -118,67 +123,20 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 							</select>
 						</div>
 
-						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-							Reportar problema
-						</button>
 
-						<!-- Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">REPORTAR PROBLEMA</h5>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										<H6>
-											REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
-											DESCRIBELO EN EL CUADRO.
-										</H6>
-										<hr>
-										<div class="input-group mb-3">
-											<span class="input-group-text" >REPORTE DE ETIQUETA</span>
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Open this select menu</option>
-												<option value="">ETIQUETA DAÑADA</option>
-												<option value="">NO TIENE ETIQUETA</option>
-												<option value="">NO SE LOGRA LEER EL QR</option>
-											</select>
-										</div>
-										<p></p>
-										<div class="input-group mb-3">
-											<span class="input-group-text" >REPORTAR EQUIPO</span>
-											<select id="aa" class="form-select" aria-label="Default select example">
-												<option selected>Open this select menu</option>
-												<option value="1">EQUIPO DAÑADO</option>
-												<option value="2">CALIBRACION VENCIDA</option>
-												<option value="3">EQUIPO EXTRAVIADO</option>
-											</select>
-										</div>
-										<p></p>
-										<div class="input-group mb-3">
-											<span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
-											<input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-										</div>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Enviar</button>
-
-									</div>
-								</div>
-							</div>
-						</div>
 
 
 
 						<P>¡FAVOR DE TOMAR FOTOS DE LA NUEVA UBICACION!</P>
-						<input type="file" id="" name="usuario" accept="image/*"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+						<input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+						<br><br>
+						<center><img style="display: none;" id="imagenPrevisualizacion" height="250px"></center>
+						<img src="" style="display: none;" id="new">
+						<img src="" style="display: none;" id="old">
 
 						<a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
 						<P></P>
-						<button type="button" class="btn btn-lg btn-success">Enviar Datos</button>
+						<button onclick="test()" type="button" class="btn btn-lg btn-success">Enviar Datos</button>
 
 
 						<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -188,6 +146,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 						<script src="assets/js/breakpoints.min.js"></script>
 						<script src="assets/js/util.js"></script>
 						<script src="assets/js/main.js"></script>
+						<script src="lib/main.js"></script>
 
 						<script>
 
@@ -274,6 +233,50 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				select.appendChild(createOption);
 			}
 		});
+	}
+
+	function ReporteActualizacion(foto){
+		var Nomina;
+		var AreaProceso;
+		var Linea;
+		var Operacion;
+		var IdEquipo;
+
+		console.log(foto);
+
+		Nomina = document.getElementById("nomina").value;
+		AreaProceso = document.getElementById("area").value;
+		Linea = document.getElementById("linea").value;
+		Operacion = document.getElementById("operacion").value;
+		IdEquipo = document.getElementById("equipo").value;
+
+		const data = new FormData();
+
+		data.append('nomina',Nomina);
+		data.append('Proceso', AreaProceso);
+		data.append('linea', Linea);
+		data.append('operacion', Operacion);
+		data.append('Referencia', IdEquipo);
+		data.append('imagen', foto);
+
+		fetch('dao/daoActualizacion.php', {
+			method: 'POST',
+			body: data
+		})
+				.then(function (response) {
+					if (response.ok) {
+						alert("Actualizado");
+					} else {
+						throw "Error";
+					}
+				})
+				.then(function (texto) {
+					console.log(texto);
+				})
+				.catch(function (err) {
+					console.log(err);
+				});
+
 	}
 
 </script>
