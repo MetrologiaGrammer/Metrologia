@@ -203,7 +203,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
 
 
-                        <a href="#"><img id="imagenUbicacion" src="images/pic2.jpg" alt="" class="left" /></a>
+                        <center><img id="imagenUbicacion" src="images/pic2.jpg" alt="" style="width: 70%"/></center>
                         <P></P>
                         <H3>SOLO CON ACCESO!</H3>
                         <P>Puedes Actualizar Algun Movimiento o Reportar Algun Equipo</P>
@@ -277,18 +277,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     document.getElementById("rango").value = data.data[0].RangoInstrumento;
                                     document.getElementById("status").value = data.data[0].Status;
                                     document.getElementById("observaciones").value = data.data[0].Observaciones;
-
-
-
                                 });
-
                                 consultaFoto(Equipo);
                             }
                             function consultaFoto(Equipo){
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daoConsultafoto.php?idreferencia='+Equipo, function (data) {
-
                                     document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/"+data.data[0].IdImagen+".png";
-
                                 });
                             }
 
