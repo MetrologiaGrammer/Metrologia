@@ -303,7 +303,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		data.append('operacion', Operacion);
 		data.append('idequipo', IdEquipo);
 		data.append('Idimagen', IdImagen);
-
+		data.append('comenterio', document.getElementById("comentario").value);
 
 		fetch('https://arketipo.mx//MailerMetrologiaAct.php', {
 			method: 'POST',
