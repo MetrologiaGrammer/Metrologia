@@ -44,7 +44,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <div id="main">
         <div class="container">
             <div class="row main-row">
-                <div class="col-8 col-12-medium">
+                <div class="col-12 col-12-medium">
 
                     <section>
                         <h2>Consulta de equipos</h2>
@@ -203,7 +203,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
 
 
-                        <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
+                        <a href="#"><img id="imagenUbicacion" src="images/pic2.jpg" alt="" class="left" /></a>
                         <P></P>
                         <H3>SOLO CON ACCESO!</H3>
                         <P>Puedes Actualizar Algun Movimiento o Reportar Algun Equipo</P>
@@ -229,8 +229,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             }
 
                             buscarQR(getParameterByName("referencia"));
-
-                            alert(getParameterByName("nomina"));
 
                             function buscarQR(id) {
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+id, function (data) {
@@ -283,7 +281,17 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 
                                 });
+
+                                consultaFoto(Equipo);
                             }
+                            function consultaFoto(Equipo){
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoConsultafoto.php?idreferencia='+Equipo, function (data) {
+
+                                    document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/"+data.data[0].IdImagen+".png";
+
+                                });
+                            }
+
                             function Reporte(){
 
                                 document.getElementById("carga").style.display="block";
