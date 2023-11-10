@@ -283,6 +283,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             function consultaFoto(Equipo){
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daoConsultafoto.php?idreferencia='+Equipo, function (data) {
                                     document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/"+data.data[0].IdImagen+".png";
+                                    document.getElementById("areaProceso").value = data.data[0].AreaProceso;
+                                    document.getElementById("linea").value = data.data[0].Linea;
+                                    document.getElementById("operacion").value = data.data[0].Operacion;
                                 });
                             }
 
