@@ -246,6 +246,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		var Operacion;
 		var IdEquipo;
 		var IdImagen;
+		var Comentario;
 
 		const min = 1;
 		const max = 1000000;
@@ -256,7 +257,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		AreaProceso = document.getElementById("area").value;
 		Linea = document.getElementById("Linea").value;
 		Operacion = document.getElementById("operacion").value;
-		IdEquipo = document.getElementById("codigo").value;
+		IdEquipo = document.getElementById("codigo").value
+		Comentario = document.getElementById("comentario").value;
 
 
 		IdImagen = randomNum+Nomina;
@@ -269,6 +271,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		data.append('Proceso', AreaProceso);
 		data.append('linea', Linea);
 		data.append('operacion', Operacion);
+		data.append('comentario', Comentario);
 		data.append('idequipo', IdEquipo);
 		data.append('imagen', foto);
 		data.append('Idimagen', IdImagen);
@@ -279,7 +282,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		})
 				.then(function (response) {
 					if (response.ok) {
-						enviarCorreo(Nomina,AreaProceso,Linea,Operacion,IdEquipo,IdImagen)
+						enviarCorreo(Nomina,AreaProceso,Linea,Operacion,IdEquipo,IdImagen,Comentario)
 					} else {
 						throw "Error";
 					}
@@ -293,7 +296,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 	}
 
-	function enviarCorreo(nomina,areaProceso,Linea,Operacion,IdEquipo,IdImagen) {
+	function enviarCorreo(nomina,areaProceso,Linea,Operacion,IdEquipo,Comentario) {
 
 		const data = new FormData();
 
@@ -303,7 +306,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		data.append('operacion', Operacion);
 		data.append('idequipo', IdEquipo);
 		data.append('Idimagen', IdImagen);
-		data.append('comenterio', document.getElementById("comentario").value);
+		data.append('comenterio',Comentario);
 
 		fetch('https://arketipo.mx//MailerMetrologiaAct.php', {
 			method: 'POST',
