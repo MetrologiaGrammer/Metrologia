@@ -124,7 +124,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                             <button ONCLICK="Buscarequipo()" type="button" class="btn btn-primary btn-lg">Buscar Equipo</button>
                             <p></p>
-                            <a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" /></a>
+                            <a href="#"><img id="imagenEquipo" src="images/LogoMetrologi.png" alt="" class="aln-center" /></a>
                         </center>
 
 
@@ -260,6 +260,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     document.getElementById("codigo").value = data.data[0].IdEquipo;
                                     document.getElementById("serie").value = data.data[0].NumSerie;
                                     document.getElementById("tipo").value = data.data[0].Tipo;
+
+                                    if (data.data[0].Tipo == "ESCALA"){
+                                        document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
+                                    }else{
+                                        document.getElementById("imagenEquipo").src = "images/"+data.data[0].IdEquipo+".jpg"
+                                    }
+
                                     document.getElementById("sub-tipo").value = data.data[0].SubTipo;
                                     document.getElementById("areaProceso").value = data.data[0].AreaProceso;
                                     document.getElementById("linea").value = data.data[0].MaqLinea;
@@ -272,6 +279,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     document.getElementById("rango").value = data.data[0].RangoInstrumento;
                                     document.getElementById("status").value = data.data[0].Status;
                                     document.getElementById("observaciones").value = data.data[0].Observaciones;
+
+
 
                                 });
                             }
