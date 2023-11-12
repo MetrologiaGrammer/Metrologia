@@ -152,6 +152,25 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 						<script src="assets/js/main.js"></script>
 						<script src="lib/main.js"></script>
 
+						<script>
+
+							function Buscarequipo(){
+								var Equipo;
+								Equipo=document.getElementById("idrefencia").value;
+
+								$.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
+									document.getElementById("codigo").value = data.data[0].IdEquipo;
+									document.getElementById("tipo").value = data.data[0].Tipo;
+									document.getElementById("sub-tipo").value = data.data[0].SubTipo;
+								});
+
+							}
+
+							function reportar(){
+								document.getElementById("reporte").style.display='block';
+							}
+
+						</script>
 					</section>
 				</div>
 			</div>
