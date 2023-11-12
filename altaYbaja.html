@@ -22,6 +22,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                   <a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" style="width: 30%"/></a>
 
                     <header id="header">
                         <h1><a href="index.html" id="logo">Metrología</a></h1>
@@ -42,17 +43,24 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
     <!-- Main -->
     <div id="main">
-        <div class="container">
-            <div class="row main-row">
-                <div class="col-8 col-12-medium">
 
+        <div class="container">
+            <a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" style="width: 20%"/></a>
+            <div class="row main-row">
+                <div class="col-12 col-12-medium">
                     <section >
                         <h2>Ingresa tus Equipos</h2>
                         <h4>¡Bienvenido!</h4>
-                        <p> Ingresa el código de referencia seguido del numero consecutivo<br>
-                            ER-000 Equipo de Referencia<br>
-                            IM-000 Calibración Interna<br>
-                            EM-000 Calibración Externa<br>
+                        <p> Ingresa la referencia según el tipo de calibración del equipo <br>
+
+
+
+                            MAF-000 Master de Alfombra <br>
+
+
+
+                            </tbody>
+                        </table>
                             Consulta el registro de altas para saber el consecutivo</p>
                         <center>
 
@@ -65,29 +73,57 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                         <div id="ingreso">
                             <h1>Registro de nuevo equipo</h1>
-                            <center><a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" style="width: 100%"/></a></center>
-                            <input type="file" id="" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+                            <input type="file" id="  " name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 
                             <p></p>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" >ssssss</span>
+                                <span class="input-group-text" >INGRESA LA REFERENCIA</span>
                                 <select ID="tipoEquipo" class="form-select" aria-label="Default select example" onchange="buscarId()">
-                                    <option value="ER">Equipo de referencia</option>
-                                    <option value="IM">Internos</option>
+                                    <option value="ER">ER-000 Equipo de Referencia </option>
+                                    <option value="IM">IM-000 Calibración Interna</option>
+                                    <option value="EM">EM-000 Calibración Externa</option>
+                                    <option value="GA">GA-000 Gage Por Atributos</option>
+                                    <option value="GV">GV-000 Gage Por Variables</option>
+                                    <option value="HF">HF-000 Hold Fixture</option>
+                                    <option value="FA">FA-000 Fixture Por Atributos</option>
+                                    <option value="FV">FV-000 Fixture Por Variables</option>
+                                    <option value="FAV">FAV-000 Fixture por Variables y Atributos</option>
+                                    <option value="MPI">MPI-000 Master De Piel</option>
+                                    <option value="MAF">MAF-000 Master De Alfombra</option>
+                                    <option value="MCR">MCR-000 Master De Cromo</option>
+                                    <option value="MPL">MPL-000 Master De Plastico</option>
+                                    <option value="MAF">MAF-000 Master De Alfombra</option>
+                                    <option value="MHI">MHI-000 MAaster De Hilo</option>
+                                    <option value="MTE">MTE-000 Master De Tela</option>
+                                    <option value="MZI">MZI-000 Master De Zipper</option>
+                                    <option value="MVI">MVI-000 Master De Vinir</option>
+                                    <option value="MR">MR-000 Master De Color</option>
+                                    <option value="MAL">MAL-000 Master De Aluminio</option>
+                                    <option value="MNY">MNY-000 Master De Aluminio</option>
+
+
                                 </select>
                             </div>
-                            <p id="referenciaAux"></p>
+                            <p id="referenciaAux none"></p>
+
+
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >ID DE REFERENCIA</span>
                                 <input type="text" id="codigoAux" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                             </div>
 
-
                             <p></p>
+                            <div class="input-group mb-3">
+                            <span class="input-group-text">TIPO</span>
+                                 <select ID="                                   " class="form-select" aria-label="Default select example" >
+                                 </select>
+                            </div>
+
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >SUB-TIPO</span>
-                                <select ID="" class="form-select" aria-label="Default select example" >
+                                <select ID="    " class="form-select" aria-label="Default select example" >
                                 </select>
                             </div>
                             <p></p>
@@ -112,35 +148,35 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >FECHA DE CALIBRACION</span>
-                                <input type="date" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="date" id="   " name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 
                             </div>
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >FRECUENCIA DE CALIBRACION</span>
-                                <input type="number" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="number" id="     " name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >PROX. FECHA DE CALIBRACION</span>
-                                <input type="date" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="date" id=" " name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <p></p>
 
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >NUM. DE SERIE</span>
-                                <input type="text" id="" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+                                <input type="text" id="      " name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
                             </div>
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >NUM. DE PARTE</span>
-                                <input type="text" id="" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+                                <input type="text" id="            " name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
                             </div>
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >RESOLUCION</span>
-                                <input type="text" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="                    " name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <p></p>
                             <div class="input-group mb-3">
@@ -150,13 +186,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >STATUS</span>
-                                <select ID="" class="form-select" aria-label="Default select example" onchange="consuktararea()">
+                                <select ID="                      " class="form-select" aria-label="Default select example" onchange="consuktararea()">
                                 </select>
                             </div>
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >OBSERVACIONES</span>
-                                <input type="text" id="" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="                                    " name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
 
                             <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
