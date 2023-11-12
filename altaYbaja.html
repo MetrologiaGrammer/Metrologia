@@ -102,14 +102,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                             <div class="input-group mb-3">
                             <span class="input-group-text">TIPO</span>
-                                 <select ID="                                   " class="form-select" aria-label="Default select example" >
+                                 <select ID="tipo" class="form-select" aria-label="Default select example" >
                                  </select>
                             </div>
 
                             <p></p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >SUB-TIPO</span>
-                                <select ID="    " class="form-select" aria-label="Default select example" >
+                                <select ID="subtipo" class="form-select" aria-label="Default select example" >
                                 </select>
                             </div>
                             <p></p>
@@ -210,7 +210,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-
+<!--
 <script>
 
     function Buscarequipo(){
@@ -241,9 +241,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     }
 
 </script>
-
+-->
 
                         <script>
+
                             function consuktararea(){
                                 var area;
                                 area=document.getElementById("area").value;
@@ -252,7 +253,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 selectOperacion.innerHTML="";
 
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?area='+area, function (data) {
-                                    var select = document.getElementById("Linea");
+                                    var select = document.getElementById("linea");
                                     select.innerHTML="";
 
                                     var createOptionAux = document.createElement("option");
@@ -273,7 +274,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                             function consuktarOpEstacion(){
                                 var area;
-                                area=document.getElementById("Linea").value;
+                                area=document.getElementById("linea").value;
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daooperacion.php?area='+area, function (data) {
                                     var selectOperacion = document.getElementById("operacion");
 
@@ -310,7 +311,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                             function llenarsubtipo() {
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php', function (data) {
-                                    var select = document.getElementById("Subtipo");
+                                    var select = document.getElementById("subtipo");
                                     for (var i = 0; i < data.data.length; i++) {
                                         var createOption = document.createElement("option");
                                         createOption.text=data.data[i].SubTipo;
@@ -325,7 +326,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             llenarTipo()
                             function llenarTipo() {
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daotipo.php', function (data) {
-                                    var select = document.getElementById("Tipo");
+                                    var select = document.getElementById("tipo");
                                     for (var i = 0; i < data.data.length; i++) {
                                         var createOption = document.createElement("option");
                                         createOption.text=data.data[i].Tipo;
@@ -356,5 +357,30 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 
                         </script>
+
+
+<!--
+        <script>
+            llenarsubtipo()
+
+            function llenarsubtipo() {
+                $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php', function (data) {
+                    var select = document.getElementById("subtipo");
+                    for (var i = 0; i < data.data.length; i++) {
+                        var createOption = document.createElement("option");
+                        createOption.text=data.data[i].SubTipo;
+                        createOption.value=data.data[i].SubTipo;
+                        select.appendChild(createOption);
+                    }
+                });
+            }
+
+
+
+
+        </script>
+-->
+
+
 </body>
 </html>
