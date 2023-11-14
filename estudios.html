@@ -121,10 +121,12 @@
                             <th>Folio</th>
                             <th>Solicitante</th>
                             <th>Area</th>
+                            <th>Area</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
+                            <th>Filter..</th>
                             <th>Filter..</th>
                             <th>Filter..</th>
                             <th>Filter..</th>
@@ -203,7 +205,8 @@
             "columns": [
                 { "data": "IdEquipo" },
                 { "data": "Observaciones" },
-                { "data": "Status" }
+                { "data": "Status" },
+                { "data": "AreaProceso" }
             ],
             "initComplete": function () {
                 this.api().columns().every(function () {
