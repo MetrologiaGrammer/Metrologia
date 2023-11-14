@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+Minimaxing by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+<head>
+    <title>Consulta De equipos</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="lib/jquery.dataTables.min.css" />
+    <script type="text/javascript" src="lib/datatables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/all.min.css" />
+    <script src="lib/datepicker/moment.min.js"></script>
+    <script type="text/javascript" src="lib/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/datepicker/css/bootstrap-datepicker.min.css" />
+    <script type="text/javascript" src="lib/datepicker/js/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/datepicker/css/daterangepicker.css" />
+</head>
+<body>
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <header id="header">
+                   <!--     <h1><a href="index.html" id="logo">Metrología</a></h1>  -->
+                        <nav id="nav">
+                            <a href="inicio.html">inicio</a>
+                            <a href="CONSULTA.html" >Consulta de Equipos</a>
+                            <a href="altaYbaja.html">Ingresos y Bajas De Equipos</a>
+                            <a href="actualizacionYreporte.html">Solicitud De Actualizaciones</a>
+                            <a href="" class="current-page-item">Estudios y Certificados de Equipos</a>
+
+                        </nav>
+                    </header>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+        <div class="container">
+            <div class="row main-row">
+                <div class="col-12 col-12-medium">
+
+                    <section>
+                        <span class="input-group-addon"></span>
+
+                        <div class="row">
+                            <div class="starter-template">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <section>
+                                <div class="col-md-12">
+                                    <div class="table-responsive-sm">
+                                        <table id="example" tableexport-key="tabla" class="table display">
+                                            <thead>
+                                            <tr>
+                                                <th>Folio</th>
+                                                <th>Solicitante</th>
+                                                <th>Area</th>
+                                                <th>Fecha Registro</th>
+                                                <th>Estado</th>
+                                                <th>Retroalimentación</th>
+                                                <th>Retorno</th>
+                                                <th>Entrega</th>
+                                                <th>Links</th>
+                                            </tr>
+                                            </thead>
+                                            <tfoot>
+                                            <tr>
+                                                <th>Filter..</th>
+                                                <th>Filter..</th>
+                                                <th>Filter..</th>
+                                                <th>Filter..</th>
+                                                <th>Filter..</th>
+                                                <th>Filter..</th>
+                                                <th>Filter..</th>
+                                                <th>Filter..</th>
+                                                <th>Filter..</th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <hr class="d-sm-none">
+                                </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                    <div class="col-12">
+                                    <div id="copyright">
+                                        &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+                                    </div>
+</div>
+
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#example tfoot th').each(function () {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Filtrar..." class="form-control input-sm" size="3px" />');
+            });
+
+            var tabla = $('#example').DataTable({
+                "responsive": true,
+                "ajax": {
+                    "url": "https://arketipo.mx/Controlling/BonoSalida/dao/DaoHistorico.php",
+                    "dataSrc": "data"
+                },
+                "columns": [
+                    { "data": "IdBitacora" },
+                    { "data": "NombreSolicitante" },
+                    { "data": "Area" },
+                    { "data": "FechaRegistro" },
+                    { "data": "Estado" },
+                    { "data": "Retroalimentacion" },
+                    { "data": "Retorno" },
+                    { "data": "RetornoVigi" },
+                    { "data": "boton" }
+                ],
+                "initComplete": function () {
+                    this.api().columns().every(function () {
+                        var that = this;
+                        $('input', this.footer()).on('keyup change', function () {
+                            if (that.search() !== this.value) {
+                                that
+                                    .search(this.value)
+                                    .draw();
+                            }
+                        });
+                    });
+                },
+                dom: 'lBfrtip',
+                buttons: [
+                    {
+                        extend: 'copyHtml5',
+                        text: 'Copiar',
+                        exportOptions: {
+                            columns: [':visible']
+                        },
+                        titleAttr: 'Copiar Texto',
+                        className: 'btn btn-secondary'
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [':visible']
+                        },
+                        titleAttr: 'Exportar a Excel',
+                        className: 'btn btn-success'
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        exportOptions: {
+                            columns: [':visible']
+                        },
+                        titleAttr: 'Exportar a PDF',
+                        className: 'btn btn-danger',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL'
+                    }
+                    /*
+                    {
+                        text: 'Seleccione las columnas',
+                        extend: 'colvis',
+                        className: 'btn btn-info'
+                    }*/
+
+                ],
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "loadingRecords": "Cargando...",
+                "deferRender": true,
+                "search": {
+                    "regex": true,
+                    "caseInsensitive": true,
+                },
+            });
+
+            $.fn.dataTable.ext.search.push(
+                function (settings, data, dataIndex) {
+                    var min = $('#min').datepicker('getDate');
+                    var max = $('#max').datepicker('getDate');
+                    var startDate = new Date(data[4]);
+                    if (min == null && max == null) return true;
+                    if (min == null && startDate <= max) return true;
+                    if (max == null && startDate >= min) return true;
+                    if (startDate <= max && startDate >= min) return true;
+                    return false;
+                }
+            );
+
+            $('#min').datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+            $('#max').datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+            var table = $('#example').DataTable();
+
+            $('#min, #max').change(function () {
+                table.draw();
+            });
+            //
+        });
+    </script>
+
+</body>
+</html>
