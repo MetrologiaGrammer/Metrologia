@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Grammer Bonos de Salida</title>
+    <title>Grammer EQUIPOS DE MEDICION</title>
     <script src="lib/jquery.min.js"></script>
     <link rel="stylesheet" href="lib/bootstrap.min.css">
     <link rel="stylesheet" href="lib/bootstrap-theme.min.css">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="row">
-        <h1 align="center">Registro históricos</h1>
+        <h1 align="center">EQUIPOS</h1>
     </div>
 
 
@@ -118,14 +118,18 @@
                     <table id="example" tableexport-key="tabla" class="table display">
                         <thead>
                         <tr>
-                            <th>Folio</th>
-                            <th>Solicitante</th>
-                            <th>Area</th>
-                            <th>Area</th>
+                            <th>ID REFERENCIA</th>
+                            <th>TIPO</th>
+                            <th>PROCESO</th>
+                            <th>AREA</th>
+                            <th>FECHA DE CALIBRACION</th>
+                            <th>PROX. FECHA DE CALIBRACION</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
+                            <th>Filter..</th>
+                            <th>Filter..</th>
                             <th>Filter..</th>
                             <th>Filter..</th>
                             <th>Filter..</th>
@@ -205,8 +209,10 @@
             "columns": [
                 { "data": "IdEquipo" },
                 { "data": "Tipo" },
-                { "data": "Status" },
-                { "data": "AreaProceso" }
+                { "data": "AreaProceso" },
+                { "data": "MaqLinea" },
+                { "data": "FechaInspeccion" },
+                { "data": "FechaVencimiento" }
             ],
             "initComplete": function () {
                 this.api().columns().every(function () {
