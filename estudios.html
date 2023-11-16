@@ -100,6 +100,8 @@
                 <button style="margin-left: 1%" type="button" class="btn btn-default" onClick="llenarTablaTurno();">
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
+
+                <a></a>
             </center>
         </div>
     </div>
@@ -125,10 +127,12 @@
                             <th>AREA</th>
                             <th>FECHA DE CALIBRACION</th>
                             <th>PROX. FECHA DE CALIBRACION</th>
+                            <th>Detalles</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
+                            <th>Filter..</th>
                             <th>Filter..</th>
                             <th>Filter..</th>
                             <th>Filter..</th>
@@ -213,7 +217,8 @@
                 { "data": "AreaProceso" },
                 { "data": "MaqLinea" },
                 { "data": "FechaInspeccion" },
-                { "data": "FechaVencimiento" }
+                { "data": "FechaVencimiento" },
+                { "data": "boton" }
             ],
             "initComplete": function () {
                 this.api().columns().every(function () {
