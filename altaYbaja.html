@@ -329,6 +329,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             tipoEquipo = document.getElementById("tipoEquipo").value;
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daotipo.php?ref='+tipoEquipo, function (data) {
                                     var select = document.getElementById("tipo");
+                                    select.innerHTML="";
                                     for (var i = 0; i < data.data.length; i++) {
                                         var createOption = document.createElement("option");
                                         createOption.text=data.data[i].Tipo;
@@ -344,6 +345,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                                 $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php?subtipo='+ TIPO, function (data) {
                                     var select = document.getElementById("subtipo");
+                                    select.innerHTML="";
                                     for (var i = 0; i < data.data.length; i++) {
                                         var createOption = document.createElement("option");
                                         createOption.text=data.data[i].Sub-Tipo;

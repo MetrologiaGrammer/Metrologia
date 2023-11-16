@@ -13,7 +13,7 @@ function Contador($Referencia){
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT * FROM `Tipo` where `Ref` = '$Referencia';");
+    $datos = mysqli_query($conex, "SELECT * FROM `Tipo` WHERE `Ref` = '$Referencia' GROUP by `Tipo`;");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 
