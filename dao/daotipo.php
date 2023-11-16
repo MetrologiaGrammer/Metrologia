@@ -3,15 +3,17 @@
 
 include_once('db.php');
 
-Contador();
+$Referencia=$_GET['ref'];
 
-function Contador(){
+Contador($Referencia);
+
+function Contador($Referencia){
 
     $con = new LocalConector();
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT `Tipo` FROM `Tipos` GROUP BY `Tipo`;");
+    $datos = mysqli_query($conex, "SELECT * FROM `Tipo` where `Ref` = '$Referencia';");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 

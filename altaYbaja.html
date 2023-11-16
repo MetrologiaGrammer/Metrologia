@@ -50,15 +50,15 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <section >
                         <h2>Ingresa tus Equipos</h2>
                         <h4>¡Bienvenido!</h4>
-                        <p> Ingresa la referencia según el tipo de calibración del equipo <br>
+                        <p> Ingresa la referencia según el tipo de calibración del equipo </p> <br>
 
                             </tbody>
                         </table>
-                            Consulta el registro de altas para saber el consecutivo</p>
+
 
 
                         <div id="ingreso">
-                            <h1>Registro de nuevo equipo</h1>
+                            <h3>Registro de nuevo equipo</h3>
 
                             <input type="file" id="  " name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 
@@ -102,7 +102,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                             <div class="input-group mb-3">
                             <span class="input-group-text">TIPO</span>
-                                 <select ID="tipo" class="form-select" aria-label="Default select example" >
+                                 <select ID="tipo" class="form-select" aria-label="Default select example" onchange="llenarsubtipo();">
                                  </select>
                             </div>
 
@@ -307,28 +307,27 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 
 
-                            llenarsubtipo()
 
-                            function llenarsubtipo() {
-                                var TIPO;
-                                TIPO = document.getElementById("tipo").value;
-
-                                $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php'+ TIPO, function (data) {
-                                    var select = document.getElementById("subtipo");
-                                    for (var i = 0; i < data.data.length; i++) {
-                                        var createOption = document.createElement("option");
-                                        createOption.text=data.data[i].SubTipo;
-                                        createOption.value=data.data[i].SubTipo;
-                                        select.appendChild(createOption);
-                                    }
+                            function buscarId() {
+                                var tipoEquipo;
+                                tipoEquipo = document.getElementById("tipoEquipo").value;
+                                console.log('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo)
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo, function (data) {
+                                    //document.getElementById("referenciaDiv").style.display='block';
+                                    const chars = data.data[0].IdEquipo.split('-');
+                                    var numero = chars[1];
+                                    var suma = parseInt(numero, 10)+1;
+                                    var referencia = chars[0]+"-"+suma;
+                                    document.getElementById("codigoAux").value = referencia;
+                                    document.getElementById("referenciaAux").innerHTML=referencia;
                                 });
+                                llenarTipo();
                             }
 
-
-
-                            llenarTipo()
-                            function llenarTipo() {
-                                $.getJSON('https://arketipo.mx/Metrologia/dao/daotipo.php', function (data) {
+                            function llenarTipo(){
+                            var tipoEquipo;
+                            tipoEquipo = document.getElementById("tipoEquipo").value;
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daotipo.php?ref='+tipoEquipo, function (data) {
                                     var select = document.getElementById("tipo");
                                     for (var i = 0; i < data.data.length; i++) {
                                         var createOption = document.createElement("option");
@@ -339,24 +338,20 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 });
                             }
 
-                            function buscarId() {
-                                var tipoEquipo;
-                                tipoEquipo = document.getElementById("tipoEquipo").value;
-                                console.log('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo)
-                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo, function (data) {
-                                    //document.getElementById("referenciaDiv").style.display='block';
-                                    const chars = data.data[0].IdEquipo.split('-');
+                            function llenarsubtipo() {
+                                var TIPO;
+                                TIPO = document.getElementById("tipo").value;
 
-                                    var numero = chars[1];
-                                    var suma = parseInt(numero, 10)+1;
-                                    var referencia = chars[0]+"-"+suma;
-                                    document.getElementById("codigoAux").value = referencia;
-                                    document.getElementById("referenciaAux").innerHTML=referencia;
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php?subtipo='+ TIPO, function (data) {
+                                    var select = document.getElementById("subtipo");
+                                    for (var i = 0; i < data.data.length; i++) {
+                                        var createOption = document.createElement("option");
+                                        createOption.text=data.data[i].Sub-Tipo;
+                                        createOption.value=data.data[i].Sub-Tipo;
+                                        select.appendChild(createOption);
+                                    }
                                 });
                             }
-
-
-
 
 
                         </script>

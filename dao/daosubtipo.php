@@ -3,17 +3,17 @@
 
 include_once('db.php');
 
-$area=$_GET['tipo'];
+$Subtipo=$_GET['subtipo'];
 
-Contador($area);
+Contador($Subtipo);
 
-function Contador($area){
+function Contador($Subtipo){
 
     $con = new LocalConector();
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT `Sub-Tipo` FROM `Tipos`where `Tipo` = '$area' GROUP by `Sub-Tipo`;");
+    $datos = mysqli_query($conex, "SELECT * FROM `Tipo` where `Tipo` = '$Subtipo';");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 
