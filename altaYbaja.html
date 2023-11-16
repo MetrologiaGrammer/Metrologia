@@ -66,7 +66,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >INGRESA LA REFERENCIA</span>
                                 <select ID="tipoEquipo" class="form-select" aria-label="Default select example" onchange="buscarId()">
-                                    <option value="MP">MP-000 Manteminiento preventico</option>
+                                    <option value="MP">MP-000 Manteminiento preventiVo</option>
                                     <option value="ER">ER-000 Equipo de Referencia </option>
                                     <option value="IM">IM-000 Calibración Interna</option>
                                     <option value="EM">EM-000 Calibración Externa</option>
@@ -91,7 +91,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                                 </select>
                             </div>
-                            <p id="referenciaAux none"></p>
+                            <p id="referenciaAux"></p>
 
 
                             <div class="input-group mb-3">
@@ -310,7 +310,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             llenarsubtipo()
 
                             function llenarsubtipo() {
-                                $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php', function (data) {
+                                var TIPO;
+                                TIPO = document.getElementById("tipo").value;
+
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php'+ TIPO, function (data) {
                                     var select = document.getElementById("subtipo");
                                     for (var i = 0; i < data.data.length; i++) {
                                         var createOption = document.createElement("option");
