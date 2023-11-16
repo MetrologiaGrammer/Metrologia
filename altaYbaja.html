@@ -66,6 +66,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <div class="input-group mb-3">
                                 <span class="input-group-text" >INGRESA LA REFERENCIA</span>
                                 <select ID="tipoEquipo" class="form-select" aria-label="Default select example" onchange="buscarId()">
+                                    <option selected value="N/A">Open this select menu</option>
                                     <option value="MP">MP-000 Manteminiento preventiVo</option>
                                     <option value="ER">ER-000 Equipo de Referencia </option>
                                     <option value="IM">IM-000 Calibración Interna</option>
@@ -313,14 +314,30 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 var tipoEquipo;
                                 tipoEquipo = document.getElementById("tipoEquipo").value;
                                 console.log('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo)
-                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo, function (data) {
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoTipoEquipo.php?tipoEquipo='+tipoEquipo+"-", function (data) {
                                     //document.getElementById("referenciaDiv").style.display='block';
                                     const chars = data.data[0].IdEquipo.split('-');
+
+                                    var ref = chars[0];
                                     var numero = chars[1];
-                                    var suma = parseInt(numero, 10)+1;
-                                    var referencia = chars[0]+"-"+suma;
-                                    document.getElementById("codigoAux").value = referencia;
-                                    document.getElementById("referenciaAux").innerHTML=referencia;
+
+                                    if (ref == tipoEquipo){
+                                        var suma = parseInt(numero, 10)+1;
+
+                                        if (suma<10){
+                                            suma="00"+suma;
+                                        }
+
+                                        if (suma>=10 && suma<=99){
+                                            suma="0"+suma;
+                                        }
+
+                                        var referencia = chars[0]+"-"+suma;
+                                        document.getElementById("codigoAux").value = referencia;
+                                    }else{
+                                        var referencia = tipoEquipo+"-000";
+                                        document.getElementById("codigoAux").value = referencia;
+                                    }
                                 });
                                 llenarTipo();
                             }
