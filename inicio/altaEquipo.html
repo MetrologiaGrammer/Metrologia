@@ -242,6 +242,11 @@
         OBSERVACIONES = document.getElementById("observaciones").value;
         IMAGEN = document.getElementById("imagen").value;
 
+        console.log("INSERT INTO `Equipo`(`IdEquipo`, `Observaciones`, `Status`, `Resolucion`, `NumParte`,`FechaInspeccion`, `Frecuencia`, " +
+            "`FechaVencimiento`, `AreaProceso`, `Tipo`, `SubTipo`,`NumSerie`, `AreaLinea`, `AreaOperacion`,`Rango`) VALUES " +
+            "('"+REFERENCIA+"','"+OBSERVACIONES+"','"+STATUS+"','"+RESOLUCION+"','"+NUMPARTE+"','"+FECHACALIBRACION+"','"+FRECUENCIA+"','"+FECHAVENCIDA+"'," +
+            "'$Proceso','$Tipo','$Subtipo','$Numparte','$Numserie','$Status','$Linea','$Operacion','$Rango')")
+
         const data = new FormData();
 
         data.append('nomina', "");
