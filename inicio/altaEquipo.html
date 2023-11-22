@@ -264,13 +264,14 @@
         data.append('observaciones', OBSERVACIONES);
         //data.append('Idimagen', IdImagen);
 
-        fetch('dao/daoActualizacion.php', {
+        fetch('dao/daoIngresoEquipo.php', {
             method: 'POST',
             body: data
         })
             .then(function (response) {
                 if (response.ok) {
-                    enviarCorreo(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen)
+                    alert("done");
+                    //enviarCorreo(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen)
                 } else {
                     throw "Error";
                 }
