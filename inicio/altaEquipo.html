@@ -39,23 +39,47 @@
         <div class="row gtr-uniform gtr-50">
 
             <div class="col-12 col-12-xsmall">
-                <input type="text" name="demo-name" id="idReferencia" value="" placeholder="ID de referencia"/>
+                <label for="referencia" style="text-align: center">Ingrese referencia</label>
+                <div class="col-12">
+                    <select name="demo-category" id="referencia">
+                        <option value="">- REFERENCIA -</option>
+                        <option value="ER">ER-000 Equipo de Referencia </option>
+                        <option value="MAP">MAP-000 Manteminiento preventivo</option>
+                        <option value="IM">IM-000 Calibración Interna</option>
+                        <option value="EM">EM-000 Calibración Externa</option>
+                        <option value="GA">GA-000 Gage Por Atributos</option>
+                        <option value="GV">GV-000 Gage Por Variables</option>
+                        <option value="HF">HF-000 Hold Fixture</option>
+                        <option value="FA">FA-000 Fixture Por Atributos</option>
+                        <option value="FV">FV-000 Fixture Por Variables</option>
+                        <option value="FAV">FAV-000 Fixture por Variables y Atributos</option>
+                        <option value="MPI">MPI-000 Master De Piel</option>
+                        <option value="MAF">MAF-000 Master De Alfombra</option>
+                        <option value="MCR">MCR-000 Master De Cromo</option>
+                        <option value="MPL">MPL-000 Master De Plastico</option>
+                        <option value="MAF">MAF-000 Master De Alfombra</option>
+                        <option value="MHI">MHI-000 MAaster De Hilo</option>
+                        <option value="MTE">MTE-000 Master De Tela</option>
+                        <option value="MZI">MZI-000 Master De Zipper</option>
+                        <option value="MVI">MVI-000 Master De Vinir</option>
+                        <option value="MR">MR-000 Master De Color</option>
+                        <option value="MAL">MAL-000 Master De Aluminio</option>
+                        <option value="MNY">MNY-000 Master De Aluminio</option>
+                    </select>
+                </div>
             </div>
             <div class="col-6 col-12-xsmall">
-                <ul class="actions stacked" style="text-align: center">
-                    <li><a href="#" class="button primary">Buscar Equipo</a>
-                </ul>
-
-
-            <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">ReferenciFEa</label>
-                <input type="date" name="demo-email" id="fechacalibracion" value="" placeholder="Email"/>
+                <label for="idReferencia" style="text-align: center">Id Referencia</label>
+                <input type="text" name="demo-name" id="idReferencia" value="" placeholder="ID"/>
             </div>
             <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">ReferenciFEa</label>
-                <input type="date" name="demo-email" id="fechavencida" value="" placeholder="Email"/>
+                <label for="referencia" style="text-align: center">Ingrese tipo</label>
+                <div class="col-12">
+                    <select name="demo-category" id="tipo">
+                        <option value="">- TIPO -</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-6
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese subtipo</label>
                 <div class="col-12">
@@ -119,7 +143,12 @@
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Status</label>
-                <input type="email" name="demo-email" id="status" value="" placeholder="STATUS"/>
+                <div class="col-12">
+                    <select name="demo-category" id="operacion">
+                        <option value="Activo">ACTIVO</option>
+                        <option value="Baja">BAJA</option>
+                    </select>
+                </div>
             </div>
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Observaciones</label>
@@ -134,14 +163,14 @@
 
             <div class="col-12 col-12-xsmall">
                 <ul class="actions stacked" style="text-align: center">
-                    <li><a href="#" class="button primary">Ingresar Nuevo Registro</a>
+                    <li><a href="#" class="button primary" onclick="Ingreso()">Ingresar Nuevo Registro</a>
                     <li><a href="#" class="button solid">Crear tipos y ubicaciones</a>
                 </ul>
             </div>
         </div>
     </section>
-</div>
-</section>
+        </div>
+    </section>
 
 
 </div>
@@ -193,15 +222,9 @@
         var OBSERVACIONES;
         var IMAGEN;
 
-
-        const min = 1;
-        const max = 1000000;
-        const randomNum = Math.floor(Math.random() * (max - min + 1) + min);
-        console.log(foto);
-
-        NOMINA = document.getElementById("").value;
-        NOMBRE = document.getElementById("").value;
-        AREA = document.getElementById("").value;
+        //NOMINA = document.getElementById("").value;
+        //NOMBRE = document.getElementById("").value;
+        //AREA = document.getElementById("").value;
         REFERENCIA = document.getElementById("referencia").value;
         TIPO = document.getElementById("tipo").value;
         SUBTIPO = document.getElementById("subtipo").value;
@@ -219,15 +242,13 @@
         OBSERVACIONES = document.getElementById("observaciones").value;
         IMAGEN = document.getElementById("imagen").value;
 
-
         IdImagen = randomNum + Nomina;
-
 
         const data = new FormData();
 
-        data.append('nomina', NOMINA);
-        data.append('nombre', NOMBRE);
-        data.append('area', AREA);
+        data.append('nomina', "");
+        data.append('nombre', "");
+        data.append('area', "");
         data.append('referencia', REFERENCIA);
         data.append('tipo', TIPO);
         data.append('subtipo', SUBTIPO);
