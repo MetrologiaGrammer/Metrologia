@@ -143,7 +143,7 @@
 <script>
 	function Buscarequipo(){
 		var Equipo;
-		Equipo=document.getElementById("idrefencia").value;
+		Equipo=document.getElementById("referencia").value;
 
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
 			document.getElementById("codigo").value = data.data[0].IdEquipo;
