@@ -304,6 +304,13 @@
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daotipo.php?ref='+tipoEquipo, function (data) {
             var select = document.getElementById("tipo");
             select.innerHTML="";
+
+            var createOptionAux = document.createElement("option");
+            createOptionAux.text="Seleccione Linea";
+            createOptionAux.value="";
+            select.appendChild(createOptionAux);
+
+
             for (var i = 0; i < data.data.length; i++) {
                 var createOption = document.createElement("option");
                 createOption.text=data.data[i].Tipo;
