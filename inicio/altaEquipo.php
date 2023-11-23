@@ -24,7 +24,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     <div class="inner">
         <img src="images/00001472.jpg" alt="" style="width: 30%"/>
         <h1>Nomina</h1>
-        <h1><strong>000034234</strong>.</h1>
+        <h1><strong><?php echo $_SESSION["nomina"];?></strong>.</h1>
         <h1>Nombre</h1>
         <h1><strong>Adrian Aragon</strong>.</h1>
         <h1>Area</h1>
