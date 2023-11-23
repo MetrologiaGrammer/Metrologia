@@ -3,7 +3,7 @@
 
 include_once('db.php');
 
-$area=$_GET['area'];
+$area=$_GET['proceso'];
 
 Contador($area);
 
