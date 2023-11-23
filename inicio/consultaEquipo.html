@@ -148,7 +148,6 @@
 
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+Equipo, function (data) {
 			document.getElementById("codigo").value = data.data[0].IdEquipo;
-			document.getElementById("serie").value = data.data[0].NumSerie;
 			document.getElementById("tipo").value = data.data[0].Tipo;
 
 		<!--	if (data.data[0].Tipo == "ESCALA"){
@@ -166,7 +165,7 @@
 			document.getElementById("numserie").value = data.data[0].NumSerie;
 			document.getElementById("numparte").value = data.data[0].NumParte;
 			document.getElementById("resolucion").value = data.data[0].Resolucion;
-			document.getElementById("rango").value = data.data[0].RangoInstrumento;
+			document.getElementById("rango").value = data.data[0].Rango;
 			document.getElementById("status").value = data.data[0].Status;
 			document.getElementById("observaciones").value = data.data[0].Observaciones;
 			document.getElementById("frecuencia").value = data.data[0].Frecuencia;
