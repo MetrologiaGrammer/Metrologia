@@ -145,7 +145,7 @@
 		var Equipo;
 		Equipo=document.getElementById("referencia").value;
 
-		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
+		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+Equipo, function (data) {
 			document.getElementById("codigo").value = data.data[0].IdEquipo;
 			document.getElementById("serie").value = data.data[0].NumSerie;
 			document.getElementById("tipo").value = data.data[0].Tipo;
