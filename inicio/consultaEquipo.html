@@ -44,12 +44,12 @@
 			</div>
 			<div class="col-12 col-12-xsmall">
 				<ul class="actions stacked" style="text-align: center">
-					<li><a href="#" class="button primary">Buscar</a>
+					<li><a href="#" class="button primary" onclick="Buscarequipo()">Buscar Equipo</a>
 				</ul>
 			</div>
 			<div class="col-6 col-12-xsmall">
 				<label style="text-align: center">Id Referencia</label>
-				<input type="text" name="demo-name" id="id" value="" placeholder="ID"disabled>
+				<input type="text" name="demo-name" id="codigo" value="" placeholder="ID"disabled>
 			</div>
 			<div class="col-6 col-12-xsmall">
 				<label  style="text-align: center">Tipo</label>
@@ -141,99 +141,37 @@
 <script src="assets/js/main.js"></script>
 
 <script>
-	function Ingreso() {
+	function Buscarequipo(){
+		var Equipo;
+		Equipo=document.getElementById("idrefencia").value;
 
-		var NOMINA;
-		var NOMBRE;
-		var AREA;
-		var REFERENCIA;
-		var TIPO;
-		var SUBTIPO;
-		var PROCESO;
-		var LINEA;
-		var OPERACION;
-		var FECHACALIBRACION;
-		var FECHAVENCIDA;
-		var RESOLUCION;
-		var RANGO;
-		var FRECUENCIA;
-		var NUMSERIE;
-		var NUMPARTE;
-		var STATUS;
-		var OBSERVACIONES;
-		var IMAGEN;
+		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
+			document.getElementById("codigo").value = data.data[0].IdEquipo;
+			document.getElementById("serie").value = data.data[0].NumSerie;
+			document.getElementById("tipo").value = data.data[0].Tipo;
 
+		<!--	if (data.data[0].Tipo == "ESCALA"){
+				document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
+			}else{
+				document.getElementById("imagenEquipo").src = "images/"+data.data[0].IdEquipo+".jpg"
+			}-->
 
-		const min = 1;
-		const max = 1000000;
-		const randomNum = Math.floor(Math.random() * (max - min + 1) + min);
-		console.log(foto);
+			document.getElementById("subtipo").value = data.data[0].SubTipo;
+			document.getElementById("proceso").value = data.data[0].AreaProceso;
+			document.getElementById("linea").value = data.data[0].AreaLinea;
+			document.getElementById("operacion").value = data.data[0].AreaOperacion;
+			document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
+			document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
+			document.getElementById("numserie").value = data.data[0].NumSerie;
+			document.getElementById("numparte").value = data.data[0].NumParte;
+			document.getElementById("resolucion").value = data.data[0].Resolucion;
+			document.getElementById("rango").value = data.data[0].RangoInstrumento;
+			document.getElementById("status").value = data.data[0].Status;
+			document.getElementById("observaciones").value = data.data[0].Observaciones;
+			document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 
-		NOMINA = document.getElementById("").value;
-		NOMBRE = document.getElementById("").value;
-		AREA = document.getElementById("").value;
-		REFERENCIA = document.getElementById("referencia").value;
-		TIPO = document.getElementById("tipo").value;
-		SUBTIPO = document.getElementById("subtipo").value;
-		PROCESO = document.getElementById("proceso").value;
-		LINEA = document.getElementById("linea").value;
-		OPERACION = document.getElementById("operacion").value;
-		FECHACALIBRACION = document.getElementById("fechacalibracion").value;
-		FECHAVENCIDA = document.getElementById("fechavencida").value;
-		RESOLUCION = document.getElementById("resolucion").value;
-		RANGO = document.getElementById("rango").value;
-		FRECUENCIA = document.getElementById("frecuencia").value;
-		NUMSERIE = document.getElementById("numserie").value;
-		NUMPARTE = document.getElementById("numparte").value;
-		STATUS = document.getElementById("status").value;
-		OBSERVACIONES = document.getElementById("observaciones").value;
-		IMAGEN = document.getElementById("imagen").value;
-
-
-		IdImagen = randomNum + Nomina;
-
-
-		const data = new FormData();
-
-		data.append('nomina', NOMINA);
-		data.append('nombre', NOMBRE);
-		data.append('area', AREA);
-		data.append('referencia', REFERENCIA);
-		data.append('tipo', TIPO);
-		data.append('subtipo', SUBTIPO);
-		data.append('proceso', PROCESO);
-		data.append('linea', LINEA);
-		data.append('operacion', OPERACION);
-		data.append('fechacalibracion', FECHACALIBRACION);
-		data.append('fechavencida', FECHAVENCIDA);
-		data.append('resolucion', RESOLUCION);
-		data.append('rango', RANGO);
-		data.append('frecuencia', FRECUENCIA);
-		data.append('numserie', NUMSERIE);
-		data.append('numparte', NUMPARTE);
-		data.append('status', STATUS);
-		data.append('observaciones', OBSERVACIONES);
-		data.append('Idimagen', IdImagen);
-
-		fetch('dao/daoActualizacion.php', {
-			method: 'POST',
-			body: data
-		})
-				.then(function (response) {
-					if (response.ok) {
-						enviarCorreo(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen)
-					} else {
-						throw "Error";
-					}
-				})
-				.then(function (texto) {
-					console.log(texto);
-				})
-				.catch(function (err) {
-					console.log(err);
-				});
-
-
+		});
+		//consultaFoto(Equipo);
 	}
 
 </script>
