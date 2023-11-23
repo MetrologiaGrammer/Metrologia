@@ -1,9 +1,14 @@
 <!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<?php
+session_start();
+
+if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
+    echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=../login/index.html'>";
+    session_destroy();
+}else{
+    session_start();
+}
+?>
 <html>
 <head>
     <title>Strata by HTML5 UP</title>
