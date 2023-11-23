@@ -200,6 +200,58 @@
 <script src="assets/js/main.js"></script>
 
 <script>
+
+    function buscarId() {
+        var tipoEquipo;
+        tipoEquipo = document.getElementById("referencia").value;
+        console.log('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia='+tipoEquipo)
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia='+tipoEquipo+"-", function (data) {
+            //document.getElementById("referenciaDiv").style.display='block';
+            const chars = data.data[0].IdEquipo.split('-');
+
+            var ref = chars[0];
+            var numero = chars[1];
+
+            if (ref == tipoEquipo){
+                var suma = parseInt(numero, 10)+1;
+
+                if (suma<10){
+                    suma="00"+suma;
+                }
+
+                if (suma>=10 && suma<=99){
+                    suma="0"+suma;
+                }
+
+                var referencia = chars[0]+"-"+suma;
+                document.getElementById("codigoAux").value = referencia;
+            }else{
+                var referencia = tipoEquipo+"-000";
+                document.getElementById("codigoAux").value = referencia;
+            }
+        });
+        llenarTipo();
+    }
+
+    function llenarTipo(){
+        var tipoEquipo;
+        tipoEquipo = document.getElementById("referencia").value;
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daotipo.php?ref='+tipoEquipo, function (data) {
+            var select = document.getElementById("tipo");
+            select.innerHTML="";
+            for (var i = 0; i < data.data.length; i++) {
+                var createOption = document.createElement("option");
+                createOption.text=data.data[i].Tipo;
+                createOption.value=data.data[i].Tipo;
+                select.appendChild(createOption);
+            }
+        });
+    }
+
+
+
+
+
     function Ingreso() {
 
         var NOMINA;
