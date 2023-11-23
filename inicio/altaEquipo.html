@@ -208,7 +208,7 @@
         var selectOperacion = document.getElementById("operacion");
         selectOperacion.innerHTML="";
 
-        $.getJSON('https://arketipo.mx/Metrologia/dao/daoareas.php?proceso='+area, function (data) {
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoareas.php?proceso='+area, function (data) {
             var select = document.getElementById("linea");
             select.innerHTML="";
 
@@ -251,7 +251,7 @@
     function llenarProceso() {
 
 
-        $.getJSON('https://arketipo.mx/Metrologia/dao/daoProceso.php', function (data) {
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
             var select = document.getElementById("proceso");
             for (var i = 0; i < data.data.length; i++) {
                 var createOption = document.createElement("option");
