@@ -17,7 +17,8 @@
 
 <header id="header">
 	<div class="inner">
-		<img src="images/00001472.jpg" alt="" style="width: 30%"/>
+		<a href="#"><img id="imagenEquipo" src="images/LogoMetrologi.png" alt="" class="aln-center" /></a>
+
 		<h1>Nomina</h1>
 		<h1><strong>000034234</strong>.</h1>
 		<h1>Nombre</h1>
@@ -139,14 +140,7 @@
 <script src="assets/js/main.js"></script>
 
 <script>
-	function getParameterByName(name) {
-		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-				results = regex.exec(location.search);
-		var cadena = results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-		var arrTerminos = cadena.split(',');
-		return arrTerminos[0];
-	}
+
 
 
 	function Buscarequipo(){
