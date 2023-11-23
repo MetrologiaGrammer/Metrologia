@@ -3,7 +3,7 @@
 
 include_once('db.php');
 
-$idreferncia=$_GET['referencia'];
+$idreferncia=$_GET['idreferencia'];
 
 Contador($idreferncia);
 
