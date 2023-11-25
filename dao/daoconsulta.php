@@ -13,7 +13,7 @@ function Contador($idreferncia){
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT * FROM `Equipos` WHERE `IdEquipo` = '$idreferncia';");
+    $datos = mysqli_query($conex, "SELECT * FROM `Equipo` WHERE `IdEquipo` = '$idreferncia';");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 

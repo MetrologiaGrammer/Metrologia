@@ -15,6 +15,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 </head>
 <body>
+
 <div id="page-wrapper">
 
     <!-- Header -->
@@ -24,13 +25,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 <div class="col-12">
 
                     <header id="header">
-                        <h1><a href="index.html" id="logo">Metrología</a></h1>
+                   <!--     <h1><a href="index.html" id="logo">Metrología</a></h1>  -->
                         <nav id="nav">
                             <a href="inicio.html">inicio</a>
                             <a href="CONSULTA.html" class="current-page-item">Consulta de Equipos</a>
                             <a href="altaYbaja.html">Ingresos y Bajas De Equipos</a>
                             <a href="actualizacionYreporte.html">Solicitud De Actualizaciones</a>
-                            <a href="">Estudios y Certificados de Equipos</a>
+                            <a href="estudios.html">Estudios y Certificados de Equipos</a>
 
                         </nav>
                     </header>
@@ -44,13 +45,79 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <div id="main">
         <div class="container">
             <div class="row main-row">
-                <div class="col-8 col-12-medium">
+                <div class="col-12 col-12-medium">
 
                     <section>
                         <h2>Consulta de equipos</h2>
                         <h4>¡Bienvenido!</h4>
                         <p> Puedes consultar los datos y especificaciones para cada instrumento de medición resgistrado en
                             nuestro laboratorio de metrología solo ingresa el ID correspondiente al equipo.</p>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Reportar problema
+                        </button>
+
+                        <!-- Modal del boton de reporte-->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">REPORTAR PROBLEMA</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img id="carga" src="images/carga.gif" style="display: none">
+                                        <div id="contenidoReporte">
+                                        <H6>
+                                            REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
+                                            DESCRIBELO EN EL CUADRO.
+                                        </H6>
+                                        <hr>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" >REFERENCIA</span>
+                                            <input type="text" id="referencia" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" >NOMINA</span>
+                                            <input type="text" id="nomina" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                        </div>
+                                        <p></p>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" >REPORTE DE ETIQUETA</span>
+                                            <select id="etiqueta" class="form-select" aria-label="Default select example">
+                                                <option selected value="N/A">Open this select menu</option>
+                                                <option value="ETIQUETA DAÑADA">ETIQUETA DAÑADA</option>
+                                                <option value="NO TIENE ETIQUETA">NO TIENE ETIQUETA</option>
+                                                <option value="NO SE LOGRA LEER EL QR">NO SE LOGRA LEER EL QR</option>
+                                            </select>
+                                        </div>
+                                        <p></p>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" >REPORTAR EQUIPO</span>
+                                            <select id="equipo" class="form-select" aria-label="Default select example">
+                                                <option selected value="N/A">Open this select menu</option>
+                                                <option value="EQUIPO DAÑADO">EQUIPO DAÑADO</option>
+                                                <option value="CALIBRACION VENCIDA">CALIBRACION VENCIDA</option>
+                                                <option value="EQUIPO EXTRAVIADO">EQUIPO EXTRAVIADO</option>
+                                            </select>
+                                        </div>
+                                        <p></p>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+                                            <input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="cerrarModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" onclick="Reporte()">Enviar</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- BUSCADOR DE ID -->
                         <center>
 
                             <label>Ingrese el ID del equipo  </label>
@@ -58,10 +125,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <p></p>
                             <button ONCLICK="Buscarequipo()" type="button" class="btn btn-primary btn-lg">Buscar Equipo</button>
                             <p></p>
-                            <a href="#"><img src="images/LogoMetrologi.png" alt="" class="aln-center" /></a>
+                            <a href="#"><img id="imagenEquipo" src="images/LogoMetrologi.png" alt="" class="aln-center" /></a>
                         </center>
 
-
+                    <!-- COMIENZAN LOS RECUADROS DE CADA INFORMACION -->
                         <p></p>
                         <div class="input-group mb-3">
                             <span class="input-group-text" >ID DE REFERENCIA</span>
@@ -133,15 +200,17 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <span class="input-group-text" >OBSERVACIONES</span>
                             <input type="text" id="observaciones" name="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"disabled>
                         </div>
+                        <button type="button" class="btn btn-outline-primary">Primary</button>
 
                         <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
 
 
-                        <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
+                        <center><img id="imagenUbicacion" src="images/pic2.jpg" alt="" style="width: 70%"/></center>
                         <P></P>
                         <H3>SOLO CON ACCESO!</H3>
-                        <P>Puedes Actualizar Algun Movimiento o Reportar Algun Equipo</P>
-                        <a href="actualizacionYreporte.html" class="button">REPORTAR O ACTUALIZAR UN DATO</a>
+                        <P>Puedes Actualizar Algun Movimiento o Actualizar Algun Dato.</P>
+                        <H4>Si Deseas Actualizar Da Click En El Boton</H4>
+                        <a href="actualizacionYreporte.html" class="button">ACTUALIZAR DATOS</a>
 
 
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -153,12 +222,19 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <script src="assets/js/main.js"></script>
 
                         <script>
+                            function getParameterByName(name) {
+                                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                                    results = regex.exec(location.search);
+                                var cadena = results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                                var arrTerminos = cadena.split(',');
+                                return arrTerminos[0];
+                            }
 
-                            function Buscarequipo(){
-                                var Equipo;
-                                Equipo=document.getElementById("idrefencia").value;
+                            buscarQR(getParameterByName("referencia"));
 
-                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
+                            function buscarQR(id) {
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+id, function (data) {
                                     document.getElementById("codigo").value = data.data[0].IdEquipo;
                                     document.getElementById("serie").value = data.data[0].NumSerie;
                                     document.getElementById("tipo").value = data.data[0].Tipo;
@@ -176,8 +252,91 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     document.getElementById("observaciones").value = data.data[0].Observaciones;
 
                                 });
+                            }
+                            function Buscarequipo(){
+                                var Equipo;
+                                Equipo=document.getElementById("idrefencia").value;
 
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoconsulta.php?idreferencia='+Equipo, function (data) {
+                                    document.getElementById("codigo").value = data.data[0].IdEquipo;
+                                    document.getElementById("serie").value = data.data[0].NumSerie;
+                                    document.getElementById("tipo").value = data.data[0].Tipo;
 
+                                    if (data.data[0].Tipo == "ESCALA"){
+                                        document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
+                                    }else{
+                                        document.getElementById("imagenEquipo").src = "images/"+data.data[0].IdEquipo+".jpg"
+                                    }
+
+                                    document.getElementById("sub-tipo").value = data.data[0].SubTipo;
+                                    document.getElementById("areaProceso").value = data.data[0].AreaProceso;
+                                    document.getElementById("linea").value = data.data[0].AreaLinea;
+                                    document.getElementById("operacion").value = data.data[0].AreaOperacion;
+                                    document.getElementById("fcalibracion").value = data.data[0].FechaInspeccion;
+                                    document.getElementById("pcalibracion").value = data.data[0].FechaVencimiento;
+                                    document.getElementById("serie").value = data.data[0].NumSerie;
+                                    document.getElementById("parte").value = data.data[0].NumParte;
+                                    document.getElementById("resolucion").value = data.data[0].Resolucion;
+                                    document.getElementById("rango").value = data.data[0].RangoInstrumento;
+                                    document.getElementById("status").value = data.data[0].Status;
+                                    document.getElementById("observaciones").value = data.data[0].Observaciones;
+                                });
+                                consultaFoto(Equipo);
+                            }
+                            function consultaFoto(Equipo){
+                                $.getJSON('https://arketipo.mx/Metrologia/dao/daoConsultafoto.php?idreferencia='+Equipo, function (data) {
+                                    document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/"+data.data[0].IdImagen+".png";
+                                    document.getElementById("areaProceso").value = data.data[0].AreaProceso;
+                                    document.getElementById("linea").value = data.data[0].Linea;
+                                    document.getElementById("operacion").value = data.data[0].Operacion;
+                                });
+                            }
+
+                            function Reporte(){
+
+                                document.getElementById("carga").style.display="block";
+                                document.getElementById("contenidoReporte").style.display="none";
+
+                                var nomina;
+                                var Retiqueta;
+                                var Requipo;
+                                var Descripcion;
+                                var Referencia;
+
+                                nomina = document.getElementById("nomina").value;
+                                Retiqueta = document.getElementById("etiqueta").value;
+                                Requipo = document.getElementById("equipo").value;
+                                Descripcion = document.getElementById("descproblema").value;
+                                Referencia = document.getElementById("referencia").value;
+
+                                const data = new FormData();
+
+                                data.append('nomina',nomina);
+                                data.append('Retiqueta', Retiqueta);
+                                data.append('Requipo', Requipo);
+                                data.append('Descripcion', Descripcion);
+                                data.append('Referencia', Referencia);
+
+                                fetch('https://arketipo.mx//MailerMetrologia.php', {
+                                    method: 'POST',
+                                    body: data
+                                })
+                                    .then(function (response) {
+                                        if (response.ok) {
+                                            document.getElementById("cerrarModal").click();
+                                            document.getElementById("carga").style.display="none";
+                                            document.getElementById("contenidoReporte").style.display="block";
+                                            document.getElementById("nomina").value ="";
+                                        } else {
+                                            throw "Error";
+                                        }
+                                    })
+                                    .then(function (texto) {
+                                        console.log(texto);
+                                    })
+                                    .catch(function (err) {
+                                        console.log(err);
+                                    });
                             }
 
                         </script>

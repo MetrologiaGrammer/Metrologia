@@ -13,7 +13,7 @@ function Contador($tipoEquipo){
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT `IdEquipo` FROM `Equipos` WHERE `IdEquipo` LIKE '%$tipoEquipo%' ORDER BY `IdEquipo` desc LIMIT 1;");
+    $datos = mysqli_query($conex, "SELECT `IdEquipo` FROM `Equipo` WHERE `IdEquipo` LIKE '%$tipoEquipo%' ORDER BY `IdEquipo` desc LIMIT 1;");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 
