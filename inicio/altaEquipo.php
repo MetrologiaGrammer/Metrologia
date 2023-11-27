@@ -43,11 +43,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
         <div class="row gtr-uniform gtr-50">
 
-            <div class="col-12 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Seleccione imagen del equipo</label>
-                <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
-                       placeholder="IMAGEN"/>
-            </div>
+
 
 
             <div class="col-12 col-12-xsmall">
@@ -79,6 +75,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                         <option value="MNY">MNY-000 Master De Aluminio</option>
                     </select>
                 </div>
+            </div>
+            <div class="col-12 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Seleccione imagen del equipo</label>
+                <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
+                       placeholder="IMAGEN"/>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label  style="text-align: center">Id Referencia</label>
