@@ -27,7 +27,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         <h1><strong><?php echo $_SESSION["nomina"];?></strong>.</h1>
         <h1>Nombre</h1>
         <h1><strong>Adrian Aragon</strong>.</h1>
-        <h1>Area</h1>
+        <h1>Puesto</h1>
         <h1><strong>Metrologia</strong>.</h1>
     </div>
 </header>
