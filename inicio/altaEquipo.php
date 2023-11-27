@@ -182,19 +182,17 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">
-        <ul class="icons">
+        <center>
+            <ul class="icons">
 
-            <li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble"> INICIO<span class="label">Dribbble</span></a></li>
-            <li><a href="consultaEquipo.html" class="icon brands fa-dribbble"> CONSULTA DE EQUIPOS<span class="label">Dribbble</span></a></li>
-            <li><a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble"> ESTUDIOS<span class="label">Dribbble</span></a></li>
+                <li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble"> INICIO<span class="label">Dribbble</span></a></li>
+                <li><a href="consultaEquipo.html" class="icon brands fa-dribbble"> CONSULTA DE EQUIPOS<span class="label">Dribbble</span></a></li>
+                <li><a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble"> ESTUDIOS<span class="label">Dribbble</span></a></li>
 
-
-        </ul>
-        <ul class="copyright">
-            <li>&copy; Untitled</li>
-            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-        </ul>
+            </ul>
+        </center>
     </div>
+
 </footer>
 
 <!-- Scripts -->
