@@ -417,6 +417,66 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     }
 
 
+    function consuktararea(){
+        var area;
+        area=document.getElementById("proceso").value;
+
+        var selectOperacion = document.getElementById("operacion");
+        selectOperacion.innerHTML="";
+
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoareas.php?proceso='+area, function (data) {
+            var select = document.getElementById("linea");
+            select.innerHTML="";
+
+            var createOptionAux = document.createElement("option");
+            createOptionAux.text="Seleccione Linea";
+            createOptionAux.value="";
+            select.appendChild(createOptionAux);
+
+            for (var i = 0; i < data.data.length; i++) {
+
+                var createOption = document.createElement("option");
+                createOption.text=data.data[i].Linea;
+                createOption.value=data.data[i].Linea;
+                select.appendChild(createOption);
+
+            }
+        });
+    }
+
+    function consuktarOpEstacion(){
+        var area,proceso;
+        area=document.getElementById("linea").value;
+        proceso=document.getElementById("proceso").value;
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daooperacion.php?linea='+area+'&proceso='+proceso, function (data) {
+            var selectOperacion = document.getElementById("operacion");
+
+            selectOperacion.innerHTML="";
+            for (var i = 0; i < data.data.length; i++) {
+
+                var createOptionOperacion = document.createElement("option");
+                createOptionOperacion.text=data.data[i].OpEstacion;
+                createOptionOperacion.value=data.data[i].OpEstacion;
+                selectOperacion.appendChild(createOptionOperacion);
+
+            }
+        });
+    }
+
+    llenarProceso();
+    function llenarProceso() {
+
+
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
+            var select = document.getElementById("proceso");
+            for (var i = 0; i < data.data.length; i++) {
+                var createOption = document.createElement("option");
+                createOption.text=data.data[i].Proceso;
+                createOption.value=data.data[i].Proceso;
+                select.appendChild(createOption);
+            }
+        });
+    }
 
 
 
