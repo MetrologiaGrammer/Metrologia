@@ -356,7 +356,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         })
             .then(function (response) {
                 if (response.ok) {
-                    enviarCorreo(Nomina,AreaProceso,Linea,Operacion,IdEquipo,IdImagen)
+                    Reporte(Nomina,AreaProceso,Linea,Operacion,IdEquipo,IdImagen,foto)
                 } else {
                     throw "Error";
                 }
@@ -370,41 +370,24 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
     }
 
-    function Reporte(){
-
-        document.getElementById("carga").style.display="block";
-        document.getElementById("contenidoReporte").style.display="none";
-
-        var nomina;
-        var Retiqueta;
-        var Requipo;
-        var Descripcion;
-        var Referencia;
-
-        nomina = document.getElementById("nomina").value;
-        Retiqueta = document.getElementById("etiqueta").value;
-        Requipo = document.getElementById("equipo").value;
-        Descripcion = document.getElementById("descproblema").value;
-        Referencia = document.getElementById("referencia").value;
+    function Reporte(Nomina,AreaProceso,Linea,Operacion,IdEquipo,IdImagen){
 
         const data = new FormData();
 
-        data.append('nomina',nomina);
-        data.append('Retiqueta', Retiqueta);
-        data.append('Requipo', Requipo);
-        data.append('Descripcion', Descripcion);
-        data.append('Referencia', Referencia);
+        data.append('idequipo',IdEquipo);
+        data.append('nomina', Nomina);
+        data.append('Proceso', AreaProceso);
+        data.append('linea', Linea);
+        data.append('operacion', Operacion);
+        data.append('Idimagen', IdImagen);
 
-        fetch('https://arketipo.mx//MailerMetrologia.php', {
+        fetch('https://arketipo.mx/MailerMetrologiaAct.php', {
             method: 'POST',
             body: data
         })
             .then(function (response) {
                 if (response.ok) {
-                    document.getElementById("cerrarModal").click();
-                    document.getElementById("carga").style.display="none";
-                    document.getElementById("contenidoReporte").style.display="block";
-                    document.getElementById("nomina").value ="";
+                    alert("Concluido");
                 } else {
                     throw "Error";
                 }
