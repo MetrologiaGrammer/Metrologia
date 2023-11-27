@@ -180,6 +180,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                     <li><a href="#" class="button solid">Crear tipos y ubicaciones</a>
                 </ul>
             </div>
+            <div class="col-12 col-12-xsmall">
+                <ul class="actions stacked" style="text-align: center">
+                    <li><a href="#" class="button primary" onclick="enviarCorreo()">enviar correo</a>
+                    <li><a href="#" class="button solid">Crear tipos y ubicaciones</a>
+                </ul>
+            </div>
         </div>
     </section>
         </div>
@@ -352,7 +358,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
 
 
-
     function Ingreso() {
 
         var NOMINA;
@@ -440,6 +445,42 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             .catch(function (err) {
                 console.log(err);
             });
+
+
+        function enviarCorreo(areaProceso) {
+
+            const data = new FormData();
+
+            data.append('proceso', areaProceso);
+        <!--
+            data.append('linea', Linea);
+            data.append('operacion', Operacion);
+            data.append('idequipo', IdEquipo);
+            data.append('Idimagen', IdImagen);
+            data.append('comenterio', document.getElementById("comentario").value);-->
+
+            fetch('https://arketipo.mx//MailerMetrologiaAct.php', {
+                method: 'POST',
+                body: data
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                    } else {
+                        throw "Error";
+                    }
+                })
+                .then(function (texto) {
+                    console.log(texto);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+
+        }
+
+
+
+
 
 
     }
