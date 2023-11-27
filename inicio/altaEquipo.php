@@ -76,11 +76,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                     </select>
                 </div>
             </div>
-            <div class="col-12 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Seleccione imagen del equipo</label>
-                <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
-                       placeholder="IMAGEN"/>
-            </div>
+
             <div class="col-6 col-12-xsmall">
                 <label  style="text-align: center">Id Referencia</label>
                 <input type="text" name="demo-name" id="codigoAux" value="" placeholder="ID" disabled>
@@ -167,7 +163,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"/>
             </div>
             <div class="col-12 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Seleccione imagen del equipo</label>
+                <label for="referencia" style="text-align: center">Ingrese imagen del equipo</label>
+                <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
+                       placeholder="IMAGEN"/>
+            </div>
+            <div class="col-12 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese una foto de la ubicación</label>
                 <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
                        placeholder="IMAGEN"/>
             </div>
