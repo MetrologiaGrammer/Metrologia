@@ -117,7 +117,7 @@
 		<p></p>
 		<div class="col-6 col-12-xsmall">
 			<ul class="actions stacked" style="text-align: center">
-				<li><a href="#" class="button solid" onclick="">Crear tipos y ubicaciones</a>
+				<li><a class="button solid" onclick="mandar()">Crear tipos y ubicaciones</a>
 			</ul>
 		</div>
 
@@ -283,6 +283,10 @@
 		});
 		//consultaFoto(Equipo);
 
+	}
+
+	function mandar() {
+		window.location = "https://arketipo.mx/Metrologia/inicio/actualizarEquipo.html&ID="+document.getElementById("referen").value;
 	}
 
 	function Reporte(){
