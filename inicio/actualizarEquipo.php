@@ -326,11 +326,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         const min = 1;
         const max = 1000000;
         const randomNum = Math.floor(Math.random() * (max - min + 1) + min);
+        
         console.log(foto);
 
         Nomina = '<?php echo $_SESSION["nomina"];?>';
-        AreaProceso = document.getElementById("area").value;
-        Linea = document.getElementById("Linea").value;
+        AreaProceso = document.getElementById("procceso").value;
+        Linea = document.getElementById("linea").value;
         Operacion = document.getElementById("operacion").value;
         IdEquipo = document.getElementById("codigo").value;
 
