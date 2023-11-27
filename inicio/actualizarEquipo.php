@@ -1,9 +1,14 @@
 <!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<?php
+session_start();
+
+if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
+    echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=../login/index.html'>";
+    session_destroy();
+}else{
+    session_start();
+}
+?>
 <html>
 <head>
     <title>Strata by HTML5 UP</title>
@@ -44,14 +49,6 @@
 
 
         <div class="row gtr-uniform gtr-50">
-
-            <div class="col-12 col-12-xsmall">
-                <label  style="text-align: center">Ingrese referencia</label>
-                <input type="text" name="emo-id" id="referencia" value="" placeholder="ID"/>
-            </div>
-            <div class="col-12 col-12-xsmall">
-                <center><BUTTON onclick="Buscarequipo()" class="button primary"> Buscar Equipo</BUTTON></center>
-            </div>
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px;">Id Referencia</label>
                 <input type="text" name="demo-name" id="codigo" value="" placeholder="ID"disabled>
@@ -76,7 +73,6 @@
                 <label style="text-align: center;font-size: 18px">Operacion</label>
                 <input type="text" name="demo-name" id="Operacion" value="" placeholder="OPERACION"disabled>
             </div>
-
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Fecha de verificación</label>
                 <input type="text" name="demo-email" id="fechacalibracion" value="" placeholder="FECHA DE VERIFICACION"disabled>
@@ -115,76 +111,55 @@
             </div>
         </div>
         <p></p>
-        <div class="col-6 col-12-xsmall">
-            <ul class="actions stacked" style="text-align: center">
-                <li><a href="actualizarEquipo.php" class="button solid" onclick="">Crear tipos y ubicaciones</a>
-            </ul>
-        </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="exampleModalLabel">REPORTAR PROBLEMA</h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img id="carga" src="images/carga.gif" style="display: none">
-                        <div id="contenidoReporte">
-                            <H6>
-                                REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
-                                DESCRIBELO EN EL CUADRO.
-                            </H6>
-                            <hr>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >REFERENCIA</span>
-                                <input type="text" id="referen" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >NOMINA</span>
-                                <input type="text" id="nomina" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >REPORTE DE ETIQUETA</span>
-                                <select id="etiqueta" class="form-select" aria-label="Default select example">
-                                    <option selected value="N/A">Open this select menu</option>
-                                    <option value="ETIQUETA DAÑADA">ETIQUETA DAÑADA</option>
-                                    <option value="NO TIENE ETIQUETA">NO TIENE ETIQUETA</option>
-                                    <option value="NO SE LOGRA LEER EL QR">NO SE LOGRA LEER EL QR</option>
-                                </select>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >REPORTAR EQUIPO</span>
-                                <select id="equipo" class="form-select" aria-label="Default select example">
-                                    <option selected value="N/A">Open this select menu</option>
-                                    <option value="EQUIPO DAÑADO">EQUIPO DAÑADO</option>
-                                    <option value="CALIBRACION VENCIDA">CALIBRACION VENCIDA</option>
-                                    <option value="EQUIPO EXTRAVIADO">EQUIPO EXTRAVIADO</option>
-                                </select>
-                            </div>
-                            <p></p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
-                                <input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="cerrarModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onclick="">Enviar</button>
+        <div class="row gtr-uniform gtr-50">
 
-                    </div>
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Proceso</label>
+                <div class="col-12">
+                    <select name="demo-category" id="proceso" onchange="consuktararea()">
+                    </select>
                 </div>
             </div>
-        </div>
 
-        <p></p>
-        <div class="col-12 col-12-xsmall">
-            <ul class="actions stacked" style="text-align: center">
-                <li><a href="#" class="button solid" onclick="Reporte()">ENVIAR REPORTE</a>
-            </ul>
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese linea</label>
+                <div class="col-12">
+                    <select name="demo-category" id="linea" onchange="consuktarOpEstacion()">
+                        <option value="">- LINEA -</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese operacion</label>
+                <div class="col-12">
+                    <select name="demo-category" id="operacion">
+                        <option value="">- OPERACION -</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-12 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Comentarios</label>
+                <input type="email" name="demo-email" id="comentario" value="" placeholder="comentarios">
+            </div>
+
+            <div class="col-12 col-12-xsmall">
+                <P>¡FAVOR DE TOMAR FOTOS DE LA NUEVA UBICACION!</P>
+                <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <br><br>
+                <center><img style="display: none;" id="imagenPrevisualizacion" height="250px"></center>
+                <img src="" style="display: none;" id="new">
+                <img src="" style="display: none;" id="old">
+            </div>
+
+            <div class="col-12 col-12-xsmall">
+                <ul class="actions stacked" style="text-align: center">
+                    <li><a href="#" class="button primary" onclick="">Enviar</a>
+                </ul>
+            </div>
+
         </div>
 
     </section>
@@ -214,6 +189,7 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="lib/main.js"></script>
 
 <script>
     function getParameterByName(name) {
@@ -338,6 +314,107 @@
             });
     }
 
+
+    function ReporteActualizacion(foto){
+        var Nomina;
+        var AreaProceso;
+        var Linea;
+        var Operacion;
+        var IdEquipo;
+        var IdImagen;
+
+        const min = 1;
+        const max = 1000000;
+        const randomNum = Math.floor(Math.random() * (max - min + 1) + min);
+        console.log(foto);
+
+        Nomina = document.getElementById("nomina").value;
+        AreaProceso = document.getElementById("area").value;
+        Linea = document.getElementById("Linea").value;
+        Operacion = document.getElementById("operacion").value;
+        IdEquipo = document.getElementById("codigo").value;
+
+
+        IdImagen = randomNum+Nomina;
+
+
+
+        const data = new FormData();
+
+        data.append('nomina',Nomina);
+        data.append('Proceso', AreaProceso);
+        data.append('linea', Linea);
+        data.append('operacion', Operacion);
+        data.append('idequipo', IdEquipo);
+        data.append('imagen', foto);
+        data.append('Idimagen', IdImagen);
+
+        fetch('dao/daoActualizacion.php', {
+            method: 'POST',
+            body: data
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    enviarCorreo(Nomina,AreaProceso,Linea,Operacion,IdEquipo,IdImagen)
+                } else {
+                    throw "Error";
+                }
+            })
+            .then(function (texto) {
+                console.log(texto);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+    }
+
+    function Reporte(){
+
+        document.getElementById("carga").style.display="block";
+        document.getElementById("contenidoReporte").style.display="none";
+
+        var nomina;
+        var Retiqueta;
+        var Requipo;
+        var Descripcion;
+        var Referencia;
+
+        nomina = document.getElementById("nomina").value;
+        Retiqueta = document.getElementById("etiqueta").value;
+        Requipo = document.getElementById("equipo").value;
+        Descripcion = document.getElementById("descproblema").value;
+        Referencia = document.getElementById("referencia").value;
+
+        const data = new FormData();
+
+        data.append('nomina',nomina);
+        data.append('Retiqueta', Retiqueta);
+        data.append('Requipo', Requipo);
+        data.append('Descripcion', Descripcion);
+        data.append('Referencia', Referencia);
+
+        fetch('https://arketipo.mx//MailerMetrologia.php', {
+            method: 'POST',
+            body: data
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    document.getElementById("cerrarModal").click();
+                    document.getElementById("carga").style.display="none";
+                    document.getElementById("contenidoReporte").style.display="block";
+                    document.getElementById("nomina").value ="";
+                } else {
+                    throw "Error";
+                }
+            })
+            .then(function (texto) {
+                console.log(texto);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
 
 
 
