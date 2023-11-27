@@ -63,15 +63,15 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             </div>
             <div class="col-6 col-12-xsmall">
                 <label  style="text-align: center;font-size: 18px;">Proceso</label>
-                <input type="text" name="demo-name" id="proceso" value="" placeholder="PROCESO"disabled>
+                <input type="text" name="demo-name" id="procesoA" value="" placeholder="PROCESO"disabled>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label  style="text-align: center;font-size: 18px">Linea</label>
-                <input type="text" name="demo-name" id="linea" value="" placeholder="LINEA"disabled>
+                <input type="text" name="demo-name" id="lineaA" value="" placeholder="LINEA"disabled>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Operacion</label>
-                <input type="text" name="demo-name" id="Operacion" value="" placeholder="OPERACION"disabled>
+                <input type="text" name="demo-name" id="OperacionA" value="" placeholder="OPERACION"disabled>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Fecha de verificación</label>
@@ -465,8 +465,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
     llenarProceso();
     function llenarProceso() {
-
-
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
             var select = document.getElementById("proceso");
             for (var i = 0; i < data.data.length; i++) {
