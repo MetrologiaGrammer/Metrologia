@@ -118,6 +118,68 @@
 				<li><a href="#" class="button solid" onclick="Reporte()">Crear tipos y ubicaciones</a>
 			</ul>
 		</div>
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">REPORTAR PROBLEMA</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<img id="carga" src="images/carga.gif" style="display: none">
+						<div id="contenidoReporte">
+							<H6>
+								REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
+								DESCRIBELO EN EL CUADRO.
+							</H6>
+							<hr>
+							<div class="input-group mb-3">
+								<span class="input-group-text" >REFERENCIA</span>
+								<input type="text" id="referen" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+							</div>
+							<div class="input-group mb-3">
+								<span class="input-group-text" >NOMINA</span>
+								<input type="text" id="nomina" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+							</div>
+							<p></p>
+							<div class="input-group mb-3">
+								<span class="input-group-text" >REPORTE DE ETIQUETA</span>
+								<select id="etiqueta" class="form-select" aria-label="Default select example">
+									<option selected value="N/A">Open this select menu</option>
+									<option value="ETIQUETA DAÑADA">ETIQUETA DAÑADA</option>
+									<option value="NO TIENE ETIQUETA">NO TIENE ETIQUETA</option>
+									<option value="NO SE LOGRA LEER EL QR">NO SE LOGRA LEER EL QR</option>
+								</select>
+							</div>
+							<p></p>
+							<div class="input-group mb-3">
+								<span class="input-group-text" >REPORTAR EQUIPO</span>
+								<select id="equipo" class="form-select" aria-label="Default select example">
+									<option selected value="N/A">Open this select menu</option>
+									<option value="EQUIPO DAÑADO">EQUIPO DAÑADO</option>
+									<option value="CALIBRACION VENCIDA">CALIBRACION VENCIDA</option>
+									<option value="EQUIPO EXTRAVIADO">EQUIPO EXTRAVIADO</option>
+								</select>
+							</div>
+							<p></p>
+							<div class="input-group mb-3">
+								<span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+								<input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button id="cerrarModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" onclick="Reporte()">Enviar</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
 	</section>
 </div>
 </section>
