@@ -180,13 +180,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                     <li><a href="#" class="button solid" onclick="Reporte()">Crear tipos y ubicaciones</a>
                 </ul>
             </div>
-            <div class="col-12 col-12-xsmall">
-                <ul class="actions stacked" style="text-align: center">
-                    <li><a href="#" class="button primary" onclick="enviarCorreo()">enviar correo</a>
-                    <li><a href="#" class="button solid">Crear tipos y ubicaciones</a>
-                </ul>
-            </div>
-        </div>
+
     </section>
         </div>
     </section>
