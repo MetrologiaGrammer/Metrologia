@@ -230,6 +230,11 @@
 
     function buscarQR(id) {
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
+            if (data.data[0].Tipo == "ESCALA"){
+                document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
+            }else{
+                document.getElementById("imagenEquipo").src = "images/"+data.data[0].IdEquipo+".jpg"
+            }
             document.getElementById("codigo").value = data.data[0].IdEquipo;
             document.getElementById("tipo").value = data.data[0].Tipo;
             document.getElementById("subtipo").value = data.data[0].SubTipo;
