@@ -444,8 +444,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
         function Reporte(){
 
-          //  document.getElementById("carga").style.display="block";
-           // document.getElementById("contenidoReporte").style.display="none";
+            document.getElementById("carga").style.display="block";
+            document.getElementById("contenidoReporte").style.display="none";
 
             var nomina;
             var Retiqueta;
