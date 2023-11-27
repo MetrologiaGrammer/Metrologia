@@ -23,12 +23,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 <header id="header">
     <div class="inner">
         <img src="images/nominas/<?php echo $_SESSION["nomina"];?>.jpg" alt="" style="width: 30%"/>
-        <h1>Nomina</h1>
+        <h1>Nómina</h1>
         <h1><strong><?php echo $_SESSION["nomina"];?></strong>.</h1>
         <h1>Nombre</h1>
-        <h1><strong>Adrian Aragon</strong>.</h1>
-        <h1>Puesto</h1>
-        <h1><strong>Metrologia</strong>.</h1>
+        <h1><strong id="nombre"></strong>.</h1>
+        <h1>Área</h1>
+        <h1><strong id="area"></strong>.</h1>
     </div>
 </header>
 
@@ -311,6 +311,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         });
         llenarTipo();
     }
+
+    var nominaAux = '<?php echo $_SESSION["nomina"];?>'
+    $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoUsuario.php?nomina='+nominaAux, function (data) {
+            document.getElementById("nombre").innerHTML=data.data[0].Nombre;
+            document.getElementById("area").innerHTML=data.data[0].Area;
+    });
 
     function llenarTipo(){
         var tipoEquipo;
