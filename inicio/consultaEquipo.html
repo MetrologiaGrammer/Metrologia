@@ -125,7 +125,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">REPORTAR PROBLEMA</h5>
+						<h2 class="modal-title" id="exampleModalLabel">REPORTAR PROBLEMA</h2>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
@@ -250,6 +250,7 @@
 
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+Equipo, function (data) {
 			document.getElementById("codigo").value = data.data[0].IdEquipo;
+			document.getElementById("referent").value = data.data[0].IdEquipo;
 			document.getElementById("tipo").value = data.data[0].Tipo;
 
 
@@ -276,6 +277,7 @@
 
 		});
 		//consultaFoto(Equipo);
+
 	}
 
 	function Reporte(){
