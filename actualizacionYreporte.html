@@ -293,24 +293,41 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 	}
 
-	function enviarCorreo(nomina,areaProceso,Linea,Operacion,IdEquipo,IdImagen) {
+	function Reporte(){
+
+		document.getElementById("carga").style.display="block";
+		document.getElementById("contenidoReporte").style.display="none";
+
+		var nomina;
+		var Retiqueta;
+		var Requipo;
+		var Descripcion;
+		var Referencia;
+
+		nomina = document.getElementById("nomina").value;
+		Retiqueta = document.getElementById("etiqueta").value;
+		Requipo = document.getElementById("equipo").value;
+		Descripcion = document.getElementById("descproblema").value;
+		Referencia = document.getElementById("referencia").value;
 
 		const data = new FormData();
 
 		data.append('nomina',nomina);
-		data.append('Proceso', areaProceso);
-		data.append('linea', Linea);
-		data.append('operacion', Operacion);
-		data.append('idequipo', IdEquipo);
-		data.append('Idimagen', IdImagen);
-		data.append('comenterio', document.getElementById("comentario").value);
+		data.append('Retiqueta', Retiqueta);
+		data.append('Requipo', Requipo);
+		data.append('Descripcion', Descripcion);
+		data.append('Referencia', Referencia);
 
-		fetch('https://arketipo.mx//MailerMetrologiaAct.php', {
+		fetch('https://arketipo.mx//MailerMetrologia.php', {
 			method: 'POST',
 			body: data
 		})
 				.then(function (response) {
 					if (response.ok) {
+						document.getElementById("cerrarModal").click();
+						document.getElementById("carga").style.display="none";
+						document.getElementById("contenidoReporte").style.display="block";
+						document.getElementById("nomina").value ="";
 					} else {
 						throw "Error";
 					}
@@ -321,7 +338,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				.catch(function (err) {
 					console.log(err);
 				});
-
 	}
 
 </script>

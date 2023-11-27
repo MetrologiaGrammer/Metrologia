@@ -177,7 +177,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             <div class="col-12 col-12-xsmall">
                 <ul class="actions stacked" style="text-align: center">
                     <li><a href="#" class="button primary" onclick="Ingreso()">Ingresar Nuevo Registro</a>
-                    <li><a href="#" class="button solid">Crear tipos y ubicaciones</a>
+                    <li><a href="#" class="button solid" onclick="Reporte()">Crear tipos y ubicaciones</a>
                 </ul>
             </div>
             <div class="col-12 col-12-xsmall">
@@ -447,24 +447,42 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             });
 
 
-        function enviarCorreo(areaProceso) {
+
+        function Reporte(){
+
+            document.getElementById("carga").style.display="block";
+            document.getElementById("contenidoReporte").style.display="none";
+
+            var nomina;
+            var Retiqueta;
+            var Requipo;
+            var Descripcion;
+            var Referencia;
+
+            nomina = document.getElementById("tipo").value;
+            Retiqueta = document.getElementById("subtipo").value;
+            Requipo = document.getElementById("area").value;
+            Descripcion = document.getElementById("operacion").value;
+            Referencia = document.getElementById("frecuencia").value;
 
             const data = new FormData();
 
-            data.append('proceso', areaProceso);
-        <!--
-            data.append('linea', Linea);
-            data.append('operacion', Operacion);
-            data.append('idequipo', IdEquipo);
-            data.append('Idimagen', IdImagen);
-            data.append('comenterio', document.getElementById("comentario").value);-->
+            data.append('nomina',nomina);
+            data.append('Retiqueta', Retiqueta);
+            data.append('Requipo', Requipo);
+            data.append('Descripcion', Descripcion);
+            data.append('Referencia', Referencia);
 
-            fetch('https://arketipo.mx//MailerMetrologiaAct.php', {
+            fetch('https://arketipo.mx//MailerMetrologia.php', {
                 method: 'POST',
                 body: data
             })
                 .then(function (response) {
                     if (response.ok) {
+                        document.getElementById("cerrarModal").click();
+                        document.getElementById("carga").style.display="none";
+                        document.getElementById("contenidoReporte").style.display="block";
+                        document.getElementById("nomina").value ="";
                     } else {
                         throw "Error";
                     }
@@ -475,10 +493,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 .catch(function (err) {
                     console.log(err);
                 });
-
         }
-
-
 
 
 
