@@ -44,6 +44,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         <div class="row gtr-uniform gtr-50">
 
             <div class="col-12 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Seleccione imagen del equipo</label>
+                <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
+                       placeholder="IMAGEN"/>
+            </div>
+
+
+            <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese referencia</label>
                 <div class="col-12">
                     <select name="demo-category" id="referencia" onchange="buscarId()">
@@ -159,7 +166,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"/>
             </div>
             <div class="col-12 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Seleccione imagen</label>
+                <label for="referencia" style="text-align: center">Seleccione imagen del equipo</label>
                 <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
                        placeholder="IMAGEN"/>
             </div>
