@@ -45,7 +45,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     <!-- One -->
     <section id="one">
         <header class="major">
-            <h1 class="display-4" style="text-align: center">Actualización de ubicacion</h1>
+            <h1 class="display-4" style="text-align: center; color: #787878">Actualización de ubicacion</h1>
         </header>
 
 
@@ -75,22 +75,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Operacion</label>
                 <input type="text" name="demo-name" id="OperacionA" value="" placeholder="OPERACION" disabled>
             </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Fecha de verificación</label>
-                <input type="text" name="demo-email" id="fechacalibracion" value="" placeholder="FECHA DE VERIFICACION"
-                       disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Prox. fecha de verificación</label>
-                <input type="text" name="demo-email" id="fechavencida" value=""
-                       placeholder="PROX. FECHA DE VERIFICACION" disabled>
-            </div>
-
         </div>
+
         <p></p>
         <br>
         <hr>
         <br>
+
         <div class="row gtr-uniform gtr-50">
 
             <div class="col-6 col-12-xsmall">
@@ -120,6 +111,15 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 </div>
             </div>
 
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese nuevas ubicaciones</label>
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Ingresar
+                    </button>
+                </div>
+            </div>
+
             <div class="col-12 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Comentarios</label>
                 <input type="email" name="demo-email" id="comentario" value="" placeholder="comentarios">
@@ -140,11 +140,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <ul class="actions stacked" style="text-align: center">
                     <li><a href="#" class="button primary" onclick="test()">Enviar</a>
                 </ul>
-
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Launch demo modal
-                </button>
             </div>
 
         </div>
@@ -165,22 +160,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         INICIO<span class="label">Dribbble</span></a></li>
                 <br>
                 <li>
-                    <EQUIPOS></EQUIPOS>
                     <a href="consultaEquipo.html" class="icon brands fa-dribbble"> CONSULTAR EQUIPOS <span
                                 class="label">Dribbble</span></a></li>
                 <br>
                 <li>
-                    <EQUIPOS></EQUIPOS>
                     <a href="altaEquipo.php" class="icon brands fa-dribbble"> INGRESAR EQUIPOS<span class="label">Dribbble</span></a>
                 </li>
                 <br>
                 <li>
-                    <EQUIPOS></EQUIPOS>
-                    <a href="altaEquipo.php" class="icon brands fa-dribbble"> INGRESAR EQUIPOS<span class="label">Dribbble</span></a>
-                </li>
-                <br>
-                <li>
-                    <EQUIPOS></EQUIPOS>
                     <a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble"> ESTUDIOS Y
                         CERTIFICADOS<span class="label">Dribbble</span></a></li>
                 <br>
