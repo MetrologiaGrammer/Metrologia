@@ -115,6 +115,16 @@ function getBase64Image(img) {
     ReporteActualizacion(dataURL);
 }
 
+function getBase64ImageAlta(img) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    var dataURL = canvas.toDataURL();
+    Ingreso(dataURL);
+}
+
 
 function calc_image_size(image) {
     let y = 1;
@@ -128,4 +138,8 @@ function calc_image_size(image) {
 
 function test() {
     getBase64Image(document.getElementById("new"));
+}
+
+function testAlta() {
+    getBase64ImageAlta(document.getElementById("new"));
 }

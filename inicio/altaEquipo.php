@@ -135,7 +135,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Resolucion</label>
-                <input type="number" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"/>
+                <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"/>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Rango</label>
@@ -164,13 +164,18 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             </div>
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese imagen del equipo</label>
-                <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
-                       placeholder="IMAGEN"/>
+                <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"
+                       class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default">
+                <br><br>
+                <center><img style="display: none;" id="imagenPrevisualizacion" height="250px"></center>
+                <img src="" style="display: none;" id="new">
+                <img src="" style="display: none;" id="old">
             </div>
 
             <div class="col-12 col-12-xsmall">
                 <ul class="actions stacked" style="text-align: center">
-                    <li><a href="#" class="button primary" onclick="Ingreso()">Ingresar Nuevo Registro</a>
+                    <li><a href="#" class="button primary" onclick="testAlta()">Ingresar Nuevo Registro</a>
                 </ul>
             </div>
 
@@ -204,6 +209,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="lib/main.js"></script>
 
 <script>
 
@@ -351,7 +357,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
 
 
-    function Ingreso() {
+    function Ingreso(foto) {
 
         var NOMINA;
         var NOMBRE;
