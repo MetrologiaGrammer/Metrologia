@@ -81,8 +81,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         <br>
         <hr>
         <br>
+        <div id="cargando" style="display: none">
+            <center><img src="images/CARGANDO.gif"></center>
+        </div>
 
-        <div class="row gtr-uniform gtr-50">
+        <div class="row gtr-uniform gtr-50" id="seccionUbi">
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Proceso</label>
@@ -242,6 +245,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         })
             .then(function (response) {
                 if (response.ok) {
+                    document.getElementById("cargando").style.display = 'block';
+                    document.getElementById("seccionUbi").style.display = 'none';
                     var selectOperacion = document.getElementById("operacion");
                     selectOperacion.innerHTML = "";
                     var select = document.getElementById("linea");
