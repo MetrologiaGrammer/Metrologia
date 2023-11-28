@@ -176,7 +176,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         <center>
             <ul class="icons">
                 <li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble">	INICIO<span class="label">Dribbble</span></a></li><br>
-                <li><EQUIPOS></EQUIPOS><a href="consultaEquipo.html" class="icon brands fa-dribbble">	CONSULTAR EQUIPOS<span class="label">Dribbble</span></a></li><br>
+                <li><EQUIPOS></EQUIPOS><a href="consultaEquipo.html" class="icon brands fa-dribbble">	CONSULTAR EQUIPOS <span class="label">Dribbble</span></a></li><br>
                 <li><EQUIPOS></EQUIPOS><a href="altaEquipo.php" class="icon brands fa-dribbble">	INGRESAR EQUIPOS<span class="label">Dribbble</span></a></li><br>
                 <li><EQUIPOS></EQUIPOS><a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble">	ESTUDIOS Y CERTIFICADOS<span class="label">Dribbble</span></a></li><br>
             </ul>
