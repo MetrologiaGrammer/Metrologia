@@ -11,7 +11,7 @@ function Contador(){
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT `IdEquipo`,`Tipo`,`AreaProceso`,`AreaOperacion`,`FechaInspeccion`,`FechaVencimiento`,CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/consultaEquipo.html?ID=',`IdEquipo`,'\" class=\"btn btn-primary\">ENTRAR</a>') AS boton FROM `Equipo` WHERE 1;");
+    $datos = mysqli_query($conex, "SELECT `IdEquipo`,`Tipo`,`AreaProceso`,`AreaOperacion`,`FechaInspeccion`,`FechaVencimiento`,CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/index.html?ID=',`IdEquipo`,'\" class=\"btn btn-primary\">ENTRAR</a>') AS boton FROM `Equipo` WHERE 1;");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 
