@@ -91,7 +91,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="referencia" style="text-align: center">Proceso</label>
                 <div class="col-12">
                     <select name="demo-category" id="proceso" onchange="consuktararea()">
-                        <option value="">- OTRO -</option>
+                        <option value="">- PROCESO - </option>
                     </select>
                 </div>
             </div>
@@ -100,7 +100,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="referencia" style="text-align: center">Ingrese linea</label>
                 <div class="col-12">
                     <select name="demo-category" id="linea" onchange="consuktarOpEstacion()">
-                        <option value="">- OTRO -</option>
+                        <option value="">- LINEA -</option>
                     </select>
                 </div>
             </div>
@@ -109,7 +109,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="referencia" style="text-align: center">Ingrese operacion</label>
                 <div class="col-12">
                     <select name="demo-category" id="operacion">
-                        <option value="">- OTRO -</option>
+                        <option value="">- OPERACIÓN -</option>
                     </select>
                 </div>
             </div>
@@ -141,7 +141,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             <div class="col-12 col-12-xsmall">
                 <ul class="actions stacked" style="text-align: center">
-                    <li><a href="#" class="button primary" onclick="test()">Enviar</a>
+                    <li><a href="" class="button primary" onclick="test()">Enviar</a>
                 </ul>
             </div>
 
