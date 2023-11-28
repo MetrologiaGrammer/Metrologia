@@ -242,6 +242,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         })
             .then(function (response) {
                 if (response.ok) {
+                    var selectOperacion = document.getElementById("operacion");
+                    selectOperacion.innerHTML = "";
+                    var select = document.getElementById("linea");
+                    select.innerHTML = "";
                     document.getElementById("cerrarModal").click();
                     llenarProceso();
                 } else {
