@@ -519,6 +519,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     function llenarProceso() {
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
             var select = document.getElementById("proceso");
+            select.innerHTML = "";
             for (var i = 0; i < data.data.length; i++) {
                 var createOption = document.createElement("option");
                 createOption.text = data.data[i].Proceso;
