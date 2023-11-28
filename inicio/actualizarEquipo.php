@@ -118,6 +118,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 <label for="referencia" style="text-align: center">Proceso</label>
                 <div class="col-12">
                     <select name="demo-category" id="proceso" onchange="consuktararea()">
+                        <option value="">- OTRO -</option>
                     </select>
                 </div>
             </div>
@@ -126,7 +127,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 <label for="referencia" style="text-align: center">Ingrese linea</label>
                 <div class="col-12">
                     <select name="demo-category" id="linea" onchange="consuktarOpEstacion()">
-                        <option value="">- LINEA -</option>
+                        <option value="">- OTRO -</option>
                     </select>
                 </div>
             </div>
@@ -135,7 +136,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 <label for="referencia" style="text-align: center">Ingrese operacion</label>
                 <div class="col-12">
                     <select name="demo-category" id="operacion">
-                        <option value="">- OPERACION -</option>
+                        <option value="">- OTRO -</option>
                     </select>
                 </div>
             </div>
