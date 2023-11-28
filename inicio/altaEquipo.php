@@ -167,17 +167,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
                        placeholder="IMAGEN"/>
             </div>
-            <div class="col-12 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Ingrese una foto de la ubicación</label>
-                <input style="text-align: center" type="file" name="demo-email" id="imagen" value=""
-                       placeholder="IMAGEN"/>
-            </div>
-
 
             <div class="col-12 col-12-xsmall">
                 <ul class="actions stacked" style="text-align: center">
                     <li><a href="#" class="button primary" onclick="Ingreso()">Ingresar Nuevo Registro</a>
-                    <li><a href="#" class="button solid" onclick="Reporte()">Crear tipos y ubicaciones</a>
                 </ul>
             </div>
 
