@@ -188,20 +188,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">Proceso:</label>
-                    <input type="text" class="form-control" id="recipient-name">
+                    <input type="text" class="form-control" id="procesonew">
                 </div>
                 <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">Linea:</label>
-                    <input type="text" class="form-control" id="recipient-name">
+                    <input type="text" class="form-control" id="lineanew">
                 </div>
                 <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">Operación:</label>
-                    <input type="text" class="form-control" id="recipient-name">
+                    <input type="text" class="form-control" id="operacionnew">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" id="cerrarModal" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="insetarUbicacion()">Enviar ubicacion</button>
             </div>
         </div>
     </div>
@@ -220,6 +220,45 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         crossorigin="anonymous"></script>
 
 <script>
+
+    function insetarUbicacion() {
+        var PROCESO;
+        var LINEA;
+        var OPERACION;
+
+        PROCESO = document.getElementById("procesonew").value;
+        LINEA = document.getElementById("lineanew").value;
+        OPERACION = document.getElementById("operacionnew").value;
+
+        const data = new FormData();
+
+        data.append('Proceso', PROCESO);
+        data.append('Linea', LINEA);
+        data.append('Operacion', OPERACION);
+
+        fetch('dao/daoingresoarea.php', {
+            method: 'POST',
+            body: data
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    document.getElementById("cerrarModal").click();
+                } else {
+                    throw "Error";
+                }
+            })
+            .then(function (texto) {
+                console.log(texto);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+
+    }
+
+
+
     function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
