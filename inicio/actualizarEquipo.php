@@ -2,10 +2,10 @@
 <?php
 session_start();
 
-if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
+if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=../login/index.html'>";
     session_destroy();
-}else{
+} else {
     session_start();
 }
 ?>
@@ -15,7 +15,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body class="is-preload">
 
@@ -25,7 +26,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
     <div class="inner">
 
-        <center><img id="imagenEquipo" alt="" class="aln-center" /></center>
+        <center><img id="imagenEquipo" alt="" class="aln-center"/></center>
 
         <!--
         <h1>Nomina</h1>
@@ -48,44 +49,48 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         </header>
 
 
-<br><br>
+        <br><br>
         <div class="row gtr-uniform gtr-50">
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px;">Id Referencia</label>
-                <input type="text" name="demo-name" id="codigo" value="" placeholder="ID"disabled>
+                <input type="text" name="demo-name" id="codigo" value="" placeholder="ID" disabled>
             </div>
             <div class="col-6 col-12-xsmall">
-                <label  style="text-align: center;font-size: 18px;">Tipo</label>
-                <input type="text" name="demo-name" id="tipo" value="" placeholder="TIPO"disabled>
+                <label style="text-align: center;font-size: 18px;">Tipo</label>
+                <input type="text" name="demo-name" id="tipo" value="" placeholder="TIPO" disabled>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px;">Subtipo</label>
-                <input type="text" name="demo-name" id="subtipo" value="" placeholder="SUB TIPO"disabled>
+                <input type="text" name="demo-name" id="subtipo" value="" placeholder="SUB TIPO" disabled>
             </div>
             <div class="col-6 col-12-xsmall">
-                <label  style="text-align: center;font-size: 18px;">Proceso</label>
-                <input type="text" name="demo-name" id="procesoA" value="" placeholder="PROCESO"disabled>
+                <label style="text-align: center;font-size: 18px;">Proceso</label>
+                <input type="text" name="demo-name" id="procesoA" value="" placeholder="PROCESO" disabled>
             </div>
             <div class="col-6 col-12-xsmall">
-                <label  style="text-align: center;font-size: 18px">Linea</label>
-                <input type="text" name="demo-name" id="lineaA" value="" placeholder="LINEA"disabled>
+                <label style="text-align: center;font-size: 18px">Linea</label>
+                <input type="text" name="demo-name" id="lineaA" value="" placeholder="LINEA" disabled>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Operacion</label>
-                <input type="text" name="demo-name" id="OperacionA" value="" placeholder="OPERACION"disabled>
+                <input type="text" name="demo-name" id="OperacionA" value="" placeholder="OPERACION" disabled>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Fecha de verificación</label>
-                <input type="text" name="demo-email" id="fechacalibracion" value="" placeholder="FECHA DE VERIFICACION"disabled>
+                <input type="text" name="demo-email" id="fechacalibracion" value="" placeholder="FECHA DE VERIFICACION"
+                       disabled>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Prox. fecha de verificación</label>
-                <input type="text" name="demo-email" id="fechavencida" value="" placeholder="PROX. FECHA DE VERIFICACION"disabled>
+                <input type="text" name="demo-email" id="fechavencida" value=""
+                       placeholder="PROX. FECHA DE VERIFICACION" disabled>
             </div>
 
         </div>
         <p></p>
-<hr>
+        <br>
+        <hr>
+        <br>
         <div class="row gtr-uniform gtr-50">
 
             <div class="col-6 col-12-xsmall">
@@ -122,7 +127,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
             <div class="col-12 col-12-xsmall">
                 <P>¡FAVOR DE TOMAR FOTOS DE LA NUEVA UBICACION!</P>
-                <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"
+                       class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default">
                 <br><br>
                 <center><img style="display: none;" id="imagenPrevisualizacion" height="250px"></center>
                 <img src="" style="display: none;" id="new">
@@ -154,11 +161,29 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     <div class="inner">
         <center>
             <ul class="icons">
-                <li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble">	INICIO<span class="label">Dribbble</span></a></li><br>
-                <li><EQUIPOS></EQUIPOS><a href="consultaEquipo.html" class="icon brands fa-dribbble">	CONSULTAR EQUIPOS <span class="label">Dribbble</span></a></li><br>
-                <li><EQUIPOS></EQUIPOS><a href="altaEquipo.php" class="icon brands fa-dribbble">	INGRESAR EQUIPOS<span class="label">Dribbble</span></a></li><br>
-                <li><EQUIPOS></EQUIPOS><a href="altaEquipo.php" class="icon brands fa-dribbble">	INGRESAR EQUIPOS<span class="label">Dribbble</span></a></li><br>
-                <li><EQUIPOS></EQUIPOS><a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble">	ESTUDIOS Y CERTIFICADOS<span class="label">Dribbble</span></a></li><br>
+                <li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble">
+                        INICIO<span class="label">Dribbble</span></a></li>
+                <br>
+                <li>
+                    <EQUIPOS></EQUIPOS>
+                    <a href="consultaEquipo.html" class="icon brands fa-dribbble"> CONSULTAR EQUIPOS <span
+                                class="label">Dribbble</span></a></li>
+                <br>
+                <li>
+                    <EQUIPOS></EQUIPOS>
+                    <a href="altaEquipo.php" class="icon brands fa-dribbble"> INGRESAR EQUIPOS<span class="label">Dribbble</span></a>
+                </li>
+                <br>
+                <li>
+                    <EQUIPOS></EQUIPOS>
+                    <a href="altaEquipo.php" class="icon brands fa-dribbble"> INGRESAR EQUIPOS<span class="label">Dribbble</span></a>
+                </li>
+                <br>
+                <li>
+                    <EQUIPOS></EQUIPOS>
+                    <a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble"> ESTUDIOS Y
+                        CERTIFICADOS<span class="label">Dribbble</span></a></li>
+                <br>
             </ul>
         </center>
     </div>
@@ -192,7 +217,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="lib/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
 <script>
     function getParameterByName(name) {
@@ -208,11 +235,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     buscarQR(getParameterByName("ID"));
 
     function buscarQR(id) {
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
-            if (data.data[0].Tipo == "ESCALA"){
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + id, function (data) {
+            if (data.data[0].Tipo == "ESCALA") {
                 document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
-            }else{
-                document.getElementById("imagenEquipo").src = "images/"+data.data[0].IdEquipo+".jpg"
+            } else {
+                document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
             }
             document.getElementById("codigo").value = data.data[0].IdEquipo;
             document.getElementById("tipo").value = data.data[0].Tipo;
@@ -233,20 +260,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     }
 
 
-    function Buscarequipo(){
+    function Buscarequipo() {
         var Equipo;
-        Equipo=document.getElementById("referencia").value;
+        Equipo = document.getElementById("referencia").value;
 
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+Equipo, function (data) {
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo, function (data) {
             document.getElementById("codigo").value = data.data[0].IdEquipo;
             document.getElementById("referen").value = data.data[0].IdEquipo;
             document.getElementById("tipo").value = data.data[0].Tipo;
 
 
-            if (data.data[0].Tipo == "ESCALA"){
+            if (data.data[0].Tipo == "ESCALA") {
                 document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
-            }else{
-                document.getElementById("imagenEquipo").src = "images/"+data.data[0].IdEquipo+".jpg"
+            } else {
+                document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
             }
 
 
@@ -269,10 +296,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
     }
 
-    function Reporte(){
+    function Reporte() {
 
-        document.getElementById("carga").style.display="block";
-        document.getElementById("contenidoReporte").style.display="none";
+        document.getElementById("carga").style.display = "block";
+        document.getElementById("contenidoReporte").style.display = "none";
 
         var nomina;
         var Retiqueta;
@@ -289,7 +316,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
         const data = new FormData();
 
-        data.append('nomina',nomina);
+        data.append('nomina', nomina);
         data.append('Retiqueta', Retiqueta);
         data.append('Requipo', Requipo);
         data.append('Descripcion', Descripcion);
@@ -302,9 +329,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             .then(function (response) {
                 if (response.ok) {
                     document.getElementById("cerrarModal").click();
-                    document.getElementById("carga").style.display="none";
-                    document.getElementById("contenidoReporte").style.display="block";
-                    document.getElementById("nomina").value ="";
+                    document.getElementById("carga").style.display = "none";
+                    document.getElementById("contenidoReporte").style.display = "block";
+                    document.getElementById("nomina").value = "";
                 } else {
                     throw "Error";
                 }
@@ -318,7 +345,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     }
 
 
-    function ReporteActualizacion(foto){
+    function ReporteActualizacion(foto) {
         var Nomina;
         var AreaProceso;
         var Linea;
@@ -339,13 +366,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         IdEquipo = document.getElementById("codigo").value;
 
 
-        IdImagen = randomNum+Nomina;
-
+        IdImagen = randomNum + Nomina;
 
 
         const data = new FormData();
 
-        data.append('nomina',Nomina);
+        data.append('nomina', Nomina);
         data.append('Proceso', AreaProceso);
         data.append('linea', Linea);
         data.append('operacion', Operacion);
@@ -359,7 +385,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         })
             .then(function (response) {
                 if (response.ok) {
-                    Reporte(Nomina,AreaProceso,Linea,Operacion,IdEquipo,IdImagen,foto)
+                    Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, foto)
                 } else {
                     throw "Error";
                 }
@@ -373,11 +399,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
     }
 
-    function Reporte(Nomina,AreaProceso,Linea,Operacion,IdEquipo,IdImagen){
+    function Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen) {
 
         const data = new FormData();
 
-        data.append('idequipo',IdEquipo);
+        data.append('idequipo', IdEquipo);
         data.append('nomina', Nomina);
         data.append('Proceso', AreaProceso);
         data.append('linea', Linea);
@@ -404,46 +430,46 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     }
 
 
-    function consuktararea(){
+    function consuktararea() {
         var area;
-        area=document.getElementById("proceso").value;
+        area = document.getElementById("proceso").value;
 
         var selectOperacion = document.getElementById("operacion");
-        selectOperacion.innerHTML="";
+        selectOperacion.innerHTML = "";
 
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoareas.php?proceso='+area, function (data) {
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoareas.php?proceso=' + area, function (data) {
             var select = document.getElementById("linea");
-            select.innerHTML="";
+            select.innerHTML = "";
 
             var createOptionAux = document.createElement("option");
-            createOptionAux.text="Seleccione Linea";
-            createOptionAux.value="";
+            createOptionAux.text = "Seleccione Linea";
+            createOptionAux.value = "";
             select.appendChild(createOptionAux);
 
             for (var i = 0; i < data.data.length; i++) {
 
                 var createOption = document.createElement("option");
-                createOption.text=data.data[i].Linea;
-                createOption.value=data.data[i].Linea;
+                createOption.text = data.data[i].Linea;
+                createOption.value = data.data[i].Linea;
                 select.appendChild(createOption);
 
             }
         });
     }
 
-    function consuktarOpEstacion(){
-        var area,proceso;
-        area=document.getElementById("linea").value;
-        proceso=document.getElementById("proceso").value;
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daooperacion.php?linea='+area+'&proceso='+proceso, function (data) {
+    function consuktarOpEstacion() {
+        var area, proceso;
+        area = document.getElementById("linea").value;
+        proceso = document.getElementById("proceso").value;
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daooperacion.php?linea=' + area + '&proceso=' + proceso, function (data) {
             var selectOperacion = document.getElementById("operacion");
 
-            selectOperacion.innerHTML="";
+            selectOperacion.innerHTML = "";
             for (var i = 0; i < data.data.length; i++) {
 
                 var createOptionOperacion = document.createElement("option");
-                createOptionOperacion.text=data.data[i].OpEstacion;
-                createOptionOperacion.value=data.data[i].OpEstacion;
+                createOptionOperacion.text = data.data[i].OpEstacion;
+                createOptionOperacion.value = data.data[i].OpEstacion;
                 selectOperacion.appendChild(createOptionOperacion);
 
             }
@@ -451,18 +477,18 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     }
 
     llenarProceso();
+
     function llenarProceso() {
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
             var select = document.getElementById("proceso");
             for (var i = 0; i < data.data.length; i++) {
                 var createOption = document.createElement("option");
-                createOption.text=data.data[i].Proceso;
-                createOption.value=data.data[i].Proceso;
+                createOption.text = data.data[i].Proceso;
+                createOption.value = data.data[i].Proceso;
                 select.appendChild(createOption);
             }
         });
     }
-
 
 
 </script>
