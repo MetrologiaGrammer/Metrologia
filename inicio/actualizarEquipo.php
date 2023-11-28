@@ -160,6 +160,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 <ul class="actions stacked" style="text-align: center">
                     <li><a href="#" class="button primary" onclick="test()">Enviar</a>
                 </ul>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch demo modal
+                </button>
             </div>
 
         </div>
@@ -186,10 +191,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     </div>
 </footer>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
