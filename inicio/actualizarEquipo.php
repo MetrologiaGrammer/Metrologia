@@ -44,7 +44,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     <!-- One -->
     <section id="one">
         <header class="major">
-            <h2 style="text-align: center">Consulta De Equipos</h2>
+            <h1 class="display-4" style="text-align: center">Actualización de ubicacion</h1>
         </header>
 
 
@@ -82,34 +82,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 <label style="text-align: center;font-size: 18px">Prox. fecha de verificación</label>
                 <input type="text" name="demo-email" id="fechavencida" value="" placeholder="PROX. FECHA DE VERIFICACION"disabled>
             </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Frecuencia</label>
-                <input type="text" name="demo-email" id="frecuencia" value="" placeholder="FRECUENCIA"disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Resolucion</label>
-                <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Rango</label>
-                <input type="email" name="demo-email" id="rango" value="" placeholder="RANGO"disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Num.Serie</label>
-                <input type="email" name="demo-email" id="numserie" value="" placeholder="NUM. SERIE"disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Num.Parte</label>
-                <input type="email" name="demo-email" id="numparte" value="" placeholder="NUM. PARTE"disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Status</label>
-                <input type="email" name="demo-email" id="status" value="" placeholder="STATUS"disabled>
-            </div>
-            <div class="col-12 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Observaciones</label>
-                <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"disabled>
-            </div>
+
         </div>
         <p></p>
 
