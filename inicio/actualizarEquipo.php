@@ -243,6 +243,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             .then(function (response) {
                 if (response.ok) {
                     document.getElementById("cerrarModal").click();
+                    llenarProceso();
                 } else {
                     throw "Error";
                 }
