@@ -126,7 +126,7 @@
 
 			<div class="row">
 				<article class="col-6 col-12-xsmall work-item">
-					<a href="" class="image fit thumb"><img src="images/thumbs/EM-011.jpg" alt="" /></a>
+					<a href="" class="image fit thumb"><img src="" id="foto" alt="" /></a>
 					<h3>Magna sed consequat tempus</h3>
 					<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
 				</article>
@@ -265,6 +265,9 @@
 <script src="assets/js/main.js"></script>
 
 <script>
+
+
+
 	function getParameterByName(name) {
 		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -300,7 +303,8 @@
 			document.getElementById("rango").value = data.data[0].Rango;
 			document.getElementById("status").value = data.data[0].Status;
 			document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-			document.getElementById("observaciones").value = data.data[0].Observaciones;
+			document.getElementById("observaciones").value = data.data[0].Observaciones
+
 		});
 	}
 
