@@ -129,10 +129,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 <label for="referencia" style="text-align: center">Proxima fecha de verificación</label>
                 <input type="date" name="demo-email" id="fechavencida" value="" placeholder="Email"/>
             </div>
+
+
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Frecuencia</label>
                 <input type="text" name="demo-email" id="frecuencia" value="" placeholder="FRECUENCIA"/>
             </div>
+
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Resolucion</label>
                 <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"/>

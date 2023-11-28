@@ -343,55 +343,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
     }
 
-    function Reporte() {
-
-        document.getElementById("carga").style.display = "block";
-        document.getElementById("contenidoReporte").style.display = "none";
-
-        var nomina;
-        var Retiqueta;
-        var Requipo;
-        var Descripcion;
-        var Referencia;
-
-        nomina = document.getElementById("nomina").value;
-        Retiqueta = document.getElementById("etiqueta").value;
-        Requipo = document.getElementById("equipo").value;
-        Descripcion = document.getElementById("descproblema").value;
-        Referencia = document.getElementById("referencia").value;
-
-
-        const data = new FormData();
-
-        data.append('nomina', nomina);
-        data.append('Retiqueta', Retiqueta);
-        data.append('Requipo', Requipo);
-        data.append('Descripcion', Descripcion);
-        data.append('Referencia', Referencia);
-
-        fetch('https://arketipo.mx//MailerMetrologia.php', {
-            method: 'POST',
-            body: data
-        })
-            .then(function (response) {
-                if (response.ok) {
-                    document.getElementById("cerrarModal").click();
-                    document.getElementById("carga").style.display = "none";
-                    document.getElementById("contenidoReporte").style.display = "block";
-                    document.getElementById("nomina").value = "";
-                } else {
-                    throw "Error";
-                }
-            })
-            .then(function (texto) {
-                console.log(texto);
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-    }
-
-
     function ReporteActualizacion(foto) {
         var Nomina;
         var AreaProceso;
