@@ -48,7 +48,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         </header>
 
 
-
+<br><br>
         <div class="row gtr-uniform gtr-50">
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px;">Id Referencia</label>
@@ -85,7 +85,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
         </div>
         <p></p>
-
+<hr>
         <div class="row gtr-uniform gtr-50">
 
             <div class="col-6 col-12-xsmall">
