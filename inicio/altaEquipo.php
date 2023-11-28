@@ -135,7 +135,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Resolucion</label>
-                <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"/>
+                <input type="number" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"/>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Rango</label>
