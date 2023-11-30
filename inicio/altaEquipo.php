@@ -400,7 +400,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         NUMPARTE = document.getElementById("numparte").value;
         STATUS = document.getElementById("status").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
-        IMAGEN = document.getElementById("imagen").value;
+
 
         console.log("INSERT INTO `Equipo`(`IdEquipo`, `Observaciones`, `Status`, `Resolucion`, `NumParte`,`FechaInspeccion`, `Frecuencia`, " +
             "`FechaVencimiento`, `AreaProceso`, `Tipo`, `SubTipo`,`NumSerie`, `AreaLinea`, `AreaOperacion`,`Rango`) VALUES " +
