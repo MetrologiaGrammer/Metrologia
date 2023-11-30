@@ -57,60 +57,60 @@
 				<label style="text-align: center;font-size: 18px;">Id Referencia</label>
 				<input type="text" name="demo-name" id="codigo" value="" placeholder="ID"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaTipo" class="col-6 col-12-xsmall">
 				<label  style="text-align: center;font-size: 18px;">Tipo</label>
 				<input type="text" name="demo-name" id="tipo" value="" placeholder="TIPO"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaSubtipo" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px;">Subtipo</label>
 				<input type="text" name="demo-name" id="subtipo" value="" placeholder="SUB TIPO"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaProceso" class="col-6 col-12-xsmall">
 				<label  style="text-align: center;font-size: 18px;">Proceso</label>
 				<input type="text" name="demo-name" id="proceso" value="" placeholder="PROCESO"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaLinea" class="col-6 col-12-xsmall">
 				<label  style="text-align: center;font-size: 18px">Linea</label>
 				<input type="text" name="demo-name" id="linea" value="" placeholder="LINEA"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaOperacion" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Operacion</label>
 				<input type="text" name="demo-name" id="Operacion" value="" placeholder="OPERACION"disabled>
 			</div>
 
-			<div class="col-6 col-12-xsmall">
+			<div id="filaFechaverificacion" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Fecha de verificación</label>
 				<input type="text" name="demo-email" id="fechacalibracion" value="" placeholder="FECHA DE VERIFICACION"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaFechavencida" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Prox. fecha de verificación</label>
 				<input type="text" name="demo-email" id="fechavencida" value="" placeholder="PROX. FECHA DE VERIFICACION"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaFrecuencia" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Frecuencia</label>
 				<input type="text" name="demo-email" id="frecuencia" value="" placeholder="FRECUENCIA"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaResolucion" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Resolucion</label>
 				<input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaRango" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Rango</label>
 				<input type="email" name="demo-email" id="rango" value="" placeholder="RANGO"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaSerie" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Num.Serie</label>
 				<input type="email" name="demo-email" id="numserie" value="" placeholder="NUM. SERIE"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaParte" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Num.Parte</label>
 				<input type="email" name="demo-email" id="numparte" value="" placeholder="NUM. PARTE"disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="fileStatus" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Status</label>
 				<input type="email" name="demo-email" id="status" value="" placeholder="STATUS"disabled>
 			</div>
-			<div class="col-12 col-12-xsmall">
+			<div id="fileObservaciones" class="col-12 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Observaciones</label>
 				<input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"disabled>
 			</div>
@@ -118,16 +118,17 @@
 		<p></p>
 		<div class="col-6 col-12-xsmall">
 			<ul class="actions stacked" style="text-align: center">
-				<li><a class="button solid" onclick="mandar()">Cambiar de ubicación</a>
+				<li><a class="button solid" onclick="mandar()">Cambiar de ubicación</a> <a class="button solid" onclick="desocultar()">Reportar</a></li>
 			</ul>
 		</div>
+
+		<center><img id="carga" src="images/carga.gif" style="display: none;width: 50%;"></center>
 
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-body">
-						<center><img id="carga" src="images/carga.gif" style="display: none;width: 50%;"></center>
-						<div id="contenidoReporte">
+						<div id="contenidoReporte" style="display: none">
 							<hr>
 							<p>
 								REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
@@ -167,18 +168,19 @@
 								<span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
 								<input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 							</div>
+							<p></p>
+							<div class="col-12 col-12-xsmall">
+								<ul class="actions stacked" style="text-align: center">
+									<li><a class="button solid" onclick="Reporte()">ENVIAR REPORTE</a>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<p></p>
-		<div class="col-12 col-12-xsmall">
-			<ul class="actions stacked" style="text-align: center">
-				<li><a class="button solid" onclick="Reporte()">ENVIAR REPORTE</a>
-			</ul>
-		</div>
+
 
 	</section>
 </div>
@@ -211,6 +213,10 @@
 <script src="assets/js/main.js"></script>
 
 <script>
+
+	function desocultar() {
+		document.getElementById('contenidoReporte').style.display = 'block';
+	}
 	function getParameterByName(name) {
 		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -256,34 +262,124 @@
 		var Equipo;
 		Equipo=document.getElementById("referencia").value;
 
-		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+Equipo, function (data) {
-			document.getElementById("codigo").value = data.data[0].IdEquipo;
-			document.getElementById("referen").value = data.data[0].IdEquipo;
-			document.getElementById("tipo").value = data.data[0].Tipo;
+		const chars =Equipo.split('-');
+
+		var ref = chars[0];
+
+		if (ref=="MPI" || ref == "MPL"){
+			alert("Master");
+		}else{
+			$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+Equipo, function (data) {
+				document.getElementById("codigo").value = data.data[0].IdEquipo;
+				document.getElementById("referen").value = data.data[0].IdEquipo;
 
 
-			if (data.data[0].Tipo == "ESCALA"){
-				document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
-			}else{
-				document.getElementById("imagenEquipo").src = "images/"+data.data[0].IdEquipo+".jpg"
-			}
+				if (data.data[0].Tipo == "") {
+					document.getElementById("filaTipo").style.display = 'none';
+				} else {
+					document.getElementById("tipo").value = data.data[0].Tipo;
+
+					if (data.data[0].Tipo == "ESCALA") {
+						document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
+					} else {
+						document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
+					}
+
+				}
 
 
-			document.getElementById("subtipo").value = data.data[0].SubTipo;
-			document.getElementById("proceso").value = data.data[0].AreaProceso;
-			document.getElementById("linea").value = data.data[0].AreaLinea;
-			document.getElementById("Operacion").value = data.data[0].AreaOperacion;
-			document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
-			document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-			document.getElementById("numserie").value = data.data[0].NumSerie;
-			document.getElementById("numparte").value = data.data[0].NumParte;
-			document.getElementById("resolucion").value = data.data[0].Resolucion;
-			document.getElementById("rango").value = data.data[0].Rango;
-			document.getElementById("status").value = data.data[0].Status;
-			document.getElementById("observaciones").value = data.data[0].Observaciones;
-			document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+				if (data.data[0].SubTipo == "") {
+					document.getElementById("filaSerie").style.display = 'none';
+				} else {
+					document.getElementById("subtipo").value = data.data[0].SubTipo;
+				}
 
-		});
+
+				if (data.data[0].AreaProceso == "") {
+					document.getElementById("filaProceso").style.display = 'none';
+				} else {
+					document.getElementById("proceso").value = data.data[0].AreaProceso;
+				}
+
+
+				if (data.data[0].AreaLinea == "") {
+					document.getElementById("filaLinea").style.display = 'none';
+				} else {
+					document.getElementById("linea").value = data.data[0].AreaLinea;
+				}
+
+
+				if (data.data[0].AreaOperacion == "") {
+					document.getElementById("filaOperacion").style.display = 'none';
+				} else {
+					document.getElementById("Operacion").value = data.data[0].AreaOperacion;
+				}
+
+				if (data.data[0].FechaInspeccion == "") {
+					document.getElementById("filaFechaverificacion").style.display = 'none';
+				} else {
+					document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
+				}
+
+
+				if (data.data[0].FechaVencimiento == "") {
+					document.getElementById("filaFechavencida").style.display = 'none';
+				} else {
+					document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
+				}
+
+
+				if (data.data[0].NumSerie == "") {
+					document.getElementById("filaSerie").style.display = 'none';
+				} else {
+					document.getElementById("numserie").value = data.data[0].NumSerie;
+				}
+
+				if (data.data[0].NumParte == "") {
+					document.getElementById("filaParte").style.display = 'none';
+				} else {
+					document.getElementById("numparte").value = data.data[0].NumParte;
+				}
+
+				if (data.data[0].Resolucion == "") {
+					document.getElementById("filaResolucion").style.display = 'none';
+				} else {
+					document.getElementById("resolucion").value = data.data[0].Resolucion;
+				}
+
+				if (data.data[0].Rango == "") {
+					document.getElementById("filaRango").style.display = 'none';
+				} else {
+					document.getElementById("rango").value = data.data[0].Rango;
+				}
+
+				if (data.data[0].Status == "") {
+					document.getElementById("filaStatus").style.display = 'none';
+				} else {
+					document.getElementById("status").value = data.data[0].Status;
+				}
+
+				if (data.data[0].Observaciones == ""){
+					document.getElementById("filaObservaciones").style.display = 'none';
+				} else{
+					document.getElementById("observaciones").value = data.data[0].Observaciones;
+				}
+
+				if (data.data[0].Frecuencia == ""){
+					document.getElementById("filaFrecuencia").style.display = 'none';
+				} else{
+					document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+				}
+
+
+
+
+
+
+			});
+		}
+
+
 		//consultaFoto(Equipo);
 
 	}
