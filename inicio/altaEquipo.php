@@ -429,6 +429,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         data.append('observaciones', OBSERVACIONES);
         data.append('imagen', foto);
 
+
+
         fetch('dao/daoIngresoEquipo.php', {
             method: 'POST',
             body: data
@@ -436,7 +438,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             .then(function (response) {
                 if (response.ok) {
                     alert("done");
-                    //enviarCorreo(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen)
+                    enviarCorreo("","",PROCESO,LINEA,REFERENCIA,OPERACION);
                 } else {
                     throw "Error";
                 }
@@ -450,30 +452,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
 
 
-        function Reportar(){
+        function enviarCorreo(nomina,Retiqueta,proceso,linea,Referencia,operacion){
 
             document.getElementById("carga").style.display="block";
             document.getElementById("contenidoReporte").style.display="none";
 
-            var nomina;
-            var Retiqueta;
-            var Requipo;
-            var Descripcion;
-            var Referencia;
-
-            nomina = document.getElementById("tipo").value;
-            Retiqueta = document.getElementById("subtipo").value;
-            Requipo = document.getElementById("area").value;
-            Descripcion = document.getElementById("operacion").value;
-            Referencia = document.getElementById("frecuencia").value;
-
             const data = new FormData();
 
             data.append('nomina',nomina);
-            data.append('Retiqueta', Retiqueta);
-            data.append('Requipo', Requipo);
-            data.append('Descripcion', Descripcion);
-            data.append('Referencia', Referencia);
+            data.append('idequipo', Referencia);
+            data.append('Proceso', proceso);
+            data.append('linea', linea);
+            data.append('operacion',operacion );
+            data.append('Idimagen', Referencia);
+            data.append('comentario', "");
 
             fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
                 method: 'POST',
@@ -481,7 +473,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             })
                 .then(function (response) {
                     if (response.ok) {
-                        document.getElementById("cerrarModal").click();
                         document.getElementById("carga").style.display="none";
                         document.getElementById("contenidoReporte").style.display="block";
                         document.getElementById("nomina").value ="";
