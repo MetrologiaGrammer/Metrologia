@@ -380,9 +380,21 @@
 		}
 
 
-		//consultaFoto(Equipo);
+		consultaFoto(Equipo);
 
 	}
+	function consultaFoto(Equipo){
+		$.getJSON('https://arketipo.mx/Metrologia/dao/daoConsultafoto.php?idreferencia='+Equipo, function (data) {
+			document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/"+data.data[0].IdImagen+".png";
+			document.getElementById("areaProceso").value = data.data[0].AreaProceso;
+			document.getElementById("linea").value = data.data[0].Linea;
+			document.getElementById("operacion").value = data.data[0].Operacion;
+		});
+	}
+
+
+
+
 
 	function mandar() {
 		window.location = "https://arketipo.mx/Metrologia/inicio/actualizarEquipo.php?ID="+document.getElementById("codigo").value;
