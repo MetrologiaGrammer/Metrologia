@@ -454,8 +454,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
         function enviarCorreo(nomina,Retiqueta,proceso,linea,Referencia,operacion){
 
-            document.getElementById("carga").style.display="block";
-            document.getElementById("contenidoReporte").style.display="none";
+            //document.getElementById("carga").style.display="block";
+            //document.getElementById("contenidoReporte").style.display="none";
 
             const data = new FormData();
 
