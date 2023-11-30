@@ -383,7 +383,6 @@
 		OBSERVACIONES = document.getElementById("observaciones").value;
 
 
-
 		const data = new FormData();
 
 		data.append('nomina', "");
@@ -407,7 +406,6 @@
 		data.append('imagen', foto);
 
 
-
 		fetch('dao/daoIngresoEquipo.php', {
 			method: 'POST',
 			body: data
@@ -426,7 +424,7 @@
 				.catch(function (err) {
 					console.log(err);
 				});
-
+	}
 
 		function Reporte(){
 
@@ -473,6 +471,7 @@
 				.catch(function (err) {
 					console.log(err);
 				});
+	}
 	}
 
 
