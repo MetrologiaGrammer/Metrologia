@@ -475,7 +475,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             data.append('Descripcion', Descripcion);
             data.append('Referencia', Referencia);
 
-            fetch('https://arketipo.mx//MailerMetrologia.php', {
+            fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
                 method: 'POST',
                 body: data
             })
