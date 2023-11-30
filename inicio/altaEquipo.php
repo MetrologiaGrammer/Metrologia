@@ -178,7 +178,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
             <div class="col-12 col-12-xsmall">
                 <ul class="actions stacked" style="text-align: center">
-                    <li><a  class="button primary" onclick="testAlta()">Ingresar Nuevo Registro</a>
+                    <li><a  class="button primary" onclick="Reportar()">Ingresar Nuevo Registro</a>
                 </ul>
             </div>
 
@@ -450,7 +450,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
 
 
-        function Reporte(){
+        function Reportar(){
 
             document.getElementById("carga").style.display="block";
             document.getElementById("contenidoReporte").style.display="none";
