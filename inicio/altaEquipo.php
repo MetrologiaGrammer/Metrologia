@@ -178,7 +178,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
             <div class="col-12 col-12-xsmall">
                 <ul class="actions stacked" style="text-align: center">
-                    <li><a href="#" class="button primary" onclick="testAlta()">Ingresar Nuevo Registro</a>
+                    <li><a  class="button primary" onclick="testAlta()">Ingresar Nuevo Registro</a>
                 </ul>
             </div>
 
