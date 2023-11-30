@@ -264,13 +264,13 @@
 		var Equipo;
 		Equipo=document.getElementById("referencia").value;
 
-		const chars =Equipo.split('-');
+	<!--	const chars =Equipo.split('-');
 
 		var ref = chars[0];
 
 		if (ref=="MPI" || ref == "MPL"){
 			alert("Master");
-		}else{
+		}else{-->
 			$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+Equipo, function (data) {
 				document.getElementById("codigo").value = data.data[0].IdEquipo;
 				document.getElementById("referen").value = data.data[0].IdEquipo;
@@ -380,7 +380,7 @@
 
 			});
 			consultaFoto(Equipo);
-		}
+
 
 
 
