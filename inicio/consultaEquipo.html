@@ -384,11 +384,11 @@
 
 	}
 	function consultaFoto(Equipo){
-		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?referencia='+Equipo, function (data) {
+		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?idreferencia='+Equipo, function (data) {
 			document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/"+data.data[0].IdImagen+".png";
 			document.getElementById("proceso").value = data.data[0].AreaProceso;
 			document.getElementById("linea").value = data.data[0].Linea;
-			document.getElementById("operacion").value = data.data[0].Operacion;
+			//document.getElementById("operacion").value = data.data[0].Operacion;
 		});
 	}
 
