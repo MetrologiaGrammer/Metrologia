@@ -323,7 +323,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
             }
 
-
             document.getElementById("subtipo").value = data.data[0].SubTipo;
             document.getElementById("procesoA").value = data.data[0].AreaProceso;
             document.getElementById("lineaA").value = data.data[0].AreaLinea;
