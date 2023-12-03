@@ -24,18 +24,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
 <header id="header">
 
+
     <div class="inner">
-
-        <center><img id="imagenEquipo" alt="" class="aln-center"/></center>
-
-        <!--
-        <h1>Nomina</h1>
-        <h1><strong>000034234</strong>.</h1>
-        <h1>Nombre</h1>
-        <h1><strong>Adrian Aragon</strong>.</h1>
-        <h1>Area</h1>
-        <h1><strong>Metrologia</strong>.</h1>
-        -->
+        <center><img id="imagenEquipo" style="width: 100%" alt="" class="aln-center" /></center>
     </div>
 </header>
 
@@ -319,7 +310,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
     function Buscarequipo() {
         var Equipo;
-        Equipo = document.getElementById("referencia").value;
+        Equipo = document.getElementById("codigo").value;
 
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo, function (data) {
             document.getElementById("codigo").value = data.data[0].IdEquipo;
