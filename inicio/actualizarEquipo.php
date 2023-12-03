@@ -314,7 +314,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo, function (data) {
             document.getElementById("codigo").value = data.data[0].IdEquipo;
-            document.getElementById("referen").value = data.data[0].IdEquipo;
             document.getElementById("tipo").value = data.data[0].Tipo;
 
 
