@@ -310,7 +310,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
     function Buscarequipo() {
         var Equipo;
-        Equipo = document.getElementById("codigo").value;
+        Equipo = document.getElementById("referencia").value;
 
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo, function (data) {
             document.getElementById("codigo").value = data.data[0].IdEquipo;
