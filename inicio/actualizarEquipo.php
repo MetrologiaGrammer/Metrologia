@@ -325,9 +325,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
 
             document.getElementById("subtipo").value = data.data[0].SubTipo;
-            document.getElementById("proceso").value = data.data[0].AreaProceso;
-            document.getElementById("linea").value = data.data[0].AreaLinea;
-            document.getElementById("Operacion").value = data.data[0].AreaOperacion;
+            document.getElementById("procesoA").value = data.data[0].AreaProceso;
+            document.getElementById("lineaA").value = data.data[0].AreaLinea;
+            document.getElementById("OperacionA").value = data.data[0].AreaOperacion;
             document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
             document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
             document.getElementById("numserie").value = data.data[0].NumSerie;
