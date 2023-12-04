@@ -11,7 +11,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 ?>
 <html>
 <head>
-    <title>GramEXPERT</title>
+    <title>Strata by HTML5 UP</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -24,9 +24,18 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
 <header id="header">
 
-
     <div class="inner">
-        <center><img id="imagenEquipo" style="width: 100%" alt="" class="aln-center" /></center>
+
+        <center><img id="imagenEquipo" alt="" class="aln-center"/></center>
+
+        <!--
+        <h1>Nomina</h1>
+        <h1><strong>000034234</strong>.</h1>
+        <h1>Nombre</h1>
+        <h1><strong>Adrian Aragon</strong>.</h1>
+        <h1>Area</h1>
+        <h1><strong>Metrologia</strong>.</h1>
+        -->
     </div>
 </header>
 
@@ -36,22 +45,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     <!-- One -->
     <section id="one">
         <header class="major">
-            <h1 class="display-4" style="text-align: center; color: #787878">Actualización de ubicación</h1>
+            <h1 class="display-4" style="text-align: center; color: #787878">Actualización de ubicacion</h1>
         </header>
 
 
+        <br><br>
         <div class="row gtr-uniform gtr-50">
-
-            <div class="col-12 col-12-xsmall">
-                <label  style="text-align: center">Ingrese referencia</label>
-                <input type="text" name="emo-id" id="referencia" value="" placeholder="ID"/>
-            </div>
-            <div class="col-12 col-12-xsmall">
-                <center><BUTTON onclick="Buscarequipo()" class="button primary"> Buscar Equipo</BUTTON></center>
-            </div>
-            <br><br>
-
-
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px;">Id Referencia</label>
                 <input type="text" name="demo-name" id="codigo" value="" placeholder="ID" disabled>
@@ -76,15 +75,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Operacion</label>
                 <input type="text" name="demo-name" id="OperacionA" value="" placeholder="OPERACION" disabled>
             </div>
-            <div id="filaFechaverificacion" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Fecha de verificación</label>
-                <input type="text" name="demo-email" id="fechacalibracion" value="" placeholder="FECHA DE VERIFICACION"disabled>
-            </div>
-            <div id="filaFechavencida" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Prox. fecha de verificación</label>
-                <input type="text" name="demo-email" id="fechavencida" value="" placeholder="PROX. FECHA DE VERIFICACION"disabled>
-            </div>
-
         </div>
 
         <p></p>
@@ -96,14 +86,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         </div>
 
         <div class="row gtr-uniform gtr-50" id="seccionUbi">
-            <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Fecha de verificación</label>
-                <input type="date" name="demo-email" id="fechacalibracion" value="" placeholder="Email"/>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Proxima fecha de verificación</label>
-                <input type="date" name="demo-email" id="fechavencida" value="" placeholder="Email"/>
-            </div>
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Proceso</label>
@@ -331,6 +313,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo, function (data) {
             document.getElementById("codigo").value = data.data[0].IdEquipo;
+            document.getElementById("referen").value = data.data[0].IdEquipo;
             document.getElementById("tipo").value = data.data[0].Tipo;
 
 
@@ -340,10 +323,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
             }
 
+
             document.getElementById("subtipo").value = data.data[0].SubTipo;
-            document.getElementById("procesoA").value = data.data[0].AreaProceso;
-            document.getElementById("lineaA").value = data.data[0].AreaLinea;
-            document.getElementById("OperacionA").value = data.data[0].AreaOperacion;
+            document.getElementById("proceso").value = data.data[0].AreaProceso;
+            document.getElementById("linea").value = data.data[0].AreaLinea;
+            document.getElementById("Operacion").value = data.data[0].AreaOperacion;
             document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
             document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
             document.getElementById("numserie").value = data.data[0].NumSerie;
@@ -366,8 +350,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var Operacion;
         var IdEquipo;
         var IdImagen;
-        var FechVER;
-        var FechVEN;
 
         const min = 1;
         const max = 1000000;
@@ -380,8 +362,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         Linea = document.getElementById("linea").value;
         Operacion = document.getElementById("operacion").value;
         IdEquipo = document.getElementById("codigo").value;
-        FechVER = document.getElementById("fechacalibracion").value;
-        FechVEN = document.getElementById("fechavencida").value;
 
 
         IdImagen = randomNum + Nomina;
@@ -396,8 +376,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('idequipo', IdEquipo);
         data.append('imagen', foto);
         data.append('Idimagen', IdImagen);
-        data.append('Fechaverificacion', FechVER);
-        data.append('Fechavencida', FechVEN);
 
         fetch('dao/daoActualizacion.php', {
             method: 'POST',
@@ -405,7 +383,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         })
             .then(function (response) {
                 if (response.ok) {
-                    Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, foto, FechVER, FechVEN)
+                    Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, foto)
                 } else {
                     throw "Error";
                 }
@@ -419,18 +397,16 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
     }
 
-    function Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, FechVER, FechVEN) {
+    function Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen) {
 
         const data = new FormData();
 
+        data.append('idequipo', IdEquipo);
         data.append('nomina', Nomina);
         data.append('Proceso', AreaProceso);
         data.append('linea', Linea);
         data.append('operacion', Operacion);
-        data.append('idequipo', IdEquipo);
         data.append('Idimagen', IdImagen);
-        data.append('Fechaverificacion', FechVER);
-        data.append('Fechavencida', FechVEN);
 
         fetch('https://arketipo.mx/MailerMetrologiaAct.php', {
             method: 'POST',
