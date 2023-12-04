@@ -398,7 +398,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         const data = new FormData();
 
         data.append('nomina', Nomina);
-        data.append('Proceso', AreaProceso);
+        data.append('proceso', AreaProceso);
         data.append('linea', Linea);
         data.append('operacion', Operacion);
         data.append('idequipo', IdEquipo);
@@ -431,7 +431,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         data.append('idequipo', IdEquipo);
         data.append('nomina', Nomina);
-        data.append('Proceso', AreaProceso);
+        data.append('proceso', AreaProceso);
         data.append('linea', Linea);
         data.append('operacion', Operacion);
         data.append('Idimagen', IdImagen);
