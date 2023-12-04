@@ -23,7 +23,7 @@ function cliente($IdEquipo,$Nomina, $Preoceso,$Linea,$Operacion,$Imagen,$Idimage
 
     $con = new LocalConector();
     $conexion = $con->conectar();
-    $consP = "INSERT INTO `Historialcambios`( `IdEquipo`, `AreaProceso`, `Linea`, `Operacion`, `IdImagen`, `Nomina`,`Fecha`,`FechaVerificacion`,`FechaVencida`) VALUES ('$IdEquipo','$Preoceso','$Linea','$Operacion','$Idimagen','$Nomina','$DateAndTime',$FechaVer,$FechaVen)";
+    $consP = "INSERT INTO `Historialcambios`( `IdEquipo`, `AreaProceso`, `Linea`, `Operacion`, `IdImagen`, `Nomina`,`Fecha`,`FechaVerificacion`,`FechaVencida`) VALUES ('$IdEquipo','$Preoceso','$Linea','$Operacion','$Idimagen','$Nomina','$DateAndTime','$FechaVer','$FechaVen')";
     $rsconsPro = mysqli_query($conexion, $consP);
     mysqli_close($conexion);
 
