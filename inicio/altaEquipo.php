@@ -408,49 +408,54 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             "('"+REFERENCIA+"','"+OBSERVACIONES+"','"+STATUS+"','"+RESOLUCION+"','"+NUMPARTE+"','"+FECHACALIBRACION+"','"+FRECUENCIA+"','"+FECHAVENCIDA+"'," +
             "'$Proceso','$Tipo','$Subtipo','$Numparte','$Numserie','$Status','$Linea','$Operacion','$Rango')")
 
-        const data = new FormData();
-
-        data.append('nomina', "");
-        data.append('nombre', "");
-        data.append('area', "");
-        data.append('referencia', REFERENCIA);
-        data.append('tipo', TIPO);
-        data.append('subtipo', SUBTIPO);
-        data.append('proceso', PROCESO);
-        data.append('linea', LINEA);
-        data.append('operacion', OPERACION);
-        data.append('fechacalibracion', FECHACALIBRACION);
-        data.append('fechavencida', FECHAVENCIDA);
-        data.append('resolucion', RESOLUCION);
-        data.append('rango', RANGO);
-        data.append('frecuencia', FRECUENCIA);
-        data.append('numserie', NUMSERIE);
-        data.append('numparte', NUMPARTE);
-        data.append('status', STATUS);
-        data.append('observaciones', OBSERVACIONES);
-        data.append('imagen', foto);
+        if (REFERENCIA != "") {
 
 
+            const data = new FormData();
 
-        fetch('dao/daoIngresoEquipo.php', {
-            method: 'POST',
-            body: data
-        })
-            .then(function (response) {
-                if (response.ok) {
-                    alert("done");
-                    enviarCorreo("","",PROCESO,LINEA,REFERENCIA,OPERACION);
-                } else {
-                    throw "Error";
-                }
+            data.append('nomina', "");
+            data.append('nombre', "");
+            data.append('area', "");
+            data.append('referencia', REFERENCIA);
+            data.append('tipo', TIPO);
+            data.append('subtipo', SUBTIPO);
+            data.append('proceso', PROCESO);
+            data.append('linea', LINEA);
+            data.append('operacion', OPERACION);
+            data.append('fechacalibracion', FECHACALIBRACION);
+            data.append('fechavencida', FECHAVENCIDA);
+            data.append('resolucion', RESOLUCION);
+            data.append('rango', RANGO);
+            data.append('frecuencia', FRECUENCIA);
+            data.append('numserie', NUMSERIE);
+            data.append('numparte', NUMPARTE);
+            data.append('status', STATUS);
+            data.append('observaciones', OBSERVACIONES);
+            data.append('imagen', foto);
+
+
+            fetch('dao/daoIngresoEquipo.php', {
+                method: 'POST',
+                body: data
             })
-            .then(function (texto) {
-                console.log(texto);
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-
+                .then(function (response) {
+                    if (response.ok) {
+                        alert("done");
+                        enviarCorreo("", "", PROCESO, LINEA, REFERENCIA, OPERACION);
+                    } else {
+                        throw "Error";
+                    }
+                })
+                .then(function (texto) {
+                    console.log(texto);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+            }else{
+                alert("Campo vacio");
+            }
+        }
 
 
         function enviarCorreo(nomina,Retiqueta,proceso,linea,Referencia,operacion){
