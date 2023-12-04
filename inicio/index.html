@@ -281,9 +281,9 @@
 	}
 
 
-	function buscarQR() {
-		var referencia = document.getElementById("codigo").value;
-				document.getElementById("estudio").src = "estudios/"+referencia+".pdf"
+	buscarQR(getParameterByName("ID"));
+	function buscarQR(ID) {
+				document.getElementById("estudio").src = "estudios/"+ID+".pdf"
 	}
 
 
