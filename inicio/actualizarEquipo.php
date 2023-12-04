@@ -419,7 +419,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         })
             .then(function (response) {
                 if (response.ok) {
-                    Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, foto)
+                    Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, foto,FechaVerificacion,FechaVencimiento)
                 } else {
                     throw "Error";
                 }
@@ -433,7 +433,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
     }
 
-    function Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen) {
+    function Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen,FechaVerificacion,FechaVencimiento) {
 
         const data = new FormData();
 
