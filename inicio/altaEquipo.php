@@ -214,6 +214,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="lib/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 
@@ -453,7 +454,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                     console.log(err);
                 });
             }else{
-                alert("Campo vacio");
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "Campo referencia vacio",
+                showConfirmButton: false,
+                timer: 1500
+            });
             }
         }
 
