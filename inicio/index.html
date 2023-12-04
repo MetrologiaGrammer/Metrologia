@@ -59,8 +59,11 @@
 			-->
 			<div class="col-12 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px;">Id Referencia</label>
-				<input type="text" name="demo-name" id="codigo" value="" placeholder="ID"disabled>
+				<input type="text" name="demo-name" id="codigo" value="" placeholder="ID">
+				<button onclick="buscarQR()">Crear</button>
 			</div>
+			<embed id=estudio  type="application/pdf" width="100%" height="600px" />
+			<a target="_blank" href="https://grammer365-my.sharepoint.com/:x:/g/personal/extern_adrian_aragon_grammer_com/EbGxTw5bVTpItysmzEhqtgwBUH1DMvpvkR3odHRLA2__jg?e=wI6b3O">Documento excel</a>
 			<!--
 			<div class="col-6 col-12-xsmall">
 				<label  style="text-align: center;font-size: 18px;">Tipo</label>
@@ -278,34 +281,9 @@
 	}
 
 
-	buscarQR(getParameterByName("ID"));
-
-	function buscarQR(id) {
-		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
-
-			if (data.data[0].Tipo == "ESCALA"){
-				document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
-			}else{
-				document.getElementById("imagenEquipo").src = "images/"+data.data[0].IdEquipo+".jpg"
-			}
-
-			document.getElementById("codigo").value = data.data[0].IdEquipo;
-			document.getElementById("tipo").value = data.data[0].Tipo;
-			document.getElementById("subtipo").value = data.data[0].SubTipo;
-			document.getElementById("proceso").value = data.data[0].AreaProceso;
-			document.getElementById("linea").value = data.data[0].AreaLinea;
-			document.getElementById("Operacion").value = data.data[0].AreaOperacion;
-			document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
-			document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-			document.getElementById("numserie").value = data.data[0].NumSerie;
-			document.getElementById("numparte").value = data.data[0].NumParte;
-			document.getElementById("resolucion").value = data.data[0].Resolucion;
-			document.getElementById("rango").value = data.data[0].Rango;
-			document.getElementById("status").value = data.data[0].Status;
-			document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-			document.getElementById("observaciones").value = data.data[0].Observaciones
-
-		});
+	function buscarQR() {
+		var referencia = document.getElementById("codigo").value;
+				document.getElementById("estudio").src = "estudios/"+referencia+".pdf"
 	}
 
 
