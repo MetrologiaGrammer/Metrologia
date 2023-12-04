@@ -366,6 +366,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var Operacion;
         var IdEquipo;
         var IdImagen;
+        var FechVER;
+        var FechVEN;
 
         const min = 1;
         const max = 1000000;
@@ -378,6 +380,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         Linea = document.getElementById("linea").value;
         Operacion = document.getElementById("operacion").value;
         IdEquipo = document.getElementById("codigo").value;
+        FechVER = document.getElementById("fechacalibracion").value;
+        FechVEN = document.getElementById("fechavencida").value;
 
 
         IdImagen = randomNum + Nomina;
@@ -386,6 +390,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         const data = new FormData();
 
         data.append('nomina', Nomina);
+        data.append('Fechaverificacion', FechVER);
+        data.append('Fechavencida', FechVEN);
         data.append('Proceso', AreaProceso);
         data.append('linea', Linea);
         data.append('operacion', Operacion);
@@ -399,7 +405,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         })
             .then(function (response) {
                 if (response.ok) {
-                    Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, foto)
+                    Reporte(Nomina, AreaProceso, Linea, Operacion, FechVER,FechVEN, IdEquipo, IdImagen, foto)
                 } else {
                     throw "Error";
                 }
