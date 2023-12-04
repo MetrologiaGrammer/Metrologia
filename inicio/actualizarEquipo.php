@@ -453,7 +453,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         })
             .then(function (response) {
                 if (response.ok) {
-                    alert("Concluido");
+                    alert("Concluido.");
                 } else {
                     throw "Error";
                 }
