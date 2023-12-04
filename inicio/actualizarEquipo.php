@@ -378,6 +378,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var Operacion;
         var IdEquipo;
         var IdImagen;
+        var FechaVerificacion;
+        var FechaVencimiento;
 
         const min = 1;
         const max = 1000000;
@@ -390,6 +392,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         Linea = document.getElementById("linea").value;
         Operacion = document.getElementById("operacion").value;
         IdEquipo = document.getElementById("codigo").value;
+        Operacion = document.getElementById("operacion").value;
+        IdEquipo = document.getElementById("codigo").value;
+        FechaVerificacion = document.getElementById("fechacalibracion").value;
+        FechaVencimiento = document.getElementById("fechavencida").value;
 
 
         IdImagen = randomNum + Nomina;
@@ -398,12 +404,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         const data = new FormData();
 
         data.append('nomina', Nomina);
-        data.append('proceso', AreaProceso);
+        data.append('Proceso', AreaProceso);
         data.append('linea', Linea);
         data.append('operacion', Operacion);
         data.append('idequipo', IdEquipo);
         data.append('imagen', foto);
         data.append('Idimagen', IdImagen);
+        data.append('fechacalibracion', FechaVerificacion);
+        data.append('fechavencimiento', FechaVencimiento);
 
         fetch('dao/daoActualizacion.php', {
             method: 'POST',
@@ -435,6 +443,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('linea', Linea);
         data.append('operacion', Operacion);
         data.append('Idimagen', IdImagen);
+        data.append('fechacalibracion', FechaVerificacion);
+        data.append('fechavencimiento', FechaVencimiento);
+
 
         fetch('https://arketipo.mx/MailerMetrologiaAct.php', {
             method: 'POST',
