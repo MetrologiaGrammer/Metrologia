@@ -84,6 +84,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Operacion</label>
                 <input type="text" name="demo-name" id="OperacionA" value="" placeholder="OPERACION" disabled>
             </div>
+            <div id="filaFechaverificacion" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Fecha de verificación</label>
+                <input type="text" name="demo-email" id="fechacalibracion" value="" placeholder="FECHA DE VERIFICACION"disabled>
+            </div>
+            <div id="filaFechavencida" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Prox. fecha de verificación</label>
+                <input type="text" name="demo-email" id="fechavencida" value="" placeholder="PROX. FECHA DE VERIFICACION"disabled>
+            </div>
         </div>
 
         <p></p>
