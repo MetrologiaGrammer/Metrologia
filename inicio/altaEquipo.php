@@ -455,7 +455,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 });
             }else{
             Swal.fire({
-                position: "top-end",
                 icon: "error",
                 title: "Campo referencia vacio",
                 showConfirmButton: false,
