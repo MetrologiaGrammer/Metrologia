@@ -36,7 +36,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     <!-- One -->
     <section id="one">
         <header class="major">
-            <h1 class="display-4" style="text-align: center; color: #787878">Actualización de ubicacion</h1>
+            <h1 class="display-4" style="text-align: center; color: #787878">Actualización de ubicación</h1>
         </header>
 
 
@@ -96,6 +96,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         </div>
 
         <div class="row gtr-uniform gtr-50" id="seccionUbi">
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Fecha de verificación</label>
+                <input type="date" name="demo-email" id="fechacalibracion" value="" placeholder="Email"/>
+            </div>
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Proxima fecha de verificación</label>
+                <input type="date" name="demo-email" id="fechavencida" value="" placeholder="Email"/>
+            </div>
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Proceso</label>
