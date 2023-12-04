@@ -45,7 +45,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     <!-- One -->
     <section id="one">
         <header class="major">
-            <h1 class="display-4" style="text-align: center; color: #787878">Actualización de ubicacion</h1>
+            <h1 class="display-4" style="text-align: center; color: #787878">Actualiza la ubicación y fecha de calibración </h1>
         </header>
 
 
