@@ -390,14 +390,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         const data = new FormData();
 
         data.append('nomina', Nomina);
-        data.append('Fechaverificacion', FechVER);
-        data.append('Fechavencida', FechVEN);
         data.append('Proceso', AreaProceso);
         data.append('linea', Linea);
         data.append('operacion', Operacion);
         data.append('idequipo', IdEquipo);
         data.append('imagen', foto);
         data.append('Idimagen', IdImagen);
+        data.append('Fechaverificacion', FechVER);
+        data.append('Fechavencida', FechVEN);
 
         fetch('dao/daoActualizacion.php', {
             method: 'POST',
@@ -405,7 +405,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         })
             .then(function (response) {
                 if (response.ok) {
-                    Reporte(Nomina, AreaProceso, Linea, Operacion, FechVER,FechVEN, IdEquipo, IdImagen, foto)
+                    Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, foto, FechVER, FechVEN)
                 } else {
                     throw "Error";
                 }
@@ -419,16 +419,19 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
     }
 
-    function Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen) {
+    function Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, FechVER, FechVEN) {
 
         const data = new FormData();
 
-        data.append('idequipo', IdEquipo);
         data.append('nomina', Nomina);
         data.append('Proceso', AreaProceso);
         data.append('linea', Linea);
         data.append('operacion', Operacion);
+        data.append('idequipo', IdEquipo);
+        data.append('imagen', foto);
         data.append('Idimagen', IdImagen);
+        data.append('Fechaverificacion', FechVER);
+        data.append('Fechavencida', FechVEN);
 
         fetch('https://arketipo.mx/MailerMetrologiaAct.php', {
             method: 'POST',
