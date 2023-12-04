@@ -2,10 +2,10 @@
 <?php
 session_start();
 
-if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
+if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=../login/index.html'>";
     session_destroy();
-}else{
+} else {
     session_start();
 }
 ?>
@@ -22,9 +22,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
 <header id="header">
     <div class="inner">
-        <img src="images/nominas/<?php echo $_SESSION["nomina"];?>.jpg" alt="" style="width: 30%"/>
+        <img src="images/nominas/<?php echo $_SESSION["nomina"]; ?>.jpg" alt="" style="width: 30%"/>
         <h1>Nómina</h1>
-        <h1><strong><?php echo $_SESSION["nomina"];?></strong>.</h1>
+        <h1><strong><?php echo $_SESSION["nomina"]; ?></strong>.</h1>
         <h1>Nombre</h1>
         <h1><strong id="nombre"></strong>.</h1>
         <h1>Área</h1>
@@ -44,14 +44,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         <div class="row gtr-uniform gtr-50">
 
 
-
-
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese referencia</label>
                 <div class="col-12">
                     <select name="demo-category" id="referencia" onchange="buscarId()">
                         <option value="">- REFERENCIA -</option>
-                        <option value="ER">ER-000 Equipo de Referencia </option>
+                        <option value="ER">ER-000 Equipo de Referencia</option>
                         <option value="MAP">MAP-000 Manteminiento preventivo</option>
                         <option value="IM">IM-000 Calibración Interna</option>
                         <option value="EM">EM-000 Calibración Externa</option>
@@ -78,7 +76,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             </div>
 
             <div class="col-6 col-12-xsmall">
-                <label  style="text-align: center">Id Referencia</label>
+                <label style="text-align: center">Id Referencia</label>
                 <input type="text" name="demo-name" id="codigoAux" value="" placeholder="ID" disabled>
             </div>
             <div class="col-6 col-12-xsmall">
@@ -178,13 +176,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
             <div class="col-12 col-12-xsmall">
                 <ul class="actions stacked" style="text-align: center">
-                    <li><a  class="button primary" onclick="testAlta()">Ingresar Nuevo Registro</a>
+                    <li><a class="button primary" onclick="testAlta()">Ingresar Nuevo Registro</a>
                 </ul>
             </div>
 
     </section>
-        </div>
-    </section>
+</div>
+</section>
 
 
 </div>
@@ -195,10 +193,18 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         <center>
             <ul class="icons">
 
-                <li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble"> INICIO<span class="label">Dribbble</span></a></li><br>
-                <li><a href="consultaEquipo.html" class="icon brands fa-dribbble"> CONSULTA DE EQUIPOS<span class="label">Dribbble</span></a></li><br>
-                <li><a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble"> ESTUDIOS<span class="label">Dribbble</span></a></li><br>
-                <li><a href="https://arketipo.mx/Metrologia/inicio/actualizarEquipo.php" class="icon brands fa-dribbble"> ACTUALIZAR EQUIPOS <span class="label">Dribbble</span></a></li><br>
+                <li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble">
+                        INICIO<span class="label">Dribbble</span></a></li>
+                <br>
+                <li><a href="consultaEquipo.html" class="icon brands fa-dribbble"> CONSULTA DE EQUIPOS<span
+                                class="label">Dribbble</span></a></li>
+                <br>
+                <li><a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble">
+                        ESTUDIOS<span class="label">Dribbble</span></a></li>
+                <br>
+                <li><a href="https://arketipo.mx/Metrologia/inicio/actualizarEquipo.php"
+                       class="icon brands fa-dribbble"> ACTUALIZAR EQUIPOS <span class="label">Dribbble</span></a></li>
+                <br>
 
             </ul>
         </center>
@@ -219,46 +225,46 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 <script>
 
 
-    function consuktararea(){
+    function consuktararea() {
         var area;
-        area=document.getElementById("proceso").value;
+        area = document.getElementById("proceso").value;
 
         var selectOperacion = document.getElementById("operacion");
-        selectOperacion.innerHTML="";
+        selectOperacion.innerHTML = "";
 
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoareas.php?proceso='+area, function (data) {
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoareas.php?proceso=' + area, function (data) {
             var select = document.getElementById("linea");
-            select.innerHTML="";
+            select.innerHTML = "";
 
             var createOptionAux = document.createElement("option");
-            createOptionAux.text="Seleccione Linea";
-            createOptionAux.value="";
+            createOptionAux.text = "Seleccione Linea";
+            createOptionAux.value = "";
             select.appendChild(createOptionAux);
 
             for (var i = 0; i < data.data.length; i++) {
 
                 var createOption = document.createElement("option");
-                createOption.text=data.data[i].Linea;
-                createOption.value=data.data[i].Linea;
+                createOption.text = data.data[i].Linea;
+                createOption.value = data.data[i].Linea;
                 select.appendChild(createOption);
 
             }
         });
     }
 
-    function consuktarOpEstacion(){
-        var area,proceso;
-        area=document.getElementById("linea").value;
-        proceso=document.getElementById("proceso").value;
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daooperacion.php?linea='+area+'&proceso='+proceso, function (data) {
+    function consuktarOpEstacion() {
+        var area, proceso;
+        area = document.getElementById("linea").value;
+        proceso = document.getElementById("proceso").value;
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daooperacion.php?linea=' + area + '&proceso=' + proceso, function (data) {
             var selectOperacion = document.getElementById("operacion");
 
-            selectOperacion.innerHTML="";
+            selectOperacion.innerHTML = "";
             for (var i = 0; i < data.data.length; i++) {
 
                 var createOptionOperacion = document.createElement("option");
-                createOptionOperacion.text=data.data[i].OpEstacion;
-                createOptionOperacion.value=data.data[i].OpEstacion;
+                createOptionOperacion.text = data.data[i].OpEstacion;
+                createOptionOperacion.value = data.data[i].OpEstacion;
                 selectOperacion.appendChild(createOptionOperacion);
 
             }
@@ -266,6 +272,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     }
 
     llenarProceso();
+
     function llenarProceso() {
 
 
@@ -273,43 +280,40 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
             var select = document.getElementById("proceso");
             for (var i = 0; i < data.data.length; i++) {
                 var createOption = document.createElement("option");
-                createOption.text=data.data[i].Proceso;
-                createOption.value=data.data[i].Proceso;
+                createOption.text = data.data[i].Proceso;
+                createOption.value = data.data[i].Proceso;
                 select.appendChild(createOption);
             }
         });
     }
 
 
-
-
-
     function buscarId() {
         var tipoEquipo;
         tipoEquipo = document.getElementById("referencia").value;
-        console.log('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia='+tipoEquipo)
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia='+tipoEquipo+"-", function (data) {
+        console.log('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo)
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo + "-", function (data) {
             //document.getElementById("referenciaDiv").style.display='block';
             const chars = data.data[0].IdEquipo.split('-');
 
             var ref = chars[0];
             var numero = chars[1];
 
-            if (ref == tipoEquipo){
-                var suma = parseInt(numero, 10)+1;
+            if (ref == tipoEquipo) {
+                var suma = parseInt(numero, 10) + 1;
 
-                if (suma<10){
-                    suma="00"+suma;
+                if (suma < 10) {
+                    suma = "00" + suma;
                 }
 
-                if (suma>=10 && suma<=99){
-                    suma="0"+suma;
+                if (suma >= 10 && suma <= 99) {
+                    suma = "0" + suma;
                 }
 
-                var referencia = chars[0]+"-"+suma;
+                var referencia = chars[0] + "-" + suma;
                 document.getElementById("codigoAux").value = referencia;
-            }else{
-                var referencia = tipoEquipo+"-000";
+            } else {
+                var referencia = tipoEquipo + "-000";
                 document.getElementById("codigoAux").value = referencia;
             }
         });
@@ -317,28 +321,28 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
     }
 
     var nominaAux = '<?php echo $_SESSION["nomina"];?>'
-    $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoUsuario.php?nomina='+nominaAux, function (data) {
-            document.getElementById("nombre").innerHTML=data.data[0].Nombre;
-            document.getElementById("area").innerHTML=data.data[0].Area;
+    $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoUsuario.php?nomina=' + nominaAux, function (data) {
+        document.getElementById("nombre").innerHTML = data.data[0].Nombre;
+        document.getElementById("area").innerHTML = data.data[0].Area;
     });
 
-    function llenarTipo(){
+    function llenarTipo() {
         var tipoEquipo;
         tipoEquipo = document.getElementById("referencia").value;
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daotipo.php?ref='+tipoEquipo, function (data) {
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daotipo.php?ref=' + tipoEquipo, function (data) {
             var select = document.getElementById("tipo");
-            select.innerHTML="";
+            select.innerHTML = "";
 
             var createOptionAux = document.createElement("option");
-            createOptionAux.text="Seleccione Linea";
-            createOptionAux.value="";
+            createOptionAux.text = "Seleccione Linea";
+            createOptionAux.value = "";
             select.appendChild(createOptionAux);
 
 
             for (var i = 0; i < data.data.length; i++) {
                 var createOption = document.createElement("option");
-                createOption.text=data.data[i].Tipo;
-                createOption.value=data.data[i].Tipo;
+                createOption.text = data.data[i].Tipo;
+                createOption.value = data.data[i].Tipo;
                 select.appendChild(createOption);
             }
         });
@@ -348,18 +352,17 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
         var TIPO;
         TIPO = document.getElementById("tipo").value;
 
-        $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php?subtipo='+ TIPO, function (data) {
+        $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php?subtipo=' + TIPO, function (data) {
             var select = document.getElementById("subtipo");
-            select.innerHTML="";
+            select.innerHTML = "";
             for (var i = 0; i < data.data.length; i++) {
                 var createOption = document.createElement("option");
-                createOption.text=data.data[i].SubTipo;
-                createOption.value=data.data[i].SubTipo;
+                createOption.text = data.data[i].SubTipo;
+                createOption.value = data.data[i].SubTipo;
                 select.appendChild(createOption);
             }
         });
     }
-
 
 
     function Ingreso(foto) {
@@ -406,99 +409,115 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
 
         console.log("INSERT INTO `Equipo`(`IdEquipo`, `Observaciones`, `Status`, `Resolucion`, `NumParte`,`FechaInspeccion`, `Frecuencia`, " +
             "`FechaVencimiento`, `AreaProceso`, `Tipo`, `SubTipo`,`NumSerie`, `AreaLinea`, `AreaOperacion`,`Rango`) VALUES " +
-            "('"+REFERENCIA+"','"+OBSERVACIONES+"','"+STATUS+"','"+RESOLUCION+"','"+NUMPARTE+"','"+FECHACALIBRACION+"','"+FRECUENCIA+"','"+FECHAVENCIDA+"'," +
+            "('" + REFERENCIA + "','" + OBSERVACIONES + "','" + STATUS + "','" + RESOLUCION + "','" + NUMPARTE + "','" + FECHACALIBRACION + "','" + FRECUENCIA + "','" + FECHAVENCIDA + "'," +
             "'$Proceso','$Tipo','$Subtipo','$Numparte','$Numserie','$Status','$Linea','$Operacion','$Rango')")
 
         if (REFERENCIA != "") {
+            if (SUBTIPO != ""){
+                if (TIPO != ""){
+                    const data = new FormData();
+
+                    data.append('nomina', "");
+                    data.append('nombre', "");
+                    data.append('area', "");
+                    data.append('referencia', REFERENCIA);
+                    data.append('tipo', TIPO);
+                    data.append('subtipo', SUBTIPO);
+                    data.append('proceso', PROCESO);
+                    data.append('linea', LINEA);
+                    data.append('operacion', OPERACION);
+                    data.append('fechacalibracion', FECHACALIBRACION);
+                    data.append('fechavencida', FECHAVENCIDA);
+                    data.append('resolucion', RESOLUCION);
+                    data.append('rango', RANGO);
+                    data.append('frecuencia', FRECUENCIA);
+                    data.append('numserie', NUMSERIE);
+                    data.append('numparte', NUMPARTE);
+                    data.append('status', STATUS);
+                    data.append('observaciones', OBSERVACIONES);
+                    data.append('imagen', foto);
 
 
-            const data = new FormData();
-
-            data.append('nomina', "");
-            data.append('nombre', "");
-            data.append('area', "");
-            data.append('referencia', REFERENCIA);
-            data.append('tipo', TIPO);
-            data.append('subtipo', SUBTIPO);
-            data.append('proceso', PROCESO);
-            data.append('linea', LINEA);
-            data.append('operacion', OPERACION);
-            data.append('fechacalibracion', FECHACALIBRACION);
-            data.append('fechavencida', FECHAVENCIDA);
-            data.append('resolucion', RESOLUCION);
-            data.append('rango', RANGO);
-            data.append('frecuencia', FRECUENCIA);
-            data.append('numserie', NUMSERIE);
-            data.append('numparte', NUMPARTE);
-            data.append('status', STATUS);
-            data.append('observaciones', OBSERVACIONES);
-            data.append('imagen', foto);
-
-
-            fetch('dao/daoIngresoEquipo.php', {
-                method: 'POST',
-                body: data
-            })
-                .then(function (response) {
-                    if (response.ok) {
-                        alert("done");
-                        enviarCorreo("", "", PROCESO, LINEA, REFERENCIA, OPERACION);
-                    } else {
-                        throw "Error";
-                    }
-                })
-                .then(function (texto) {
-                    console.log(texto);
-                })
-                .catch(function (err) {
-                    console.log(err);
-                });
+                    fetch('dao/daoIngresoEquipo.php', {
+                        method: 'POST',
+                        body: data
+                    })
+                        .then(function (response) {
+                            if (response.ok) {
+                                alert("done");
+                                enviarCorreo("", "", PROCESO, LINEA, REFERENCIA, OPERACION);
+                            } else {
+                                throw "Error";
+                            }
+                        })
+                        .then(function (texto) {
+                            console.log(texto);
+                        })
+                        .catch(function (err) {
+                            console.log(err);
+                        });
+                }else{
+                    Swal.fire({
+                        icon: "error",
+                        title: "Campo tipo vacio",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
             }else{
+                Swal.fire({
+                    icon: "error",
+                    title: "Campo subtipo vacio",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        } else {
             Swal.fire({
                 icon: "error",
                 title: "Campo referencia vacio",
                 showConfirmButton: false,
                 timer: 1500
             });
-            }
         }
+    }
 
 
-        function enviarCorreo(nomina,Retiqueta,proceso,linea,Referencia,operacion){
+    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion) {
 
-            //document.getElementById("carga").style.display="block";
-            //document.getElementById("contenidoReporte").style.display="none";
+        //document.getElementById("carga").style.display="block";
+        //document.getElementById("contenidoReporte").style.display="none";
 
-            const data = new FormData();
+        const data = new FormData();
 
-            data.append('nomina',nomina);
-            data.append('idequipo', Referencia);
-            data.append('Proceso', proceso);
-            data.append('linea', linea);
-            data.append('operacion',operacion );
-            data.append('Idimagen', Referencia);
-            data.append('comentario', "");
+        data.append('nomina', nomina);
+        data.append('idequipo', Referencia);
+        data.append('Proceso', proceso);
+        data.append('linea', linea);
+        data.append('operacion', operacion);
+        data.append('Idimagen', Referencia);
+        data.append('comentario', "");
 
-            fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
-                method: 'POST',
-                body: data
+        fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
+            method: 'POST',
+            body: data
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    document.getElementById("carga").style.display = "none";
+                    document.getElementById("contenidoReporte").style.display = "block";
+                    document.getElementById("nomina").value = "";
+                } else {
+                    throw "Error";
+                }
             })
-                .then(function (response) {
-                    if (response.ok) {
-                        document.getElementById("carga").style.display="none";
-                        document.getElementById("contenidoReporte").style.display="block";
-                        document.getElementById("nomina").value ="";
-                    } else {
-                        throw "Error";
-                    }
-                })
-                .then(function (texto) {
-                    console.log(texto);
-                })
-                .catch(function (err) {
-                    console.log(err);
-                });
-        }
+            .then(function (texto) {
+                console.log(texto);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
 
 </script>
 
