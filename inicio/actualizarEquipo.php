@@ -51,6 +51,15 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         <br><br>
         <div class="row gtr-uniform gtr-50">
+
+
+            <div class="col-12 col-12-xsmall">
+                <label  style="text-align: center">Ingrese referencia</label>
+                <input type="text" name="emo-id" id="referencia" value="" placeholder="ID"/>
+            </div>
+            <div class="col-12 col-12-xsmall">
+                <center><BUTTON onclick="Buscarequipo()" class="button primary"> Buscar Equipo</BUTTON></center>
+            </div>
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px;">Id Referencia</label>
                 <input type="text" name="demo-name" id="codigo" value="" placeholder="ID" disabled>
