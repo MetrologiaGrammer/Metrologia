@@ -494,11 +494,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null) {
                 });
         }
 
-
-
-
-    }
-
 </script>
 
 </body>
