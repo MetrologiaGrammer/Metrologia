@@ -13,9 +13,9 @@ $Idimagen = $_POST['Idimagen'];
 $FechaVer = $_POST['Fechaverificacion'];
 $FechaVen = $_POST['Fechavencida'];
 
-cliente($IdEquipo,$Nomina, $Preoceso,$Linea,$Operacion,$Imagen,$Idimagen,$FechaVer);
+cliente($IdEquipo,$Nomina, $Preoceso,$Linea,$Operacion,$Imagen,$Idimagen,$FechaVer,$FechaVen);
 
-function cliente($IdEquipo,$Nomina, $Preoceso,$Linea,$Operacion,$Imagen,$Idimagen,$FechaVen)
+function cliente($IdEquipo,$Nomina, $Preoceso,$Linea,$Operacion,$Imagen,$Idimagen,$FechaVer,$FechaVen)
 {
     $Object = new DateTime();
     $Object->setTimezone(new DateTimeZone('America/Denver'));
@@ -23,7 +23,7 @@ function cliente($IdEquipo,$Nomina, $Preoceso,$Linea,$Operacion,$Imagen,$Idimage
 
     $con = new LocalConector();
     $conexion = $con->conectar();
-    $consP = "INSERT INTO `Historialcambios`( `IdEquipo`, `AreaProceso`, `Linea`, `Operacion`, `IdImagen`, `Nomina`,`Fecha`,`FechaVerificacion`,`FechaVencida`) VALUES ('$IdEquipo','$Preoceso','$Linea','$Operacion','$Idimagen','$Nomina','$DateAndTime',$Idimagen,$FechaVen)";
+    $consP = "INSERT INTO `Historialcambios`( `IdEquipo`, `AreaProceso`, `Linea`, `Operacion`, `IdImagen`, `Nomina`,`Fecha`,`FechaVerificacion`,`FechaVencida`) VALUES ('$IdEquipo','$Preoceso','$Linea','$Operacion','$Idimagen','$Nomina','$DateAndTime',$Idimagen,$FechaVer,$FechaVen)";
     $rsconsPro = mysqli_query($conexion, $consP);
     mysqli_close($conexion);
 
