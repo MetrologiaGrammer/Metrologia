@@ -445,7 +445,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .then(function (response) {
                             if (response.ok) {
                                 alert("done");
-                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,STATUS);
+                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO);
                             } else {
                                 throw "Error";
                             }
@@ -483,7 +483,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     }
 
 
-    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo,fechacaibracion,fechavencida,resolucion,rango,frecuencia,numserie,numparte,estatus) {
+    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo) {
 
         //document.getElementById("carga").style.display="block";
         //document.getElementById("contenidoReporte").style.display="none";
@@ -498,7 +498,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('Idimagen', "");
         data.append('comentario', observaciones);
         data.append('tipo', tipo);
-        data.append('subtipo', subtipo);
+      <!--  data.append('subtipo', subtipo);
         data.append('fechacalibracion', fechacalibracion);
         data.append('fechavencida', fechavencida);
         data.append('resolucion', resolucion);
@@ -506,7 +506,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('frecuencia', frecuencia);
         data.append('numserie', numserie);
         data.append('numparte', numparte;
-        data.append('status', estatus);
+        data.append('status', estatus);-->
 
         fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
             method: 'POST',
