@@ -203,6 +203,7 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 
@@ -386,7 +387,7 @@
 
 
 	function mandar() {
-		window.location = "https://arketipo.mx/Metrologia/inicio/actualizarEquipo.php?ID="+document.getElementById("codigo").value;
+		window.location = "https://arketipo.mx/Metrologia/estudios.html?ID="+document.getElementById("codigo").value;
 	}
 
 	function Reporte(){
@@ -405,6 +406,10 @@
 		Requipo = document.getElementById("equipo").value;
 		Descripcion = document.getElementById("descproblema").value;
 		Referencia = document.getElementById("referencia").value;
+
+
+		if (nomina!=""){
+
 
 
 		const data = new FormData();
@@ -434,6 +439,17 @@
 				.catch(function (err) {
 					console.log(err);
 				});
+
+		} else {
+			Swal.fire({
+				icon: "error",
+				title: "Campo nomina vacio",
+				showConfirmButton: false,
+				timer: 1500
+			});
+		}
+
+
 	}
 
 </script>
