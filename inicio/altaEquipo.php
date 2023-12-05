@@ -415,47 +415,56 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         if (REFERENCIA != "") {
             if (SUBTIPO != ""){
                 if (TIPO != ""){
-                    const data = new FormData();
+                    if (PROCESO != "") {
 
-                    data.append('nomina', NOMINA);
-                    data.append('nombre', "");
-                    data.append('area', "");
-                    data.append('referencia', REFERENCIA);
-                    data.append('tipo', TIPO);
-                    data.append('subtipo', SUBTIPO);
-                    data.append('proceso', PROCESO);
-                    data.append('linea', LINEA);
-                    data.append('operacion', OPERACION);
-                    data.append('fechacalibracion', FECHACALIBRACION);
-                    data.append('fechavencida', FECHAVENCIDA);
-                    data.append('resolucion', RESOLUCION);
-                    data.append('rango', RANGO);
-                    data.append('frecuencia', FRECUENCIA);
-                    data.append('numserie', NUMSERIE);
-                    data.append('numparte', NUMPARTE);
-                    data.append('status', STATUS);
-                    data.append('observaciones', OBSERVACIONES);
-                    data.append('imagen', foto);
+                        const data = new FormData();
+
+                        data.append('nomina', NOMINA);
+                        data.append('nombre', "");
+                        data.append('area', "");
+                        data.append('referencia', REFERENCIA);
+                        data.append('tipo', TIPO);
+                        data.append('subtipo', SUBTIPO);
+                        data.append('proceso', PROCESO);
+                        data.append('linea', LINEA);
+                        data.append('operacion', OPERACION);
+                        data.append('fechacalibracion', FECHACALIBRACION);
+                        data.append('fechavencida', FECHAVENCIDA);
+                        data.append('resolucion', RESOLUCION);
+                        data.append('rango', RANGO);
+                        data.append('frecuencia', FRECUENCIA);
+                        data.append('numserie', NUMSERIE);
+                        data.append('numparte', NUMPARTE);
+                        data.append('status', STATUS);
+                        data.append('observaciones', OBSERVACIONES);
+                        data.append('imagen', foto);
 
 
-                    fetch('dao/daoIngresoEquipo.php', {
-                        method: 'POST',
-                        body: data
-                    })
-                        .then(function (response) {
-                            if (response.ok) {
-                                alert("done");
-                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,STATUS);
-                            } else {
-                                throw "Error";
-                            }
+                        fetch('dao/daoIngresoEquipo.php', {
+                            method: 'POST',
+                            body: data
                         })
-                        .then(function (texto) {
-                            console.log(texto);
-                        })
-                        .catch(function (err) {
-                            console.log(err);
-                        });
+                            .then(function (response) {
+                                if (response.ok) {
+                                    alert("done");
+                                    enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION, OBSERVACIONES, TIPO, SUBTIPO, FECHACALIBRACION, FECHAVENCIDA, RESOLUCION, RANGO, FRECUENCIA, NUMSERIE, NUMPARTE, STATUS);
+                                } else {
+                                    throw "Error";
+                                }
+                            })
+                            .then(function (texto) {
+                                console.log(texto);
+                            })
+                            .catch(function (err) {
+                                console.log(err);
+                            });
+                    }else{
+                            Swal.fire({
+                                icon: "error",
+                                title: "Campo proceso vacio",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
                 }else{
                     Swal.fire({
                         icon: "error",
