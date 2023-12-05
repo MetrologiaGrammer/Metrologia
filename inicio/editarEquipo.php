@@ -6,7 +6,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     session_destroy();
 } else {
     session_start();
-}
+    }
 ?>
 <html>
 <head>
