@@ -445,7 +445,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .then(function (response) {
                             if (response.ok) {
                                 alert("done");
-                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO);
+                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO);
                             } else {
                                 throw "Error";
                             }
@@ -483,7 +483,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     }
 
 
-    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo) {
+    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo) {
 
         //document.getElementById("carga").style.display="block";
         //document.getElementById("contenidoReporte").style.display="none";
@@ -498,6 +498,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('Idimagen', "");
         data.append('comentario', observaciones);
         data.append('tipo', tipo);
+        data.append('subtipo', subtipo);
+
 
 
         fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
