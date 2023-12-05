@@ -415,6 +415,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         if (REFERENCIA != "") {
             if (SUBTIPO != ""){
                 if (TIPO != ""){
+                    if (PROCESO != ""){
 
                     const data = new FormData();
 
@@ -457,6 +458,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .catch(function (err) {
                             console.log(err);
                         });
+                    }else{
+                        Swal.fire({
+                            icon: "error",
+                            title: "Campo tipo vacio",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
                 }else{
                     Swal.fire({
                         icon: "error",
