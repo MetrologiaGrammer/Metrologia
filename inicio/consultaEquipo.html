@@ -225,28 +225,104 @@
 	function buscarQR(id) {
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
 
-			if (data.data[0].Tipo == "ESCALA"){
-				document.getElementById("imagenEquipo").src = "images/ER-001.jpg";
-			}else{
-				document.getElementById("imagenEquipo").src = "images/"+data.data[0].IdEquipo+".jpg"
-			}
 
 			document.getElementById("codigo").value = data.data[0].IdEquipo;
 			document.getElementById("referen").value = data.data[0].IdEquipo;
-			document.getElementById("tipo").value = data.data[0].Tipo;
-			document.getElementById("subtipo").value = data.data[0].SubTipo;
-			document.getElementById("proceso").value = data.data[0].AreaProceso;
-			document.getElementById("linea").value = data.data[0].AreaLinea;
-			document.getElementById("Operacion").value = data.data[0].AreaOperacion;
-			document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
-			document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-			document.getElementById("numserie").value = data.data[0].NumSerie;
-			document.getElementById("numparte").value = data.data[0].NumParte;
-			document.getElementById("resolucion").value = data.data[0].Resolucion;
-			document.getElementById("rango").value = data.data[0].Rango;
-			document.getElementById("status").value = data.data[0].Status;
-			document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-			document.getElementById("observaciones").value = data.data[0].Observaciones;
+
+			if (data.data[0].Tipo == "") {
+				document.getElementById("filaTipo").style.display = 'none';
+			} else {
+				document.getElementById("tipo").value = data.data[0].Tipo;
+
+				if (data.data[0].Tipo == "ESCALA") {
+					document.getElementById("imagenEquipo").src = "images/ER-001.jpg";
+				} else {
+					document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
+				}
+			}
+
+
+			if (data.data[0].SubTipo == "") {
+				document.getElementById("filaSerie").style.display = 'none';
+			} else {
+				document.getElementById("subtipo").value = data.data[0].SubTipo;
+			}
+
+			if (data.data[0].AreaProceso == "") {
+				document.getElementById("filaProceso").style.display = 'none';
+			} else {
+				document.getElementById("proceso").value = data.data[0].AreaProceso;
+			}
+
+			if (data.data[0].AreaLinea == "") {
+				document.getElementById("filaLinea").style.display = 'none';
+			} else {
+				document.getElementById("linea").value = data.data[0].AreaLinea;
+			}
+
+
+			if (data.data[0].AreaOperacion == "") {
+				document.getElementById("filaOperacion").style.display = 'none';
+			} else {
+				document.getElementById("Operacion").value = data.data[0].AreaOperacion;
+			}
+
+			if (data.data[0].FechaInspeccion == "") {
+				document.getElementById("filaFechaverificacion").style.display = 'none';
+			} else {
+				document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
+			}
+
+
+			if (data.data[0].FechaVencimiento == "") {
+				document.getElementById("filaFechavencida").style.display = 'none';
+			} else {
+				document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
+			}
+
+			if (data.data[0].NumSerie == "") {
+				document.getElementById("filaSerie").style.display = 'none';
+			} else {
+				document.getElementById("numserie").value = data.data[0].NumSerie;
+			}
+
+			if (data.data[0].NumParte == "") {
+				document.getElementById("filaParte").style.display = 'none';
+			} else {
+				document.getElementById("numparte").value = data.data[0].NumParte;
+			}
+
+			if (data.data[0].Resolucion == "") {
+				document.getElementById("filaResolucion").style.display = 'none';
+			} else {
+				document.getElementById("resolucion").value = data.data[0].Resolucion;
+			}
+
+			if (data.data[0].Rango == "") {
+				document.getElementById("filaRango").style.display = 'none';
+			} else {
+				document.getElementById("rango").value = data.data[0].Rango;
+			}
+
+			if (data.data[0].Status == "") {
+				document.getElementById("filaStatus").style.display = 'none';
+			} else {
+				document.getElementById("status").value = data.data[0].Status;
+			}
+
+			if (data.data[0].Observaciones == "") {
+				document.getElementById("filaObservaciones").style.display = 'none';
+			} else {
+				document.getElementById("observaciones").value = data.data[0].Observaciones;
+			}
+
+			if (data.data[0].Frecuencia == "") {
+				document.getElementById("filaFrecuencia").style.display = 'none';
+			} else {
+				document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+			}
+
+
 		});
 	}
 
