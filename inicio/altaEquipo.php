@@ -387,7 +387,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var OBSERVACIONES;
         var IMAGEN;
 
-        //NOMINA = document.getElementById("").value;
+        NOMINA = '<?php echo $_SESSION["nomina"];?>';
         //NOMBRE = document.getElementById("").value;
         //AREA = document.getElementById("").value;
         REFERENCIA = document.getElementById("codigoAux").value;
@@ -417,7 +417,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 if (TIPO != ""){
                     const data = new FormData();
 
-                    data.append('nomina', "");
+                    data.append('nomina', NOMINA);
                     data.append('nombre', "");
                     data.append('area', "");
                     data.append('referencia', REFERENCIA);
