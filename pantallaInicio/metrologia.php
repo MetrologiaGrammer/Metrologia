@@ -35,7 +35,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<span class="copyright">&copy; Grammer Automotive: <a href="https://arketipo.mx/Metrologia/pantallaInicio/">GramEXPERT</a>.</span>
+						<span class="copyright">&copy; Grammer Automotive: <a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html">GramEXPERT</a>.</span>
 					</footer>
 
 			</div>
