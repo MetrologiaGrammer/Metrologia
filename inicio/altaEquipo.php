@@ -497,7 +497,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('operacion', operacion);
         data.append('Idimagen', "");
         data.append('comentario', observaciones);
-        data.append('tipi', tipo);
+        data.append('tipo', tipo);
 
 
         fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
