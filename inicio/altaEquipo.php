@@ -413,9 +413,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             "'$Proceso','$Tipo','$Subtipo','$Numparte','$Numserie','$Status','$Linea','$Operacion','$Rango')")
 
         if (REFERENCIA != "") {
-            if (SUBTIPO != ""){
-                if (TIPO != ""){
+            if (TIPO != ""){
+                if (SUBTIPO != ""){
                     if (PROCESO != ""){
+                        if (FECHACALIBRACION != ""){
 
                     const data = new FormData();
 
@@ -458,10 +459,18 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .catch(function (err) {
                             console.log(err);
                         });
+                        }else{
+                            Swal.fire({
+                                icon: "error",
+                                title: "Campo fecha de calibración vacio",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
                     }else{
                         Swal.fire({
                             icon: "error",
-                            title: "Campo tipo vacio",
+                            title: "Campo proceso vacio",
                             showConfirmButton: false,
                             timer: 1500
                         });
@@ -469,7 +478,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 }else{
                     Swal.fire({
                         icon: "error",
-                        title: "Campo tipo vacio",
+                        title: "Campo subtipo vacio",
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -477,7 +486,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             }else{
                 Swal.fire({
                     icon: "error",
-                    title: "Campo subtipo vacio",
+                    title: "Campo tipo vacio",
                     showConfirmButton: false,
                     timer: 1500
                 });
