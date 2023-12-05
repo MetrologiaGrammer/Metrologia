@@ -445,7 +445,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .then(function (response) {
                             if (response.ok) {
                                 alert("done");
-                                enviarCorreo(NOMINA, REFERENCIA, PROCESO, LINEA, OPERACION,OBSERVACIONES);
+                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION);
                             } else {
                                 throw "Error";
                             }
