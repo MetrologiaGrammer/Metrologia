@@ -249,6 +249,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 
@@ -453,7 +454,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         })
             .then(function (response) {
                 if (response.ok) {
-                    alert("Concluido.");
+                    Swal.fire({
+                        icon: "success",
+                        title: "Campo fecha de calibración vacio",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
                 } else {
                     throw "Error";
                 }
