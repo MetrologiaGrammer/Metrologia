@@ -483,7 +483,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     }
 
 
-    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion) {
+    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones) {
 
         //document.getElementById("carga").style.display="block";
         //document.getElementById("contenidoReporte").style.display="none";
@@ -495,9 +495,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('Proceso', proceso);
         data.append('linea', linea);
         data.append('operacion', operacion);
-        data.append('Idimagen', Referencia);
-        data.append('comentario', "");
-
+        data.append('Idimagen', "");
+        data.append('comentario', observaciones);
         fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
             method: 'POST',
             body: data
