@@ -445,7 +445,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .then(function (response) {
                             if (response.ok) {
                                 alert("done");
-                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA);
+                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA);
                             } else {
                                 throw "Error";
                             }
@@ -483,7 +483,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     }
 
 
-    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo,fechacalibracion,fechavencida,resolucion,rango,frecuencia) {
+    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo,fechacalibracion,fechavencida) {
 
         //document.getElementById("carga").style.display="block";
         //document.getElementById("contenidoReporte").style.display="none";
@@ -501,9 +501,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('subtipo', subtipo);
         data.append('fechacalibracion', fechacalibracion);
         data.append('fechavencida', fechavencida);
-        data.append('resolucion', resolucion);
-        data.append('rango', rango);
-        data.append('frecuencia', frecuencia);
+
 
 
         fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
