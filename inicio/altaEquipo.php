@@ -498,15 +498,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('Idimagen', "");
         data.append('comentario', observaciones);
         data.append('tipo', tipo);
-      <!--  data.append('subtipo', subtipo);
-        data.append('fechacalibracion', fechacalibracion);
-        data.append('fechavencida', fechavencida);
-        data.append('resolucion', resolucion);
-        data.append('rango', rengo);
-        data.append('frecuencia', frecuencia);
-        data.append('numserie', numserie);
-        data.append('numparte', numparte;
-        data.append('status', estatus);-->
+
 
         fetch('https://arketipo.mx//MailerMetrologiaIng.php', {
             method: 'POST',
