@@ -102,7 +102,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             <center><img src="images/CARGANDO.gif"></center>
         </div>
 
-        <div class="row gtr-uniform gtr-50" id="seccionUbi">
+        <div class="row gtr-uniform gtr-50" >
 
             <div class="col-6 col-12-xsmall">
                 <label  style="text-align: center">Fecha de verificación</label>
