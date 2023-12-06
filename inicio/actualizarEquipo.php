@@ -106,11 +106,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Fecha de verificación</label>
-                <input type="date" name="demo-email" id="fechacalibracion" value="" placeholder="Email"/>
+                <input type="date" name="demo-email" id="fechaverificacion" value="" placeholder="Email"/>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Proxima fecha de verificación</label>
-                <input type="date" name="demo-email" id="fechavencida" value="" placeholder="Email"/>
+                <input type="date" name="demo-email" id="fechavencimiento" value="" placeholder="Email"/>
             </div>
 
 
@@ -394,8 +394,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         Operacion = document.getElementById("operacion").value;
         IdEquipo = document.getElementById("codigo").value;
         Operacion = document.getElementById("operacion").value;
-        FechaVerificacion = document.getElementById("fechacalibracion").value;
-        FechaVencimiento = document.getElementById("fechavencida").value;
+        FechaVerificacion = document.getElementById("fechaverificacion").value;
+        FechaVencimiento = document.getElementById("fechavencimiento").value;
 
 
         IdImagen = randomNum + Nomina;
@@ -443,7 +443,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('linea', Linea);
         data.append('operacion', Operacion);
         data.append('Idimagen', IdImagen);
-        data.append('fechacalibracion', FechaVerificacion);
+        data.append('fechaverificacion', FechaVerificacion);
         data.append('fechavencimiento', FechaVencimiento);
 
 
