@@ -313,7 +313,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     function buscarQR(id) {
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + id, function (data) {
             if (data.data[0].Tipo == "ESCALA") {
-                document.getElementById("imagenEquipo").src = "images/ER-001.jpg";
+                document.getElementById("imagenEquipo").src = "images/ER-000.jpg";
             } else {
                 document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
             }
