@@ -446,7 +446,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     })
                         .then(function (response) {
                             if (response.ok) {
-                                alert("done");
+                                alert("Se ha ingresado");
                                 enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,STATUS);
                             } else {
                                 throw "Error";
