@@ -455,7 +455,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 if (response.ok) {
                     Swal.fire({
                         icon: "success",
-                        title: "Campo fecha de calibración vacio",
+                        title: "Se actualizo",
                         showConfirmButton: false,
                         timer: 1500
                     });
