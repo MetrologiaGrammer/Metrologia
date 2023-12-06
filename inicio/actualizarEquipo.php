@@ -26,7 +26,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
     <div class="inner">
 
-        <center><img id="imagenEquipo" alt="" class="aln-center"/></center>
+        <center><img id="imagenEquipo" style="width: 70%" alt="" class="aln-center"/></center>
 
         <!--
         <h1>Nomina</h1>
