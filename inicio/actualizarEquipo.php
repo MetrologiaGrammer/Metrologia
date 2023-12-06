@@ -106,7 +106,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             <div class="col-6 col-12-xsmall">
                 <label  style="text-align: center">Fecha de verificación</label>
-                <input type="date" name="demo-email" id="fechaverificacion" value="" placeholder="Email"/>
+                <input type="date" name="demo-email" id="fechav" value="" placeholder="Email"/>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label  style="text-align: center">Proxima fecha de verificación</label>
@@ -394,7 +394,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         Operacion = document.getElementById("operacion").value;
         IdEquipo = document.getElementById("codigo").value;
         Operacion = document.getElementById("operacion").value;
-        FechaVerificacion = document.getElementById("fechavencimiento").value;
+        FechaVerificacion = document.getElementById("fechav").value;
         FechaVencimiento = document.getElementById("fechavencimiento").value;
 
 
