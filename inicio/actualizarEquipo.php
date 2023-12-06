@@ -394,7 +394,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         Operacion = document.getElementById("operacion").value;
         IdEquipo = document.getElementById("codigo").value;
         Operacion = document.getElementById("operacion").value;
-        IdEquipo = document.getElementById("codigo").value;
         FechaVerificacion = document.getElementById("fechacalibracion").value;
         FechaVencimiento = document.getElementById("fechavencida").value;
 
