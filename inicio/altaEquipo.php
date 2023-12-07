@@ -541,6 +541,22 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     document.getElementById("carga").style.display = "none";
                     document.getElementById("contenidoReporte").style.display = "block";
                     document.getElementById("nomina").value = "";
+                    document.getElementById("codigoAux").value='';
+                    document.getElementById("tipo").value='';
+                    document.getElementById("subtipo").value='';
+                    document.getElementById("proceso").value='';
+                    document.getElementById("linea").value='';
+                    document.getElementById("operacion").value='';
+                    document.getElementById("fechacalibracion").value='';
+                    document.getElementById("fechavencida").value='';
+                    document.getElementById("resolucion").value='';
+                    document.getElementById("rango").value='';
+                    document.getElementById("frecuencia").value='';
+                    document.getElementById("numserie").value='';
+                    document.getElementById("numparte").value='';
+                    document.getElementById("status").value='';
+                    document.getElementById("observaciones").value='';
+
                 } else {
                     throw "Error";
                 }
