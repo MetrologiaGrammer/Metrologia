@@ -235,6 +235,12 @@ input, select, textarea {
 		top: 0;
 	}
 
+	@media only screen and (max-width: 767px) {
+		#bg {
+			background: #348cb2 url("images/bg-mobile.png") bottom left; /* Imagen para dispositivos móviles */
+		}
+	}
+
 	@-moz-keyframes bg {
 		0% {
 			-moz-transform: translate3d(0,0,0);
