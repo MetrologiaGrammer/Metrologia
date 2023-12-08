@@ -450,6 +450,7 @@
 
 	}
 	function consultaFoto(Equipo){
+		console.log('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?idreferencia='+Equipo);
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?idreferencia='+Equipo, function (data) {
 			document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/"+data.data[0].IdImagen+".png";
 			document.getElementById("proceso").value = data.data[0].AreaProceso;

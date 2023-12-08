@@ -548,7 +548,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     document.getElementById("proceso").value="";
                     document.getElementById("linea").value=" ";
                     document.getElementById("operacion").value='';
-                    document.getElementById("fechacalibracion").value='';
+                    document.getElementById("fechacalibracion").value=''    ;
                     document.getElementById("fechavencida").value='';
                     document.getElementById("resolucion").value='';
                     document.getElementById("rango").value='';
