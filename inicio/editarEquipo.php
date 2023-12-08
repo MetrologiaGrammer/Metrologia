@@ -202,7 +202,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + id, function (data) {
 
             if (data.data[0].Tipo == "ESCALA") {
-                document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
+                document.getElementById("imagenEquipo").src = "images/ER-001.jpg";
             } else {
                 document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
             }
@@ -248,7 +248,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     document.getElementById("tipo").value = data.data[0].Tipo;
 
                     if (data.data[0].Tipo == "ESCALA") {
-                        document.getElementById("imagenEquipo").src = "images/ER-100.jpg";
+                        document.getElementById("imagenEquipo").src = "images/ER-001.jpg";
                     } else {
                         document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
                     }
