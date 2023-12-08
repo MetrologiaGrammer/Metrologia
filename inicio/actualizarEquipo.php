@@ -274,8 +274,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         })
             .then(function (response) {
                 if (response.ok) {
-                    document.getElementById("cargando").style.display = 'block';
-                    document.getElementById("seccionUbi").style.display = 'none';
                     var selectOperacion = document.getElementById("operacion");
                     selectOperacion.innerHTML = "";
                     var select = document.getElementById("linea");
