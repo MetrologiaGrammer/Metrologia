@@ -10,7 +10,7 @@ $Linea = $_POST['linea'];
 $Operacion = $_POST['operacion'];
 $Imagen= $_POST['imagen'];
 $Idimagen = $_POST['Idimagen'];
-$FechaVer = $_POST['fechacalibracion'];
+$FechaVer = $_POST['fechav'];
 $FechaVen = $_POST['fechavencimiento'];
 
 cliente($IdEquipo,$Nomina, $Preoceso,$Linea,$Operacion,$Imagen,$Idimagen,$FechaVer,$FechaVen);
