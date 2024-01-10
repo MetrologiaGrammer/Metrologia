@@ -408,7 +408,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('idequipo', IdEquipo);
         data.append('imagen', foto);
         data.append('Idimagen', IdImagen);
-        data.append('fechaverificacion', FechaVerificacion);
+        data.append('fechav', FechaVerificacion);
         data.append('fechavencimiento', FechaVencimiento);
 
         fetch('dao/daoActualizacion.php', {
@@ -442,7 +442,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('linea', Linea);
         data.append('operacion', Operacion);
         data.append('Idimagen', IdImagen);
-        data.append('fechaverificacion', FechaVencimiento);
+        data.append('fechav', FechaVencimiento);
         data.append('fechavencimiento', FechaVencimiento);
         data.append('comentario', Comentario);
 
