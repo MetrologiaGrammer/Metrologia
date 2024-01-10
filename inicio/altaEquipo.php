@@ -306,7 +306,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 if (suma < 10) {
                     suma = "00" + suma;
                 }
-
                 if (suma >= 10 && suma <= 99) {
                     suma = "0" + suma;
                 }
@@ -320,7 +319,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         });
         llenarTipo();
     }
-
     var nominaAux = '<?php echo $_SESSION["nomina"];?>'
     $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoUsuario.php?nomina=' + nominaAux, function (data) {
         document.getElementById("nombre").innerHTML = data.data[0].Nombre;
