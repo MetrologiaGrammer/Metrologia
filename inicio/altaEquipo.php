@@ -313,7 +313,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 var referencia = chars[0] + "-" + suma;
                 document.getElementById("codigoAux").value = referencia;
             } else {
-                var referencia = tipoEquipo + "-0000";
+                var referencia = tipoEquipo + "-000";
                 document.getElementById("codigoAux").value = referencia;
             }
         });
