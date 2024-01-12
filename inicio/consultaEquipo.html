@@ -313,7 +313,7 @@
 			} else {
 				document.getElementById("status").value = data.data[0].Status;
 			}
-			if (data.data[0].TolMax == "") {
+			if (data.data[0].ST == "") {
 				document.getElementById("filaCentrocosto").style.display = 'none';
 			} else {
 				document.getElementById("centrocosto").value = data.data[0].TolMax;
@@ -438,12 +438,17 @@
 				} else {
 					document.getElementById("rango").value = data.data[0].Status;
 				}
-
-				if (data.data[0].Centrocosto == "") {
-					document.getElementById("filaStatus").style.display = 'none';
-				} else {
-					document.getElementById("status").value = data.data[0].CentroCosto;
 				}
+				if (data.data[0].TolMax == "") {
+				document.getElementById("filaCentrocosto").style.display = 'none';
+				} else {
+				document.getElementById("centrocosto").value = data.data[0].TolMax;
+				}
+				if (data.data[0].CodigoCosto == "") {
+				document.getElementById("filaCodigocosto").style.display = 'none';
+				} else {document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
+				}
+
 
 				if (data.data[0].Observaciones == "") {
 					document.getElementById("filaObservaciones").style.display = 'none';
