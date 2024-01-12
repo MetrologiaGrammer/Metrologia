@@ -418,10 +418,10 @@
 					document.getElementById("rango").value = data.data[0].Rango;
 				}
 
-				if (data.data[0].CentroCosto == "") {
+				if (data.data[0].Rango == "") {
 					document.getElementById("filaStatus").style.display = 'none';
 				} else {
-					document.getElementById("status").value = data.data[0].CentroCosto;
+					document.getElementById("status").value = data.data[0].Rango;
 				}
 
 				if (data.data[0].Observaciones == "") {
