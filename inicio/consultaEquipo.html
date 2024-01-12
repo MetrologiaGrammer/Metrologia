@@ -313,10 +313,10 @@
 			} else {
 				document.getElementById("status").value = data.data[0].Status;
 			}
-			if (data.data[0].ST == "") {
+			if (data.data[0].CentroCosto == "") {
 				document.getElementById("filaCentrocosto").style.display = 'none';
 			} else {
-				document.getElementById("centrocosto").value = data.data[0].TolMax;
+				document.getElementById("centrocosto").value = data.data[0].CentroCosto;
 			}
 			if (data.data[0].CodigoCosto == "") {
 				document.getElementById("filaCodigocosto").style.display = 'none';
