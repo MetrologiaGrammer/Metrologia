@@ -184,7 +184,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 <script src="lib/main.js"></script>
 
 <script>
-
+    function desocultar() {
+        document.getElementById('contenidoReporte').style.display = 'block';
+    }
 
     function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
