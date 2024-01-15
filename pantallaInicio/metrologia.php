@@ -29,7 +29,7 @@
 								<li><a href="https://arketipo.mx/Metrologia/inicio/altaEquipo.php" class="icon brands fa-dribbble">Ingresar<span class="label">Dribbble</span></a></li>
 								<li><a href="https://arketipo.mx/Metrologia/estudiosnum2.html" class="icon brands fa-dribbble">Costos<span class="label">Dribbble</span></a></li>
 								<li><a href="https://arketipo.mx/Metrologia/inicio/editarEquipo.php" class="icon brands fa-dribbble">Editar<span class="label">Dribbble</span></a></li>
-                                <li style="margin-right: 10px;" class=""><a href="https://arketipo.mx/Metrologia/inicio/editarEquipo.php" target="_blank" ><img class="zoom" style="width: 100%" alt="" src="pantallaInicio/imagen/editar.png"></a></li>
+                                <li style="margin-right: 10px;" class=""><a href="https://arketipo.mx/Metrologia/inicio/editarEquipo.php" target="_blank" ><img class="zoom" style="width: 100%" alt="" src="images/editar.png"></a></li>
 							</ul>
 						</nav>
 					</header>
