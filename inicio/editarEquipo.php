@@ -118,11 +118,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             </div>
             <div id="fileCentrocosto" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Centro de costos</label>
-                <input type="email" name="demo-email" id="centrocosto" value="" placeholder="Centro de costos"disabled>
+                <input type="email" name="demo-email" id="centrocosto" value="" placeholder="Centro de costos">
             </div>
             <div id="fileCodigocosto" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Código de costos</label>
-                <input type="email" name="demo-email" id="codigocosto" value="" placeholder="Codigo de costos"disabled>
+                <input type="email" name="demo-email" id="codigocosto" value="" placeholder="Codigo de costos">
             </div>
             <div id="fileObservaciones" class="col-12 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Observaciones</label>
