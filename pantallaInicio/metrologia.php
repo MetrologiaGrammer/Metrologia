@@ -28,7 +28,7 @@
 
 								<li><a href="https://arketipo.mx/Metrologia/inicio/altaEquipo.php" class="icon brands fa-dribbble">Ingresar<span class="label">Dribbble</span></a></li>
 								<li><a href="https://arketipo.mx/Metrologia/estudiosnum2.html" class="icon brands fa-dribbble">Costos<span class="label">Dribbble</span></a></li>
-								<li><a href="https://arketipo.mx/Metrologia/inicio/editarEquipo.php" class="icon brands fa-dribbble">EDITAR<span class="label">Dribbble</span></a></li>
+								<li><a href="https://arketipo.mx/Metrologia/inicio/editarEquipo.php" class="icon brands fa-dribbble">Editar<span class="label">Dribbble</span></a></li>
 							</ul>
 						</nav>
 					</header>
