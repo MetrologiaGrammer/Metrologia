@@ -205,7 +205,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
 
             document.getElementById("codigo").value = data.data[0].IdEquipo;
-            document.getElementById("referen").value = data.data[0].IdEquipo;
 
             if (data.data[0].Tipo == "") {
                 document.getElementById("filaTipo").style.display = 'none';
