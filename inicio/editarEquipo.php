@@ -43,7 +43,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     <!-- One -->
     <section id="one">
         <header class="major">
-            <h2 style="text-align: center">Consulta De Equipos</h2>
+            <h2 style="text-align: center">Editar Datos</h2>
         </header>
 
 
