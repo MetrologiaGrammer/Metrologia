@@ -116,6 +116,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Status</label>
                 <input type="email" name="demo-email" id="status" value="" placeholder="STATUS">
             </div>
+            <div id="fileCentrocosto" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Centro de costos</label>
+                <input type="email" name="demo-email" id="centrocosto" value="" placeholder="Centro de costos"disabled>
+            </div>
+            <div id="fileCodigocosto" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Código de costos</label>
+                <input type="email" name="demo-email" id="codigocosto" value="" placeholder="Codigo de costos"disabled>
+            </div>
             <div id="fileObservaciones" class="col-12 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Observaciones</label>
                 <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES">
@@ -410,6 +418,16 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     document.getElementById("filaStatus").style.display = 'none';
                 } else {
                     document.getElementById("status").value = data.data[0].Status;
+                }
+                if (data.data[0].CentroCosto == "") {
+                    document.getElementById("filaCentrocosto").style.display = 'none';
+                } else {
+                    document.getElementById("centrocosto").value = data.data[0].CentroCosto;
+                }
+                if (data.data[0].CodigoCosto == "") {
+                    document.getElementById("filaCodigocosto").style.display = 'none';
+                } else {
+                    document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
                 }
 
                 if (data.data[0].Observaciones == "") {
