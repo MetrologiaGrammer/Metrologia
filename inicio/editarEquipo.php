@@ -323,6 +323,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         } else {
             $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo, function (data) {
                 document.getElementById("codigo").value = data.data[0].IdEquipo;
+                document.getElementById("referen").value = data.data[0].IdEquipo;
 
 
                 if (data.data[0].Tipo == "") {
