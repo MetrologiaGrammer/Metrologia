@@ -198,11 +198,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <br>
                 <li><a href="consultaEquipo.html" class="icon brands fa-dribbble"> CONSULTA DE EQUIPOS<span
                                 class="label">Dribbble</span></a></li>
-                <br>
+        <!--        <br>
                 <li><a href="https://arketipo.mx/Metrologia/inicio/actualizarEquipo.php"
                        class="icon brands fa-dribbble"> ACTUALIZAR EQUIPOS <span class="label">Dribbble</span></a></li>
                 <br>
-
+        -->
                 <li><a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble">
                         ESTUDIOS Y CERTIFICADOS<span class="label">Dribbble</span></a></li>
                 <br>
