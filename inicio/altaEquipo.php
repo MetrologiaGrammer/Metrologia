@@ -77,7 +77,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center">Id Referencia</label>
-                <input type="text" name="demo-name" id="codigoAux" value="" placeholder="ID" disabled>
+                <input type="text" name="demo-name" id="codigoAux" value="" placeholder="ID" >
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese tipo</label>
