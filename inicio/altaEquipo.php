@@ -231,12 +231,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         area = document.getElementById("proceso").value;
 
         var selectOperacion = document.getElementById("operacion");
-
+        selectOperacion.innerHTML = "";
 
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoareas.php?proceso=' + area, function (data) {
             var select = document.getElementById("linea");
             select.innerHTML = "";
-            selectOperacion.innerHTML = "";
+
             var createOptionAux = document.createElement("option");
             createOptionAux.text = "Seleccione Linea";
             createOptionAux.value = "";
