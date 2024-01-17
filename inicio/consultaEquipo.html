@@ -230,8 +230,6 @@
 
 	function buscarQR(id) {
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
-
-
 			document.getElementById("codigo").value = data.data[0].IdEquipo;
 
 
@@ -447,7 +445,6 @@
 				} else {
 					document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
 				}
-
 
 				if (data.data[0].Observaciones == "") {
 					document.getElementById("filaObservaciones").style.display = 'none';
