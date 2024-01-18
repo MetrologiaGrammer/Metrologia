@@ -140,7 +140,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             <img src="" style="display: none;" id="old">
         </div>
         <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
-        <center><img id="imagenUbicacion" src="images/pic2.jpg" alt="" style="width: 70%"/></center>
+        <center><img id="imagenUbicacion" src="images/" alt="" style="width: 70%"/></center>
         <p></p>
         <div class="col-6 col-12-xsmall">
             <ul class="actions stacked" style="text-align: center">
