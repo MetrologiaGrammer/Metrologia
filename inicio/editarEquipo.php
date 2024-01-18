@@ -209,6 +209,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     buscarQR(getParameterByName("ID"));
 
     function buscarQR(id) {
+        console.log('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id);
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
 
 
@@ -330,6 +331,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         if (ref == "MPI" || ref == "MPL") {
             alert("Master");
         } else {
+            console.log('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo)
             $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo, function (data) {
                 document.getElementById("codigo").value = data.data[0].IdEquipo;
                 document.getElementById("referen").value = data.data[0].IdEquipo;
