@@ -159,14 +159,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     </select>
                 </div>
             </div>
-            <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Num.Parte</label>
-                <input type="email" name="demo-email" id="centrocosto" value="" placeholder="Centro de costo"/>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Num.Parte</label>
-                <input type="email" name="demo-email" id="Codigocosto" value="" placeholder="Codigo de costo"/>
-            </div>
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Observaciones</label>
                 <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"/>
@@ -391,8 +383,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var NUMSERIE;
         var NUMPARTE;
         var STATUS;
-        var CENCOSTO;
-        var CODCOSTO;
         var OBSERVACIONES;
         var IMAGEN;
 
@@ -413,8 +403,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         NUMSERIE = document.getElementById("numserie").value;
         NUMPARTE = document.getElementById("numparte").value;
         STATUS = document.getElementById("status").value;
-        CENCOSTO = document.getElementById("centrocosto").value;
-        CODCOSTO = document.getElementById("codigocosto").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
 
@@ -448,8 +436,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     data.append('numserie', NUMSERIE);
                     data.append('numparte', NUMPARTE);
                     data.append('status', STATUS);
-                    data.append('centrocosto', CENCOSTO);
-                    data.append('codigocosto', CODCOSTO);
                     data.append('observaciones', OBSERVACIONES);
                     data.append('imagen', foto);
 
@@ -461,7 +447,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .then(function (response) {
                             if (response.ok) {
                                 alert("Se ha ingresado");
-                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,STATUS,CENCOSTO,CODCOSTO);
+                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,STATUS);
 
                             } else {
                                 throw "Error";
@@ -516,7 +502,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     }
 
 
-    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo,fechacalibracion,fechavencida,resolucion,rango,frecuencia,numparte,numserie,STATUS,centrocosto,codigocosto) {
+    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo,fechacalibracion,fechavencida,resolucion,rango,frecuencia,numparte,numserie,STATUS) {
 
         //document.getElementById("carga").style.display="block";
         //document.getElementById("contenidoReporte").style.display="none";
@@ -538,9 +524,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('rango', rango);
         data.append('frecuencia', frecuencia);
         data.append('numserie', numserie);
-        data.append('numparte', numparte);
-        data.append('centrocosto', centrocosto);
-        data.append('codigocosto', codigocosto);
         data.append('numparte', numparte);
         data.append('status', STATUS);
 
@@ -571,8 +554,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     document.getElementById("numserie").value='';
                     document.getElementById("numparte").value='';
                     document.getElementById("status").value='';
-                    document.getElementById("centrocosto").value='';
-                    document.getElementById("codigocosto").value='';
                     document.getElementById("observaciones").value='';
 
                 } else {

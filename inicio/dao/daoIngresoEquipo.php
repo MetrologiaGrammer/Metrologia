@@ -19,18 +19,16 @@ $Frecuencia= $_POST['frecuencia'];
 $Numserie= $_POST['numserie'];
 $Numparte= $_POST['numparte'];
 $Status = $_POST['status'];
-$Codcosto = $_POST['codigocosto'];
-$Cencosto = $_POST['centrocosto'];
 $Observaciones= $_POST['observaciones'];
 $Imagen= $_POST['imagen'];
 
-cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Codcosto,$Cencosto,$Status,$Observaciones,$Imagen);
+cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Status,$Observaciones,$Imagen);
 
-function cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Codcosto,$Cencosto,$Status,$Observaciones,$Imagen)
+function cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Status,$Observaciones,$Imagen)
 {
     $con = new LocalConector();
     $conexion = $con->conectar();
-    $consP = "INSERT INTO `Equipo`(`IdEquipo`, `Observaciones`, `Status`, `Resolucion`, `NumParte`,`FechaInspeccion`, `Frecuencia`, `FechaVencimiento`, `AreaProceso`, `Tipo`, `SubTipo`,`NumSerie`, `AreaLinea`, `AreaOperacion`,`Rango`,`CentroCosto`,`CodigoCosto`) VALUES ('$Referencia','$Observaciones','$Status','$Resolucion','$Numparte','$Fechacalibracion','$Frecuencia','$Fechavencida','$Proceso','$Tipo','$Subtipo','$Numserie','$Linea','$Operacion','$Rango','$Codcosto','$Cencosto')";
+    $consP = "INSERT INTO `Equipo`(`IdEquipo`, `Observaciones`, `Status`, `Resolucion`, `NumParte`,`FechaInspeccion`, `Frecuencia`, `FechaVencimiento`, `AreaProceso`, `Tipo`, `SubTipo`,`NumSerie`, `AreaLinea`, `AreaOperacion`,`Rango`) VALUES ('$Referencia','$Observaciones','$Status','$Resolucion','$Numparte','$Fechacalibracion','$Frecuencia','$Fechavencida','$Proceso','$Tipo','$Subtipo','$Numserie','$Linea','$Operacion','$Rango')";
     $rsconsPro = mysqli_query($conexion, $consP);
     mysqli_close($conexion);
 
