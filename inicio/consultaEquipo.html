@@ -243,6 +243,11 @@
 				} else {
 					document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
 				}
+				if (data.data[0].Tipo == "LAINA") {
+					document.getElementById("imagenEquipo").src = "images/LAINA.jpg";
+				} else {
+					document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
+				}
 			}
 
 
