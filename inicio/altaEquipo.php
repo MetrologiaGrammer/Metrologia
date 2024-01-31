@@ -386,6 +386,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var FRECUENCIA;
         var NUMSERIE;
         var NUMPARTE;
+        var TARGET;
         var STATUS;
         var OBSERVACIONES;
         var IMAGEN;
@@ -406,6 +407,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         FRECUENCIA = document.getElementById("frecuencia").value;
         NUMSERIE = document.getElementById("numserie").value;
         NUMPARTE = document.getElementById("numparte").value;
+        TARGET = document.getElementById("target").value;
         STATUS = document.getElementById("status").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
@@ -439,6 +441,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     data.append('frecuencia', FRECUENCIA);
                     data.append('numserie', NUMSERIE);
                     data.append('numparte', NUMPARTE);
+                    data.append('target', TARGET);
                     data.append('status', STATUS);
                     data.append('observaciones', OBSERVACIONES);
                     data.append('imagen', foto);
@@ -451,7 +454,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .then(function (response) {
                             if (response.ok) {
                                 alert("Se ha ingresado");
-                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,STATUS);
+                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,TARGET,STATUS);
 
                             } else {
                                 throw "Error";
