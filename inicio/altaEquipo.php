@@ -124,10 +124,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="date" name="demo-email" id="fechacalibracion" value="" placeholder="Email"/>
             </div>
             <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Proxima fecha de verificación</label>
+                <label
+                        for="referencia" style="text-align: center">Proxima fecha de verificación</label>
                 <input type="date" name="demo-email" id="fechavencida" value="" placeholder="Email"/>
             </div>
-
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Frecuencia</label>
@@ -149,6 +149,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Num.Parte</label>
                 <input type="email" name="demo-email" id="numparte" value="" placeholder="NUM. PARTE"/>
+            </div>
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Num.TARGET</label>
+                <input type="email" name="demo-email" id="target" value="" placeholder="NUM. TARGET"/>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Status</label>
