@@ -134,6 +134,18 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="frecuencia" value="" placeholder="FRECUENCIA"/>
             </div>
 
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Status</label>
+                <div class="col-12">
+                    <select name="demo-category" id="status">
+                        <option value="Activo">ACTIVO</option>
+                        <option value="Baja">BAJA</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr>
+
             <div class="col-6 col-12-xsmall" id="campoResolucion">
                 <label for="referencia" style="text-align: center">Resolucion</label>
                 <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"/>
@@ -158,15 +170,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
-            <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Status</label>
-                <div class="col-12">
-                    <select name="demo-category" id="status">
-                        <option value="Activo">ACTIVO</option>
-                        <option value="Baja">BAJA</option>
-                    </select>
-                </div>
-            </div>
+
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Observaciones</label>
                 <input type="text" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"/>
@@ -303,7 +307,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         let campos = ["campoResolucion", "campoRango", "campoParte", "campoSerie", "campoTarget", "campoColor"];
 
-        if (tipoEquipo === "MPI") {
+        if (tipoEquipo === "MPI" || tipoEquipo === "MPL" || tipoEquipo === "MAF" || tipoEquipo === "MCR" || tipoEquipo === "MCR") {
             for (let i = 0; i < campos.length; i++) {
                 if (campos[i] === "campoColor" || campos[i] === "campoTarget") {
                     document.getElementById(campos[i]).style.display = 'block';
@@ -313,7 +317,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             }
         } else {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "campoColor") {
+                if (campos[i] === "campoColor" || campos[i] === "campoTarget") {
                     document.getElementById(campos[i]).style.display = 'none';
                 } else {
                     document.getElementById(campos[i]).style.display = 'block';
