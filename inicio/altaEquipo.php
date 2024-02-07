@@ -144,8 +144,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 </div>
             </div>
 
-            <div><hr></div>
-
+            echo "<hr>";
 
             <div class="col-6 col-12-xsmall" id="campoResolucion">
                 <label for="referencia" style="text-align: center">Resolucion</label>
