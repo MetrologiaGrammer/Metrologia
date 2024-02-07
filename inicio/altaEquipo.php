@@ -34,8 +34,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
 <!-- Main -->
 <div id="main">
-
-    <!-- One -->
     <section id="one">
         <header class="major">
             <h2 style="text-align: center">Alta De Equipos.</h2>
@@ -163,18 +161,22 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="referencia" style="text-align: center">Num.Parte</label>
                 <input type="text" name="demo-email" id="numparte" value="" placeholder="NUM. PARTE"/>
             </div>
-            <div class="col-6 col-12-xsmall" id="campoTarget">
-                <label for="referencia" style="text-align: center">Num.TARGET</label>
-                <input type="text" name="demo-email" id="target" value="" placeholder="NUM. TARGET"/>
-            </div>
+
             <div class="col-6 col-12-xsmall" id="codigoColor" style="display: none">
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
-            <div class="col-6 col-12-xsmall" id="clienteMaster">
-                <label for="referencia" style="text-align: center">Cliente</label>
-                <input type="text" name="demo-email" id="target" value="" placeholder="Cliente"/>
+
+            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: none">
+                <label for="color" style="text-align: center">Codigo de color</label>
+                <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
+
+            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: none">
+                <label for="color" style="text-align: center">Codigo de color</label>
+                <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
+            </div>
+
             <div class="col-6 col-12-xsmall" id="plataformaMaster" style="display: none">
                 <label for="color" style="text-align: center">Plataforma</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Plataforma"/>
@@ -201,11 +203,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 </ul>
             </div>
 
+
     </section>
-</div>
-</section>
-
-
 </div>
 
 <!-- Footer -->
