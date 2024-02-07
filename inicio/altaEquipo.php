@@ -167,12 +167,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
 
-            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: ">
+            <div class="col-6 col-12-xsmall" id="campoTarget" style="display: ">
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
 
-            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: ">
+            <div class="col-6 col-12-xsmall" id="clienteMaster" style="display: ">
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
