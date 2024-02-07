@@ -143,7 +143,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     </select>
                 </div>
             </div>
-<hr>
+            <div><hr></div>
             <P>--------------------</P>
 
             <div class="col-6 col-12-xsmall" id="campoResolucion">
