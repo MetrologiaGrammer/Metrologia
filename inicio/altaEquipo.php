@@ -144,13 +144,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 </div>
             </div>
 
-            echo "<hr>";
+            <hr>
 
             <div class="col-6 col-12-xsmall" id="campoResolucion">
                 <label for="referencia" style="text-align: center">Resolucion</label>
                 <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"/>
             </div>
-            <hr>
+
             <div class="col-6 col-12-xsmall" id="campoRango">
                 <label for="referencia" style="text-align: center">Rango</label>
                 <input type="text" name="demo-email" id="rango" value="" placeholder="RANGO"/>
