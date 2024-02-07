@@ -134,25 +134,25 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="frecuencia" value="" placeholder="FRECUENCIA"/>
             </div>
 
-            <div class="col-6 col-12-xsmall">
+            <div class="col-6 col-12-xsmall" id="campoResolucion">
                 <label for="referencia" style="text-align: center">Resolucion</label>
                 <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"/>
             </div>
-            <div class="col-6 col-12-xsmall">
+            <div class="col-6 col-12-xsmall" id="campoRango">
                 <label for="referencia" style="text-align: center">Rango</label>
-                <input type="email" name="demo-email" id="rango" value="" placeholder="RANGO"/>
+                <input type="text" name="demo-email" id="rango" value="" placeholder="RANGO"/>
             </div>
-            <div class="col-6 col-12-xsmall">
+            <div class="col-6 col-12-xsmall" id="campoSerie">
                 <label for="referencia" style="text-align: center">Num.Serie</label>
-                <input type="email" name="demo-email" id="numserie" value="" placeholder="NUM. SERIE"/>
+                <input type="text" name="demo-email" id="numserie" value="" placeholder="NUM. SERIE"/>
             </div>
-            <div class="col-6 col-12-xsmall">
+            <div class="col-6 col-12-xsmall" id="campoParte">
                 <label for="referencia" style="text-align: center">Num.Parte</label>
-                <input type="email" name="demo-email" id="numparte" value="" placeholder="NUM. PARTE"/>
+                <input type="text" name="demo-email" id="numparte" value="" placeholder="NUM. PARTE"/>
             </div>
-            <div class="col-6 col-12-xsmall">
+            <div class="col-6 col-12-xsmall" id="campoTarget">
                 <label for="referencia" style="text-align: center">Num.TARGET</label>
-                <input type="email" name="demo-email" id="target" value="" placeholder="NUM. TARGET"/>
+                <input type="text" name="demo-email" id="target" value="" placeholder="NUM. TARGET"/>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Status</label>
@@ -165,7 +165,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             </div>
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Observaciones</label>
-                <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"/>
+                <input type="text" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"/>
             </div>
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese imagen del equipo</label>
@@ -296,6 +296,21 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     function buscarId() {
         var tipoEquipo;
         tipoEquipo = document.getElementById("referencia").value;
+
+        if (tipoEquipo === "MPI"){
+            document.getElementById("campoResolucion").style.display = 'none';
+            document.getElementById("campoRango").style.display = 'none';
+            document.getElementById("campoParte").style.display = 'none';
+            document.getElementById("campoSerie").style.display = 'none';
+            document.getElementById("campoTarget").style.display = 'none';
+        }else{
+            document.getElementById("campoResolucion").style.display = 'block';
+            document.getElementById("campoRango").style.display = 'block';
+            document.getElementById("campoParte").style.display = 'block';
+            document.getElementById("campoSerie").style.display = 'block';
+            document.getElementById("campoTarget").style.display = 'block';
+        }
+
         console.log('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo)
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo + "-", function (data) {
             //document.getElementById("referenciaDiv").style.display='block';
