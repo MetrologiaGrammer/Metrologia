@@ -169,17 +169,17 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             <div class="col-6 col-12-xsmall" id="campoTarget" style="display: ">
                 <label for="color" style="text-align: center">Codigo de color</label>
-                <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
+                <input type="text" name="demo-email" id="target" value="" placeholder="Codigo color"/>
             </div>
 
             <div class="col-6 col-12-xsmall" id="clienteMaster" style="display: ">
                 <label for="color" style="text-align: center">Codigo de color</label>
-                <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
+                <input type="text" name="demo-email" id="cliente" value="" placeholder="Codigo color"/>
             </div>
 
             <div class="col-6 col-12-xsmall" id="plataformaMaster" style="display: ">
                 <label for="color" style="text-align: center">Plataforma</label>
-                <input type="text" name="demo-email" id="color" value="" placeholder="Plataforma"/>
+                <input type="text" name="demo-email" id="plataforma" value="" placeholder="Plataforma"/>
             </div>
 
             <div class="col-12 col-12-xsmall">
@@ -424,6 +424,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var NUMSERIE;
         var NUMPARTE;
         var TARGET;
+        var COLOR;
+        var CLIENTE;
+        var PLATAFORMA;
         var STATUS;
         var OBSERVACIONES;
         var IMAGEN;
@@ -445,6 +448,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         NUMSERIE = document.getElementById("numserie").value;
         NUMPARTE = document.getElementById("numparte").value;
         TARGET = document.getElementById("target").value;
+        COLOR = document.getElementById("color").value;
+        CLIENTE = document.getElementById("cliente").value;
+        PLATAFORMA= document.getElementById("plataforma").value;
         STATUS = document.getElementById("status").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
@@ -479,6 +485,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     data.append('numserie', NUMSERIE);
                     data.append('numparte', NUMPARTE);
                     data.append('target', TARGET);
+                    data.append('color', COLOR);
+                    data.append('cliente', CLIENTE);
+                    data.append('plataforma', PLATAFORMA);
                     data.append('status', STATUS);
                     data.append('observaciones', OBSERVACIONES);
                     data.append('imagen', foto);

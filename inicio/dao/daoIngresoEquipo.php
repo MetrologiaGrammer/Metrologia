@@ -19,17 +19,20 @@ $Frecuencia= $_POST['frecuencia'];
 $Numserie= $_POST['numserie'];
 $Numparte= $_POST['numparte'];
 $Target= $_POST['target'];
+$Color= $_POST['color'];
+$Cliente= $_POST['cliente'];
+$Plataforma = $_POST['plataforma'];
 $Status = $_POST['status'];
 $Observaciones= $_POST['observaciones'];
 $Imagen= $_POST['imagen'];
 
-cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Status,$Observaciones,$Imagen);
+cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Color,$Cliente,$Plataforma,$Status,$Observaciones,$Imagen);
 
-function cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Status,$Observaciones,$Imagen)
+function cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Color,$Cliente,$Plataforma,$Status,$Observaciones,$Imagen)
 {
     $con = new LocalConector();
     $conexion = $con->conectar();
-    $consP = "INSERT INTO `Equipo`(`IdEquipo`, `Observaciones`, `Status`, `Resolucion`, `NumParte`,`FechaInspeccion`, `Frecuencia`, `FechaVencimiento`, `AreaProceso`, `Tipo`, `SubTipo`,`NumSerie`, `AreaLinea`, `AreaOperacion`,`Rango`,`Ntarget`) VALUES ('$Referencia','$Observaciones','$Status','$Resolucion','$Numparte','$Fechacalibracion','$Frecuencia','$Fechavencida','$Proceso','$Tipo','$Subtipo','$Numserie','$Linea','$Operacion','$Rango','$Target')";
+    $consP = "INSERT INTO `Equipo`(`IdEquipo`, `Observaciones`, `Status`, `Resolucion`, `NumParte`,`FechaInspeccion`, `Frecuencia`, `FechaVencimiento`, `AreaProceso`, `Tipo`, `SubTipo`,`NumSerie`, `AreaLinea`, `AreaOperacion`,`Rango`,`Ntarget`,`CodColor`,`ClienteMaster`,`PlataformaMaster`) VALUES ('$Referencia','$Observaciones','$Status','$Resolucion','$Numparte','$Fechacalibracion','$Frecuencia','$Fechavencida','$Proceso','$Tipo','$Subtipo','$Numserie','$Linea','$Operacion','$Rango','$Target','$Color','$Cliente','$Plataforma')";
     $rsconsPro = mysqli_query($conexion, $consP);
     mysqli_close($conexion);
 
