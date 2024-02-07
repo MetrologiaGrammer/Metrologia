@@ -305,7 +305,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         if (tipoEquipo === "MPI") {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "campoColor") {
+                if (campos[i] === "campoColor" || campos[i] === "campoTarget") {
                     document.getElementById(campos[i]).style.display = 'block';
                 } else {
                     document.getElementById(campos[i]).style.display = 'none';
