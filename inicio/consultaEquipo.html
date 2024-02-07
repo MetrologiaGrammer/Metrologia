@@ -238,8 +238,10 @@
 	buscarQR(getParameterByName("ID"));
 
 	function buscarQR(id) {
+
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
-			document.getElementById("codigo").value = data.data[0].IdEquipo;
+
+		//	document.getElementById("codigo").value = data.data[0].IdEquipo;
 
 			if (data.data[0].Tipo == "") {
 				document.getElementById("filaTipo").style.display = 'none';
@@ -251,7 +253,6 @@
 				} else {
 					document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
 				}
-
 			}
 
 
@@ -337,8 +338,6 @@
 			} else {
 				document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 			}
-
-
 		});
 		consultaFoto(id);
 	}
