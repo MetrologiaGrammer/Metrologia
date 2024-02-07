@@ -161,12 +161,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="referencia" style="text-align: center">Num.Parte</label>
                 <input type="text" name="demo-email" id="numparte" value="" placeholder="NUM. PARTE"/>
             </div>
-
             <div class="col-6 col-12-xsmall" id="codigoColor" style="display: ">
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
-
             <div class="col-6 col-12-xsmall" id="campoTarget" style="display: ">
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="target" value="" placeholder="Target"/>
