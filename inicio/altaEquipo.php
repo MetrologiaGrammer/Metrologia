@@ -167,7 +167,15 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="referencia" style="text-align: center">Num.TARGET</label>
                 <input type="text" name="demo-email" id="target" value="" placeholder="NUM. TARGET"/>
             </div>
-            <div class="col-6 col-12-xsmall" id="campoColor" style="display: none">
+            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: none">
+                <label for="color" style="text-align: center">Codigo de color</label>
+                <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
+            </div>
+            <div class="col-6 col-12-xsmall" id="clienteMaster">
+                <label for="referencia" style="text-align: center">Num.TARGET</label>
+                <input type="text" name="demo-email" id="target" value="" placeholder="NUM. TARGET"/>
+            </div>
+            <div class="col-6 col-12-xsmall" id="plataformaMaster" style="display: none">
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
@@ -308,7 +316,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         let campos = ["campoResolucion", "campoRango", "campoParte", "campoSerie", "campoTarget", "campoColor"];
 
-        if (tipoEquipo === "MPI" || tipoEquipo === "MPL" || tipoEquipo === "MAF" || tipoEquipo === "MCR" || tipoEquipo === "MCR") {
+        if (tipoEquipo === "MPI" || tipoEquipo === "MPL" || tipoEquipo === "MAF" || tipoEquipo === "MCR" || tipoEquipo === "MHI" || tipoEquipo === "MTE" || tipoEquipo === "MZI" || tipoEquipo === "MVI" || tipoEquipo === "MR" || tipoEquipo === "MAL" || tipoEquipo === "MNY") {
             for (let i = 0; i < campos.length; i++) {
                 if (campos[i] === "campoColor" || campos[i] === "campoTarget") {
                     document.getElementById(campos[i]).style.display = 'block';
