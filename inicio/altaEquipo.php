@@ -172,12 +172,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
             <div class="col-6 col-12-xsmall" id="clienteMaster">
-                <label for="referencia" style="text-align: center">Num.TARGET</label>
-                <input type="text" name="demo-email" id="target" value="" placeholder="NUM. TARGET"/>
+                <label for="referencia" style="text-align: center">Cliente</label>
+                <input type="text" name="demo-email" id="target" value="" placeholder="Cliente"/>
             </div>
             <div class="col-6 col-12-xsmall" id="plataformaMaster" style="display: none">
-                <label for="color" style="text-align: center">Codigo de color</label>
-                <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
+                <label for="color" style="text-align: center">Plataforma</label>
+                <input type="text" name="demo-email" id="color" value="" placeholder="Plataforma"/>
             </div>
 
             <div class="col-12 col-12-xsmall">
@@ -314,11 +314,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var tipoEquipo;
         tipoEquipo = document.getElementById("referencia").value;
 
-        let campos = ["campoResolucion", "campoRango", "campoParte", "campoSerie", "campoTarget", "campoColor"];
+        let campos = ["campoResolucion", "campoRango", "campoParte", "campoSerie", "campoTarget", "clienteMaster","codigoColor","plataformaMaster"];
 
         if (tipoEquipo === "MPI" || tipoEquipo === "MPL" || tipoEquipo === "MAF" || tipoEquipo === "MCR" || tipoEquipo === "MHI" || tipoEquipo === "MTE" || tipoEquipo === "MZI" || tipoEquipo === "MVI" || tipoEquipo === "MR" || tipoEquipo === "MAL" || tipoEquipo === "MNY") {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "campoColor" || campos[i] === "campoTarget") {
+                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster") {
                     document.getElementById(campos[i]).style.display = 'block';
                 } else {
                     document.getElementById(campos[i]).style.display = 'none';
@@ -326,7 +326,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             }
         } else {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "campoColor" || campos[i] === "campoTarget") {
+                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster") {
                     document.getElementById(campos[i]).style.display = 'none';
                 } else {
                     document.getElementById(campos[i]).style.display = 'block';
