@@ -301,20 +301,24 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var tipoEquipo;
         tipoEquipo = document.getElementById("referencia").value;
 
-        if (tipoEquipo === "MPI"){
-            document.getElementById("campoResolucion").style.display = 'none';
-            document.getElementById("campoRango").style.display = 'none';
-            document.getElementById("campoParte").style.display = 'none';
-            document.getElementById("campoSerie").style.display = 'none';
-            document.getElementById("campoTarget").style.display = 'none';
-            document.getElementById("campoColor").style.display = 'block';
-        }else{
-            document.getElementById("campoResolucion").style.display = 'block';
-            document.getElementById("campoRango").style.display = 'block';
-            document.getElementById("campoParte").style.display = 'block';
-            document.getElementById("campoSerie").style.display = 'block';
-            document.getElementById("campoTarget").style.display = 'block';
-            document.getElementById("campoColor").style.display = 'none';
+        let campos = ["campoResolucion", "campoRango", "campoParte", "campoSerie", "campoTarget", "campoColor"];
+
+        if (tipoEquipo === "MPI") {
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i] === "campoColor") {
+                    document.getElementById(campos[i]).style.display = 'block';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'none';
+                }
+            }
+        } else {
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i] === "campoColor") {
+                    document.getElementById(campos[i]).style.display = 'none';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'block';
+                }
+            }
         }
 
         console.log('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo)
