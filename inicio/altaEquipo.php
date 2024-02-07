@@ -162,22 +162,22 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="numparte" value="" placeholder="NUM. PARTE"/>
             </div>
 
-            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: none">
+            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: ">
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
 
-            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: none">
+            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: ">
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
 
-            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: none">
+            <div class="col-6 col-12-xsmall" id="codigoColor" style="display: ">
                 <label for="color" style="text-align: center">Codigo de color</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
             </div>
 
-            <div class="col-6 col-12-xsmall" id="plataformaMaster" style="display: none">
+            <div class="col-6 col-12-xsmall" id="plataformaMaster" style="display: ">
                 <label for="color" style="text-align: center">Plataforma</label>
                 <input type="text" name="demo-email" id="color" value="" placeholder="Plataforma"/>
             </div>
