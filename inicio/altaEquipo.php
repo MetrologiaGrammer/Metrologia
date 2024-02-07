@@ -154,6 +154,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="referencia" style="text-align: center">Num.TARGET</label>
                 <input type="text" name="demo-email" id="target" value="" placeholder="NUM. TARGET"/>
             </div>
+            <div class="col-6 col-12-xsmall" id="campoColor" style="display: none">
+                <label for="color" style="text-align: center">Codigo de color</label>
+                <input type="text" name="demo-email" id="color" value="" placeholder="Codigo color"/>
+            </div>
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Status</label>
                 <div class="col-12">
@@ -303,12 +307,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("campoParte").style.display = 'none';
             document.getElementById("campoSerie").style.display = 'none';
             document.getElementById("campoTarget").style.display = 'none';
+            document.getElementById("campoColor").style.display = 'block';
         }else{
             document.getElementById("campoResolucion").style.display = 'block';
             document.getElementById("campoRango").style.display = 'block';
             document.getElementById("campoParte").style.display = 'block';
             document.getElementById("campoSerie").style.display = 'block';
             document.getElementById("campoTarget").style.display = 'block';
+            document.getElementById("campoColor").style.display = 'none';
         }
 
         console.log('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo)
