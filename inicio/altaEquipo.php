@@ -326,11 +326,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var tipoEquipo;
         tipoEquipo = document.getElementById("referencia").value;
 
-        let campos = ["campoResolucion", "campoRango", "campoParte", "campoSerie", "campoTarget", "clienteMaster","codigoColor","plataformaMaster"];
+        let campos = ["campoResolucion", "campoRango", "campoParte", "campoSerie", "campoTarget", "clienteMaster","codigoColor","plataformaMaster","vendedorMaster","colorMaster","numColor"];
 
         if (tipoEquipo === "MPI" || tipoEquipo === "MPL" || tipoEquipo === "MAF" || tipoEquipo === "MCR" || tipoEquipo === "MHI" || tipoEquipo === "MTE" || tipoEquipo === "MZI" || tipoEquipo === "MVI" || tipoEquipo === "MR" || tipoEquipo === "MAL" || tipoEquipo === "MNY") {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster") {
+                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "numColor") {
                     document.getElementById(campos[i]).style.display = 'block';
                 } else {
                     document.getElementById(campos[i]).style.display = 'none';
@@ -338,7 +338,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             }
         } else {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster") {
+                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "numColor") {
                     document.getElementById(campos[i]).style.display = 'none';
                 } else {
                     document.getElementById(campos[i]).style.display = 'block';
