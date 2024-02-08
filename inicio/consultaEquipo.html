@@ -457,16 +457,19 @@
 				} else {
 					document.getElementById("status").value = data.data[0].Status;
 				}
+
 				if (data.data[0].Ntarget == "") {
 					document.getElementById("filaTarget").style.display = 'none';
 				} else {
 					document.getElementById("target").value = data.data[0].Ntarget;
 				}
+
 				if (data.data[0].CodColor == "") {
 					document.getElementById("filaCodigocolor").style.display = 'none';
 				} else {
 					document.getElementById("codigoColor").value = data.data[0].CodColor;
 				}
+
 				if (data.data[0].ClienteMaster == "") {
 					document.getElementById("filaCliente").style.display = 'none';
 				} else {
