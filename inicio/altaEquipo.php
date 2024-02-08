@@ -187,7 +187,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             <div class="col-6 col-12-xsmall" id="colorMaster" style="display: ">
                 <label for="color" style="text-align: center">Color del Master</label>
-                <input type="text" name="demo-email" id="coloraster" value="" placeholder="Color del master"/>
+                <input type="text" name="demo-email" id="colormaster" value="" placeholder="Color del master"/>
             </div>
 
             <div class="col-6 col-12-xsmall" id="numColor" style="display: ">
@@ -440,6 +440,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var COLOR;
         var CLIENTE;
         var PLATAFORMA;
+        var VENDEDOR;
+        var COLORM;
+        var NUMCOLOR;
         var STATUS;
         var OBSERVACIONES;
         var IMAGEN;
@@ -464,6 +467,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         COLOR = document.getElementById("color").value;
         CLIENTE = document.getElementById("cliente").value;
         PLATAFORMA= document.getElementById("plataforma").value;
+        VENDEDOR= document.getElementById("vendedor").value;
+        COLORM= document.getElementById("colormaster").value;
+        NUMCOLOR= document.getElementById("numColor").value;
         STATUS = document.getElementById("status").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
@@ -501,6 +507,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     data.append('color', COLOR);
                     data.append('cliente', CLIENTE);
                     data.append('plataforma', PLATAFORMA);
+                    data.append('vendedor', VENDEDOR);
+                    data.append('colormaster', COLORM);
+                    data.append('numColor', NUMCOLOR);
                     data.append('status', STATUS);
                     data.append('observaciones', OBSERVACIONES);
                     data.append('imagen', foto);
