@@ -477,6 +477,22 @@
 				} else {
 					document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
 				}
+				if (data.data[0].VendedorMaster == "") {
+					document.getElementById("filaVendedormaster").style.display = 'none';
+				} else {
+					document.getElementById("vendedor").value = data.data[0].VendedorMaster;
+				}
+				if (data.data[0].NombreColorMaster == "") {
+					document.getElementById("filaColormaster").style.display = 'none';
+				} else {
+					document.getElementById("color").value = data.data[0].NombreColorMaster;
+				}
+				if (data.data[0].NumColorMaster == "") {
+					document.getElementById("filaNumcolor").style.display = 'none';
+				} else {
+					document.getElementById("numColor").value = data.data[0].NumColorMaster;
+				}
+
 				if (data.data[0].CentroCosto == "") {
 					document.getElementById("filaCentrocosto").style.display = 'none';
 				} else {
