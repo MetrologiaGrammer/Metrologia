@@ -180,6 +180,21 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="plataforma" value="" placeholder="Plataforma"/>
             </div>
 
+            <div class="col-6 col-12-xsmall" id="vendedorMaster" style="display: ">
+                <label for="color" style="text-align: center">Vendedor del Master</label>
+                <input type="text" name="demo-email" id="vendedor" value="" placeholder="Vendedor del master"/>
+            </div>
+
+            <div class="col-6 col-12-xsmall" id="colorMaster" style="display: ">
+                <label for="color" style="text-align: center">Color del Master</label>
+                <input type="text" name="demo-email" id="coloraster" value="" placeholder="Color del master"/>
+            </div>
+
+            <div class="col-6 col-12-xsmall" id="numColor" style="display: ">
+                <label for="color" style="text-align: center">Numero del color</label>
+                <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero del color"/>
+            </div>
+
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Observaciones</label>
                 <input type="text" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"/>
