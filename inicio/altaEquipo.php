@@ -195,7 +195,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero del color"/>
             </div>
 
-
+            <div class="col-12 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Observaciones</label>
+                <input type="text" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"/>
+            </div>
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese imagen del equipo</label>
                 <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"
