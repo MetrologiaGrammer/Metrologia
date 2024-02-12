@@ -190,10 +190,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="colormaster" value="" placeholder="Color del master"/>
             </div>
 
-            <div class="col-6 col-12-xsmall" id="numColor" style="display: ">
-                <label for="color" style="text-align: center">Numero del color</label>
-                <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero del color"/>
-            </div>}
 
 
 
