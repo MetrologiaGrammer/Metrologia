@@ -195,15 +195,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero del color"/>
             </div>}
 
-            <div class="col-12 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Nomina</label>
-                <input type="text" name="demo-email" id="numNomina" value="" placeholder="Nomina"/>
-            </div>
 
-            <div class="col-12 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Para que se requiere el equipo?</label>
-                <input type="text" name="demo-email" id="uso" value="" placeholder="Para que se usa"/>
-            </div>
 
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Observaciones</label>
