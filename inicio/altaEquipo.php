@@ -202,7 +202,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Para que se requiere el equipo?</label>
-                <input type="text" name="demo-email" id="uso" value="" placeholder="Para que se usa?"/>
+                <input type="text" name="demo-email" id="uso" value="" placeholder="Para que se usa"/>
             </div>
 
             <div class="col-12 col-12-xsmall">
