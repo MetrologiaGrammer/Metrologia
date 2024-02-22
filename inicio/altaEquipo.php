@@ -114,7 +114,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="npersona" value="" placeholder="Nomina del responsable"/>
             </div>
 
-            <div class="col-6 col-12-xsmall" id="campopersona">
+            <div class="col-6 col-12-xsmall" id="campoPersona">
                 <label for="referencia" style="text-align: center">Nombre de la persona</label>
                 <input type="text" name="demo-email" id="persona" value="" placeholder="Nombre del responsable"/>
             </div>
@@ -321,6 +321,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     function llenarProceso() {
 
 
+
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
             var select = document.getElementById("proceso");
             for (var i = 0; i < data.data.length; i++) {
@@ -330,6 +331,26 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 select.appendChild(createOption);
             }
         });
+
+        let campos = ["campoNpersona", "campoPersona"];
+
+        if (select === "PERSONAL" ) {
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "numColor") {
+                    document.getElementById(campos[i]).style.display = 'block';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'none';
+                }
+            }
+        } else {
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "numColor") {
+                    document.getElementById(campos[i]).style.display = 'none';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'block';
+                }
+            }
+        }
     }
 
 
