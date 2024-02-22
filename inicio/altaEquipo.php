@@ -108,6 +108,17 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     </select>
                 </div>
             </div>
+
+            <div class="col-6 col-12-xsmall" id="campoNpersona">
+                <label for="referencia" style="text-align: center">Nomina</label>
+                <input type="text" name="demo-email" id="npersona" value="" placeholder="Nomina del responsable"/>
+            </div>
+
+            <div class="col-6 col-12-xsmall" id="campopersona">
+                <label for="referencia" style="text-align: center">Nombre de la persona</label>
+                <input type="text" name="demo-email" id="persona" value="" placeholder="Nombre del responsable"/>
+            </div>
+
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese operacion</label>
                 <div class="col-12">
@@ -444,6 +455,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var COLORM;
         var NUMCOLOR;
         var STATUS;
+        var NOMINAPERSONA;
+        var NOMBREPERSONA;
         var OBSERVACIONES;
         var IMAGEN;
 
@@ -471,6 +484,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         COLORM= document.getElementById("colormaster").value;
         NUMCOLOR= document.getElementById("numColor").value;
         STATUS = document.getElementById("status").value;
+        NOMINAPERSONA = document.getElementById("npersona").value;
+        NOMBREPERSONA = document.getElementById("persona").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
 
@@ -511,6 +526,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     data.append('colormaster', COLORM);
                     data.append('numColor', NUMCOLOR);
                     data.append('status', STATUS);
+                    data.append('npersona', NOMINAPERSONA);
+                    data.append('persona', NOMBREPERSONA);
                     data.append('observaciones', OBSERVACIONES);
                     data.append('imagen', foto);
 
@@ -522,7 +539,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .then(function (response) {
                             if (response.ok) {
                                 alert("Se ha ingresado");
-                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,TARGET,STATUS);
+                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,TARGET,STATUS,NOMINAPERSONA,NOMBREPERSONA);
 
                             } else {
                                 throw "Error";
@@ -577,7 +594,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     }
 
 
-    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo,fechacalibracion,fechavencida,resolucion,rango,frecuencia,numparte,numserie,STATUS) {
+    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo,fechacalibracion,fechavencida,resolucion,rango,frecuencia,numparte,numserie,STATUS,NOMINAPERSONA,NOMBREPERSONA) {
 
         //document.getElementById("carga").style.display="block";
         //document.getElementById("contenidoReporte").style.display="none";
@@ -601,6 +618,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('numserie', numserie);
         data.append('numparte', numparte);
         data.append('status', STATUS);
+        data.append('npersona', NOMINAPERSONA);
+        data.append('persona', NOMBREPERSONA);
 
 
 
