@@ -320,7 +320,19 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
     function llenarProceso() {
 
-        let campos = [, "campoOperacion""campoNpersona", "campoPersona"];
+
+
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
+            var select = document.getElementById("proceso");
+            for (var i = 0; i < data.data.length; i++) {
+                var createOption = document.createElement("option");
+                createOption.text = data.data[i].Proceso;
+                createOption.value = data.data[i].Proceso;
+                select.appendChild(createOption);
+            }
+        });
+
+        let campos = [ "campoOperacion","campoNpersona", "campoPersona"];
 
         if (select === "PERSONAL" ) {
             for (let i = 0; i < campos.length; i++) {
@@ -339,18 +351,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 }
             }
         }
-
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
-            var select = document.getElementById("proceso");
-            for (var i = 0; i < data.data.length; i++) {
-                var createOption = document.createElement("option");
-                createOption.text = data.data[i].Proceso;
-                createOption.value = data.data[i].Proceso;
-                select.appendChild(createOption);
-            }
-        });
-
-
     }
 
 
