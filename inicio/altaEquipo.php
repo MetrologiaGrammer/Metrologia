@@ -119,7 +119,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="persona" value="" placeholder="Nombre del responsable"/>
             </div>
 
-            <div class="col-6 col-12-xsmall">
+            <div class="col-6 col-12-xsmall" id="campoOperacion">
                 <label for="referencia" style="text-align: center">Ingrese operacion</label>
                 <div class="col-12">
                     <select name="demo-category" id="operacion">
@@ -332,11 +332,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             }
         });
 
-        let campos = ["campoNpersona", "campoPersona"];
+        let campos = [, "campoOperacion""campoNpersona", "campoPersona"];
 
         if (select === "PERSONAL" ) {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "numColor") {
+                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
                     document.getElementById(campos[i]).style.display = 'block';
                 } else {
                     document.getElementById(campos[i]).style.display = 'none';
@@ -344,7 +344,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             }
         } else {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "numColor") {
+                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
                     document.getElementById(campos[i]).style.display = 'none';
                 } else {
                     document.getElementById(campos[i]).style.display = 'block';
