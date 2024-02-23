@@ -284,17 +284,17 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         if (area === "PERSONAL" ) {
             for (let i = 0; i < campos.length; i++) {
                 if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
-                    document.getElementById(campos[i]).style.display = 'none';
-                } else {
                     document.getElementById(campos[i]).style.display = 'block';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'none';
                 }
             }
         } else {
             for (let i = 0; i < campos.length; i++) {
                 if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
-                    document.getElementById(campos[i]).style.display = 'block';
-                } else {
                     document.getElementById(campos[i]).style.display = 'none';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'block';
                 }
             }
         }
