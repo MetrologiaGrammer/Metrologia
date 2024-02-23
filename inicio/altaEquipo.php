@@ -109,6 +109,15 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 </div>
             </div>
 
+            <div class="col-6 col-12-xsmall" id="campoOperacion">
+                <label for="referencia" style="text-align: center">Ingrese operacion</label>
+                <div class="col-12">
+                    <select name="demo-category" id="operacion">
+                        <option value="">- OPERACION -</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="col-6 col-12-xsmall" id="campoNpersona">
                 <label for="referencia" style="text-align: center">Nomina</label>
                 <input type="text" name="demo-email" id="npersona" value="" placeholder="Nomina del responsable"/>
@@ -117,15 +126,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             <div class="col-6 col-12-xsmall" id="campoPersona">
                 <label for="referencia" style="text-align: center">Nombre de la persona</label>
                 <input type="text" name="demo-email" id="persona" value="" placeholder="Nombre del responsable"/>
-            </div>
-
-            <div class="col-6 col-12-xsmall" id="campoOperacion">
-                <label for="referencia" style="text-align: center">Ingrese operacion</label>
-                <div class="col-12">
-                    <select name="demo-category" id="operacion">
-                        <option value="">- OPERACION -</option>
-                    </select>
-                </div>
             </div>
 
             <div class="col-6 col-12-xsmall">
