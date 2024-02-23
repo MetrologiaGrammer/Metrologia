@@ -277,6 +277,28 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var selectOperacion = document.getElementById("operacion");
         selectOperacion.innerHTML = "";
 
+        area = document.getElementById("proceso").value;
+
+        let campos = ["campoOperacion","campoNpersona", "campoPersona"];
+
+        if (area === "PERSONAL" ) {
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
+                    document.getElementById(campos[i]).style.display = 'none';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'block';
+                }
+            }
+        } else {
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
+                    document.getElementById(campos[i]).style.display = 'block';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'none';
+                }
+            }
+        }
+
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoareas.php?proceso=' + area, function (data) {
             var select = document.getElementById("linea");
             select.innerHTML = "";
@@ -319,28 +341,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     llenarProceso();
 
     function llenarProceso() {
-        var selec;
-        selec = document.getElementById("proceso").value;
 
-        let campos = ["campoOperacion","campoNpersona", "campoPersona"];
-
-        if (selec === "PERSONAL" ) {
-            for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
-                    document.getElementById(campos[i]).style.display = 'none';
-                } else {
-                    document.getElementById(campos[i]).style.display = 'block';
-                }
-            }
-        } else {
-            for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
-                    document.getElementById(campos[i]).style.display = 'block';
-                } else {
-                    document.getElementById(campos[i]).style.display = 'none';
-                }
-            }
-        }
 
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
             var select = document.getElementById("proceso");
