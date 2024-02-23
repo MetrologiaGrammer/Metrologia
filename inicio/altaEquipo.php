@@ -319,22 +319,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     llenarProceso();
 
     function llenarProceso() {
+        var selec;
+        selec = document.getElementById("proceso").value;
 
+        let campos = ["campoOperacion","campoNpersona", "campoPersona"];
 
-
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
-            var select = document.getElementById("proceso");
-            for (var i = 0; i < data.data.length; i++) {
-                var createOption = document.createElement("option");
-                createOption.text = data.data[i].Proceso;
-                createOption.value = data.data[i].Proceso;
-                select.appendChild(createOption);
-            }
-        });
-
-        let campos = [ "campoOperacion","campoNpersona", "campoPersona"];
-
-        if (select === "PERSONAL" ) {
+        if (selec === "PERSONAL" ) {
             for (let i = 0; i < campos.length; i++) {
                 if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
                     document.getElementById(campos[i]).style.display = 'block';
@@ -351,6 +341,19 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 }
             }
         }
+
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoProceso.php', function (data) {
+            var select = document.getElementById("proceso");
+            for (var i = 0; i < data.data.length; i++) {
+                var createOption = document.createElement("option");
+                createOption.text = data.data[i].Proceso;
+                createOption.value = data.data[i].Proceso;
+                select.appendChild(createOption);
+            }
+        });
+
+
+
     }
 
 
