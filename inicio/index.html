@@ -284,6 +284,25 @@
 	buscarQR(getParameterByName("ID"));
 	function buscarQR(ID) {
 				document.getElementById("estudio").src = "Estudios/"+ID+".pdf"
+
+		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
+
+			document.getElementById("codigo").value = data.data[0].IdEquipo
+
+			if (data.data[0].Tipo == "") {
+				document.getElementById("filaTipo").style.display = 'none';
+			} else {
+				document.getElementById("tipo").value = data.data[0].Tipo;
+
+				if (data.data[0].Tipo == "ESCALA") {
+					document.getElementById("imagenEquipo").src = "images/ER-.jpg";
+				} else {
+					document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
+				}
+			}
+		});
+
+		consultaFoto(id);
 	}
 
 
@@ -319,7 +338,7 @@
 			document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 
 		});
-		//consultaFoto(Equipo);
+		consultaFoto(Equipo);
 
 	}
 
@@ -375,7 +394,15 @@
 				});
 	}
 
-
+		function consultaFoto(Equipo){
+			console.log('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?idreferencia='+Equipo);
+			$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?idreferencia='+Equipo, function (data) {
+				document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/"+data.data[0].IdImagen +".png";
+				document.getElementById("proceso").value = data.data[0].AreaProceso;
+				document.getElementById("linea").value = data.data[0].Linea;
+				//document.getElementById("operacion").value = data.data[0].Operacion;
+			});
+		}
 
 
 
