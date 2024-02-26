@@ -337,12 +337,59 @@
 			} else {
 				document.getElementById("status").value = data.data[0].Status;
 			}
-
+			if (data.data[0].CentroCosto == "") {
+				document.getElementById("filaCentrocosto").style.display = 'none';
+			} else {
+				document.getElementById("centrocosto").value = data.data[0].CentroCosto;
+			}
 			if (data.data[0].CodigoCosto == "") {
 				document.getElementById("filaCodigocosto").style.display = 'none';
 			} else {
 				document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
 			}
+
+			if (data.data[0].Ntarget == "") {
+				document.getElementById("filaTarget").style.display = 'none';
+			} else {
+				document.getElementById("target").value = data.data[0].Ntarget;
+			}
+
+			if (data.data[0].CodColor == "") {
+				document.getElementById("filaCodigocolor").style.display = 'none';
+			} else {
+				document.getElementById("codigoColor").value = data.data[0].CodColor;
+			}
+
+			if (data.data[0].ClienteMaster == "") {
+				document.getElementById("filaCliente").style.display = 'none';
+			} else {
+				document.getElementById("cliente").value = data.data[0].ClienteMaster;
+			}
+
+			if (data.data[0].PlataformaMaster == "") {
+				document.getElementById("filaPlataforma").style.display = 'none';
+			} else {
+				document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
+			}
+
+			if (data.data[0].VendedorMaster == "") {
+				document.getElementById("filaVendedormaster").style.display = 'none';
+			} else {
+				document.getElementById("vendedor").value = data.data[0].VendedorMaster;
+			}
+
+			if (data.data[0].NombreColorMaster == "") {
+				document.getElementById("filaColormaster").style.display = 'none';
+			} else {
+				document.getElementById("color").value = data.data[0].NombreColorMaster;
+			}
+
+			if (data.data[0].NumColorMaster == "") {
+				document.getElementById("filaNumcolor").style.display = 'none';
+			} else {
+				document.getElementById("numColor").value = data.data[0].NumColorMaster;
+			}
+
 			if (data.data[0].Observaciones == "") {
 				document.getElementById("filaObservaciones").style.display = 'none';
 			} else {
