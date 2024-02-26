@@ -148,8 +148,8 @@
 
 
 	buscarQR(getParameterByName("ID"));
-
 	function buscarQR(id) {
+				document.getElementById("estudio").src = "Estudios/"+ID+".pdf"
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + id, function (data) {
 			if (data.data[0].Tipo == "ESCALA") {
 				document.getElementById("imagenEquipo").src = "images/ER-001.jpg";
@@ -171,7 +171,10 @@
 			document.getElementById("status").value = data.data[0].Status;
 			document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 			document.getElementById("observaciones").value = data.data[0].Observaciones;
+
 		});
+
+
 	}
 
 
