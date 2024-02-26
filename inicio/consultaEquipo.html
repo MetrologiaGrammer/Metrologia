@@ -217,7 +217,7 @@
 		<ul class="icons">
 			<li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble">	INICIO<span class="label">Dribbble</span></a></li><br>
             <li><a href="https://arketipo.mx/Metrologia/inicio/altaEquipo.php" class="icon brands fa-dribbble">	INGRESO DE EQUIPO<span class="label">Dribbble</span></a></li><br>
-			<li><a ONCLICK="mandar()" class="icon brands fa-dribbble">	ESTUDIOS Y CERTIFICACIONES<span class="label">Dribbble</span></a></li><br>
+			<li><a ONCLICK="mandarEstudio()" class="icon brands fa-dribbble">	ESTUDIOS Y CERTIFICACIONES<span class="label">Dribbble</span></a></li><br>
 			<li><a ONCLICK="mandar()" class="icon brands fa-dribbble">	ACTUALIZAR EQUIPOS<span class="label">Dribbble</span></a></li><br>
 
 		</ul>
@@ -594,6 +594,8 @@
 
 	function mandar() {
 		window.location = "https://arketipo.mx/Metrologia/inicio/actualizarEquipo.php?ID="+document.getElementById("codigo").value;
+	}
+	function mandarEstudio() {
 		window.location = "https://arketipo.mx/Metrologia/inicio/index.html?ID="+document.getElementById("codigo").value;
 	}
 
