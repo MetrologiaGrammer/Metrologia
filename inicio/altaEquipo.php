@@ -127,6 +127,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="referencia" style="text-align: center">Nombre de la persona</label>
                 <input type="text" name="demo-email" id="persona" value="" placeholder="Nombre del responsable"/>
             </div>
+            <div class="col-6 col-12-xsmall" id="campoCorreo">
+                <label for="referencia" style="text-align: center">Correo del responsable</label>
+                <input type="text" name="demo-email" id="correo" value="" placeholder="Correo del responsable"/>
+            </div>
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Fecha de verificación</label>
@@ -279,11 +283,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         area = document.getElementById("proceso").value;
 
-        let campos = ["campoOperacion","campoNpersona", "campoPersona"];
+        let campos = ["campoOperacion","campoNpersona", "campoPersona", "campoCorreo"];
 
         if (area === "PERSONAL" ) {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
+                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona"|| campos[i] === "campoCorreo") {
                     document.getElementById(campos[i]).style.display = 'block';
                 } else {
                     document.getElementById(campos[i]).style.display = 'none';
@@ -291,7 +295,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             }
         } else {
             for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona") {
+                if (campos[i] === "campoNpersona" || campos[i] === "campoPersona"|| campos[i] === "campoCorreo") {
                     document.getElementById(campos[i]).style.display = 'none';
                 } else {
                     document.getElementById(campos[i]).style.display = 'block';
@@ -482,6 +486,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var STATUS;
         var NOMINAPERSONA;
         var NOMBREPERSONA;
+        var CORREOPERSONA;
         var OBSERVACIONES;
         var IMAGEN;
 
@@ -511,6 +516,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         STATUS = document.getElementById("status").value;
         NOMINAPERSONA = document.getElementById("npersona").value;
         NOMBREPERSONA = document.getElementById("persona").value;
+        CORREOPERSONA = document.getElementById("correo").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
 
@@ -553,6 +559,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     data.append('status', STATUS);
                     data.append('npersona', NOMINAPERSONA);
                     data.append('persona', NOMBREPERSONA);
+                    data.append('correo', CORREOPERSONA);
                     data.append('observaciones', OBSERVACIONES);
                     data.append('imagen', foto);
 
@@ -564,7 +571,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         .then(function (response) {
                             if (response.ok) {
                                 alert("Se ha ingresado");
-                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,TARGET,STATUS,NOMINAPERSONA,NOMBREPERSONA);
+                                enviarCorreo(NOMINA, "", PROCESO, LINEA, REFERENCIA, OPERACION,OBSERVACIONES,TIPO,SUBTIPO,FECHACALIBRACION,FECHAVENCIDA,RESOLUCION,RANGO,FRECUENCIA,NUMSERIE,NUMPARTE,TARGET,STATUS,NOMINAPERSONA,NOMBREPERSONA,CORREOPERSONA);
 
                             } else {
                                 throw "Error";
@@ -619,7 +626,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     }
 
 
-    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo,fechacalibracion,fechavencida,resolucion,rango,frecuencia,numparte,numserie,STATUS,NOMINAPERSONA,NOMBREPERSONA) {
+    function enviarCorreo(nomina, Retiqueta, proceso, linea, Referencia, operacion,observaciones,tipo,subtipo,fechacalibracion,fechavencida,resolucion,rango,frecuencia,numparte,numserie,STATUS,NOMINAPERSONA,NOMBREPERSONA,CORREOPERSONA) {
 
         //document.getElementById("carga").style.display="block";
         //document.getElementById("contenidoReporte").style.display="none";
@@ -645,6 +652,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('status', STATUS);
         data.append('npersona', NOMINAPERSONA);
         data.append('persona', NOMBREPERSONA);
+        data.append('correo', CORREOPERSONA);
 
 
 
