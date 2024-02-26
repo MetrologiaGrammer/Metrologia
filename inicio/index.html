@@ -102,7 +102,7 @@
 				<input type="text" name="demo-email" id="fechavencida" value="" placeholder="PROX. FECHA DE VERIFICACION"disabled>
 			</div>
 		</div>
-		</div>
+
 		<P></P>
 
 
@@ -182,7 +182,7 @@
 
 	function Buscarequipo(){
 		var Equipo;
-		Equipo=document.getElementById("referencia").value;
+		Equipo=document.getElementById("codigo").value;
 
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+Equipo, function (data) {
 			document.getElementById("codigo").value = data.data[0].IdEquipo;
