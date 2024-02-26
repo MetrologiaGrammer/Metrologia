@@ -54,7 +54,7 @@ function Contador(){
             // Imprimir la respuesta
             echo $respuesta;
 
-            cliente($fila['IdBitacora']);
+            // cliente($fila['IdBitacora']);
         }
 
 }
