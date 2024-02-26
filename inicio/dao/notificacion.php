@@ -8,7 +8,7 @@ Contador();
 function Contador(){
     $con = new LocalConector();
     $conex=$con->conectar();
-    $datos = mysqli_query($conex, "SELECT * FROM `Equipo` WHERE STR_TO_DATE(    CONCAT('01-',        CASE            WHEN `FechaVencimiento` LIKE '%enero%' THEN REPLACE(`FechaVencimiento`, 'enero', 'january')           WHEN `FechaVencimiento` LIKE '%febrero%' THEN REPLACE(`FechaVencimiento`, 'febrero', 'february')            WHEN `FechaVencimiento` LIKE '%marzo%' THEN REPLACE(`FechaVencimiento`, 'marzo', 'march')            WHEN `FechaVencimiento` LIKE '%abril%' THEN REPLACE(`FechaVencimiento`, 'abril', 'april')            WHEN `FechaVencimiento` LIKE '%mayo%' THEN REPLACE(`FechaVencimiento`, 'mayo', 'may')            WHEN `FechaVencimiento` LIKE '%junio%' THEN REPLACE(`FechaVencimiento`, 'junio', 'june')            WHEN `FechaVencimiento` LIKE '%julio%' THEN REPLACE(`FechaVencimiento`, 'julio', 'july')            WHEN `FechaVencimiento` LIKE '%agosto%' THEN REPLACE(`FechaVencimiento`, 'agosto', 'august')            WHEN `FechaVencimiento` LIKE '%septiembre%' THEN REPLACE(`FechaVencimiento`, 'septiembre', 'september')            WHEN `FechaVencimiento` LIKE '%octubre%' THEN REPLACE(`FechaVencimiento`, 'octubre', 'october')            WHEN `FechaVencimiento` LIKE '%noviembre%' THEN REPLACE(`FechaVencimiento`, 'noviembre', 'november')            WHEN `FechaVencimiento` LIKE '%diciembre%' THEN REPLACE(`FechaVencimiento`, 'diciembre', 'december')        END    ), '%d-%M-%y') < CURDATE();");
+    $datos = mysqli_query($conex, "SELECT * FROM `Equipo` WHERE Notificacion = 0 and STR_TO_DATE(    CONCAT('01-',        CASE            WHEN `FechaVencimiento` LIKE '%enero%' THEN REPLACE(`FechaVencimiento`, 'enero', 'january')           WHEN `FechaVencimiento` LIKE '%febrero%' THEN REPLACE(`FechaVencimiento`, 'febrero', 'february')            WHEN `FechaVencimiento` LIKE '%marzo%' THEN REPLACE(`FechaVencimiento`, 'marzo', 'march')            WHEN `FechaVencimiento` LIKE '%abril%' THEN REPLACE(`FechaVencimiento`, 'abril', 'april')            WHEN `FechaVencimiento` LIKE '%mayo%' THEN REPLACE(`FechaVencimiento`, 'mayo', 'may')            WHEN `FechaVencimiento` LIKE '%junio%' THEN REPLACE(`FechaVencimiento`, 'junio', 'june')            WHEN `FechaVencimiento` LIKE '%julio%' THEN REPLACE(`FechaVencimiento`, 'julio', 'july')            WHEN `FechaVencimiento` LIKE '%agosto%' THEN REPLACE(`FechaVencimiento`, 'agosto', 'august')            WHEN `FechaVencimiento` LIKE '%septiembre%' THEN REPLACE(`FechaVencimiento`, 'septiembre', 'september')            WHEN `FechaVencimiento` LIKE '%octubre%' THEN REPLACE(`FechaVencimiento`, 'octubre', 'october')            WHEN `FechaVencimiento` LIKE '%noviembre%' THEN REPLACE(`FechaVencimiento`, 'noviembre', 'november')            WHEN `FechaVencimiento` LIKE '%diciembre%' THEN REPLACE(`FechaVencimiento`, 'diciembre', 'december')        END    ), '%d-%M-%y') < CURDATE();");
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 
     foreach($resultado as $fila){
@@ -54,16 +54,16 @@ function Contador(){
             // Imprimir la respuesta
             echo $respuesta;
 
-            // cliente($fila['IdBitacora']);
+             cliente($fila['IdEquipo']);
         }
 
 }
 
-function cliente($Bitacora){
+function cliente($IdEquipo){
     $con = new LocalConector();
     $conexion=$con->conectar();
 
-    $consP="update `BitacoraBonosSalida` set `Notificacion` = '1' WHERE `IdBitacora` = '$Bitacora'";
+    $consP="update `Equipo` set `Notificacion` = '1' WHERE `IdEquipo` = '$IdEquipo'";
 
     $rsconsPro=mysqli_query($conexion,$consP);
     mysqli_close($conexion);
