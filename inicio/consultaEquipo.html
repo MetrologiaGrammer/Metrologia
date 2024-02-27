@@ -72,13 +72,30 @@
 				<input type="text" name="demo-email" id="frecuencia" value="" placeholder="FRECUENCIA"disabled>
 			</div>
 			<div id="filaResolucion" class="col-6 col-12-xsmall">
-				<label style="text-align: center;font-size: 18px">Resolucion</label>
+				<label style="text-align: center;font-size: 18px">Resolución</label>
 				<input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"disabled>
 			</div>
+
+			<div id="filaNominal" class="col-6 col-12-xsmall">
+				<label style="text-align: center;font-size: 18px">Especificación</label>
+				<input type="text" name="demo-email" id="nominal" value="" placeholder="ESPECIFICACION"disabled>
+			</div>
+
+			<div id="filaEspMax" class="col-6 col-12-xsmall">
+				<label style="text-align: center;font-size: 18px">Especificación Máxima</label>
+				<input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA"disabled>
+			</div>
+
+			<div id="filaEspMin" class="col-6 col-12-xsmall">
+				<label style="text-align: center;font-size: 18px">Especificación Minima</label>
+				<input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA"disabled>
+			</div>
+
 			<div id="filaRango" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Rango</label>
 				<input type="text" name="demo-email" id="rango" value="" placeholder="RANGO"disabled>
 			</div>
+
 			<div id="filaSerie" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Num.Serie</label>
 				<input type="text" name="demo-email" id="numserie" value="" placeholder="NUM. SERIE"disabled>
@@ -327,6 +344,22 @@
 				document.getElementById("resolucion").value = data.data[0].Resolucion;
 			}
 
+			if (data.data[0].Nominal == "") {
+				document.getElementById("filaNominal").style.display = 'none';
+			} else {
+				document.getElementById("nominal").value = data.data[0].Nominal;
+			}
+			if (data.data[0].EspMin == "") {
+				document.getElementById("filaEspMin").style.display = 'none';
+			} else {
+				document.getElementById("minima").value = data.data[0].EspMin;
+			}
+			if (data.data[0].EspMax == "") {
+				document.getElementById("filaEspMax").style.display = 'none';
+			} else {
+				document.getElementById("maxima").value = data.data[0].EspMax;
+			}
+
 			if (data.data[0].Rango == "") {
 				document.getElementById("filaRango").style.display = 'none';
 			} else {
@@ -495,6 +528,21 @@
 					document.getElementById("filaRango").style.display = 'none';
 				} else {
 					document.getElementById("rango").value = data.data[0].Rango;
+				}
+				if (data.data[0].Nominal == "") {
+					document.getElementById("filaNominal").style.display = 'none';
+				} else {
+					document.getElementById("nominal").value = data.data[0].Nominal;
+				}
+				if (data.data[0].EspMin == "") {
+					document.getElementById("filaEspMin").style.display = 'none';
+				} else {
+					document.getElementById("minima").value = data.data[0].EspMin;
+				}
+				if (data.data[0].EspMax == "") {
+					document.getElementById("filaEspMax").style.display = 'none';
+				} else {
+					document.getElementById("maxima").value = data.data[0].EspMax;
 				}
 				if (data.data[0].Status == "") {
 					document.getElementById("filaRango").style.display = 'none';
