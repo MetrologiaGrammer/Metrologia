@@ -102,17 +102,17 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             </div>
             <div id="filaNominal" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Especificación</label>
-                <input type="text" name="demo-email" id="nominal" value="" placeholder="ESPECIFICACION"disabled>
+                <input type="text" name="demo-email" id="nominal" value="" placeholder="ESPECIFICACION">
             </div>
 
             <div id="filaEspMax" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Especificación Máxima</label>
-                <input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA"disabled>
+                <input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA">
             </div>
 
             <div id="filaEspMin" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Especificación Minima</label>
-                <input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA"disabled>
+                <input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA">
             </div>
             <div id="filaRango" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Rango</label>
@@ -141,31 +141,31 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             <div id="filaTarget" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Numero de Target</label>
-                <input type="text" name="demo-email" id="target" value="" placeholder="Num. Target"disabled>
+                <input type="text" name="demo-email" id="target" value="" placeholder="Num. Target">
             </div>
             <div id="filaCodigocolor" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Codigo de color</label>
-                <input type="text" name="demo-email" id="codigoColor" value="" placeholder="Cod. Color"disabled>
+                <input type="text" name="demo-email" id="codigoColor" value="" placeholder="Cod. Color">
             </div>
             <div id="filaCliente" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Cliente</label>
-                <input type="text" name="demo-email" id="cliente" value="" placeholder="Cliente"disabled>
+                <input type="text" name="demo-email" id="cliente" value="" placeholder="Cliente">
             </div>
             <div id="filaPlataforma" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Plataforma</label>
-                <input type="text" name="demo-email" id="plataforma" value="" placeholder="plataforma"disabled>
+                <input type="text" name="demo-email" id="plataforma" value="" placeholder="plataforma">
             </div>
             <div id="filaVendedormaster" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Vendedor del Master</label>
-                <input type="text" name="demo-email" id="vendedor" value="" placeholder="Vendedor"disabled>
+                <input type="text" name="demo-email" id="vendedor" value="" placeholder="Vendedor">
             </div>
             <div id="filaColormaster" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Color del Master</label>
-                <input type="text" name="demo-email" id="color" value="" placeholder="color del master"disabled>
+                <input type="text" name="demo-email" id="color" value="" placeholder="color del master">
             </div>
             <div id="filaNumcolor" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Numero del Color</label>
-                <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero de color"disabled>
+                <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero de color">
             </div>
 
             <div id="fileObservaciones" class="col-12 col-12-xsmall">
