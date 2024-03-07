@@ -14,22 +14,33 @@ $Operacion= $_POST['operacion'];
 $Fechacalibracion= $_POST['fechacalibracion'];
 $Fechavencida= $_POST['fechavencida'];
 $Resolucion= $_POST['resolucion'];
+$Nominal= $_POST['nominal'];
+$Maxima= $_POST['maxima'];
+$Minima= $_POST['minima'];
 $Rango= $_POST['rango'];
 $Frecuencia= $_POST['frecuencia'];
 $Numserie= $_POST['numserie'];
 $Numparte= $_POST['numparte'];
+$Target= $_POST['target'];
+$Color= $_POST['color'];
+$Cliente= $_POST['cliente'];
+$Plataforma = $_POST['plataforma'];
+$Vendedor = $_POST['vendedor'];
+$ColorM = $_POST['colormaster'];
+$Numcolor = $_POST['numColor'];
 $Status = $_POST['status'];
 $Observaciones= $_POST['observaciones'];
 $Imagen= $_POST['imagen'];
 
-cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Status,$Observaciones,$Imagen);
+cliente($Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Nominal,$Maxima,$Minima,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Color,$Cliente,$Plataforma,$Vendedor,$ColorM,$Numcolor,$Status,$Observaciones,$Imagen);
 
-function cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Status,$Observaciones,$Imagen)
+function cliente($Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Nominal,$Maxima,$Minima,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Color,$Cliente,$Plataforma,$Vendedor,$ColorM,$Numcolor,$Status,$Observaciones,$Imagen)
 {
     $con = new LocalConector();
     $conexion = $con->conectar();
-    $consP = "UPDATE `Equipo` SET `Observaciones`='$Observaciones',`Status`='$Status',`Resolucion`='$Resolucion',`NumParte`='$Numparte',`Descripcion`='',`Nominal`='',`TolMax`='',`TolMin`='',`EspMin`='',`EspMax`='',`Caracteristica`='',`FechaInspeccion`='$Fechacalibracion',`Frecuencia`='$Frecuencia',`FechaVencimiento`='$Fechavencida',`AreaProceso`='$Proceso',`Tipo`='$Tipo',`SubTipo`='$Subtipo',`NumSerie`='$Numserie',`AreaLinea`='$Linea',`AreaOperacion`='$Operacion',`Rango`='$Rango' WHERE `IdEquipo`='$Referencia'";
-     $rsconsPro = mysqli_query($conexion, $consP);
+    $consP = "UPDATE `Equipo` SET `Observaciones`='$Observaciones',`Status`='$Status',`Resolucion`='$Resolucion',`NumParte`='$Numparte',`Descripcion`='',`Nominal`='$Nominal',`TolMax`='',`TolMin`='',`EspMin`='$Minima',`EspMax`='$Maxima',`Caracteristica`='',`FechaInspeccion`='$Fechacalibracion',`Frecuencia`='$Frecuencia',`FechaVencimiento`='$Fechavencida',`AreaProceso`='$Proceso',`Tipo`='$Tipo',`SubTipo`='$Subtipo',`NumSerie`='$Numserie',`AreaLinea`='$Linea',`AreaOperacion`='$Operacion',`Rango`='$Rango',`CentroCosto`='',`CodigoCosto`='',`CostoCalibracion`='',`Moneda`='',`Ntarget`='$Target',`CodColor`='$Color',`ClienteMaster`='$Cliente',`PlataformaMaster`='$Plataforma',`VendedorMaster`='$Vendedor',`NombreColorMaster`='$ColorM',`NumColorMaster`='$Numcolor',`NominaPersona`='',`NombrePersona`='' ,`Correo`='',`Notificacion`=''WHERE `IdEquipo`='$Referencia'";
+    $rsconsPro = mysqli_query($conexion,$consP);
+
     mysqli_close($conexion);
 
     $imagenCodificada = $Imagen; //ejemplo de imagen en base64

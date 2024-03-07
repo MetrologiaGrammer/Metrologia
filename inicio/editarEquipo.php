@@ -100,6 +100,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Resolucion</label>
                 <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION">
             </div>
+            <div id="filaNominal" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Especificación</label>
+                <input type="text" name="demo-email" id="nominal" value="" placeholder="ESPECIFICACION"disabled>
+            </div>
+
+            <div id="filaEspMax" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Especificación Máxima</label>
+                <input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA"disabled>
+            </div>
+
+            <div id="filaEspMin" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Especificación Minima</label>
+                <input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA"disabled>
+            </div>
             <div id="filaRango" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Rango</label>
                 <input type="email" name="demo-email" id="rango" value="" placeholder="RANGO">
@@ -124,6 +138,36 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Código de costos</label>
                 <input type="email" name="demo-email" id="codigocosto" value="" placeholder="Codigo de costos">
             </div>
+
+            <div id="filaTarget" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Numero de Target</label>
+                <input type="text" name="demo-email" id="target" value="" placeholder="Num. Target"disabled>
+            </div>
+            <div id="filaCodigocolor" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Codigo de color</label>
+                <input type="text" name="demo-email" id="codigoColor" value="" placeholder="Cod. Color"disabled>
+            </div>
+            <div id="filaCliente" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Cliente</label>
+                <input type="text" name="demo-email" id="cliente" value="" placeholder="Cliente"disabled>
+            </div>
+            <div id="filaPlataforma" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Plataforma</label>
+                <input type="text" name="demo-email" id="plataforma" value="" placeholder="plataforma"disabled>
+            </div>
+            <div id="filaVendedormaster" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Vendedor del Master</label>
+                <input type="text" name="demo-email" id="vendedor" value="" placeholder="Vendedor"disabled>
+            </div>
+            <div id="filaColormaster" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Color del Master</label>
+                <input type="text" name="demo-email" id="color" value="" placeholder="color del master"disabled>
+            </div>
+            <div id="filaNumcolor" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Numero del Color</label>
+                <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero de color"disabled>
+            </div>
+
             <div id="fileObservaciones" class="col-12 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Observaciones</label>
                 <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES">
@@ -215,6 +259,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             document.getElementById("codigo").value = data.data[0].IdEquipo;
 
+
             if (data.data[0].Tipo == "") {
                 document.getElementById("filaTipo").style.display = 'none';
             } else {
@@ -226,97 +271,35 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
                 }
             }
-
-
-            if (data.data[0].SubTipo == "") {
-                document.getElementById("filaSerie").style.display = 'none';
-            } else {
-                document.getElementById("subtipo").value = data.data[0].SubTipo;
-            }
-
-            if (data.data[0].AreaProceso == "") {
-                document.getElementById("filaProceso").style.display = 'none';
-            } else {
-                document.getElementById("proceso").value = data.data[0].AreaProceso;
-            }
-
-            if (data.data[0].AreaLinea == "") {
-                document.getElementById("filaLinea").style.display = 'none';
-            } else {
-                document.getElementById("linea").value = data.data[0].AreaLinea;
-            }
-
-
-            if (data.data[0].AreaOperacion == "") {
-                document.getElementById("filaOperacion").style.display = 'none';
-            } else {
-                document.getElementById("Operacion").value = data.data[0].AreaOperacion;
-            }
-
-            if (data.data[0].FechaInspeccion == "") {
-                document.getElementById("filaFechaverificacion").style.display = 'none';
-            } else {
-                document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
-            }
-
-            if (data.data[0].FechaVencimiento == "") {
-                document.getElementById("filaFechavencida").style.display = 'none';
-            } else {
-                document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-            }
-
-            if (data.data[0].NumSerie == "") {
-                document.getElementById("filaSerie").style.display = 'none';
-            } else {
-                document.getElementById("numserie").value = data.data[0].NumSerie;
-            }
-
-            if (data.data[0].NumParte == "") {
-                document.getElementById("filaParte").style.display = 'none';
-            } else {
-                document.getElementById("numparte").value = data.data[0].NumParte;
-            }
-
-            if (data.data[0].Resolucion == "") {
-                document.getElementById("filaResolucion").style.display = 'none';
-            } else {
-                document.getElementById("resolucion").value = data.data[0].Resolucion;
-            }
-
-            if (data.data[0].Rango == "") {
-                document.getElementById("filaRango").style.display = 'none';
-            } else {
-                document.getElementById("rango").value = data.data[0].Rango;
-            }
-            if (data.data[0].Status == "") {
-                document.getElementById("filaStatus").style.display = 'none';
-            } else {
-                document.getElementById("status").value = data.data[0].Status;
-            }
-            if (data.data[0].CentroCosto == "") {
-                document.getElementById("filaCentrocosto").style.display = 'none';
-            } else {
-                document.getElementById("centrocosto").value = data.data[0].CentroCosto;
-            }
-            if (data.data[0].CodigoCosto == "") {
-                document.getElementById("filaCodigocosto").style.display = 'none';
-            } else {
-                document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
-            }
-            if (data.data[0].Observaciones == "") {
-                document.getElementById("filaObservaciones").style.display = 'none';
-            } else {
-                document.getElementById("observaciones").value = data.data[0].Observaciones;
-            }
-
-            if (data.data[0].Frecuencia == "") {
-                document.getElementById("filaFrecuencia").style.display = 'none';
-            } else {
-                document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-            }
+            document.getElementById("subtipo").value = data.data[0].SubTipo;
+            document.getElementById("proceso").value = data.data[0].AreaProceso;
+            document.getElementById("linea").value = data.data[0].AreaLinea;
+            document.getElementById("Operacion").value = data.data[0].AreaOperacion;
+            document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
+            document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
+            document.getElementById("numserie").value = data.data[0].NumSerie;
+            document.getElementById("numparte").value = data.data[0].NumParte;
+            document.getElementById("resolucion").value = data.data[0].Resolucion;
+            document.getElementById("nominal").value = data.data[0].Nominal;
+            document.getElementById("minima").value = data.data[0].EspMin;
+            document.getElementById("maxima").value = data.data[0].EspMax;
+            document.getElementById("rango").value = data.data[0].Rango;
+            document.getElementById("status").value = data.data[0].Status;
+            document.getElementById("centrocosto").value = data.data[0].CentroCosto;
+            document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
+            document.getElementById("observaciones").value = data.data[0].Observaciones;
+            document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+            document.getElementById("target").value = data.data[0].Ntarget;
+            document.getElementById("codigoColor").value = data.data[0].CodColor;
+            document.getElementById("cliente").value = data.data[0].ClienteMaster;
+            document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
+            document.getElementById("vendedor").value = data.data[0].VendedorMaster;
+            document.getElementById("color").value = data.data[0].NombreColorMaster;
+            document.getElementById("numColor").value = data.data[0].NumColorMaster;
 
 
         });
+        consultaFoto(id);
     }
 
 
@@ -326,11 +309,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         const chars = Equipo.split('-');
 
-        var ref = chars[0];
 
-        if (ref == "MPI" || ref == "MPL") {
-            alert("Master");
-        } else {
             console.log('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo)
             $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo, function (data) {
                 document.getElementById("codigo").value = data.data[0].IdEquipo;
@@ -347,108 +326,39 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     } else {
                         document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
                     }
-
                 }
 
 
-                if (data.data[0].SubTipo == "") {
-                    document.getElementById("filaSerie").style.display = 'none';
-                } else {
-                    document.getElementById("subtipo").value = data.data[0].SubTipo;
-                }
-
-
-                if (data.data[0].AreaProceso == "") {
-                    document.getElementById("filaProceso").style.display = 'none';
-                } else {
-                    document.getElementById("proceso").value = data.data[0].AreaProceso;
-                }
-
-
-                if (data.data[0].AreaLinea == "") {
-                    document.getElementById("filaLinea").style.display = 'none';
-                } else {
-                    document.getElementById("linea").value = data.data[0].AreaLinea;
-                }
-
-
-                if (data.data[0].AreaOperacion == "") {
-                    document.getElementById("filaOperacion").style.display = 'none';
-                } else {
-                    document.getElementById("Operacion").value = data.data[0].AreaOperacion;
-                }
-
-                if (data.data[0].FechaInspeccion == "") {
-                    document.getElementById("filaFechaverificacion").style.display = 'none';
-                } else {
-                    document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
-                }
-
-
-                if (data.data[0].FechaVencimiento == "") {
-                    document.getElementById("filaFechavencida").style.display = 'none';
-                } else {
-                    document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-                }
-
-
-                if (data.data[0].NumSerie == "") {
-                    document.getElementById("filaSerie").style.display = 'none';
-                } else {
-                    document.getElementById("numserie").value = data.data[0].NumSerie;
-                }
-
-                if (data.data[0].NumParte == "") {
-                    document.getElementById("filaParte").style.display = 'none';
-                } else {
-                    document.getElementById("numparte").value = data.data[0].NumParte;
-                }
-
-                if (data.data[0].Resolucion == "") {
-                    document.getElementById("filaResolucion").style.display = 'none';
-                } else {
-                    document.getElementById("resolucion").value = data.data[0].Resolucion;
-                }
-
-                if (data.data[0].Rango == "") {
-                    document.getElementById("filaRango").style.display = 'none';
-                } else {
-                    document.getElementById("rango").value = data.data[0].Rango;
-                }
-
-                if (data.data[0].Status == "") {
-                    document.getElementById("filaStatus").style.display = 'none';
-                } else {
-                    document.getElementById("status").value = data.data[0].Status;
-                }
-                if (data.data[0].CentroCosto == "") {
-                    document.getElementById("filaCentrocosto").style.display = 'none';
-                } else {
-                    document.getElementById("centrocosto").value = data.data[0].CentroCosto;
-                }
-                if (data.data[0].CodigoCosto == "") {
-                    document.getElementById("filaCodigocosto").style.display = 'none';
-                } else {
-                    document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
-                }
-
-                if (data.data[0].Observaciones == "") {
-                    document.getElementById("filaObservaciones").style.display = 'none';
-                } else {
-                    document.getElementById("observaciones").value = data.data[0].Observaciones;
-                }
-
-                if (data.data[0].Frecuencia == "") {
-                    document.getElementById("filaFrecuencia").style.display = 'none';
-                } else {
-                    document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-                }
+                document.getElementById("subtipo").value = data.data[0].SubTipo;
+                document.getElementById("proceso").value = data.data[0].AreaProceso;
+                document.getElementById("linea").value = data.data[0].AreaLinea;
+                document.getElementById("Operacion").value = data.data[0].AreaOperacion;
+                document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
+                document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
+                document.getElementById("numserie").value = data.data[0].NumSerie;
+                document.getElementById("numparte").value = data.data[0].NumParte;
+                document.getElementById("resolucion").value = data.data[0].Resolucion;
+                document.getElementById("nominal").value = data.data[0].Nominal;
+                document.getElementById("minima").value = data.data[0].EspMin;
+                document.getElementById("maxima").value = data.data[0].EspMax;
+                document.getElementById("rango").value = data.data[0].Rango;
+                document.getElementById("status").value = data.data[0].Status;
+                document.getElementById("centrocosto").value = data.data[0].CentroCosto;
+                document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
+                document.getElementById("observaciones").value = data.data[0].Observaciones;
+                document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+                document.getElementById("target").value = data.data[0].Ntarget;
+                document.getElementById("codigoColor").value = data.data[0].CodColor;
+                document.getElementById("cliente").value = data.data[0].ClienteMaster;
+                document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
+                document.getElementById("vendedor").value = data.data[0].VendedorMaster;
+                document.getElementById("color").value = data.data[0].NombreColorMaster;
+                document.getElementById("numColor").value = data.data[0].NumColorMaster;
 
 
             });
-        }
-        consultaFoto(Equipo);
 
+        consultaFoto(Equipo);
 
     }
 
@@ -480,10 +390,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var FECHACALIBRACION;
         var FECHAVENCIDA;
         var RESOLUCION;
+        var NOMINAL;
+        var MAXIMA;
+        var MINIMA;
         var RANGO;
         var FRECUENCIA;
         var NUMSERIE;
         var NUMPARTE;
+        var TARGET;
+        var COLOR;
+        var CLIENTE;
+        var PLATAFORMA;
+        var VENDEDOR;
+        var COLORM;
+        var NUMCOLOR;
         var STATUS;
         var OBSERVACIONES;
 
@@ -496,11 +416,21 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         OPERACION = document.getElementById("Operacion").value;
         FECHACALIBRACION = document.getElementById("fechacalibracion").value;
         FECHAVENCIDA = document.getElementById("fechavencida").value;
+        NOMINAL = document.getElementById("nominal").value;
+        MAXIMA = document.getElementById("maxima").value;
+        MINIMA = document.getElementById("minima").value;
         RESOLUCION = document.getElementById("resolucion").value;
         RANGO = document.getElementById("rango").value;
         FRECUENCIA = document.getElementById("frecuencia").value;
         NUMSERIE = document.getElementById("numserie").value;
         NUMPARTE = document.getElementById("numparte").value;
+        TARGET = document.getElementById("target").value;
+        COLOR = document.getElementById("color").value;
+        CLIENTE = document.getElementById("cliente").value;
+        PLATAFORMA= document.getElementById("plataforma").value;
+        VENDEDOR= document.getElementById("vendedor").value;
+        COLORM= document.getElementById("colormaster").value;
+        NUMCOLOR= document.getElementById("numColor").value;
         STATUS = document.getElementById("status").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
@@ -519,10 +449,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('fechacalibracion', FECHACALIBRACION);
         data.append('fechavencida', FECHAVENCIDA);
         data.append('resolucion', RESOLUCION);
+        data.append('nominal', NOMINAL);
+        data.append('maxima', MAXIMA);
+        data.append('minima', MINIMA);
         data.append('rango', RANGO);
         data.append('frecuencia', FRECUENCIA);
         data.append('numserie', NUMSERIE);
         data.append('numparte', NUMPARTE);
+        data.append('target', TARGET);
+        data.append('color', COLOR);
+        data.append('cliente', CLIENTE);
+        data.append('plataforma', PLATAFORMA);
+        data.append('vendedor', VENDEDOR);
+        data.append('colormaster', COLORM);
+        data.append('numColor', NUMCOLOR);
         data.append('status', STATUS);
         data.append('observaciones', OBSERVACIONES);
         data.append('imagen', foto);
