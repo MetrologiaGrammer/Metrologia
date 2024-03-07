@@ -40,7 +40,6 @@ function cliente($Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacal
     $conexion = $con->conectar();
     $consP = "UPDATE `Equipo` SET `Observaciones`='$Observaciones',`Status`='$Status',`Resolucion`='$Resolucion',`NumParte`='$Numparte',`Descripcion`='',`Nominal`='$Nominal',`TolMax`='',`TolMin`='',`EspMin`='$Minima',`EspMax`='$Maxima',`Caracteristica`='',`FechaInspeccion`='$Fechacalibracion',`Frecuencia`='$Frecuencia',`FechaVencimiento`='$Fechavencida',`AreaProceso`='$Proceso',`Tipo`='$Tipo',`SubTipo`='$Subtipo',`NumSerie`='$Numserie',`AreaLinea`='$Linea',`AreaOperacion`='$Operacion',`Rango`='$Rango',`CentroCosto`='',`CodigoCosto`='',`CostoCalibracion`='',`Moneda`='',`Ntarget`='$Target',`CodColor`='$Color',`ClienteMaster`='$Cliente',`PlataformaMaster`='$Plataforma',`VendedorMaster`='$Vendedor',`NombreColorMaster`='$ColorM',`NumColorMaster`='$Numcolor',`NominaPersona`='',`NombrePersona`='' ,`Correo`='',`Notificacion`=''WHERE `IdEquipo`='$Referencia'";
     $rsconsPro = mysqli_query($conexion,$consP);
-
     mysqli_close($conexion);
 
     $imagenCodificada = $Imagen; //ejemplo de imagen en base64
