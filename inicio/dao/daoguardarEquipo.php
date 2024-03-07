@@ -32,9 +32,9 @@ $Status = $_POST['status'];
 $Observaciones= $_POST['observaciones'];
 $Imagen= $_POST['imagen'];
 
-cliente($Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Nominal,$Maxima,$Minima,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Color,$Cliente,$Plataforma,$Vendedor,$ColorM,$Numcolor,$Status,$Observaciones,$Imagen);
+cliente($Nomina,$Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Nominal,$Maxima,$Minima,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Color,$Cliente,$Plataforma,$Vendedor,$ColorM,$Numcolor,$Status,$Observaciones,$Imagen);
 
-function cliente($Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Nominal,$Maxima,$Minima,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Color,$Cliente,$Plataforma,$Vendedor,$ColorM,$Numcolor,$Status,$Observaciones,$Imagen)
+function cliente($Nomina,$Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Nominal,$Maxima,$Minima,$Rango,$Frecuencia,$Numserie,$Numparte,$Target,$Color,$Cliente,$Plataforma,$Vendedor,$ColorM,$Numcolor,$Status,$Observaciones,$Imagen)
 {
     $con = new LocalConector();
     $conexion = $con->conectar();
