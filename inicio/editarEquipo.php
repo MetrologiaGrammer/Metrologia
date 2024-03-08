@@ -105,7 +105,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Especificación</label>
                 <input type="text" name="demo-email" id="nominal" value="" placeholder="ESPECIFICACION">
             </div>
-            <!--
+
                         <div id="filaEspMax" class="col-6 col-12-xsmall">
                             <label style="text-align: center;font-size: 18px">Especificación Máxima</label>
                             <input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA">
@@ -116,7 +116,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                             <input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA">
                         </div>
 
-                         -->
+
             <div id="filaRango" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Rango</label>
                 <input type="email" name="demo-email" id="rango" value="" placeholder="RANGO">
@@ -413,8 +413,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var FECHAVENCIDA;
         var RESOLUCION;
         var NOMINAL;
-       /* var MAXIMA;
-        var MINIMA;*/
+        var MAXIMA;
+        var MINIMA;
         var RANGO;
         var FRECUENCIA;
         var NUMSERIE;
@@ -441,8 +441,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         FECHACALIBRACION = document.getElementById("fechacalibracion").value;
         FECHAVENCIDA = document.getElementById("fechavencida").value;
         NOMINAL = document.getElementById("nominal").value;
-        /* MAXIMA = document.getElementById("maxima").value;
-         MINIMA = document.getElementById("minima").value;*/
+        MAXIMA = document.getElementById("maxima").value;
+        MINIMA = document.getElementById("minima").value;
         RESOLUCION = document.getElementById("resolucion").value;
         RANGO = document.getElementById("rango").value;
         FRECUENCIA = document.getElementById("frecuencia").value;
@@ -475,13 +475,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('fechavencida', FECHAVENCIDA);
         data.append('resolucion', RESOLUCION);
         data.append('nominal', NOMINAL);
-        /*data.append('maxima', MAXIMA);
-                data.append('minima', MINIMA);*/
+        data.append('maxima', MAXIMA);
+        data.append('minima', MINIMA);
         data.append('rango', RANGO);
         data.append('frecuencia', FRECUENCIA);
         data.append('numserie', NUMSERIE);
         data.append('numparte', NUMPARTE);
         data.append('target', TARGET);
+
       /*
         data.append('color', COLOR);
         data.append('cliente', CLIENTE);
