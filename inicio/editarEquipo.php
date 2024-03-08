@@ -407,20 +407,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var FECHACALIBRACION;
         var FECHAVENCIDA;
         var RESOLUCION;
-        var NOMINAL;
+      /*  var NOMINAL;
         var MAXIMA;
-        var MINIMA;
+        var MINIMA;*/
         var RANGO;
         var FRECUENCIA;
         var NUMSERIE;
         var NUMPARTE;
-        var TARGET;
+    /*    var TARGET;
         var COLOR;
         var CLIENTE;
         var PLATAFORMA;
         var VENDEDOR;
         var COLORM;
-        var NUMCOLOR;
+        var NUMCOLOR;*/
         var STATUS;
         var OBSERVACIONES;
 
