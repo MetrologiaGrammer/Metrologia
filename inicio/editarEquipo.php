@@ -491,8 +491,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             method: 'POST',
             body: data
         })
-        document.getElementById("carga").style.display = "block";
-        document.getElementById("contenidoReporte").style.display = "none";
+
             .then(function (response) {
                 if (response.ok) {
                     alert("actualizado");
