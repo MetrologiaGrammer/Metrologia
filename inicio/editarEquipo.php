@@ -141,11 +141,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Código de costos</label>
                 <input type="email" name="demo-email" id="codigocosto" value="" placeholder="Codigo de costos">
             </div>
-            <!--
+
                         <div id="filaTarget" class="col-6 col-12-xsmall">
                             <label style="text-align: center;font-size: 18px">Numero de Target</label>
                             <input type="text" name="demo-email" id="target" value="" placeholder="Num. Target">
                         </div>
+
+            <!--
                         <div id="filaCodigocolor" class="col-6 col-12-xsmall">
                             <label style="text-align: center;font-size: 18px">Codigo de color</label>
                             <input type="text" name="demo-email" id="codigoColor" value="" placeholder="Cod. Color">
@@ -296,7 +298,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("observaciones").value = data.data[0].Observaciones;
             document.getElementById("frecuencia").value = data.data[0].Frecuencia;
             document.getElementById("nominal").value = data.data[0].Nominal;
-            <!--   document.getElementById("target").value = data.data[0].Ntarget;
+            document.getElementById("target").value = data.data[0].Ntarget;
+            <!--
                document.getElementById("codigoColor").value = data.data[0].CodColor;
                document.getElementById("cliente").value = data.data[0].ClienteMaster;
                document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
@@ -352,12 +355,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("frecuencia").value = data.data[0].Frecuencia;
                 document.getElementById("resolucion").value = data.data[0].Resolucion;
                 document.getElementById("nominal").value = data.data[0].Nominal;
+                document.getElementById("target").value = data.data[0].Ntarget;
                 /*
                   <!--
                       document.getElementById("minima").value = data.data[0].EspMin;
                       document.getElementById("maxima").value = data.data[0].EspMax;-->
 
-                  <!--   document.getElementById("target").value = data.data[0].Ntarget;
+                  <!--
                      document.getElementById("codigoColor").value = data.data[0].CodColor;
                      document.getElementById("cliente").value = data.data[0].ClienteMaster;
                      document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
@@ -415,7 +419,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var FRECUENCIA;
         var NUMSERIE;
         var NUMPARTE;
-    /*    var TARGET;
+        var TARGET;
+    /*
         var COLOR;
         var CLIENTE;
         var PLATAFORMA;
@@ -443,7 +448,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         FRECUENCIA = document.getElementById("frecuencia").value;
         NUMSERIE = document.getElementById("numserie").value;
         NUMPARTE = document.getElementById("numparte").value;
-       /* TARGET = document.getElementById("target").value;
+        TARGET = document.getElementById("target").value;
+       /*
         COLOR = document.getElementById("color").value;
         CLIENTE = document.getElementById("cliente").value;
         PLATAFORMA= document.getElementById("plataforma").value;
@@ -475,7 +481,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('frecuencia', FRECUENCIA);
         data.append('numserie', NUMSERIE);
         data.append('numparte', NUMPARTE);
-      /*  data.append('target', TARGET);
+        data.append('target', TARGET);
+      /*
         data.append('color', COLOR);
         data.append('cliente', CLIENTE);
         data.append('plataforma', PLATAFORMA);
