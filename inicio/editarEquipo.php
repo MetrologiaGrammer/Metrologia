@@ -333,9 +333,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
                     }
                 }
-                document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 
-/*
+
                 document.getElementById("subtipo").value = data.data[0].SubTipo;
                 document.getElementById("proceso").value = data.data[0].AreaProceso;
                 document.getElementById("linea").value = data.data[0].AreaLinea;
@@ -344,80 +343,32 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
                 document.getElementById("numserie").value = data.data[0].NumSerie;
                 document.getElementById("numparte").value = data.data[0].NumParte;
-                document.getElementById("resolucion").value = data.data[0].Resolucion;
-                <!--    document.getElementById("nominal").value = data.data[0].Nominal;
-                    document.getElementById("minima").value = data.data[0].EspMin;
-                    document.getElementById("maxima").value = data.data[0].EspMax;-->
                 document.getElementById("rango").value = data.data[0].Rango;
                 document.getElementById("status").value = data.data[0].Status;
                 document.getElementById("centrocosto").value = data.data[0].CentroCosto;
                 document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
                 document.getElementById("observaciones").value = data.data[0].Observaciones;
                 document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-                <!--   document.getElementById("target").value = data.data[0].Ntarget;
-                   document.getElementById("codigoColor").value = data.data[0].CodColor;
-                   document.getElementById("cliente").value = data.data[0].ClienteMaster;
-                   document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
-                   document.getElementById("vendedor").value = data.data[0].VendedorMaster;
-                   document.getElementById("color").value = data.data[0].NombreColorMaster;
-                   document.getElementById("numColor").value = data.data[0].NumColorMaster;
-       -->
-*/
+
+
+                /*  document.getElementById("resolucion").value = data.data[0].Resolucion;
+                  <!--    document.getElementById("nominal").value = data.data[0].Nominal;
+                      document.getElementById("minima").value = data.data[0].EspMin;
+                      document.getElementById("maxima").value = data.data[0].EspMax;-->
+
+                  <!--   document.getElementById("target").value = data.data[0].Ntarget;
+                     document.getElementById("codigoColor").value = data.data[0].CodColor;
+                     document.getElementById("cliente").value = data.data[0].ClienteMaster;
+                     document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
+                     document.getElementById("vendedor").value = data.data[0].VendedorMaster;
+                     document.getElementById("color").value = data.data[0].NombreColorMaster;
+                     document.getElementById("numColor").value = data.data[0].NumColorMaster;
+         -->
+  */
 
 
 
-                if (data.data[0].SubTipo == "") {
-                    document.getElementById("filaSerie").style.display = 'none';
-                } else {
-                    document.getElementById("subtipo").value = data.data[0].SubTipo;
-                }
 
-
-                if (data.data[0].AreaProceso == "") {
-                    document.getElementById("filaProceso").style.display = 'none';
-                } else {
-                    document.getElementById("proceso").value = data.data[0].AreaProceso;
-                }
-
-
-                if (data.data[0].AreaLinea == "") {
-                    document.getElementById("filaLinea").style.display = 'none';
-                } else {
-                    document.getElementById("linea").value = data.data[0].AreaLinea;
-                }
-
-
-                if (data.data[0].AreaOperacion == "") {
-                    document.getElementById("filaOperacion").style.display = 'none';
-                } else {
-                    document.getElementById("Operacion").value = data.data[0].AreaOperacion;
-                }
-
-                if (data.data[0].FechaInspeccion == "") {
-                    document.getElementById("filaFechaverificacion").style.display = 'none';
-                } else {
-                    document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
-                }
-
-
-                if (data.data[0].FechaVencimiento == "") {
-                    document.getElementById("filaFechavencida").style.display = 'none';
-                } else {
-                    document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-                }
-
-
-                if (data.data[0].NumSerie == "") {
-                    document.getElementById("filaSerie").style.display = 'none';
-                } else {
-                    document.getElementById("numserie").value = data.data[0].NumSerie;
-                }
-
-                if (data.data[0].NumParte == "") {
-                    document.getElementById("filaParte").style.display = 'none';
-                } else {
-                    document.getElementById("numparte").value = data.data[0].NumParte;
-                }
 
 
 
