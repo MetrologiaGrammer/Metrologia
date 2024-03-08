@@ -259,7 +259,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     buscarQR(getParameterByName("ID"));
 
     function buscarQR(id) {
-        console.log('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id);
+       // console.log('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id);
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
 
 
@@ -379,6 +379,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     }
 
     function consultaFoto(Equipo) {
+        console.log('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?idreferencia='+Equipo);
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?idreferencia=' + Equipo, function (data) {
             document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/" + data.data[0].IdImagen + ".png";
             document.getElementById("proceso").value = data.data[0].AreaProceso;
