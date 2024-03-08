@@ -454,22 +454,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var FECHACALIBRACION;
         var FECHAVENCIDA;
         var RESOLUCION;
-        <!--   NOMINAL = document.getElementById("nominal").value;
-           var NOMINAL;
-           var MAXIMA;
-           var MINIMA;-->
+        var NOMINAL;
+        var MAXIMA;
+        var MINIMA;
         var RANGO;
         var FRECUENCIA;
         var NUMSERIE;
         var NUMPARTE;
-        <!--   NOMINAL = document.getElementById("nominal").value;
-           var TARGET;
-           var COLOR;
-           var CLIENTE;
-           var PLATAFORMA;
-           var VENDEDOR;
-           var COLORM;
-           var NUMCOLOR;-->
+        var TARGET;
+        var COLOR;
+        var CLIENTE;
+        var PLATAFORMA;
+        var VENDEDOR;
+        var COLORM;
+        var NUMCOLOR;
         var STATUS;
         var OBSERVACIONES;
 
@@ -482,9 +480,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         OPERACION = document.getElementById("Operacion").value;
         FECHACALIBRACION = document.getElementById("fechacalibracion").value;
         FECHAVENCIDA = document.getElementById("fechavencida").value;
-     <!--   NOMINAL = document.getElementById("nominal").value;
+        /*NOMINAL = document.getElementById("nominal").value;
         MAXIMA = document.getElementById("maxima").value;
-        MINIMA = document.getElementById("minima").value;-->
+        MINIMA = document.getElementById("minima").value;*/
         RESOLUCION = document.getElementById("resolucion").value;
         RANGO = document.getElementById("rango").value;
         FRECUENCIA = document.getElementById("frecuencia").value;
