@@ -100,6 +100,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Resolucion</label>
                 <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION">
             </div>
+
+            <!--
             <div id="filaNominal" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Especificación</label>
                 <input type="text" name="demo-email" id="nominal" value="" placeholder="ESPECIFICACION">
@@ -114,6 +116,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Especificación Minima</label>
                 <input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA">
             </div>
+
+             -->
             <div id="filaRango" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Rango</label>
                 <input type="email" name="demo-email" id="rango" value="" placeholder="RANGO">
@@ -138,58 +142,58 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Código de costos</label>
                 <input type="email" name="demo-email" id="codigocosto" value="" placeholder="Codigo de costos">
             </div>
+            <!--
+                        <div id="filaTarget" class="col-6 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Numero de Target</label>
+                            <input type="text" name="demo-email" id="target" value="" placeholder="Num. Target">
+                        </div>
+                        <div id="filaCodigocolor" class="col-6 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Codigo de color</label>
+                            <input type="text" name="demo-email" id="codigoColor" value="" placeholder="Cod. Color">
+                        </div>
+                        <div id="filaCliente" class="col-6 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Cliente</label>
+                            <input type="text" name="demo-email" id="cliente" value="" placeholder="Cliente">
+                        </div>
+                        <div id="filaPlataforma" class="col-6 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Plataforma</label>
+                            <input type="text" name="demo-email" id="plataforma" value="" placeholder="plataforma">
+                        </div>
+                        <div id="filaVendedormaster" class="col-6 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Vendedor del Master</label>
+                            <input type="text" name="demo-email" id="vendedor" value="" placeholder="Vendedor">
+                        </div>
+                        <div id="filaColormaster" class="col-6 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Color del Master</label>
+                            <input type="text" name="demo-email" id="color" value="" placeholder="color del master">
+                        </div>
+                        <div id="filaNumcolor" class="col-6 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Numero del Color</label>
+                            <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero de color">
+                        </div>
+            -->
+                        <div id="fileObservaciones" class="col-12 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Observaciones</label>
+                            <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES">
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-12 col-12-xsmall">
+                        <label for="referencia" style="text-align: center">Ingrese imagen del equipo</label>
+                        <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"
+                               class="form-control" aria-label="Sizing example input"
+                               aria-describedby="inputGroup-sizing-default">
 
-            <div id="filaTarget" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Numero de Target</label>
-                <input type="text" name="demo-email" id="target" value="" placeholder="Num. Target">
-            </div>
-            <div id="filaCodigocolor" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Codigo de color</label>
-                <input type="text" name="demo-email" id="codigoColor" value="" placeholder="Cod. Color">
-            </div>
-            <div id="filaCliente" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Cliente</label>
-                <input type="text" name="demo-email" id="cliente" value="" placeholder="Cliente">
-            </div>
-            <div id="filaPlataforma" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Plataforma</label>
-                <input type="text" name="demo-email" id="plataforma" value="" placeholder="plataforma">
-            </div>
-            <div id="filaVendedormaster" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Vendedor del Master</label>
-                <input type="text" name="demo-email" id="vendedor" value="" placeholder="Vendedor">
-            </div>
-            <div id="filaColormaster" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Color del Master</label>
-                <input type="text" name="demo-email" id="color" value="" placeholder="color del master">
-            </div>
-            <div id="filaNumcolor" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Numero del Color</label>
-                <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero de color">
-            </div>
+                        <br><br>
+                        <center><img style="display: none;" id="imagenPrevisualizacion" height="250px"></center>
+                        <img src="" style="display: none;" id="new">
+                        <img src="" style="display: none;" id="old">
+                    </div>
 
-            <div id="fileObservaciones" class="col-12 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Observaciones</label>
-                <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES">
-            </div>
-        </div>
-        <!--
-        <div class="col-12 col-12-xsmall">
-            <label for="referencia" style="text-align: center">Ingrese imagen del equipo</label>
-            <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"
-                   class="form-control" aria-label="Sizing example input"
-                   aria-describedby="inputGroup-sizing-default">
-
-            <br><br>
-            <center><img style="display: none;" id="imagenPrevisualizacion" height="250px"></center>
-            <img src="" style="display: none;" id="new">
-            <img src="" style="display: none;" id="old">
-        </div>
-
-        <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
-        <center><img id="imagenUbicacion" src="images/" alt="" style="width: 70%"/></center>
-        <p></p>
-        -->
+                    <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
+                    <center><img id="imagenUbicacion" src="images/" alt="" style="width: 70%"/></center>
+                    <p></p>
+                    -->
         <div class="col-6 col-12-xsmall">
             <ul class="actions stacked" style="text-align: center">
                 <li><a class="button solid" onclick="testActualizacion()">Guardar Cambio</a></li>
@@ -284,23 +288,23 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("numserie").value = data.data[0].NumSerie;
             document.getElementById("numparte").value = data.data[0].NumParte;
             document.getElementById("resolucion").value = data.data[0].Resolucion;
-            document.getElementById("nominal").value = data.data[0].Nominal;
+        <!--    document.getElementById("nominal").value = data.data[0].Nominal;
             document.getElementById("minima").value = data.data[0].EspMin;
-            document.getElementById("maxima").value = data.data[0].EspMax;
+            document.getElementById("maxima").value = data.data[0].EspMax;-->
             document.getElementById("rango").value = data.data[0].Rango;
             document.getElementById("status").value = data.data[0].Status;
             document.getElementById("centrocosto").value = data.data[0].CentroCosto;
             document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
             document.getElementById("observaciones").value = data.data[0].Observaciones;
             document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-            document.getElementById("target").value = data.data[0].Ntarget;
-            document.getElementById("codigoColor").value = data.data[0].CodColor;
-            document.getElementById("cliente").value = data.data[0].ClienteMaster;
-            document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
-            document.getElementById("vendedor").value = data.data[0].VendedorMaster;
-            document.getElementById("color").value = data.data[0].NombreColorMaster;
-            document.getElementById("numColor").value = data.data[0].NumColorMaster;
-
+            <!--   document.getElementById("target").value = data.data[0].Ntarget;
+               document.getElementById("codigoColor").value = data.data[0].CodColor;
+               document.getElementById("cliente").value = data.data[0].ClienteMaster;
+               document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
+               document.getElementById("vendedor").value = data.data[0].VendedorMaster;
+               document.getElementById("color").value = data.data[0].NombreColorMaster;
+               document.getElementById("numColor").value = data.data[0].NumColorMaster;
+   -->
 
         });
         consultaFoto(id);
@@ -342,23 +346,23 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("numserie").value = data.data[0].NumSerie;
                 document.getElementById("numparte").value = data.data[0].NumParte;
                 document.getElementById("resolucion").value = data.data[0].Resolucion;
-                document.getElementById("nominal").value = data.data[0].Nominal;
-                document.getElementById("minima").value = data.data[0].EspMin;
-                document.getElementById("maxima").value = data.data[0].EspMax;
+                <!--    document.getElementById("nominal").value = data.data[0].Nominal;
+                    document.getElementById("minima").value = data.data[0].EspMin;
+                    document.getElementById("maxima").value = data.data[0].EspMax;-->
                 document.getElementById("rango").value = data.data[0].Rango;
                 document.getElementById("status").value = data.data[0].Status;
                 document.getElementById("centrocosto").value = data.data[0].CentroCosto;
                 document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
                 document.getElementById("observaciones").value = data.data[0].Observaciones;
                 document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-                document.getElementById("target").value = data.data[0].Ntarget;
-                document.getElementById("codigoColor").value = data.data[0].CodColor;
-                document.getElementById("cliente").value = data.data[0].ClienteMaster;
-                document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
-                document.getElementById("vendedor").value = data.data[0].VendedorMaster;
-                document.getElementById("color").value = data.data[0].NombreColorMaster;
-                document.getElementById("numColor").value = data.data[0].NumColorMaster;
-
+                <!--   document.getElementById("target").value = data.data[0].Ntarget;
+                   document.getElementById("codigoColor").value = data.data[0].CodColor;
+                   document.getElementById("cliente").value = data.data[0].ClienteMaster;
+                   document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
+                   document.getElementById("vendedor").value = data.data[0].VendedorMaster;
+                   document.getElementById("color").value = data.data[0].NombreColorMaster;
+                   document.getElementById("numColor").value = data.data[0].NumColorMaster;
+       -->
 
             });
 
@@ -394,20 +398,22 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var FECHACALIBRACION;
         var FECHAVENCIDA;
         var RESOLUCION;
-        var NOMINAL;
-        var MAXIMA;
-        var MINIMA;
+        <!--   NOMINAL = document.getElementById("nominal").value;
+           var NOMINAL;
+           var MAXIMA;
+           var MINIMA;-->
         var RANGO;
         var FRECUENCIA;
         var NUMSERIE;
         var NUMPARTE;
-        var TARGET;
-        var COLOR;
-        var CLIENTE;
-        var PLATAFORMA;
-        var VENDEDOR;
-        var COLORM;
-        var NUMCOLOR;
+        <!--   NOMINAL = document.getElementById("nominal").value;
+           var TARGET;
+           var COLOR;
+           var CLIENTE;
+           var PLATAFORMA;
+           var VENDEDOR;
+           var COLORM;
+           var NUMCOLOR;-->
         var STATUS;
         var OBSERVACIONES;
 
@@ -420,21 +426,21 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         OPERACION = document.getElementById("Operacion").value;
         FECHACALIBRACION = document.getElementById("fechacalibracion").value;
         FECHAVENCIDA = document.getElementById("fechavencida").value;
-        NOMINAL = document.getElementById("nominal").value;
+     <!--   NOMINAL = document.getElementById("nominal").value;
         MAXIMA = document.getElementById("maxima").value;
-        MINIMA = document.getElementById("minima").value;
+        MINIMA = document.getElementById("minima").value;-->
         RESOLUCION = document.getElementById("resolucion").value;
         RANGO = document.getElementById("rango").value;
         FRECUENCIA = document.getElementById("frecuencia").value;
         NUMSERIE = document.getElementById("numserie").value;
         NUMPARTE = document.getElementById("numparte").value;
-        TARGET = document.getElementById("target").value;
+       <!-- TARGET = document.getElementById("target").value;
         COLOR = document.getElementById("color").value;
         CLIENTE = document.getElementById("cliente").value;
         PLATAFORMA= document.getElementById("plataforma").value;
         VENDEDOR= document.getElementById("vendedor").value;
         COLORM= document.getElementById("colormaster").value;
-        NUMCOLOR= document.getElementById("numColor").value;
+        NUMCOLOR= document.getElementById("numColor").value;-->
         STATUS = document.getElementById("status").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
@@ -453,20 +459,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('fechacalibracion', FECHACALIBRACION);
         data.append('fechavencida', FECHAVENCIDA);
         data.append('resolucion', RESOLUCION);
-        data.append('nominal', NOMINAL);
+     <!--   data.append('nominal', NOMINAL);
         data.append('maxima', MAXIMA);
-        data.append('minima', MINIMA);
+        data.append('minima', MINIMA);-->
         data.append('rango', RANGO);
         data.append('frecuencia', FRECUENCIA);
         data.append('numserie', NUMSERIE);
         data.append('numparte', NUMPARTE);
-        data.append('target', TARGET);
+      <!--  data.append('target', TARGET);
         data.append('color', COLOR);
         data.append('cliente', CLIENTE);
         data.append('plataforma', PLATAFORMA);
         data.append('vendedor', VENDEDOR);
         data.append('colormaster', COLORM);
-        data.append('numColor', NUMCOLOR);
+        data.append('numColor', NUMCOLOR);-->
         data.append('status', STATUS);
         data.append('observaciones', OBSERVACIONES);
         data.append('imagen', foto);
