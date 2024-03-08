@@ -89,8 +89,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             </div>
             <div id="filaFechavencida" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Prox. fecha de verificación</label>
-                <input type="text" name="demo-email" id="fechavencida" value=""
-                       placeholder="PROX. FECHA DE VERIFICACION">
+                <input type="text" name="demo-email" id="fechavencida" value="" placeholder="PROX. FECHA DE VERIFICACION">
             </div>
             <div id="filaFrecuencia" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Frecuencia</label>
@@ -225,8 +224,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <br>
                 <li>
                     <EQUIPOS></EQUIPOS>
-                    <a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble"> ESTUDIOS Y
-                        CERTIFICADOS<span class="label">Dribbble</span></a></li>
+                    <a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble"> ESTUDIOS Y CERTIFICADOS<span class="label">Dribbble</span></a></li>
                 <br>
             </ul>
         </center>
@@ -288,9 +286,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("numserie").value = data.data[0].NumSerie;
             document.getElementById("numparte").value = data.data[0].NumParte;
             document.getElementById("resolucion").value = data.data[0].Resolucion;
-        <!--    document.getElementById("nominal").value = data.data[0].Nominal;
+            document.getElementById("nominal").value = data.data[0].Nominal;
             document.getElementById("minima").value = data.data[0].EspMin;
-            document.getElementById("maxima").value = data.data[0].EspMax;-->
+            document.getElementById("maxima").value = data.data[0].EspMax;
             document.getElementById("rango").value = data.data[0].Rango;
             document.getElementById("status").value = data.data[0].Status;
             document.getElementById("centrocosto").value = data.data[0].CentroCosto;
