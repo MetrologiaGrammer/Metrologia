@@ -490,7 +490,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         fetch('dao/daoguardarEquipo.php', {
             method: 'POST',
             body: data
-
         })
             .then(function (response) {
                 if (response.ok) {
