@@ -100,23 +100,23 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION">
             </div>
 
-            <!--
+
             <div id="filaNominal" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Especificación</label>
                 <input type="text" name="demo-email" id="nominal" value="" placeholder="ESPECIFICACION">
             </div>
+            <!--
+                        <div id="filaEspMax" class="col-6 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Especificación Máxima</label>
+                            <input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA">
+                        </div>
 
-            <div id="filaEspMax" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Especificación Máxima</label>
-                <input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA">
-            </div>
+                        <div id="filaEspMin" class="col-6 col-12-xsmall">
+                            <label style="text-align: center;font-size: 18px">Especificación Minima</label>
+                            <input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA">
+                        </div>
 
-            <div id="filaEspMin" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Especificación Minima</label>
-                <input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA">
-            </div>
-
-             -->
+                         -->
             <div id="filaRango" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Rango</label>
                 <input type="email" name="demo-email" id="rango" value="" placeholder="RANGO">
@@ -295,6 +295,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
             document.getElementById("observaciones").value = data.data[0].Observaciones;
             document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+            document.getElementById("nominal").value = data.data[0].Nominal;
             <!--   document.getElementById("target").value = data.data[0].Ntarget;
                document.getElementById("codigoColor").value = data.data[0].CodColor;
                document.getElementById("cliente").value = data.data[0].ClienteMaster;
@@ -350,9 +351,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("observaciones").value = data.data[0].Observaciones;
                 document.getElementById("frecuencia").value = data.data[0].Frecuencia;
                 document.getElementById("resolucion").value = data.data[0].Resolucion;
-
+                document.getElementById("nominal").value = data.data[0].Nominal;
                 /*
-                  <!--    document.getElementById("nominal").value = data.data[0].Nominal;
+                  <!--
                       document.getElementById("minima").value = data.data[0].EspMin;
                       document.getElementById("maxima").value = data.data[0].EspMax;-->
 
@@ -407,8 +408,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var FECHACALIBRACION;
         var FECHAVENCIDA;
         var RESOLUCION;
-      /*  var NOMINAL;
-        var MAXIMA;
+        var NOMINAL;
+       /* var MAXIMA;
         var MINIMA;*/
         var RANGO;
         var FRECUENCIA;
@@ -434,9 +435,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         OPERACION = document.getElementById("Operacion").value;
         FECHACALIBRACION = document.getElementById("fechacalibracion").value;
         FECHAVENCIDA = document.getElementById("fechavencida").value;
-        /*NOMINAL = document.getElementById("nominal").value;
-        MAXIMA = document.getElementById("maxima").value;
-        MINIMA = document.getElementById("minima").value;*/
+        NOMINAL = document.getElementById("nominal").value;
+        /* MAXIMA = document.getElementById("maxima").value;
+         MINIMA = document.getElementById("minima").value;*/
         RESOLUCION = document.getElementById("resolucion").value;
         RANGO = document.getElementById("rango").value;
         FRECUENCIA = document.getElementById("frecuencia").value;
@@ -467,9 +468,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('fechacalibracion', FECHACALIBRACION);
         data.append('fechavencida', FECHAVENCIDA);
         data.append('resolucion', RESOLUCION);
-     /*  data.append('nominal', NOMINAL);
-        data.append('maxima', MAXIMA);
-        data.append('minima', MINIMA);*/
+        data.append('nominal', NOMINAL);
+        /*data.append('maxima', MAXIMA);
+                data.append('minima', MINIMA);*/
         data.append('rango', RANGO);
         data.append('frecuencia', FRECUENCIA);
         data.append('numserie', NUMSERIE);
