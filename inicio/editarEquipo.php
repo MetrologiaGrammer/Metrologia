@@ -485,6 +485,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('observaciones', OBSERVACIONES);
         data.append('imagen', foto);
 
+        document.getElementById("carga").style.display = "block";
+        document.getElementById("contenidoReporte").style.display = "none";
 
         fetch('dao/daoguardarEquipo.php', {
             method: 'POST',
