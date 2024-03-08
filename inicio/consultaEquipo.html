@@ -444,9 +444,9 @@
 		Equipo=document.getElementById("referencia").value;
 
 		const chars =Equipo.split('-');
-
+<!--
 		var ref = chars[0];
-
+-->
 
 			$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + Equipo, function (data) {
 				document.getElementById("codigo").value = data.data[0].IdEquipo;
