@@ -488,13 +488,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         FRECUENCIA = document.getElementById("frecuencia").value;
         NUMSERIE = document.getElementById("numserie").value;
         NUMPARTE = document.getElementById("numparte").value;
-       <!-- TARGET = document.getElementById("target").value;
+       /* TARGET = document.getElementById("target").value;
         COLOR = document.getElementById("color").value;
         CLIENTE = document.getElementById("cliente").value;
         PLATAFORMA= document.getElementById("plataforma").value;
         VENDEDOR= document.getElementById("vendedor").value;
         COLORM= document.getElementById("colormaster").value;
-        NUMCOLOR= document.getElementById("numColor").value;-->
+        NUMCOLOR= document.getElementById("numColor").value;*/
         STATUS = document.getElementById("status").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
@@ -513,20 +513,20 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('fechacalibracion', FECHACALIBRACION);
         data.append('fechavencida', FECHAVENCIDA);
         data.append('resolucion', RESOLUCION);
-     <!--   data.append('nominal', NOMINAL);
+     /*  data.append('nominal', NOMINAL);
         data.append('maxima', MAXIMA);
-        data.append('minima', MINIMA);-->
+        data.append('minima', MINIMA);*/
         data.append('rango', RANGO);
         data.append('frecuencia', FRECUENCIA);
         data.append('numserie', NUMSERIE);
         data.append('numparte', NUMPARTE);
-      <!--  data.append('target', TARGET);
+      /*  data.append('target', TARGET);
         data.append('color', COLOR);
         data.append('cliente', CLIENTE);
         data.append('plataforma', PLATAFORMA);
         data.append('vendedor', VENDEDOR);
         data.append('colormaster', COLORM);
-        data.append('numColor', NUMCOLOR);-->
+        data.append('numColor', NUMCOLOR);*/
         data.append('status', STATUS);
         data.append('observaciones', OBSERVACIONES);
         data.append('imagen', foto);
