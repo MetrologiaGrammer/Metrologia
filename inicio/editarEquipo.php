@@ -349,9 +349,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
                 document.getElementById("observaciones").value = data.data[0].Observaciones;
                 document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+                document.getElementById("resolucion").value = data.data[0].Resolucion;
 
-
-                /*  document.getElementById("resolucion").value = data.data[0].Resolucion;
+                /*
                   <!--    document.getElementById("nominal").value = data.data[0].Nominal;
                       document.getElementById("minima").value = data.data[0].EspMin;
                       document.getElementById("maxima").value = data.data[0].EspMax;-->

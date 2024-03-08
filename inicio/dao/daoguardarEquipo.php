@@ -41,7 +41,7 @@ function cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Lin
 {
     $con = new LocalConector();
     $conexion = $con->conectar();
-    $consP = "UPDATE `Equipo` SET `Observaciones`='$Observaciones',`Status`='$Status',`Resolucion`='$Resolucion',`NumParte`='$Numparte',`Descripcion`='',`Nominal`='',`TolMax`='',`TolMin`='',`EspMin`='',`EspMax`='',`Caracteristica`='',`FechaInspeccion`='$Fechacalibracion',`Frecuencia`='$Frecuencia',`FechaVencimiento`='$Fechavencida',`AreaProceso`='$Proceso',`Tipo`='$Tipo',`SubTipo`='$Subtipo',`NumSerie`='$Numserie',`AreaLinea`='$Linea',`AreaOperacion`='$Operacion',`Rango`='$Rango',`Ntarget`='',`CodColor`='',`ClienteMaster`='',`PlataformaMaster`='',`VendedorMaster`='',`NombreColorMaster`='',`NumColorMaster`='',`NominaPersona`='',`NombrePersona`='' WHERE `IdEquipo`='$Referencia'";
+    $consP = "UPDATE `Equipo` SET `Observaciones`='$Observaciones',`Status`='$Status',`Resolucion`='$Resolucion',`NumParte`='$Numparte',`Descripcion`='',`Nominal`='',`TolMax`='',`TolMin`='',`EspMin`='',`EspMax`='',`Caracteristica`='',`FechaInspeccion`='$Fechacalibracion',`Frecuencia`='$Frecuencia',`FechaVencimiento`='$Fechavencida',`AreaProceso`='$Proceso',`Tipo`='$Tipo',`SubTipo`='$Subtipo',`NumSerie`='$Numserie',`AreaLinea`='$Linea',`AreaOperacion`='$Operacion',`Rango`='$Rango',`CentroCosto`='',`CodigoCalibracion`='',`CostoCalibracion`='',`Moneda`='',`Ntarget`='',`CodColor`='',`ClienteMaster`='',`PlataformaMaster`='',`VendedorMaster`='',`NombreColorMaster`='',`NumColorMaster`='',`NominaPersona`='',`NombrePersona`='' WHERE `IdEquipo`='$Referencia'";
     $rsconsPro = mysqli_query($conexion, $consP);
     mysqli_close($conexion);
 
