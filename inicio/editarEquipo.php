@@ -424,6 +424,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var STATUS;
         var OBSERVACIONES;
 
+        document.getElementById("carga").style.display = "block";
+        document.getElementById("contenidoReporte").style.display = "none";
 
         REFERENCIA = document.getElementById("referencia").value;
         TIPO = document.getElementById("tipo").value;
