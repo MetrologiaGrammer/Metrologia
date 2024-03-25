@@ -198,8 +198,9 @@
 
 
 			if (data.data[0].Proveedor == "MESS"){
+				if(data.data[0].Tipo=="CELDA")
 				document.getElementById("Proveedor").src = "Estudios/MESSFUERZA.pdf";
-		} else {
+			} else {
 			document.getElementById("Proveedor").src = "Estudios/"+id+".pdf"
 		}
 
