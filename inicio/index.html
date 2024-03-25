@@ -98,6 +98,25 @@
 				<label style="text-align: center;font-size: 18px">Observaciones</label>
 				<input type="text" name="demo-email" id="observaciones" value="" placeholder="Observaciones"disabled>
 			</div>
+			<div id="filaResolucion" class="col-6 col-12-xsmall">
+				<label style="text-align: center;font-size: 18px">Resolución</label>
+				<input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"disabled>
+			</div>
+
+			<div id="filaEspMax" class="col-6 col-12-xsmall">
+				<label style="text-align: center;font-size: 18px">Especificación Máxima</label>
+				<input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA"disabled>
+			</div>
+
+			<div id="filaEspMin" class="col-6 col-12-xsmall">
+				<label style="text-align: center;font-size: 18px">Especificación Minima</label>
+				<input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA"disabled>
+			</div>
+
+			<div id="filaRango" class="col-6 col-12-xsmall">
+				<label style="text-align: center;font-size: 18px">Rango</label>
+				<input type="text" name="demo-email" id="rango" value="" placeholder="RANGO"disabled>
+			</div>
 		</div>
 		<P></P>
 
@@ -162,12 +181,11 @@
 			document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
 			document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
 			document.getElementById("observaciones").value = data.data[0].Observaciones;
-			document.getElementById("numserie").value = data.data[0].NumSerie;
-			document.getElementById("numparte").value = data.data[0].NumParte;
-			document.getElementById("resolucion").value = data.data[0].Resolucion;
 			document.getElementById("rango").value = data.data[0].Rango;
-			document.getElementById("status").value = data.data[0].Status;
-			document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+			document.getElementById("EspMin").value = data.data[0].EspMin;
+			document.getElementById("EspMax").value = data.data[0].EspMax;
+			document.getElementById("resolucion").value = data.data[0].Resolucion;
+
 
 
 		});
