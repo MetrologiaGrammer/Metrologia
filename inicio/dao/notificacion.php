@@ -19,6 +19,8 @@ function Contador(){
     $html .= "<th>SubTipo</th>";
     $html .= "<th>Area Linea</th>";
     $html .= "<th>Area Operacion</th>";
+    $html .= "<th>Fecha de inspección</th>";
+    $html .= "<th>Proxima fecha de inspección</th>";
     $html .= "</tr>";
 
     foreach($resultado as $fila){
@@ -30,6 +32,8 @@ function Contador(){
         $html .= "<td>" . $fila['SubTipo'] . "</td>";
         $html .= "<td>" . $fila['AreaLinea'] . "</td>";
         $html .= "<td>" . $fila['AreaOperacion'] . "</td>";
+        $html .= "<td>" . $fila['FechaInspeccion'] . "</td>";
+        $html .= "<td>" . $fila['FechaVencimiento'] . "</td>";
         $html .= "</tr>";
 
 
