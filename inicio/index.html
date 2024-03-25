@@ -168,7 +168,18 @@
 	buscarQR(getParameterByName("ID"));
 	function buscarQR(id) {
 				document.getElementById("estudio").src = "Estudios/"+id+".pdf"
+
+
+		if (data.data[0].Tipo == "ESCALA") {
+			document.getElementById("imagenEquipo").src = "images/ER-001.jpg";
+		} else {
+			document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
+		}
 				document.getElementById("provedor").src = "Estudios/"+id+".pdf"
+
+
+
+
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + id, function (data) {
 			if (data.data[0].Tipo == "ESCALA") {
 				document.getElementById("imagenEquipo").src = "images/ER-001.jpg";
