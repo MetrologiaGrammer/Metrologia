@@ -119,9 +119,11 @@
 			</div>
 		</div>
 		<P></P>
+		<hr>
+		<hr>
 
-
-
+		<h4 style="text-align: center">DATOS DEL PROVEDOR</h4>
+		<embed id=provedor  type="application/pdf" width="100%" height="600px" />
 	</section>
 </div>
 
@@ -166,6 +168,7 @@
 	buscarQR(getParameterByName("ID"));
 	function buscarQR(id) {
 				document.getElementById("estudio").src = "Estudios/"+id+".pdf"
+				document.getElementById("provedor").src = "Estudios/"+id+".pdf"
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + id, function (data) {
 			if (data.data[0].Tipo == "ESCALA") {
 				document.getElementById("imagenEquipo").src = "images/ER-001.jpg";
