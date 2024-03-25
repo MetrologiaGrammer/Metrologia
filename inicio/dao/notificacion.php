@@ -20,7 +20,7 @@ function Contador(){
     $html .= "<th>Area Linea</th>";
     $html .= "<th>Area Operacion</th>";
     $html .= "<th>Fecha de inspección</th>";
-    $html .= "<th>Proxima fecha de inspección</th>";
+    $html .= "<th>Próxima fecha de inspección</th>";
     $html .= "</tr>";
 
     foreach($resultado as $fila){
