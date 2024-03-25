@@ -170,11 +170,6 @@
 				document.getElementById("estudio").src = "Estudios/"+id+".pdf"
 
 
-			if (data.data[0].Proveedor == "MESS") {
-				document.getElementById("Proveedor").src = "Estudios/MESSFUERZA.pdf";
-				} else {
-				document.getElementById("Proveedor").src = "Estudios/"+id+".pdf"
-				}
 
 
 
@@ -201,8 +196,13 @@
 			document.getElementById("resolucion").value = data.data[0].Resolucion;
 			document.getElementById("Proveedor").value = data.data[0].Proveedor;
 
-
 		});
+
+		if (data.data[0].Proveedor == "MESS") {
+			document.getElementById("Proveedor").src = "Estudios/MESSFUERZA.pdf";
+		} else {
+			document.getElementById("Proveedor").src = "Estudios/"+id+".pdf"
+		}
 
 	}
 
