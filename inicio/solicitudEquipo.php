@@ -422,7 +422,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         document.getElementById("area").innerHTML = data.data[0].Area;
     });
 
-    llenarTipo()
+    llenarTipo();
 
     function llenarTipo() {
         var tipoEquipo;
