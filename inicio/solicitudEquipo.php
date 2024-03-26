@@ -85,6 +85,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     </select>
                 </div>
             </div>
+
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese subtipo</label>
                 <div class="col-12">
