@@ -41,7 +41,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         <div class="row gtr-uniform gtr-50">
 
-<!--
+
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese referencia</label>
                 <div class="col-12">
@@ -72,7 +72,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     </select>
                 </div>
             </div>
--->
+
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center">Id Referencia</label>
                 <input type="text" name="demo-name" id="codigoAux" value="" placeholder="ID" >
@@ -414,6 +414,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("codigoAux").value = referencia;
             }
         });
+        llenarTipo();
 
     }
     var nominaAux = '<?php echo $_SESSION["nomina"];?>'
@@ -422,7 +423,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         document.getElementById("area").innerHTML = data.data[0].Area;
     });
 
-    llenarTipo();
 
     function llenarTipo() {
         var tipoEquipo;
