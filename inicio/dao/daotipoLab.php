@@ -13,7 +13,7 @@ function Contador(){
 
     $conex=$con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT * FROM `Tipo` GROUP by `Tipo`;");
+    $datos = mysqli_query($conex, "SELECT * FROM `EquipoLab` GROUP by `Tipo`;");
 
     $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
 
