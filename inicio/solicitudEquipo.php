@@ -414,7 +414,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("codigoAux").value = referencia;
             }
         });
-        llenarTipo();
+
 
     }
     var nominaAux = '<?php echo $_SESSION["nomina"];?>'
