@@ -442,7 +442,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 createOption.value = data.data[i].Tipo;
                 select.appendChild(createOption);
             }
-        });
+        })
+        llenarsubtipo();
     }
 
     function llenarsubtipo() {
