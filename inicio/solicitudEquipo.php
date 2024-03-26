@@ -425,9 +425,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     llenarTipo();
 
     function llenarTipo() {
-        var tipoEquipo;
-        tipoEquipo = document.getElementById("referencia").value;
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daotipo.php?ref=' + tipoEquipo, function (data) {
+
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daotipoLab.php?ref=' , function (data) {
             var select = document.getElementById("tipo");
             select.innerHTML = "";
 
