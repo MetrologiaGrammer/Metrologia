@@ -77,6 +77,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center">Id Referencia</label>
                 <input type="text" name="demo-name" id="codigoAux" value="" placeholder="ID" >
             </div>
+
+
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese tipo</label>
                 <div class="col-12">
@@ -412,13 +414,15 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("codigoAux").value = referencia;
             }
         });
-        llenarTipo();
+
     }
     var nominaAux = '<?php echo $_SESSION["nomina"];?>'
     $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoUsuario.php?nomina=' + nominaAux, function (data) {
         document.getElementById("nombre").innerHTML = data.data[0].Nombre;
         document.getElementById("area").innerHTML = data.data[0].Area;
     });
+
+    llenarTipo()
 
     function llenarTipo() {
         var tipoEquipo;
