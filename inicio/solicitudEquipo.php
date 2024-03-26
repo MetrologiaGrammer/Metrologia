@@ -80,7 +80,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese tipo</label>
                 <div class="col-12">
-                    <select name="demo-category" id="tipo" onchange="llenarsubtipo()">
+                    <select name="demo-category" id="tipo" onchange="llenarTipo()">
                         <option value="">- TIPO -</option>
                     </select>
                 </div>
