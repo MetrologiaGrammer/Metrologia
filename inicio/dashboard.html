@@ -29,6 +29,7 @@
 
 		<div class="row gtr-uniform gtr-50">
 			<canvas style="padding: 27px;" id="grafica2"></canvas>
+			<canvas style="padding: 27px;" id="grafica3"></canvas>
 		</div>
 
 	</section>
@@ -82,7 +83,70 @@
 			test2(areaList6, cantidadHoras6);
 		});
 	}
+	prelista4();
+	function prelista4() {
 
+		areaList7 = [];
+		cantidadHoras7 = [];
+
+		$.getJSON("https://arketipo.mx/Metrologia/inicio/dao/daoDashapu.php", function (data) {
+			for (var i = 0; i < data.data.length; i++) {
+
+				areaList7[i] = data.data[i].CentroCosto;
+				cantidadHoras7[i] = data.data[i].conteo;
+
+			}
+			test3(areaList7, cantidadHoras7);
+		});
+	}
+
+	function test3(areaList3, cantidadHoras3) {
+		const $grafica = document.querySelector("#grafica3");
+		const etiquetasZona = areaList3;
+
+		const colores = [
+			'#E9E6DD',
+			'#003D70',
+			'#69A032',
+			'#E9E6DD',
+		];
+
+		Chart.helpers.each(Chart.instances, function (instance) {
+			if (instance.chart.canvas.id === $grafica.id) {
+				instance.destroy();
+			}
+		});
+
+		const datosZona = {
+			label: "Numeros de parte bloqueados",
+			data: cantidadHoras3, // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+			backgroundColor: colores,// Color de fondo
+			//borderColor: 'rgba(217, 83, 79, 0.8)',// Color del borde
+			borderWidth: 1,// Ancho del borde
+		};
+
+		new Chart($grafica, {
+			type: 'bar',// Tipo de gráfica
+			data: {
+				labels: etiquetasZona,
+				datasets: [
+					datosZona,
+					// Aquí más datos...
+				]
+			},
+			options: {
+
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}],
+				},
+			}
+		});
+
+	}
 
 	function test2(areaList3, cantidadHoras3) {
 		const $grafica = document.querySelector("#grafica2");
