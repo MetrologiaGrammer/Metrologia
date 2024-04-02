@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>GramEXPERT</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+
+
+
+<body class="is-preload">
+<!-- Header -->
+<header id="header">
+
+	<div class="inner">
+		<center><img id="imagenEquipo" style="width: 70%" alt="" class="aln-center" /></center>
+
+	</div>
+</header>
+<!-- Main -->
+<div id="main">
+	<!-- One -->
+	<section id="one">
+
+		<header class="major">
+			<h2 style="text-align: center">Consulta De Equipos</h2>
+		</header>
+
+		<div class="row gtr-uniform gtr-50">
+			<canvas style="padding: 27px;" id="grafica2"></canvas>
+		</div>
+
+	</section>
+</div>
+</section>
+
+
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+	<div class="inner">
+		<center>
+		<ul class="icons">
+			<li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble">	INICIO<span class="label">Dribbble</span></a></li><br>
+            <li><a href="https://arketipo.mx/Metrologia/inicio/altaEquipo.php" class="icon brands fa-dribbble">	INGRESO DE EQUIPO<span class="label">Dribbble</span></a></li><br>
+			<li><a ONCLICK="mandarEstudio()" class="icon brands fa-dribbble">	ESTUDIOS Y CERTIFICACIONES<span class="label">Dribbble</span></a></li><br>
+			<li><a ONCLICK="mandar()" class="icon brands fa-dribbble">	ACTUALIZAR EQUIPOS<span class="label">Dribbble</span></a></li><br>
+
+		</ul>
+		</center>
+	</div>
+</footer>
+
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+
+<script>
+	prelista3();
+	function prelista3() {
+
+		areaList6 = [];
+		cantidadHoras6 = [];
+
+		$.getJSON("https://arketipo.mx/Metrologia/inicio/dao/daoDash.php", function (data) {
+			for (var i = 0; i < data.data.length; i++) {
+
+				areaList6[i] = data.data[i].AreaLinea;
+				cantidadHoras6[i] = data.data[i].Conteo;
+
+			}
+			test2(areaList6, cantidadHoras6);
+		});
+	}
+
+
+	function test2(areaList3, cantidadHoras3) {
+		const $grafica = document.querySelector("#grafica2");
+		const etiquetasZona = areaList3;
+
+		const colores = [
+			'#E9E6DD',
+			'#003D70',
+			'#69A032',
+			'#E9E6DD',
+		];
+
+		Chart.helpers.each(Chart.instances, function (instance) {
+			if (instance.chart.canvas.id === $grafica.id) {
+				instance.destroy();
+			}
+		});
+
+		const datosZona = {
+			label: "Numeros de parte bloqueados",
+			data: cantidadHoras3, // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+			backgroundColor: colores,// Color de fondo
+			//borderColor: 'rgba(217, 83, 79, 0.8)',// Color del borde
+			borderWidth: 1,// Ancho del borde
+		};
+
+		new Chart($grafica, {
+			type: 'bar',// Tipo de gráfica
+			data: {
+				labels: etiquetasZona,
+				datasets: [
+					datosZona,
+					// Aquí más datos...
+				]
+			},
+			options: {
+
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}],
+				},
+			}
+		});
+
+	}
+
+</script>
+
+</body>
+</html>
