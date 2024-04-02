@@ -134,7 +134,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Fecha de verificación</label>
-                <input type="date" name="demo-email" id="fechacalibracion" value="" placeholder="Email"/>
+                <input type="month" name="demo-email" id="fechacalibracion" value="" placeholder="Email"/>
             </div>
             <div class="col-6 col-12-xsmall">
                 <label
