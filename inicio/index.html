@@ -56,7 +56,7 @@
 				<input type="text" name="demo-name" id="codigo" value="" placeholder="ID" disabled ONCLICK="mandar()">
 			</div>-->
 
-			<center><a style="margin-top: 40px" target="_blank" href="https://grammer365-my.sharepoint.com/:x:/g/personal/extern_adrian_aragon_grammer_com/EbGxTw5bVTpItysmzEhqtgwBUH1DMvpvkR3odHRLA2__jg?e=wI6b3O"><img src="images/excel.png" width="50"></a></center>
+			<center><a id="sharepoint" style="margin-top: 40px" target="_blank" href=""><img src="images/excel.png" width="50"></a></center>
 			<embed id=estudio  type="application/pdf" width="100%" height="600px" />
 
 
@@ -194,7 +194,7 @@
 			document.getElementById("EspMin").value = data.data[0].EspMin;
 			document.getElementById("EspMax").value = data.data[0].EspMax;
 			document.getElementById("resolucion").value = data.data[0].Resolucion;
-			document.getElementById("Proveedor").value = data.data[0].Proveedor;
+			document.getElementById("sharepoint").href = data.data[0].Proveedor;
 
 
 			if (data.data[0].Proveedor == "MESS"){
