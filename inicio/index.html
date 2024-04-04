@@ -236,11 +236,6 @@
 				document.getElementById("resolucion").value = data.data[0].Resolucion;
 			}
 
-			if (data.data[0].Nominal == "") {
-				document.getElementById("filaNominal").style.display = 'none';
-			} else {
-				document.getElementById("nominal").value = data.data[0].Nominal;
-			}
 			if (data.data[0].EspMin == "") {
 				document.getElementById("filaEspMin").style.display = 'none';
 			} else {
