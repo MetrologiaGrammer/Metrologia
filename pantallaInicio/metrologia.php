@@ -1,4 +1,13 @@
 <!DOCTYPE HTML>
+<?php
+session_start();
+if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
+    echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=../login/indexMet.html'>";
+    session_destroy();
+} else {
+    session_start();
+}
+?>
 <!--
 	Aerial by HTML5 UP
 	html5up.net | @ajlkn
