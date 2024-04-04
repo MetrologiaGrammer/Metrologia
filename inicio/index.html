@@ -167,7 +167,6 @@
 	buscarQR(getParameterByName("ID"));
 	function buscarQR(id) {
 				document.getElementById("estudio").src = "Estudios/"+id+".pdf"
-				document.getElementById("proveedor").src = "Estudios/MESSFUERZA.pdf";
 
 
 
@@ -197,20 +196,20 @@
 		//	document.getElementById("sharepoint").href = data.data[0].SharePoint;
 
 
-			if (data.data[0].Proveedor == "MESS"){
 
-				if(data.data[0].Tipo=="CELDA"){
-
-					document.getElementById("proveedor").src = "Estudios/MESSFUERZA.pdf";
-				}
-
-			} else {
-			document.getElementById("proveedor").src = "Estudios/"+id+".pdf"
-		}
 
 		});
 
+		if (data.data[0].Proveedor == "MESS"){
 
+			if(data.data[0].Tipo=="CELDA"){
+
+				document.getElementById("proveedor").src = "Estudios/MESSFUERZA.pdf";
+			}
+
+		} else {
+			document.getElementById("proveedor").src = "Estudios/"+id+".pdf"
+		}
 	}
 
 
