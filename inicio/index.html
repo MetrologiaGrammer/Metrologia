@@ -104,12 +104,12 @@
 
 			<div id="filaEspMax" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Especificación Máxima</label>
-				<input type="text" name="demo-email" id="EspMax" value="" placeholder="MAXIMA"disabled>
+				<input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA"disabled>
 			</div>
 
 			<div id="filaEspMin" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Especificación Minima</label>
-				<input type="text" name="demo-email" id="EspMin" value="" placeholder="MINIMA"disabled>
+				<input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA"disabled>
 			</div>
 
 			<div id="filaRango" class="col-6 col-12-xsmall">
@@ -225,6 +225,11 @@
 			} else {
 				document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
 			}
+			if (data.data[0].Observaciones == "") {
+				document.getElementById("filaObservaciones").style.display = 'none';
+			} else {
+				document.getElementById("observaciones").value = data.data[0].Observaciones;
+			}
 			if (data.data[0].Resolucion == "") {
 				document.getElementById("filaResolucion").style.display = 'none';
 			} else {
@@ -252,11 +257,7 @@
 			} else {
 				document.getElementById("rango").value = data.data[0].Rango;
 			}
-			if (data.data[0].Observaciones == "") {
-				document.getElementById("filaObservaciones").style.display = 'none';
-			} else {
-				document.getElementById("observaciones").value = data.data[0].Observaciones;
-			}
+
 			document.getElementById("proveedor").value = data.data[0].Proveedor;
 		//	document.getElementById("sharepoint").href = data.data[0].SharePoint;
 
