@@ -251,6 +251,11 @@
 			} else {
 				document.getElementById("rango").value = data.data[0].Rango;
 			}
+			if (data.data[0].Observaciones == "") {
+				document.getElementById("filaObservaciones").style.display = 'none';
+			} else {
+				document.getElementById("observaciones").value = data.data[0].Observaciones;
+			}
 			document.getElementById("proveedor").value = data.data[0].Proveedor;
 		//	document.getElementById("sharepoint").href = data.data[0].SharePoint;
 
