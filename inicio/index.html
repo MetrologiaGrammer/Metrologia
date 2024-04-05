@@ -65,23 +65,26 @@
 			<div class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px;">Id Referencia</label>
 				<input type="text" name="demo-name" id="codigo" value="" placeholder="ID" disabled>
-			</div> <div class="col-6 col-12-xsmall">
+			</div>
+
+			<div id="filaTipo" class="col-6 col-12-xsmall">
 			<label style="text-align: center;font-size: 18px;">Tipo</label>
 			<input type="text" name="demo-name" id="tipo" value="" placeholder="TIPO" disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+
+			<div id="filaSubtipo" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px;">Subtipo</label>
 				<input type="text" name="demo-name" id="subtipo" value="" placeholder="SUB TIPO" disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaProceso" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px;">Proceso</label>
 				<input type="text" name="demo-name" id="proceso" value="" placeholder="PROCESO" disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaLinea" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Linea</label>
 				<input type="text" name="demo-name" id="linea" value="" placeholder="LINEA" disabled>
 			</div>
-			<div class="col-6 col-12-xsmall">
+			<div id="filaOperacion" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Operacion</label>
 				<input type="text" name="demo-name" id="Operacion" value="" placeholder="OPERACION" disabled>
 			</div>
@@ -190,7 +193,7 @@
 
 
 			if (data.data[0].SubTipo == "") {
-				document.getElementById("filaSerie").style.display = 'none';
+				document.getElementById("filaSubtipo").style.display = 'none';
 			} else {
 				document.getElementById("subtipo").value = data.data[0].SubTipo;
 			}
