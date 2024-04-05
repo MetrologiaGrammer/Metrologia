@@ -49,6 +49,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                                 <li style="margin-right: 10px;" class=""><a href="https://arketipo.mx/Metrologia/estudios.html" target="_blank" ><img class="zoom" style="width: 100%" alt="" src="imagen/estudios.png"></a></li>
                                 <li style="margin-right: 10px;" class=""><a href="https://arketipo.mx/Metrologia/estudios.html" target="_blank" ><img class="zoom" style="width: 100%" alt="" src="imagen/AreaNueva.png"></a></li>
                                 <li style="margin-right: 10px;" class=""><a href="https://arketipo.mx/Metrologia/estudiosnum2.html" target="_blank" ><img class="zoom" style="width: 100%" alt="" src="imagen/costos.png"></a></li>
+                                <li style="margin-right: 10px;" class=""><a href="https://arketipo.mx/Metrologia/estudiosnum2.html" target="_blank" ><img class="zoom" style="width: 100%" alt="" src="imagen/master.png"></a></li>
 
 							</ul>
 						</nav>
