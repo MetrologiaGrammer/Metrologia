@@ -38,7 +38,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 					<header id="header">
 						<h1>GramExpert</h1>
 						<h2> <strong>  Laboratorio de Metrología   </strong> </h2>
-						<p>¡Bienvenido! Apartir de ahora puedes ingresar tus equipos, asi mismo, verificar sus especificaciones y estudios.  </p>
+                        <p>¡Bienvenido! </p>
 
 						<nav>
 							<ul>
