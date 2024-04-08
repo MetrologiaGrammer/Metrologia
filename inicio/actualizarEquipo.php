@@ -404,7 +404,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         if (foto === "data:,"){
             Swal.fire({
-                icon: "danger",
+                icon: "error",
                 title: "Tiene que cargar una foto",
                 showConfirmButton: false,
                 timer: 1500
