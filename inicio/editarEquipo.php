@@ -436,7 +436,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
 
 
-        REFERENCIA = document.getElementById("referencia").value;
+        REFERENCIA = document.getElementById("codigo").value;
         TIPO = document.getElementById("tipo").value;
         SUBTIPO = document.getElementById("subtipo").value;
         PROCESO = document.getElementById("proceso").value;
@@ -469,7 +469,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('nomina', "");
         data.append('nombre', "");
         data.append('area', "");
-        data.append('referencia', REFERENCIA);
+        data.append('codigo', REFERENCIA);
         data.append('tipo', TIPO);
         data.append('subtipo', SUBTIPO);
         data.append('proceso', PROCESO);
