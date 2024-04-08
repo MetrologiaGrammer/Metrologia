@@ -257,7 +257,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     }
 
 
-    buscarQR(getParameterByName("id"));
+    buscarQR(getParameterByName("ID"));
 
     function buscarQR(id) {
        // console.log('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id);
