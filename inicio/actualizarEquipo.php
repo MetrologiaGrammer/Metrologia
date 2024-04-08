@@ -146,7 +146,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label for="referencia" style="text-align: center">Ingrese nuevas ubicaciones</label>
                 <div class="col-12">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Ingresar
+                        Nuevo
                     </button>
                 </div>
             </div>
