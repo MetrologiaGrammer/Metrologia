@@ -259,10 +259,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
     buscarQR(getParameterByName("ID"));
 
     function buscarQR(id) {
-        var Equipo;
-        Equipo = document.getElementById("referencia").value;
-
-        const chars = Equipo.split('-');
 
 
         // console.log('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id);

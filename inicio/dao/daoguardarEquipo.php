@@ -5,7 +5,7 @@ include_once('db.php');
 $Nomina = $_POST['nomina'];
 $Nombre = $_POST['nombre'];
 $Area= $_POST['area'];
-$Referencia= $_POST['referencia'];
+$Referencia= $_POST['codigo'];
 $Tipo= $_POST['tipo'];
 $Subtipo= $_POST['subtipo'];
 $Proceso= $_POST['proceso'];
