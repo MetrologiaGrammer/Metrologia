@@ -400,6 +400,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('fechav', FechaVerificacion);
         data.append('fechavencimiento', FechaVencimiento);
 
+        console.log(foto);
+
         fetch('dao/daoActualizacion.php', {
             method: 'POST',
             body: data
