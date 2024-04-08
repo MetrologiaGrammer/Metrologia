@@ -91,47 +91,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Prox. fecha de verificación</label>
                 <input type="text" name="demo-email" id="fechavencida" value="" placeholder="PROX. FECHA DE VERIFICACION">
             </div>
-            <div id="filaFrecuencia" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Frecuencia</label>
-                <input type="text" name="demo-email" id="frecuencia" value="" placeholder="FRECUENCIA">
-            </div>
-            <div id="filaResolucion" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Resolucion</label>
-                <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION">
-            </div>
 
-
-            <div id="filaNominal" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Especificación</label>
-                <input type="text" name="demo-email" id="nominal" value="" placeholder="ESPECIFICACION">
-            </div>
-            <div id="filaEspMax" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Especificación Máxima</label>
-                <input type="text" name="demo-email" id="maxima" value="" placeholder="MAXIMA">
-            </div>
-
-            <div id="filaEspMin" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Especificación Minima</label>
-                <input type="text" name="demo-email" id="minima" value="" placeholder="MINIMA">
-            </div>
-
-
-            <div id="filaRango" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Rango</label>
-                <input type="email" name="demo-email" id="rango" value="" placeholder="RANGO">
-            </div>
-            <div id="filaSerie" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Num.Serie</label>
-                <input type="email" name="demo-email" id="numserie" value="" placeholder="NUM. SERIE">
-            </div>
-            <div id="filaParte" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Num.Parte</label>
-                <input type="email" name="demo-email" id="numparte" value="" placeholder="NUM. PARTE">
-            </div>
-            <div id="fileStatus" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Status</label>
-                <input type="email" name="demo-email" id="status" value="" placeholder="STATUS">
-            </div>
             <div id="fileCentrocosto" class="col-6 col-12-xsmall">
                 <label style="text-align: center;font-size: 18px">Centro de costos</label>
                 <input type="email" name="demo-email" id="centrocosto" value="" placeholder="Centro de costos">
@@ -141,10 +101,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="email" name="demo-email" id="codigocosto" value="" placeholder="Codigo de costos">
             </div>
 
-            <div id="filaTarget" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Numero de Target</label>
-                <input type="text" name="demo-email" id="target" value="" placeholder="Num. Target">
-            </div>
+
 
             <!--
                         <div id="filaCodigocolor" class="col-6 col-12-xsmall">
@@ -172,12 +129,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                             <input type="text" name="demo-email" id="numColor" value="" placeholder="Numero de color">
                         </div>
             -->
-            <div id="fileObservaciones" class="col-12 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Observaciones</label>
-                <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES">
-            </div>
-                    </div>
-                    <!---->
+
+                    <!----
                     <div class="col-12 col-12-xsmall">
                         <label for="referencia" style="text-align: center">Ingrese imagen del equipo</label>
                         <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"
@@ -192,7 +145,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
                     <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
                     <center><img id="imagenUbicacion" src="images/" alt="" style="width: 70%"/></center>
-
+-->
         <div class="col-6 col-12-xsmall">
             <ul class="actions stacked" style="text-align: center">
                 <li><a class="button solid" onclick="testActualizacion()">Guardar Cambio</a></li>
