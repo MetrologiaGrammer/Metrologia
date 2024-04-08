@@ -178,7 +178,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                             <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES">
                         </div>
                     </div>
-                    <!----
+                    <!---->
                     <div class="col-12 col-12-xsmall">
                         <label for="referencia" style="text-align: center">Ingrese imagen del equipo</label>
                         <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"
@@ -193,8 +193,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
                     <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
                     <center><img id="imagenUbicacion" src="images/" alt="" style="width: 70%"/></center>
-                    <p></p>
--->
+
         <div class="col-6 col-12-xsmall">
             <ul class="actions stacked" style="text-align: center">
                 <li><a class="button solid" onclick="testActualizacion()">Guardar Cambio</a></li>
