@@ -103,17 +103,17 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         </div>
 
         <div class="row gtr-uniform gtr-50" >
-<!--
-            <div class="col-6 col-12-xsmall">
+
+            <div class="col-6 col-12-xsmall" STYLE="display: none">
                 <label  style="text-align: center">Fecha de verificación</label>
                 <input type="date" name="demo-email" id="fechav" value="" placeholder="Email"/>
             </div>
-            <div class="col-6 col-12-xsmall">
+            <div class="col-6 col-12-xsmall" STYLE="display: none">
                 <label  style="text-align: center">Proxima fecha de verificación</label>
                 <input type="date" name="demo-email" id="fechavencimiento" value="" placeholder="Email"/>
             </div>
 
--->
+
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Proceso</label>
