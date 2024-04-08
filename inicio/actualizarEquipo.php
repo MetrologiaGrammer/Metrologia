@@ -323,7 +323,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("OperacionA").value = data.data[0].AreaOperacion;
             document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
             document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-            document.getElementById("numserie").value = data.data[0].NumSerie;
             document.getElementById("numparte").value = data.data[0].NumParte;
             document.getElementById("resolucion").value = data.data[0].Resolucion;
             document.getElementById("rango").value = data.data[0].Rango;
@@ -357,7 +356,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("OperacionA").value = data.data[0].AreaOperacion;
             document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
             document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-            document.getElementById("numserie").value = data.data[0].NumSerie;
             document.getElementById("numparte").value = data.data[0].NumParte;
             document.getElementById("resolucion").value = data.data[0].Resolucion;
             document.getElementById("rango").value = data.data[0].Rango;
