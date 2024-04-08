@@ -323,11 +323,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("OperacionA").value = data.data[0].AreaOperacion;
             document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
             document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-            document.getElementById("numparte").value = data.data[0].NumParte;
-            document.getElementById("resolucion").value = data.data[0].Resolucion;
-            document.getElementById("rango").value = data.data[0].Rango;
-            document.getElementById("status").value = data.data[0].Status;
-            document.getElementById("frecuencia").value = data.data[0].Frecuencia;
             document.getElementById("observaciones").value = data.data[0].Observaciones;
         });
     }
@@ -356,10 +351,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("OperacionA").value = data.data[0].AreaOperacion;
             document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
             document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-            document.getElementById("numparte").value = data.data[0].NumParte;
-            document.getElementById("resolucion").value = data.data[0].Resolucion;
-            document.getElementById("rango").value = data.data[0].Rango;
-            document.getElementById("status").value = data.data[0].Status;
             document.getElementById("observaciones").value = data.data[0].Observaciones;
             document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 
