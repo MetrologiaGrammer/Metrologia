@@ -402,24 +402,32 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         console.log(foto);
 
-        fetch('dao/daoActualizacion.php', {
-            method: 'POST',
-            body: data
-        })
-            .then(function (response) {
-                if (response.ok) {
-                    Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, foto,FechaVerificacion,FechaVencimiento)
-                } else {
-                    throw "Error";
-                }
-            })
-            .then(function (texto) {
-                console.log(texto);
-            })
-            .catch(function (err) {
-                console.log(err);
+        if (foto === "data:,"){
+            Swal.fire({
+                icon: "danger",
+                title: "Tiene que cargar una foto",
+                showConfirmButton: false,
+                timer: 1500
             });
-
+        }else {
+            fetch('dao/daoActualizacion.php', {
+                method: 'POST',
+                body: data
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen, foto, FechaVerificacion, FechaVencimiento)
+                    } else {
+                        throw "Error";
+                    }
+                })
+                .then(function (texto) {
+                    console.log(texto);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
     }
 
     function Reporte(Nomina, AreaProceso, Linea, Operacion, IdEquipo, IdImagen,FechaVerificacion,FechaVencimiento) {
