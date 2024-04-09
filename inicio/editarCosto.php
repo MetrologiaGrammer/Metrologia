@@ -475,8 +475,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
            data.append('colormaster', COLORM);
            data.append('numColor', NUMCOLOR);
         data.append('status', STATUS);
-        data.append('observaciones', OBSERVACIONES);*/
-        data.append('imagen', foto);
+        data.append('observaciones', OBSERVACIONES);
+        data.append('imagen', foto);*/
 
 
 
