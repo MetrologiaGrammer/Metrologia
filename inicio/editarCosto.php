@@ -251,7 +251,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("moneda").value = data.data[0].Moneda;
 
 
-            <!--    document.getElementById("observaciones").value = data.data[0].Observaciones;
+            /*    document.getElementById("observaciones").value = data.data[0].Observaciones;
                 document.getElementById("frecuencia").value = data.data[0].Frecuencia;
                 document.getElementById("nominal").value = data.data[0].Nominal;
                 document.getElementById("target").value = data.data[0].Ntarget;
@@ -269,7 +269,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                    document.getElementById("vendedor").value = data.data[0].VendedorMaster;
                    document.getElementById("color").value = data.data[0].NombreColorMaster;
                    document.getElementById("numColor").value = data.data[0].NumColorMaster;
-       -->
+       -->*/
 
         });
         consultaFoto(id);
