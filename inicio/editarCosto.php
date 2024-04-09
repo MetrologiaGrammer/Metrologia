@@ -480,7 +480,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
 
 
-        fetch('dao/daoguardarEquipo.php', {
+        fetch('dao/daoguardarEquipoMet.php', {
             method: 'POST',
             body: data
         })
