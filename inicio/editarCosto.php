@@ -247,8 +247,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
             document.getElementById("centrocosto").value = data.data[0].CentroCosto;
             document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
-            document.getElementById("codigocosto").value = data.data[0].CostoCalibracion;
-            document.getElementById("codigocosto").value = data.data[0].Moneda;
+            document.getElementById("costo").value = data.data[0].CostoCalibracion;
+            document.getElementById("moneda").value = data.data[0].Moneda;
 
 
             <!--    document.getElementById("observaciones").value = data.data[0].Observaciones;
