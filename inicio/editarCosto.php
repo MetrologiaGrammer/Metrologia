@@ -372,6 +372,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var FRECUENCIA;
         var NUMSERIE;
         var NUMPARTE;
+
         var TARGET;
     /*
         var COLOR;
