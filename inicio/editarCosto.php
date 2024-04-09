@@ -100,7 +100,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Código de costos</label>
                 <input type="email" name="demo-email" id="codigocosto" value="" placeholder="Codigo de costos">
             </div>
-
+            <div id="fileCosto" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Costo de calibración</label>
+                <input type="email" name="demo-email" id="costo" value="" placeholder="Costos">
+            </div>
+            <div id="fileMoneda" class="col-6 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Moneda de pago</label>
+                <input type="email" name="demo-email" id="moneda" value="" placeholder="Moneda">
+            </div>
 
 
             <!--
@@ -238,7 +245,17 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("Operacion").value = data.data[0].AreaOperacion;
             document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
             document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-            document.getElementById("numserie").value = data.data[0].NumSerie;
+            document.getElementById("centrocosto").value = data.data[0].CentroCosto;
+            document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
+            document.getElementById("codigocosto").value = data.data[0].CostoCalibracion;
+            document.getElementById("codigocosto").value = data.data[0].Moneda;
+
+
+            <!--    document.getElementById("observaciones").value = data.data[0].Observaciones;
+                document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+                document.getElementById("nominal").value = data.data[0].Nominal;
+                document.getElementById("target").value = data.data[0].Ntarget;
+                 document.getElementById("numserie").value = data.data[0].NumSerie;
             document.getElementById("numparte").value = data.data[0].NumParte;
             document.getElementById("resolucion").value = data.data[0].Resolucion;
             document.getElementById("nominal").value = data.data[0].Nominal;
@@ -246,20 +263,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("maxima").value = data.data[0].EspMax;
             document.getElementById("rango").value = data.data[0].Rango;
             document.getElementById("status").value = data.data[0].Status;
-            document.getElementById("centrocosto").value = data.data[0].CentroCosto;
-            document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
-            document.getElementById("observaciones").value = data.data[0].Observaciones;
-            document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-            document.getElementById("nominal").value = data.data[0].Nominal;
-            document.getElementById("target").value = data.data[0].Ntarget;
-            <!--
-               document.getElementById("codigoColor").value = data.data[0].CodColor;
-               document.getElementById("cliente").value = data.data[0].ClienteMaster;
-               document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
-               document.getElementById("vendedor").value = data.data[0].VendedorMaster;
-               document.getElementById("color").value = data.data[0].NombreColorMaster;
-               document.getElementById("numColor").value = data.data[0].NumColorMaster;
-   -->
+                   document.getElementById("codigoColor").value = data.data[0].CodColor;
+                   document.getElementById("cliente").value = data.data[0].ClienteMaster;
+                   document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
+                   document.getElementById("vendedor").value = data.data[0].VendedorMaster;
+                   document.getElementById("color").value = data.data[0].NombreColorMaster;
+                   document.getElementById("numColor").value = data.data[0].NumColorMaster;
+       -->
 
         });
         consultaFoto(id);
@@ -298,31 +308,34 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("Operacion").value = data.data[0].AreaOperacion;
                 document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
                 document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-                document.getElementById("numserie").value = data.data[0].NumSerie;
-                document.getElementById("numparte").value = data.data[0].NumParte;
-                document.getElementById("rango").value = data.data[0].Rango;
-                document.getElementById("status").value = data.data[0].Status;
                 document.getElementById("centrocosto").value = data.data[0].CentroCosto;
                 document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
-                document.getElementById("observaciones").value = data.data[0].Observaciones;
-                document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-                document.getElementById("resolucion").value = data.data[0].Resolucion;
-                document.getElementById("nominal").value = data.data[0].Nominal;
-                document.getElementById("minima").value = data.data[0].EspMin;
-                document.getElementById("maxima").value = data.data[0].EspMax;
-                document.getElementById("target").value = data.data[0].Ntarget;
+                document.getElementById("costo").value = data.data[0].CostoCalibracion;
+                document.getElementById("moneda").value = data.data[0].Moneda;
+
+                <!--document.getElementById("numserie").value = data.data[0].NumSerie;
+                 document.getElementById("numparte").value = data.data[0].NumParte;
+                 document.getElementById("rango").value = data.data[0].Rango;
+                 document.getElementById("status").value = data.data[0].Status;
+                 document.getElementById("observaciones").value = data.data[0].Observaciones;
+                 document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+                 document.getElementById("resolucion").value = data.data[0].Resolucion;
+                 document.getElementById("nominal").value = data.data[0].Nominal;
+                 document.getElementById("minima").value = data.data[0].EspMin;
+                 document.getElementById("maxima").value = data.data[0].EspMax;
+                 document.getElementById("target").value = data.data[0].Ntarget;
 
 
 
 
-                  <!--
-                     document.getElementById("codigoColor").value = data.data[0].CodColor;
-                     document.getElementById("cliente").value = data.data[0].ClienteMaster;
-                     document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
-                     document.getElementById("vendedor").value = data.data[0].VendedorMaster;
-                     document.getElementById("color").value = data.data[0].NombreColorMaster;
-                     document.getElementById("numColor").value = data.data[0].NumColorMaster;
-         -->
+
+                      document.getElementById("codigoColor").value = data.data[0].CodColor;
+                      document.getElementById("cliente").value = data.data[0].ClienteMaster;
+                      document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
+                      document.getElementById("vendedor").value = data.data[0].VendedorMaster;
+                      document.getElementById("color").value = data.data[0].NombreColorMaster;
+                      document.getElementById("numColor").value = data.data[0].NumColorMaster;
+          -->
 
 
 
@@ -364,26 +377,31 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var OPERACION;
         var FECHACALIBRACION;
         var FECHAVENCIDA;
-        var RESOLUCION;
-        var NOMINAL;
-        var MAXIMA;
-        var MINIMA;
-        var RANGO;
-        var FRECUENCIA;
-        var NUMSERIE;
-        var NUMPARTE;
+        var CENTROCOST;
+        var CODIGOCOST;
+        var COSTO;
+        var MONEDA;
 
-        var TARGET;
-    /*
-        var COLOR;
-        var CLIENTE;
-        var PLATAFORMA;
-        var VENDEDOR;
-        var COLORM;
-        var NUMCOLOR;*/
+        /* var RESOLUCION;
+         var NOMINAL;
+         var MAXIMA;
+         var MINIMA;
+         var RANGO;
+         var FRECUENCIA;
+         var NUMSERIE;
+         var NUMPARTE;
+
+         var TARGET;
+
+             var COLOR;
+             var CLIENTE;
+             var PLATAFORMA;
+             var VENDEDOR;
+             var COLORM;
+             var NUMCOLOR;
         var STATUS;
         var OBSERVACIONES;
-
+*/
 
 
         REFERENCIA = document.getElementById("codigo").value;
@@ -394,24 +412,31 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         OPERACION = document.getElementById("Operacion").value;
         FECHACALIBRACION = document.getElementById("fechacalibracion").value;
         FECHAVENCIDA = document.getElementById("fechavencida").value;
-        NOMINAL = document.getElementById("nominal").value;
-        MAXIMA = document.getElementById("maxima").value;
-        MINIMA = document.getElementById("minima").value;
-        RESOLUCION = document.getElementById("resolucion").value;
-        RANGO = document.getElementById("rango").value;
-        FRECUENCIA = document.getElementById("frecuencia").value;
-        NUMSERIE = document.getElementById("numserie").value;
-        NUMPARTE = document.getElementById("numparte").value;
-        TARGET = document.getElementById("target").value;
-       /*
-        COLOR = document.getElementById("color").value;
-        CLIENTE = document.getElementById("cliente").value;
-        PLATAFORMA= document.getElementById("plataforma").value;
-        VENDEDOR= document.getElementById("vendedor").value;
-        COLORM= document.getElementById("colormaster").value;
-        NUMCOLOR= document.getElementById("numColor").value;*/
+        CENTROCOST = document.getElementById("centrocosto").value;
+        CODIGOCOST = document.getElementById("codigocosto").value;
+        COSTO = document.getElementById("costo").value;
+        MONEDA = document.getElementById("moneda").value;
+
+
+
+        /*
+         NOMINAL = document.getElementById("nominal").value;
+         MAXIMA = document.getElementById("maxima").value;
+         MINIMA = document.getElementById("minima").value;
+         RESOLUCION = document.getElementById("resolucion").value;
+         RANGO = document.getElementById("rango").value;
+         FRECUENCIA = document.getElementById("frecuencia").value;
+         NUMSERIE = document.getElementById("numserie").value;
+         NUMPARTE = document.getElementById("numparte").value;
+         TARGET = document.getElementById("target").value;
+         COLOR = document.getElementById("color").value;
+         CLIENTE = document.getElementById("cliente").value;
+         PLATAFORMA= document.getElementById("plataforma").value;
+         VENDEDOR= document.getElementById("vendedor").value;
+         COLORM= document.getElementById("colormaster").value;
+         NUMCOLOR= document.getElementById("numColor").value;
         STATUS = document.getElementById("status").value;
-        OBSERVACIONES = document.getElementById("observaciones").value;
+        OBSERVACIONES = document.getElementById("observaciones").value;*/
 
 
         const data = new FormData();
@@ -427,25 +452,30 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('operacion', OPERACION);
         data.append('fechacalibracion', FECHACALIBRACION);
         data.append('fechavencida', FECHAVENCIDA);
-        data.append('resolucion', RESOLUCION);
-        data.append('nominal', NOMINAL);
-        data.append('maxima', MAXIMA);
-        data.append('minima', MINIMA);
-        data.append('rango', RANGO);
-        data.append('frecuencia', FRECUENCIA);
-        data.append('numserie', NUMSERIE);
-        data.append('numparte', NUMPARTE);
-        data.append('target', TARGET);
+        data.append('centrocosto', CENTROCOST);
+        data.append('codigocosto', CODIGOCOST);
+        data.append('costo', COSTO);
+        data.append('moneda', MONEDA);
+        /*
+           data.append('resolucion', RESOLUCION);
+           data.append('nominal', NOMINAL);
+           data.append('maxima', MAXIMA);
+           data.append('minima', MINIMA);
+           data.append('rango', RANGO);
+           data.append('frecuencia', FRECUENCIA);
+           data.append('numserie', NUMSERIE);
+           data.append('numparte', NUMPARTE);
+           data.append('target', TARGET);
 
-      /*
-        data.append('color', COLOR);
-        data.append('cliente', CLIENTE);
-        data.append('plataforma', PLATAFORMA);
-        data.append('vendedor', VENDEDOR);
-        data.append('colormaster', COLORM);
-        data.append('numColor', NUMCOLOR);*/
+
+           data.append('color', COLOR);
+           data.append('cliente', CLIENTE);
+           data.append('plataforma', PLATAFORMA);
+           data.append('vendedor', VENDEDOR);
+           data.append('colormaster', COLORM);
+           data.append('numColor', NUMCOLOR);
         data.append('status', STATUS);
-        data.append('observaciones', OBSERVACIONES);
+        data.append('observaciones', OBSERVACIONES);*/
         data.append('imagen', foto);
 
 
