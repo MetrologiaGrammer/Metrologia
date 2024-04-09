@@ -158,9 +158,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <li><a class="button solid" onclick="testActualizacion()">Guardar Cambio</a></li>
             </ul>
         </div>
-
+<!--
         <center><img id="carga" src="images/carga.gif" style="display: none;width: 50%;"></center>
-
+-->
 
     </section>
 </div>
