@@ -149,10 +149,10 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         <img src="" style="display: none;" id="new">
                         <img src="" style="display: none;" id="old">
                     </div>
-
+-->
                     <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
                     <center><img id="imagenUbicacion" src="images/" alt="" style="width: 70%"/></center>
--->
+
         <div class="col-6 col-12-xsmall">
             <ul class="actions stacked" style="text-align: center">
                 <li><a class="button solid" onclick="testActualizacion()">Guardar Cambio</a></li>
