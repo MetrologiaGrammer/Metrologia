@@ -364,7 +364,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         window.location = "https://arketipo.mx/Metrologia/inicio/actualizarEquipo.php?ID=" + document.getElementById("codigo").value;
     }
 
-    function Actualizar(foto) {
+    function Actualizar() {
 
         var NOMINA;
         var NOMBRE;
