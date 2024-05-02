@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<?php
+session_start();
+
+if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
+    echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=../login/index.html'>";
+session_destroy();
+} else {
+session_start();
+}
+?>
+<html>
+<head>
+    <title>GramEXPERT</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+
+<header id="header">
+    <div class="inner">
+        <center><img id="imagenEquipo" style="width: 70%" alt="" class="aln-center"/></center>
+    </div>
+</header>
+
+<!-- Main -->
+<div id="main">
+
+    <!-- One -->
+    <section id="one">
+        <header class="major">
+            <h1 class="display-4" style="text-align: center; color: #787878">Documentación</h1>
+        </header>
+
+        <div class="row gtr-uniform gtr-50">
+
+            <div class="col-12 col-12-xsmall">
+                <label style="text-align: center">Ingrese referencia</label>
+                <input type="text" name="emo-id" id="referencia" value="" placeholder="ID"/>
+            </div>
+            <div class="col-12 col-12-xsmall mb-5">
+                <center>
+                    <BUTTON onclick="Buscarequipo()" class="button primary"> Buscar Equipo</BUTTON>
+                </center>
+            </div>
+
+
+            <table class="table table-hover mt-2" id="tablaDocumentos">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Archivo</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <form action="dao/subirArchivos.php" method="post" enctype="multipart/form-data">
+                <div class="col-6 col-12-xsmall">
+                    <label style="text-align: center;font-size: 18px;">Id Referencia</label>
+                    <input type="text" name="referencia" id="codigo" value="">
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <label style="text-align: center;font-size: 18px;">Tipo</label>
+                    <input type="file" id="archivos" name="archivos[]" multiple>
+                </div>
+
+                <div class="col-12 col-12-xsmall">
+                    <ul class="actions stacked" style="text-align: center">
+                        <li><button type="submit" class="button primary" >Subir</button>
+                    </ul>
+                </div>
+            </form>
+
+
+        </div>
+
+    </section>
+</div>
+</section>
+
+
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <center>
+            <ul class="icons">
+                <li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble">
+                    INICIO<span class="label">Dribbble</span></a></li>
+                <br>
+                <li>
+                    <a href="consultaEquipo.html" class="icon brands fa-dribbble"> CONSULTAR EQUIPOS <span
+                            class="label">Dribbble</span></a></li>
+                <br>
+                <li>
+                    <a href="altaEquipo.php" class="icon brands fa-dribbble"> INGRESAR EQUIPOS<span class="label">Dribbble</span></a>
+                </li>
+                <br>
+                <li>
+                    <a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble"> ESTUDIOS Y
+                        CERTIFICADOS<span class="label">Dribbble</span></a></li>
+                <br>
+            </ul>
+        </center>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="lib/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function cargarDocumentos() {
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultaDocumentos.php', function (data) {
+            var table = $("#tablaDocumentos");
+            for (var i = 0; i < data.data.length; i++) {
+                var newRow = $("<tr></tr>");
+                var idCell = $("<td></td>").text(data.data[i].IdCurso);
+                var estatusCell = $("<td></td>").html("<span class=\"badge badge-pill badge-warning\">"+"Caducado"+"</span>");
+
+                newRow.append(idCell);
+                newRow.append(nameCell);
+                table.append(newRow);
+            }
+        });
+    }
+
+</script>
+
+</body>
+</html>
