@@ -45,7 +45,7 @@ session_start();
             </div>
             <div class="col-12 col-12-xsmall mb-5">
                 <center>
-                    <BUTTON onclick="Buscarequipo()" class="button primary"> Buscar Equipo</BUTTON>
+                    <button onclick="cargarDocumentos()()" class="button primary"> Buscar Equipo</button>
                 </center>
             </div>
 
@@ -128,15 +128,15 @@ session_start();
 
 <script>
     function cargarDocumentos() {
-        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultaDocumentos.php', function (data) {
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultaDocumento.php?referencia='+document.getElementById("referencia").value, function (data) {
             var table = $("#tablaDocumentos");
             for (var i = 0; i < data.data.length; i++) {
                 var newRow = $("<tr></tr>");
-                var idCell = $("<td></td>").text(data.data[i].IdCurso);
-                var estatusCell = $("<td></td>").html("<span class=\"badge badge-pill badge-warning\">"+"Caducado"+"</span>");
+                var idCell = $("<td></td>").text(data.data[i].IdDocumento);
+                var documentoCell = $("<td></td>").html("<a class='button primary' href='documentacion/"+document.getElementById("referencia").value+"/"+data.data[i].Nombre+"'>Subir</a>");
 
                 newRow.append(idCell);
-                newRow.append(nameCell);
+                newRow.append(documentoCell);
                 table.append(newRow);
             }
         });
