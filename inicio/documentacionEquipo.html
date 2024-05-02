@@ -133,7 +133,7 @@ session_start();
             for (var i = 0; i < data.data.length; i++) {
                 var newRow = $("<tr></tr>");
                 var idCell = $("<td></td>").text(data.data[i].IdDocumento);
-                var documentoCell = $("<td></td>").html("<a class='button primary' href='documentacion/"+document.getElementById("referencia").value+"/"+data.data[i].Nombre+"'>Subir</a>");
+                var documentoCell = $("<td></td>").html("<a class='button primary' href='documentacion/"+document.getElementById("referencia").value+"/"+data.data[i].Nombre+"'>"+data.data[i].Nombre+"</a>");
 
                 newRow.append(idCell);
                 newRow.append(documentoCell);
