@@ -50,7 +50,7 @@ session_start();
             </div>
 
 
-            <table class="table table-hover mt-2" id="tablaDocumentos">
+            <table class="table table-hover mt-2 mb-5" id="tablaDocumentos">
                 <thead>
                 <tr>
                     <th scope="col">Id</th>
@@ -62,17 +62,17 @@ session_start();
                 </tbody>
             </table>
             <form action="dao/subirArchivos.php" method="post" enctype="multipart/form-data">
-                <div class="col-6 col-12-xsmall">
+                <div class="col-12 col-12-xsmall" style="text-align: center">
                     <label style="text-align: center;font-size: 18px;">Id Referencia</label>
                     <input type="text" name="referencia" id="codigo" value="">
                 </div>
-                <div class="col-6 col-12-xsmall">
+                <div class="col-12 col-12-xsmall mt-5" style="text-align: center">
                     <label style="text-align: center;font-size: 18px;">Tipo</label>
+                    <p></p>
                     <input type="file" id="archivos" name="archivos[]" multiple>
                 </div>
-
                 <div class="col-12 col-12-xsmall">
-                    <ul class="actions stacked" style="text-align: center">
+                    <ul class="actions stacked mt-5" style="text-align: center">
                         <li><button type="submit" class="button primary" >Subir</button>
                     </ul>
                 </div>
