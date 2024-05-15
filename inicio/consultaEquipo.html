@@ -434,13 +434,13 @@
 			} else {
 				document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 			}
+			consultaFoto(id);
 		});
-		consultaFoto(id);
 	}
 
 
 	function Buscarequipo(){
-		var Equipo;
+		var Equipo,proceso,linea;
 		Equipo=document.getElementById("referencia").value;
 
 		const chars = Equipo.split('-');
@@ -470,7 +470,6 @@
 				} else {
 					document.getElementById("subtipo").value = data.data[0].SubTipo;
 				}
-/*
 
 				if (data.data[0].AreaProceso == "") {
 					document.getElementById("filaProceso").style.display = 'none';
@@ -478,7 +477,6 @@
 					document.getElementById("proceso").value = data.data[0].AreaProceso;
 				}
 
-*/
 				if (data.data[0].AreaLinea == "") {
 					document.getElementById("filaLinea").style.display = 'none';
 				} else {
@@ -616,10 +614,10 @@
 					document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 				}
 
+				consultaFoto(Equipo);
 
 			});
 
-			consultaFoto(Equipo);
 
 
 
