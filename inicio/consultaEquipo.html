@@ -272,6 +272,8 @@
 
 	function buscarQR(id) {
 
+		var proceso,linea;
+
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
 
 		document.getElementById("codigo").value = data.data[0].IdEquipo;
@@ -294,17 +296,17 @@
 			} else {
 				document.getElementById("subtipo").value = data.data[0].SubTipo;
 			}
-/*
+
 			if (data.data[0].AreaProceso == "") {
 				document.getElementById("filaProceso").style.display = 'none';
 			} else {
-				document.getElementById("proceso").value = data.data[0].AreaProceso;
+				proceso = data.data[0].AreaProceso;
 			}
-*/
+
 			if (data.data[0].AreaLinea == "") {
 				document.getElementById("filaLinea").style.display = 'none';
 			} else {
-				document.getElementById("linea").value = data.data[0].AreaLinea;
+				linea =  = data.data[0].AreaLinea;
 			}
 
 
@@ -434,7 +436,7 @@
 			} else {
 				document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 			}
-			consultaFoto(id);
+			consultaFoto(id,proceso,linea);
 		});
 	}
 
@@ -474,13 +476,13 @@
 				if (data.data[0].AreaProceso == "") {
 					document.getElementById("filaProceso").style.display = 'none';
 				} else {
-					document.getElementById("proceso").value = data.data[0].AreaProceso;
+					proceso  = data.data[0].AreaProceso;
 				}
 
 				if (data.data[0].AreaLinea == "") {
 					document.getElementById("filaLinea").style.display = 'none';
 				} else {
-					document.getElementById("linea").value = data.data[0].AreaLinea;
+					linea = data.data[0].AreaLinea;
 				}
 
 
@@ -614,7 +616,7 @@
 					document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 				}
 
-				consultaFoto(Equipo);
+				consultaFoto(Equipo,proceso,linea);
 
 			});
 
@@ -624,9 +626,13 @@
 
 
 	}
-	function consultaFoto(Equipo){
+	function consultaFoto(Equipo,proceso,linea){
 		console.log('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?idreferencia='+Equipo);
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultafoto.php?idreferencia='+Equipo, function (data) {
+
+			document.getElementById("proceso").value = proceso;
+			document.getElementById("linea").value = linea;
+
 			document.getElementById("imagenUbicacion").src = "dao/imagenActualizacion/"+data.data[0].IdImagen +".png";
 			document.getElementById("proceso").value = data.data[0].AreaProceso;
 			document.getElementById("linea").value = data.data[0].Linea;
