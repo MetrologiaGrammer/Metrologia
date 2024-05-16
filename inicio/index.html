@@ -59,6 +59,18 @@
 
 			<embed id=estudio  type="application/pdf" width="100%" height="600px" />
 
+			<table class="table table-hover mt-2 mb-5" id="tablaDocumentos">
+				<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Archivo</th>
+				</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+
 			<table class="table table-striped table-hover">
 
 			</table>
@@ -169,6 +181,21 @@
 
 
 	buscarQR(getParameterByName("ID"));
+	cargarDocumentos();
+	function cargarDocumentos() {
+		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoConsultaDocumento.php?referencia='+getParameterByName("ID"), function (data) {
+			var table = $("#tablaDocumentos");
+			for (var i = 0; i < data.data.length; i++) {
+				var newRow = $("<tr></tr>");
+				var idCell = $("<td></td>").text(data.data[i].IdDocumento);
+				var documentoCell = $("<td></td>").html("<a class='button primary' href='documentacion/"+document.getElementById("referencia").value+"/"+data.data[i].Nombre+"'>"+data.data[i].Nombre+"</a>");
+
+				newRow.append(idCell);
+				newRow.append(documentoCell);
+				table.append(newRow);
+			}
+		});
+	}
 	function buscarQR(id) {
 				document.getElementById("estudio").src = "Estudios/"+id+".pdf"
 
