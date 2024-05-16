@@ -312,6 +312,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         consultaFoto(id);
     }
 
+    var fechaVerificacion,fechaInspeccion;
 
     function Buscarequipo() {
         var Equipo;
@@ -343,8 +344,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("proceso").value = data.data[0].AreaProceso;
                 document.getElementById("linea").value = data.data[0].AreaLinea;
                 document.getElementById("Operacion").value = data.data[0].AreaOperacion;
+
                 document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
                 document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
+
+                fechaVerificacion = data.data[0].FechaInspeccion;
+                fechaInspeccion = data.data[0].FechaVencimiento;
+
                 document.getElementById("numserie").value = data.data[0].NumSerie;
                 document.getElementById("numparte").value = data.data[0].NumParte;
                 document.getElementById("rango").value = data.data[0].Rango;
@@ -398,6 +404,32 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         window.location = "https://arketipo.mx/Metrologia/inicio/actualizarEquipo.php?ID=" + document.getElementById("codigo").value;
     }
 
+    function guardarBitacora(fechaV,fechaI,referencia) {
+
+        const data = new FormData();
+
+        data.append('idEquipo', referencia);
+        data.append('fechaVerificacion', fechaV);
+        data.append('fechaInspeccion', fechaI);
+
+        fetch('dao/daoGuardarBitacora.php', {
+            method: 'POST',
+            body: data
+        }).then(function (response) {
+                if (response.ok) {
+                    alert("Se actualizo bitacora.");
+                } else {
+                    throw "Error";
+                }
+            })
+            .then(function (texto) {
+                console.log(texto);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
     function Actualizar(foto) {
 
         var NOMINA;
@@ -431,7 +463,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var OBSERVACIONES;
 
 
-
         REFERENCIA = document.getElementById("codigo").value;
         TIPO = document.getElementById("tipo").value;
         SUBTIPO = document.getElementById("subtipo").value;
@@ -459,6 +490,9 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         STATUS = document.getElementById("status").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
 
+        if (fechaVerificacion!=FECHACALIBRACION.value || fechaInspeccion!=FECHAVENCIDA.value){
+            guardarBitacora(fechaVerificacion,fechaInspeccion,REFERENCIA.value);
+        }
 
         const data = new FormData();
 
