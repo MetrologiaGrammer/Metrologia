@@ -45,11 +45,14 @@ function cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Lin
     $rsconsPro = mysqli_query($conexion, $consP);
     mysqli_close($conexion);
 
-    $imagenCodificada = $Imagen; //ejemplo de imagen en base64
-    $imagenDecodificada = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imagenCodificada));
-    $nombreArchivo = "imagen.png";
-    $rutaArchivo =  __DIR__ . "/../images/".$Referencia.".jpg";
-    file_put_contents($rutaArchivo, $imagenDecodificada);
+    if ($Imagen!='data:,'){
+        $imagenCodificada = $Imagen; //ejemplo de imagen en base64
+        $imagenDecodificada = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imagenCodificada));
+        $nombreArchivo = "imagen.png";
+        $rutaArchivo =  __DIR__ . "/../images/".$Referencia.".jpg";
+        file_put_contents($rutaArchivo, $imagenDecodificada);
+    }
+
 }
 
 
