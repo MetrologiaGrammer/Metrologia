@@ -491,7 +491,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         OBSERVACIONES = document.getElementById("observaciones").value;
 
         if (fechaVerificacion!=FECHACALIBRACION.value || fechaInspeccion!=FECHAVENCIDA.value){
-            guardarBitacora(fechaVerificacion,fechaInspeccion,REFERENCIA.value);
+            guardarBitacora(fechaVerificacion,fechaInspeccion,REFERENCIA);
         }
 
         const data = new FormData();
@@ -538,6 +538,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             .then(function (response) {
                 if (response.ok) {
                     alert("actualizado");
+                    location.reload();
                     //enviarCorreo("","",PROCESO,LINEA,REFERENCIA,OPERACION);
                 } else {
                     throw "Error";
