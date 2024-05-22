@@ -452,7 +452,7 @@
 
 
 	function Buscarequipo(){
-		var Equipo,proceso,linea,st;
+		var Equipo,proceso,linea,ST;
 		Equipo=document.getElementById("referencia").value;
 		ST=document.getElementById("statuscalibracion").value;
 		const chars = Equipo.split('-');
@@ -625,12 +625,12 @@
 				} else {
 					document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 				}
-
-				if (data.data[0].EstadoCalibracion == 0){
+				if (data.data[0].EstadoCalibracion != "") {
+					if (data.data[0].EstadoCalibracion == 0){
 						ST="ON TIME"
 				} else {
 					document.getElementById("statuscalibracion").value = data.data[0].ST;
-				}
+				}}
 
 
 
