@@ -86,34 +86,34 @@
                 <h2 class="display-4" style="text-align: center; color: #787878">Tipos de equipos </h2>
             </header>
 
-
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Referenecia de ID</label>
+                <div class="col-12">
+                    <select name="demo-category" id="ref">
+                        <option value="">- REFERENCIA -</option>
+                    </select>
+                </div>
+            </div>
 
             <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Proceso</label>
+                <label for="referencia" style="text-align: center">TIPO</label>
                 <div class="col-12">
-                    <select name="demo-category" id="proceso" onchange="consuktararea()">
+                    <select name="demo-category" id="tipo" onchange="consuktararea()">
                         <option value="">- PROCESO - </option>
                     </select>
                 </div>
             </div>
 
             <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Ingrese linea</label>
+                <label for="referencia" style="text-align: center">SUBTIPO</label>
                 <div class="col-12">
-                    <select name="demo-category" id="linea" onchange="consuktarOpEstacion()">
+                    <select name="demo-category" id="subtipo" onchange="consuktarOpEstacion()">
                         <option value="">- LINEA -</option>
                     </select>
                 </div>
             </div>
 
-            <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Ingrese operacion</label>
-                <div class="col-12">
-                    <select name="demo-category" id="operacion">
-                        <option value="">- OPERACIÓN -</option>
-                    </select>
-                </div>
-            </div>
+
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese nuevas ubicaciones</label>
@@ -199,21 +199,21 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Proceso:</label>
-                    <input type="text" class="form-control" id="procesonew">
+                    <label for="recipient-name" class="col-form-label">Ref:</label>
+                    <input type="text" class="form-control" id="refnew">
                 </div>
                 <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">Linea:</label>
-                    <input type="text" class="form-control" id="lineanew">
+                    <input type="text" class="form-control" id="tipoanew">
                 </div>
                 <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Operación:</label>
-                    <input type="text" class="form-control" id="operacionnew">
+                    <label for="recipient-name" class="col-form-label">Linea:</label>
+                    <input type="text" class="form-control" id="subtipoanew">
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" id="cerrarModal" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" onclick="insetarUbicacion()">Enviar ubicacion</button>
+                <button type="button" class="btn btn-primary" onclick="insetarTipo()">Enviar ubicacion</button>
             </div>
         </div>
     </div>
@@ -235,6 +235,16 @@
 
 <script>
 
+
+    function insertarTipo(){
+
+
+
+
+
+
+
+    }
     function insetarUbicacion() {
         var PROCESO;
         var LINEA;
