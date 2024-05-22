@@ -38,12 +38,8 @@
             <h2 class="display-4" style="text-align: center; color: #787878">Ingreso de area </h2>
         </header>
 
-
         <br><br>
-        <p></p>
-        <br>
         <hr>
-        <br>
         <div id="cargando" style="display: none">
             <center><img src="images/CARGANDO.gif"></center>
         </div>
