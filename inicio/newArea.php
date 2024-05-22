@@ -86,11 +86,6 @@
                 </div>
             </div>
 
-            <div class="col-12 col-12-xsmall">
-                <ul class="actions stacked" style="text-align: center">
-                    <li><a class="button primary" onclick="test()">Enviar</a>
-                </ul>
-            </div>
 
         </div>
 
