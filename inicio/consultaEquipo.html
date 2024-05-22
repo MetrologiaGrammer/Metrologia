@@ -625,6 +625,11 @@
 				} else {
 					document.getElementById("frecuencia").value = data.data[0].Frecuencia;
 				}
+				if (data.data[0].EstadoCalibracion == "") {
+					document.getElementById("filaStatuscalibracion").style.display = 'none';
+				} else {
+					document.getElementById("statuscalibracion").value = data.data[0].EstadoCalibracion;
+				}
 
 				consultaFoto(Equipo,proceso,linea);
 
