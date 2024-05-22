@@ -35,7 +35,7 @@
     <!-- One -->
     <section id="one">
         <header class="major">
-            <h1 class="display-4" style="text-align: center; color: #787878">Ingreso de area </h1>
+            <h2 class="display-4" style="text-align: center; color: #787878">Ingreso de area </h2>
         </header>
 
 
