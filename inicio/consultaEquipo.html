@@ -145,6 +145,11 @@
 				<input type="text" name="demo-email" id="numColor" value="" placeholder="Numero de color"disabled>
 			</div>
 
+			<div id="filaStatuscalibracion" class="col-6 col-12-xsmall">
+				<label style="text-align: center;font-size: 18px">Status calibración</label>
+				<input type="text" name="demo-email" id="statuscalibracion" value="" placeholder="Status de la calibracion"disabled>
+			</div>
+
 			<div id="filaObservaciones" class="col-12 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Observaciones</label>
 				<input type="text" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES"disabled>
@@ -435,6 +440,11 @@
 				document.getElementById("filaFrecuencia").style.display = 'none';
 			} else {
 				document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+			}
+			if (data.data[0].EstadoCalibracion == "") {
+				document.getElementById("filaStatuscalibracion").style.display = 'none';
+			} else {
+				document.getElementById("statuscalibracion").value = data.data[0].EstadoCalibracion;
 			}
 			consultaFoto(id,proceso,linea);
 		});
