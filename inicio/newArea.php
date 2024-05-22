@@ -159,7 +159,7 @@
 </footer>
 
 
-<!-- Modal -->
+<!-- Modal de area -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -188,6 +188,37 @@
         </div>
     </div>
 </div>
+
+<!-- Modal de Tipo -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar ubicaciones</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Proceso:</label>
+                    <input type="text" class="form-control" id="procesonew">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Linea:</label>
+                    <input type="text" class="form-control" id="lineanew">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Operación:</label>
+                    <input type="text" class="form-control" id="operacionnew">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cerrarModal" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="insetarUbicacion()">Enviar ubicacion</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
