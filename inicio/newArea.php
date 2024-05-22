@@ -87,13 +87,6 @@
             </div>
 
             <div class="col-12 col-12-xsmall">
-                <br><br>
-                <center><img style="display: none;" id="imagenPrevisualizacion" height="250px"></center>
-                <img src="" style="display: none;" id="new">
-                <img src="" style="display: none;" id="old">
-            </div>
-
-            <div class="col-12 col-12-xsmall">
                 <ul class="actions stacked" style="text-align: center">
                     <li><a class="button primary" onclick="test()">Enviar</a>
                 </ul>
