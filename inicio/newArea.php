@@ -37,7 +37,6 @@
         <header class="major">
             <h2 class="display-4" style="text-align: center; color: #787878">Ingreso de area </h2>
         </header>
-
         <br><br>
         <hr>
         <div id="cargando" style="display: none">
@@ -82,6 +81,48 @@
                 </div>
             </div>
 
+            <hr>
+            <header class="major">
+                <h2 class="display-4" style="text-align: center; color: #787878">Tipos de equipos </h2>
+            </header>
+
+
+
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Proceso</label>
+                <div class="col-12">
+                    <select name="demo-category" id="proceso" onchange="consuktararea()">
+                        <option value="">- PROCESO - </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese linea</label>
+                <div class="col-12">
+                    <select name="demo-category" id="linea" onchange="consuktarOpEstacion()">
+                        <option value="">- LINEA -</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese operacion</label>
+                <div class="col-12">
+                    <select name="demo-category" id="operacion">
+                        <option value="">- OPERACIÓN -</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese nuevas ubicaciones</label>
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Incluir Nueva
+                    </button>
+                </div>
+            </div>
 
         </div>
 
