@@ -87,15 +87,6 @@
             </div>
 
             <div class="col-12 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Comentarios</label>
-                <input type="email" name="demo-email" id="comentario" value="" placeholder="comentarios">
-            </div>
-
-            <div class="col-12 col-12-xsmall">
-                <P>¡FAVOR DE TOMAR FOTOS DE LA NUEVA UBICACION!</P>
-                <input type="file" id="files" name="usuario" accept="image/*" onchange="preview_image()"
-                       class="form-control" aria-label="Sizing example input"
-                       aria-describedby="inputGroup-sizing-default">
                 <br><br>
                 <center><img style="display: none;" id="imagenPrevisualizacion" height="250px"></center>
                 <img src="" style="display: none;" id="new">
