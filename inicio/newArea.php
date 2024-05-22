@@ -35,55 +35,11 @@
     <!-- One -->
     <section id="one">
         <header class="major">
-            <h1 class="display-4" style="text-align: center; color: #787878">Actualiza la ubicación y fecha de calibración </h1>
+            <h1 class="display-4" style="text-align: center; color: #787878">Ingreso de area </h1>
         </header>
 
 
         <br><br>
-        <div class="row gtr-uniform gtr-50">
-
-
-            <div class="col-12 col-12-xsmall">
-                <label  style="text-align: center">Ingrese referencia</label>
-                <input type="text" name="emo-id" id="referencia" value="" placeholder="ID"/>
-            </div>
-            <div class="col-12 col-12-xsmall">
-                <center><BUTTON onclick="Buscarequipo()" class="button primary"> Buscar Equipo</BUTTON></center>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px;">Id Referencia</label>
-                <input type="text" name="demo-name" id="codigo" value="" placeholder="ID" disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px;">Tipo</label>
-                <input type="text" name="demo-name" id="tipo" value="" placeholder="TIPO" disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px;">Subtipo</label>
-                <input type="text" name="demo-name" id="subtipo" value="" placeholder="SUB TIPO" disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px;">Proceso</label>
-                <input type="text" name="demo-name" id="procesoA" value="" placeholder="PROCESO" disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Linea</label>
-                <input type="text" name="demo-name" id="lineaA" value="" placeholder="LINEA" disabled>
-            </div>
-            <div class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Operacion</label>
-                <input type="text" name="demo-name" id="OperacionA" value="" placeholder="OPERACION" disabled>
-            </div>
-            <div id="filaFechaverificacion" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Fecha de verificación</label>
-                <input type="text" name="demo-email" id="fechacalibracion" value="" placeholder="FECHA DE VERIFICACION"disabled>
-            </div>
-            <div id="filaFechavencida" class="col-6 col-12-xsmall">
-                <label style="text-align: center;font-size: 18px">Prox. fecha de verificación</label>
-                <input type="text" name="demo-email" id="fechavencida" value="" placeholder="PROX. FECHA DE VERIFICACION"disabled>
-            </div>
-        </div>
-
         <p></p>
         <br>
         <hr>
@@ -93,17 +49,6 @@
         </div>
 
         <div class="row gtr-uniform gtr-50" >
-
-            <div class="col-6 col-12-xsmall" STYLE="display: none">
-                <label  style="text-align: center">Fecha de verificación</label>
-                <input type="date" name="demo-email" id="fechav" value="" placeholder="Email"/>
-            </div>
-            <div class="col-6 col-12-xsmall" STYLE="display: none">
-                <label  style="text-align: center">Proxima fecha de verificación</label>
-                <input type="date" name="demo-email" id="fechavencimiento" value="" placeholder="Email"/>
-            </div>
-
-
 
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Proceso</label>
