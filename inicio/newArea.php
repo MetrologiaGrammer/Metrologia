@@ -95,35 +95,58 @@
                 </div>
             </div>
 
-            <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">TIPO</label>
+
+            <div class="col-12 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese referencia</label>
                 <div class="col-12">
-                    <select name="demo-category" id="tipo" onchange="consuktararea()">
-                        <option value="">- PROCESO - </option>
+                    <select name="demo-category" id="referencia" onchange="buscarId()">
+                        <option value="">- REFERENCIA -</option>
+                        <option value="ER">ER-000 Equipo de Referencia</option>
+                        <option value="MAP">MAP-000 Manteminiento preventivo</option>
+                        <option value="IM">IM-000 Calibración Interna</option>
+                        <option value="EM">EM-000 Calibración Externa</option>
+                        <option value="GA">GA-000 Gage Por Atributos</option>
+                        <option value="GV">GV-000 Gage Por Variables</option>
+                        <option value="HF">HF-000 Hold Fixture</option>
+                        <option value="FA">FA-000 Fixture Por Atributos</option>
+                        <option value="FV">FV-000 Fixture Por Variables</option>
+                        <option value="FAV">FAV-000 Fixture por Variables y Atributos</option>
+                        <option value="MPI">MPI-000 Master De Piel</option>
+                        <option value="MAF">MAF-000 Master De Alfombra</option>
+                        <option value="MCR">MCR-000 Master De Cromo</option>
+                        <option value="MPL">MPL-000 Master De Plastico</option>
+                        <option value="MAF">MAF-000 Master De Alfombra</option>
+                        <option value="MHI">MHI-000 MAaster De Hilo</option>
+                        <option value="MTE">MTE-000 Master De Tela</option>
+                        <option value="MZI">MZI-000 Master De Zipper</option>
+                        <option value="MVI">MVI-000 Master De Vinir</option>
+                        <option value="MR">MR-000 Master De Color</option>
+                        <option value="MAL">MAL-000 Master De Aluminio</option>
+                        <option value="MNY">MNY-000 Master De Aluminio</option>
                     </select>
                 </div>
             </div>
 
             <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">SUBTIPO</label>
+                <label style="text-align: center">Id Referencia</label>
+                <input type="text" name="demo-name" id="codigoAux" value="" placeholder="ID" >
+            </div>
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese tipo</label>
                 <div class="col-12">
-                    <select name="demo-category" id="subtipo" onchange="consuktarOpEstacion()">
-                        <option value="">- LINEA -</option>
+                    <select name="demo-category" id="tipo" onchange="llenarsubtipo()">
+                        <option value="">- TIPO -</option>
                     </select>
                 </div>
             </div>
-
-
-
             <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Ingrese nuevas ubicaciones</label>
+                <label for="referencia" style="text-align: center">Ingrese subtipo</label>
                 <div class="col-12">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Incluir Nueva
-                    </button>
+                    <select name="demo-category" id="subtipo">
+
+                    </select>
                 </div>
             </div>
-
         </div>
 
     </section>
@@ -237,8 +260,13 @@
 
 
     function insertarTipo(){
+        var REF;
+        var TIPO;
+        var SUBTIPO;
 
-
+        REF = document.getElementById("procesonew").value;
+        LINEA = document.getElementById("lineanew").value;
+        OPERACION = document.getElementById("operacionnew").value;
 
 
 
@@ -519,6 +547,45 @@
                 var createOption = document.createElement("option");
                 createOption.text = data.data[i].Proceso;
                 createOption.value = data.data[i].Proceso;
+                select.appendChild(createOption);
+            }
+        });
+    }
+
+
+    function llenarTipo() {
+        var tipoEquipo;
+        tipoEquipo = document.getElementById("referencia").value;
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daotipo.php?ref=' + tipoEquipo, function (data) {
+            var select = document.getElementById("tipo");
+            select.innerHTML = "";
+
+            var createOptionAux = document.createElement("option");
+            createOptionAux.text = "Seleccione Linea";
+            createOptionAux.value = "";
+            select.appendChild(createOptionAux);
+
+
+            for (var i = 0; i < data.data.length; i++) {
+                var createOption = document.createElement("option");
+                createOption.text = data.data[i].Tipo;
+                createOption.value = data.data[i].Tipo;
+                select.appendChild(createOption);
+            }
+        });
+    }
+
+    function llenarsubtipo() {
+        var TIPO;
+        TIPO = document.getElementById("tipo").value;
+
+        $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php?subtipo=' + TIPO, function (data) {
+            var select = document.getElementById("subtipo");
+            select.innerHTML = "";
+            for (var i = 0; i < data.data.length; i++) {
+                var createOption = document.createElement("option");
+                createOption.text = data.data[i].SubTipo;
+                createOption.value = data.data[i].SubTipo;
                 select.appendChild(createOption);
             }
         });
