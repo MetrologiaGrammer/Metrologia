@@ -552,6 +552,62 @@
         });
     }
 
+    function buscarId() {
+        var tipoEquipo;
+        tipoEquipo = document.getElementById("referencia").value;
+
+        let campos = ["campoResolucion", "campoRango", "campoParte", "campoSerie", "campoTarget", "clienteMaster","codigoColor","plataformaMaster","vendedorMaster","colorMaster","NumColor"];
+
+        if (tipoEquipo === "MPI" || tipoEquipo === "MPL" || tipoEquipo === "MAF" || tipoEquipo === "MCR" || tipoEquipo === "MHI" || tipoEquipo === "MTE" || tipoEquipo === "MZI" || tipoEquipo === "MVI" || tipoEquipo === "MR" || tipoEquipo === "MAL" || tipoEquipo === "MNY") {
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "NumColor") {
+                    document.getElementById(campos[i]).style.display = 'block';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'none';
+                }
+            }
+        } else {
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "NumColor") {
+                    document.getElementById(campos[i]).style.display = 'none';
+                } else {
+                    document.getElementById(campos[i]).style.display = 'block';
+                }
+            }
+        }
+
+        console.log('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo)
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo + "-", function (data) {
+            //document.getElementById("referenciaDiv").style.display='block';
+            const chars = data.data[0].IdEquipo.split('-');
+
+            var ref = chars[0];
+            var numero = chars[1];
+
+            if (ref == tipoEquipo) {
+                var suma = parseInt(numero, 10) + 1;
+
+                if (suma < 10) {
+                    suma = "00" + suma;
+                }
+                if (suma >= 10 && suma <= 99) {
+                    suma = "0" + suma;
+                }
+
+                var referencia = chars[0] + "-" + suma;
+                document.getElementById("codigoAux").value = referencia;
+            } else {
+                var referencia = tipoEquipo + "-000";
+                document.getElementById("codigoAux").value = referencia;
+            }
+        });
+        llenarTipo();
+    }
+    var nominaAux = '<?php echo $_SESSION["nomina"];?>'
+    $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoUsuario.php?nomina=' + nominaAux, function (data) {
+        document.getElementById("nombre").innerHTML = data.data[0].Nombre;
+        document.getElementById("area").innerHTML = data.data[0].Area;
+    });
 
     function llenarTipo() {
         var tipoEquipo;
@@ -570,22 +626,6 @@
                 var createOption = document.createElement("option");
                 createOption.text = data.data[i].Tipo;
                 createOption.value = data.data[i].Tipo;
-                select.appendChild(createOption);
-            }
-        });
-    }
-
-    function llenarsubtipo() {
-        var TIPO;
-        TIPO = document.getElementById("tipo").value;
-
-        $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php?subtipo=' + TIPO, function (data) {
-            var select = document.getElementById("subtipo");
-            select.innerHTML = "";
-            for (var i = 0; i < data.data.length; i++) {
-                var createOption = document.createElement("option");
-                createOption.text = data.data[i].SubTipo;
-                createOption.value = data.data[i].SubTipo;
                 select.appendChild(createOption);
             }
         });
