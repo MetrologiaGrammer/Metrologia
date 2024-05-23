@@ -75,7 +75,7 @@
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese nuevas ubicaciones</label>
                 <div class="col-12">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Incluir Nueva
                     </button>
                 </div>
@@ -138,7 +138,7 @@
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese nuevas ubicaciones</label>
                 <div class="col-12">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                         Incluir Nueva
                     </button>
                 </div>
