@@ -344,7 +344,7 @@
     }
 
 
-    buscarQR(getParameterByName("ID"));
+    //buscarQR(getParameterByName("ID"));
 
     function buscarQR(id) {
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + id, function (data) {
