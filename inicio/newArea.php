@@ -582,11 +582,6 @@
         });
         llenarTipo();
     }
-    var nominaAux = '<?php echo $_SESSION["nomina"];?>'
-    $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoUsuario.php?nomina=' + nominaAux, function (data) {
-        document.getElementById("nombre").innerHTML = data.data[0].Nombre;
-        document.getElementById("area").innerHTML = data.data[0].Area;
-    });
 
     function llenarTipo() {
         var tipoEquipo;
