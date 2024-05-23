@@ -223,7 +223,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="cerrarModal" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" onclick="insetarTipo()">Enviar ubicacion</button>
+                <button type="button" class="btn btn-primary" onclick=" insertarTipo()">Enviar tipo</button>
             </div>
         </div>
     </div>
