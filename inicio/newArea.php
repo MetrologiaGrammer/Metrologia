@@ -214,11 +214,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">Tipo:</label>
-                    <input type="text" class="form-control" id="tipoanew">
+                    <input type="text" class="form-control" id="tiponew">
                 </div>
                 <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">Subtipo:</label>
-                    <input type="text" class="form-control" id="subtipoanew">
+                    <input type="text" class="form-control" id="subtiponew">
                 </div>
             </div>
             <div class="modal-footer">
