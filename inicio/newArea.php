@@ -272,7 +272,7 @@
                     selectSubtipo.innerHTML = "";
                     var select = document.getElementById("tipo");
                     select.innerHTML = "";
-                    document.getElementById("cerrarModal").click();
+                    document.getElementById("cerrarModal2").click();
                     Buscarequipo();
                 } else {
                     throw "Error";
