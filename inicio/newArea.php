@@ -556,25 +556,6 @@
         var tipoEquipo;
         tipoEquipo = document.getElementById("referencia").value;
 
-        let campos = ["campoResolucion", "campoRango", "campoParte", "campoSerie", "campoTarget", "clienteMaster","codigoColor","plataformaMaster","vendedorMaster","colorMaster","NumColor"];
-
-        if (tipoEquipo === "MPI" || tipoEquipo === "MPL" || tipoEquipo === "MAF" || tipoEquipo === "MCR" || tipoEquipo === "MHI" || tipoEquipo === "MTE" || tipoEquipo === "MZI" || tipoEquipo === "MVI" || tipoEquipo === "MR" || tipoEquipo === "MAL" || tipoEquipo === "MNY") {
-            for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "NumColor") {
-                    document.getElementById(campos[i]).style.display = 'block';
-                } else {
-                    document.getElementById(campos[i]).style.display = 'none';
-                }
-            }
-        } else {
-            for (let i = 0; i < campos.length; i++) {
-                if (campos[i] === "codigoColor" || campos[i] === "campoTarget" || campos[i] === "clienteMaster" || campos[i] === "plataformaMaster" || campos[i] === "vendedorMaster" || campos[i] === "colorMaster" || campos[i] === "NumColor") {
-                    document.getElementById(campos[i]).style.display = 'none';
-                } else {
-                    document.getElementById(campos[i]).style.display = 'block';
-                }
-            }
-        }
 
         console.log('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo)
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo + "-", function (data) {
