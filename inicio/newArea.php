@@ -75,7 +75,7 @@
             <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese nuevas ubicaciones</label>
                 <div class="col-12">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                         Incluir Nueva
                     </button>
                 </div>
@@ -200,11 +200,11 @@
 </div>
 
 <!-- Modal de Tipo -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar ubicaciones</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Tipo de equipo</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -213,11 +213,11 @@
                     <input type="text" class="form-control" id="refnew">
                 </div>
                 <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Linea:</label>
+                    <label for="recipient-name" class="col-form-label">Tipo:</label>
                     <input type="text" class="form-control" id="tipoanew">
                 </div>
                 <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Linea:</label>
+                    <label for="recipient-name" class="col-form-label">Subtipo:</label>
                     <input type="text" class="form-control" id="subtipoanew">
                 </div>
             </div>
