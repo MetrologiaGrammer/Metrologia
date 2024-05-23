@@ -205,7 +205,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Tipo de equipo</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal2" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
