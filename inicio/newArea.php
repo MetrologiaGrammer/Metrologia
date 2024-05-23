@@ -630,7 +630,21 @@
             }
         });
     }
+    function llenarsubtipo() {
+        var TIPO;
+        TIPO = document.getElementById("tipo").value;
 
+        $.getJSON('https://arketipo.mx/Metrologia/dao/daosubtipo.php?subtipo=' + TIPO, function (data) {
+            var select = document.getElementById("subtipo");
+            select.innerHTML = "";
+            for (var i = 0; i < data.data.length; i++) {
+                var createOption = document.createElement("option");
+                createOption.text = data.data[i].SubTipo;
+                createOption.value = data.data[i].SubTipo;
+                select.appendChild(createOption);
+            }
+        });
+    }
 
 </script>
 
