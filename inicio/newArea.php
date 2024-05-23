@@ -87,7 +87,7 @@
             </header>
 
 
-            <div class="col-12 col-12-xsmall">
+            <div class="col-6 col-6-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese referencia</label>
                 <div class="col-12">
                     <select name="demo-category" id="referencia" onchange="buscarId()">
