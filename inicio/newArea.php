@@ -247,20 +247,51 @@
 
 
     function insertarTipo(){
-        var REF;
+
+        var REFERENCIA;
         var TIPO;
         var SUBTIPO;
 
-        REF = document.getElementById("procesonew").value;
-        LINEA = document.getElementById("lineanew").value;
-        OPERACION = document.getElementById("operacionnew").value;
+        REFERENCIA = document.getElementById("refnew").value;
+        TIPO = document.getElementById("tiponew").value;
+        SUBTIPO = document.getElementById("subtiponew").value;
 
+        const data = new FormData();
 
+        data.append('Ref', REFERENCIA);
+        data.append('Tipo', TIPO);
+        data.append('SubTipo', SUBTIPO);
 
-
+        fetch('dao/daoingresotipo.php', {
+            method: 'POST',
+            body: data
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    var selectSubtipo = document.getElementById("subtipo");
+                    selectSubtipo.innerHTML = "";
+                    var select = document.getElementById("tipo");
+                    select.innerHTML = "";
+                    document.getElementById("cerrarModal").click();
+                    Buscarequipo();
+                } else {
+                    throw "Error";
+                }
+            })
+            .then(function (texto) {
+                console.log(texto);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
 
     }
+
+
+
+
     function insetarUbicacion() {
+
         var PROCESO;
         var LINEA;
         var OPERACION;
