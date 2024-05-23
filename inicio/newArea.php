@@ -46,7 +46,7 @@
         <div class="row gtr-uniform gtr-50" >
 
             <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Proceso</label>
+                <label for="referencia" style="text-align: center">Proceso/Ubicación</label>
                 <div class="col-12">
                     <select name="demo-category" id="proceso" onchange="consuktararea()">
                         <option value="">- PROCESO - </option>
@@ -134,7 +134,18 @@
                     </select>
                 </div>
             </div>
+
+            <div class="col-6 col-12-xsmall">
+                <label for="referencia" style="text-align: center">Ingrese nuevas ubicaciones</label>
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Incluir Nueva
+                    </button>
+                </div>
+            </div>
+
         </div>
+
 
     </section>
 </div>
