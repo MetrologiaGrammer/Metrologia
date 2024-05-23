@@ -345,7 +345,7 @@
 
 
     //buscarQR(getParameterByName("ID"));
-
+/*
     function buscarQR(id) {
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + id, function (data) {
             if (data.data[0].Tipo == "ESCALA") {
@@ -396,7 +396,7 @@
         //consultaFoto(Equipo);
 
     }
-
+*/
     function ReporteActualizacion(foto) {
         var Nomina;
         var AreaProceso;
