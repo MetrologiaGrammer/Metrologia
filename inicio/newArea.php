@@ -128,10 +128,6 @@
             </div>
 
             <div class="col-6 col-12-xsmall">
-                <label style="text-align: center">Id Referencia</label>
-                <input type="text" name="demo-name" id="codigoAux" value="" placeholder="ID" >
-            </div>
-            <div class="col-6 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese tipo</label>
                 <div class="col-12">
                     <select name="demo-category" id="tipo" onchange="llenarsubtipo()">
@@ -560,27 +556,7 @@
         console.log('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo)
         $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoTipoEquipo.php?referencia=' + tipoEquipo + "-", function (data) {
             //document.getElementById("referenciaDiv").style.display='block';
-            const chars = data.data[0].IdEquipo.split('-');
 
-            var ref = chars[0];
-            var numero = chars[1];
-
-            if (ref == tipoEquipo) {
-                var suma = parseInt(numero, 10) + 1;
-
-                if (suma < 10) {
-                    suma = "00" + suma;
-                }
-                if (suma >= 10 && suma <= 99) {
-                    suma = "0" + suma;
-                }
-
-                var referencia = chars[0] + "-" + suma;
-                document.getElementById("codigoAux").value = referencia;
-            } else {
-                var referencia = tipoEquipo + "-000";
-                document.getElementById("codigoAux").value = referencia;
-            }
         });
         llenarTipo();
     }
