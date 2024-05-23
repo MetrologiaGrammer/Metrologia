@@ -86,15 +86,6 @@
                 <h2 class="display-4" style="text-align: center; color: #787878">Tipos de equipos </h2>
             </header>
 
-            <div class="col-6 col-12-xsmall">
-                <label for="referencia" style="text-align: center">Referenecia de ID</label>
-                <div class="col-12">
-                    <select name="demo-category" id="ref">
-                        <option value="">- REFERENCIA -</option>
-                    </select>
-                </div>
-            </div>
-
 
             <div class="col-12 col-12-xsmall">
                 <label for="referencia" style="text-align: center">Ingrese referencia</label>
@@ -158,20 +149,9 @@
         <center>
             <ul class="icons">
                 <li><a href="https://arketipo.mx/Metrologia/pantallaInicio/index.html" class="icon brands fa-dribbble">
-                        INICIO<span class="label">Dribbble</span></a></li>
+                        MENÚ<span class="label">Dribbble</span></a></li>
                 <br>
-                <li>
-                    <a href="consultaEquipo.html" class="icon brands fa-dribbble"> CONSULTAR EQUIPOS <span
-                                class="label">Dribbble</span></a></li>
-                <br>
-                <li>
-                    <a href="altaEquipo.php" class="icon brands fa-dribbble"> INGRESAR EQUIPOS<span class="label">Dribbble</span></a>
-                </li>
-                <br>
-                <li>
-                    <a href="https://arketipo.mx/Metrologia/estudios.html" class="icon brands fa-dribbble"> ESTUDIOS Y
-                        CERTIFICADOS<span class="label">Dribbble</span></a></li>
-                <br>
+
             </ul>
         </center>
     </div>
