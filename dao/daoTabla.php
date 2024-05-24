@@ -45,7 +45,7 @@ $query = "
 
             CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/index.html?ID=', `IdEquipo`, '\" class=\"btn btn-info\">Document</a>') AS boton ,
        
-            CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/consultaEquipo.html?ID=', `IdEquipo`, '\" class=\"btn btn-dark\">Info</a>') AS boton2 
+            CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/consultaEquipo.html?ID=', `IdEquipo`, '\" class=\"btn btn-light\">Info</a>') AS boton2 
 
         FROM 
 
