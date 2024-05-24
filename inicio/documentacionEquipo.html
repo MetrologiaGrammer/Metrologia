@@ -71,7 +71,6 @@ session_start();
                 <div class="col-6 col-12-xsmall">
                     <label style="text-align: center;font-size: 18px;">Nombre del documento</label>
                     <select name="demo-category" id="doc">
-                        <option value="">- Tipo de documento -</option>
                     </select>
                 </div>
 
@@ -149,6 +148,24 @@ session_start();
                 table.append(newRow);
             }
         });
+    }
+    llenarDocumento();
+
+    function llenarDocumento() {
+
+
+        $.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoDocument.php', function (data) {
+            var select = document.getElementById("doc");
+            for (var i = 0; i < data.data.length; i++) {
+                var createOption = document.createElement("option");
+                createOption.text = data.data[i].Tipodocumento;
+                createOption.value = data.data[i].Tipodocumento;
+                select.appendChild(createOption);
+            }
+        });
+
+
+
     }
 
 </script>
