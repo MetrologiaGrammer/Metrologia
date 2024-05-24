@@ -63,12 +63,14 @@ session_start();
                 </tbody>
             </table>
             <form action="dao/subirArchivos.php" method="post" enctype="multipart/form-data">
-                <div class="col-6 col-6-xsmall" style="text-align: center">
-                    <label style="text-align: center;font-size: 18px;">Id Referencia</label>
-                    <input type="text" name="referencia" id="codigo" value=""></div>
-
-                    <label style="text-align: center;font-size: 18px;">NOMBRE DEL DOCUMENTO</label>
-                    <input type="text" name="referencia" id="" value="">
+                <div id="filaFrecuencia" class="col-6 col-12-xsmall">
+                    <label style="text-align: center;font-size: 18px">Frecuencia</label>
+                    <input type="text" name="demo-email" id="frecuencia" value="" placeholder="FRECUENCIA"disabled>
+                </div>
+                <div id="filaResolucion" class="col-6 col-12-xsmall">
+                    <label style="text-align: center;font-size: 18px">Resolución</label>
+                    <input type="text" name="demo-email" id="resolucion" value="" placeholder="RESOLUCION"disabled>
+                </div>
                 </div>
                     <p></p>
                     <input type="file" id="archivos" name="archivos[]" multiple>
