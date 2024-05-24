@@ -37,7 +37,7 @@ $query = "
 
                 WHEN `EstadoCalibracion` = 1 THEN '<span class=\"badge badge-pill badge-success\" style=\"background: green;\">Completed</span>'
 
-                WHEN `EstadoCalibracion` = 2 THEN '<span class=\"badge badge-pill badge-warning\">On time</span>'
+                WHEN `EstadoCalibracion` = 2 THEN '<span class=\"badge badge-pill badge-warning\" style=\"background: goldenrod;\">On time</span>'
 
                 ELSE '<span class=\"badge badge-pill badge-danger\" style=\"background: red;\">late</span>'
 
