@@ -10,9 +10,9 @@ $Object->setTimezone(new DateTimeZone('America/Denver'));
 $DateAndTime = $Object->format("Y/m/d h:i:s");
 
 $referencia = $_POST['referencia'];
-$doc = $_POST['doc'];
-$target_dir = "../documentacion/$referencia/"; // especifica el directorio donde se subirá el archivo
 
+$target_dir = "../documentacion/$referencia/"; // especifica el directorio donde se subirá el archivo
+$doc = $_POST['doc'];
 // verifica si el directorio existe, si no, lo crea
 if (!file_exists($target_dir)) {
     mkdir($target_dir, 0777, true);
