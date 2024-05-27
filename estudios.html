@@ -121,54 +121,6 @@
         <section>
             <div class="col-md-12">
                 <div class="table-responsive-sm">
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        ENERO
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        FEBRERO
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        MARZO
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        ABRIL
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        MAYO
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        JUNIO
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        JULIO
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        AGOSTO
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        SEPTIEMBRE
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        OCTUBRE
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        NOVIEMBRE
-                    </button>
-                    <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal"
-                            data-target="#myModal">
-                        DICIEMBRE
-                    </button>
                     <div class="container text-center">
                         <div class="row">
                             <div class="col-4">
@@ -291,6 +243,7 @@
         });
 
         var tabla = $('#example').DataTable({
+            destroy: true,
             "responsive": true,
             "ajax": {
                 "url": "https://arketipo.mx/Metrologia/dao/daoTabla.php?fechaCalibracion="+fechaC+"&fechaVencimiento="+fechaV,
