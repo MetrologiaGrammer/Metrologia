@@ -10,9 +10,10 @@ $Object->setTimezone(new DateTimeZone('America/Denver'));
 $DateAndTime = $Object->format("Y/m/d h:i:s");
 
 $referencia = $_POST['referencia'];
+$Nombredoc = $_POST['nombredocumento'];
 
 $target_dir = "../documentacion/$referencia/"; // especifica el directorio donde se subirá el archivo
-$doc = $_POST['doc'];
+//$doc = $_POST['doc'];
 // verifica si el directorio existe, si no, lo crea
 if (!file_exists($target_dir)) {
     mkdir($target_dir, 0777, true);
@@ -26,7 +27,7 @@ if (!empty($_FILES['archivos']['name'][0])) {
 
         // intenta subir el archivo
         if (move_uploaded_file($_FILES["archivos"]["tmp_name"][$i], $target_file)) {
-            $insertDocumento= "INSERT INTO `Documentacion`(`Nombre`, `Referencia`, `Fecha`, `TipoDocumento`) VALUES ('" . basename($_FILES["archivos"]["name"][$i]) . "','$referencia','$DateAndTime','$doc')";
+            $insertDocumento= "INSERT INTO `Documentacion`(`Nombre`, `Referencia`, `Fecha`, `TipoDocumento`) VALUES ('" . basename($_FILES["archivos"]["name"][$i]) . "','$referencia','$DateAndTime','$Nombredoc')";
 
             $rsinsertDocu=mysqli_query($conex,$insertDocumento);
             echo "El archivo ". basename( $_FILES["archivos"]["name"][$i]). " ha sido subido.";
