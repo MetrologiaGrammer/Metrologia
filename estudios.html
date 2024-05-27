@@ -169,6 +169,23 @@
                             data-target="#myModal">
                         DICIEMBRE
                     </button>
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-4">
+                                <label>Fecha calibración</label>
+                                <input type="month" class="form-control" id="fechaCalibracion">
+                            </div>
+                            <div class="col-4">
+                                <label>Fecha vencimiento</label>
+                                <input type="month" class="form-control" id="fechaVencimiento">
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-success" onclick="filtros()">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <br /><br />
                     <table id="example" tableexport-key="tabla" class="table display">
                         <thead>
@@ -253,8 +270,20 @@
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
 
 <script>
+    filtros();
+    function filtros() {
 
-    $(document).ready(function () {
+
+        var fechaC = document.getElementById("fechaCalibracion").value;
+        var fechaV = document.getElementById("fechaVencimiento").value;
+
+        if (fechaC==null && fechaC===""){
+            fechaC="n";
+        }
+
+        if (fechaV==null && fechaV===""){
+            fechaV="n";
+        }
 
         $('#example tfoot th').each(function () {
             var title = $(this).text();
@@ -264,7 +293,7 @@
         var tabla = $('#example').DataTable({
             "responsive": true,
             "ajax": {
-                "url": "https://arketipo.mx/Metrologia/dao/daoTabla.php",
+                "url": "https://arketipo.mx/Metrologia/dao/daoTabla.php?fechaCalibracion="+fechaC+"&fechaVencimiento="+fechaV,
                 "dataSrc": "data"
             },
             "columns": [
@@ -319,13 +348,13 @@
                     orientation: 'landscape',
                     pageSize: 'LEGAL'
                 }
-/*
-                {
-                    text: 'Seleccione las columnas',
-                    extend: 'colvis',
-                    className: 'btn btn-info'
-                }
-*/
+                /*
+                                {
+                                    text: 'Seleccione las columnas',
+                                    extend: 'colvis',
+                                    className: 'btn btn-info'
+                                }
+                */
             ],
             "paging": true,
             "lengthChange": true,
@@ -363,7 +392,8 @@
             table.draw();
         });
         //
-    });
+
+    }
 
 </script>
 
