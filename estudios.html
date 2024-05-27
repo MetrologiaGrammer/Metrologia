@@ -384,15 +384,12 @@
             }
         );
 
-        $('#min').datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-        $('#max').datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-        var table = $('#example').DataTable();
+        $('#min').datepicker({ onSelect: function () { tabla.draw(); }, changeMonth: true, changeYear: true });
+        $('#max').datepicker({ onSelect: function () { tabla.draw(); }, changeMonth: true, changeYear: true });
 
         $('#min, #max').change(function () {
-            table.draw();
+            tabla.draw();
         });
-        //
-
     }
 
 </script>
