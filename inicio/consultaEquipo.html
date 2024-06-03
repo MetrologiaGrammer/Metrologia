@@ -59,6 +59,15 @@
 				<input type="text" name="demo-name" id="Operacion" value="" placeholder="OPERACION"disabled>
 			</div>
 
+			<div id="filaNomina" class="col-6 col-12-xsmall">
+				<label  style="text-align: center;font-size: 18px">Nomina del responsable</label>
+				<input type="text" name="demo-name" id="nresponsable" value="" placeholder="Nomina"disabled>
+			</div>
+			<div id="filaPersona" class="col-6 col-12-xsmall">
+				<label  style="text-align: center;font-size: 18px">Nombre del responsable</label>
+				<input type="text" name="demo-name" id="nomresponsable" value="" placeholder="Nombre"disabled>
+			</div>
+
 			<div id="filaFechaverificacion" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Fecha de verificación</label>
 				<input type="month" name="demo-email" id="fechacalibracion" value="" placeholder="FECHA DE VERIFICACION"disabled>
@@ -322,6 +331,22 @@
 					document.getElementById("Operacion").value = data.data[0].AreaOperacion;
 				}
 
+
+				if (data.data[0].NominaPersona == "") {
+					document.getElementById("filaNomina").style.display = 'none';
+				} else {
+					document.getElementById("nresponsable").value = data.data[0].NominaPersona;
+				}
+				if (data.data[0].NombrePersona == "") {
+					document.getElementById("filaPersona").style.display = 'none';
+				} else {
+					document.getElementById("nomresponsable").value = data.data[0].NombrePersona;
+				}
+
+
+
+
+
 				if (data.data[0].FechaInspeccion == "") {
 					document.getElementById("filaFechaverificacion").style.display = 'none';
 				} else {
@@ -502,6 +527,22 @@
 					} else {
 						document.getElementById("Operacion").value = data.data[0].AreaOperacion;
 					}
+
+
+
+					if (data.data[0].NominaPersona == "") {
+						document.getElementById("filaNomina").style.display = 'none';
+					} else {
+						document.getElementById("nresponsable").value = data.data[0].NominaPersona;
+					}
+					if (data.data[0].NombrePersona == "") {
+						document.getElementById("filaPersona").style.display = 'none';
+					} else {
+						document.getElementById("nomresponsable").value = data.data[0].NombrePersona;
+					}
+
+
+
 
 					if (data.data[0].FechaInspeccion == "") {
 						document.getElementById("filaFechaverificacion").style.display = 'none';
