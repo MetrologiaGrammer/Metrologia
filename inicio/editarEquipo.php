@@ -176,6 +176,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Observaciones</label>
                 <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES">
             </div>
+
+            <div id="fileStatuscalibracion" class="col-12 col-12-xsmall">
+                <label style="text-align: center;font-size: 18px">Estatus de calibracion</label>
+                <input type="email" name="demo-email" id="estatuscalibracion" value="" placeholder="ESTATUS">
+            </div>
                     </div>
                     <!---->
                     <div class="col-12 col-12-xsmall">
@@ -299,6 +304,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             document.getElementById("frecuencia").value = data.data[0].Frecuencia;
             document.getElementById("nominal").value = data.data[0].Nominal;
             document.getElementById("target").value = data.data[0].Ntarget;
+            document.getElementById("estatuscalibracion").value = data.data[0].EstadoCalibracion;
             <!--
                document.getElementById("codigoColor").value = data.data[0].CodColor;
                document.getElementById("cliente").value = data.data[0].ClienteMaster;
@@ -364,7 +370,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 document.getElementById("minima").value = data.data[0].EspMin;
                 document.getElementById("maxima").value = data.data[0].EspMax;
                 document.getElementById("target").value = data.data[0].Ntarget;
-
+                document.getElementById("estatuscalibracion").value = data.data[0].EstadoCalibracion;
 
 
 
@@ -461,6 +467,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         var NUMCOLOR;*/
         var STATUS;
         var OBSERVACIONES;
+        var ESTADOCALIBRACION;
+
 
 
         REFERENCIA = document.getElementById("codigo").value;
@@ -489,6 +497,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         NUMCOLOR= document.getElementById("numColor").value;*/
         STATUS = document.getElementById("status").value;
         OBSERVACIONES = document.getElementById("observaciones").value;
+        ESTADOCALIBRACION = document.getElementById("estatuscalibracion").value;
 
         if (fechaVerificacion!=FECHACALIBRACION.value || fechaInspeccion!=FECHAVENCIDA.value){
             guardarBitacora(fechaVerificacion,fechaInspeccion,REFERENCIA);
@@ -526,6 +535,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         data.append('numColor', NUMCOLOR);*/
         data.append('status', STATUS);
         data.append('observaciones', OBSERVACIONES);
+        data.append('estatuscalibracion', ESTADOCALIBRACION);
         data.append('imagen', foto);
 
 

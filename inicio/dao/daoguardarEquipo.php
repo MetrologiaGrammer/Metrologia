@@ -33,15 +33,16 @@ $ColorM = $_POST['colormaster'];
 $Numcolor = $_POST['numColor'];*/
 $Status = $_POST['status'];
 $Observaciones= $_POST['observaciones'];
+$Estadocalibracion= $_POST['estatuscalibracion'];
 $Imagen= $_POST['imagen'];
 
-cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Status,$Nominal,$Observaciones,$Target,$Maxima,$Minima,$Imagen);
+cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Status,$Nominal,$Observaciones,$Target,$Maxima,$Minima,$Estadocalibracion,$Imagen);
 
-function cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Status,$Nominal,$Observaciones,$Target,$Maxima,$Minima,$Imagen)
+function cliente($Nomina, $Nombre,$Area,$Referencia,$Tipo,$Subtipo,$Proceso,$Linea,$Operacion,$Fechacalibracion,$Fechavencida,$Resolucion,$Rango,$Frecuencia,$Numserie,$Numparte,$Status,$Nominal,$Observaciones,$Target,$Maxima,$Minima,$Estadocalibracion,$Imagen)
 {
     $con = new LocalConector();
     $conexion = $con->conectar();
-    $consP = "UPDATE `Equipo` SET `Observaciones`='$Observaciones',`Status`='$Status',`Resolucion`='$Resolucion',`NumParte`='$Numparte',`Descripcion`='',`Nominal`='$Nominal',`TolMax`='',`TolMin`='',`EspMin`='$Minima',`EspMax`='$Maxima',`Caracteristica`='',`FechaInspeccion`='$Fechacalibracion',`Frecuencia`='$Frecuencia',`FechaVencimiento`='$Fechavencida',`AreaProceso`='$Proceso',`Tipo`='$Tipo',`SubTipo`='$Subtipo',`NumSerie`='$Numserie',`AreaLinea`='$Linea',`AreaOperacion`='$Operacion',`Rango`='$Rango',`Ntarget`='$Target' WHERE `IdEquipo`='$Referencia'";
+    $consP = "UPDATE `Equipo` SET `Observaciones`='$Observaciones',`Status`='$Status',`Resolucion`='$Resolucion',`NumParte`='$Numparte',`Descripcion`='',`Nominal`='$Nominal',`TolMax`='',`TolMin`='',`EspMin`='$Minima',`EspMax`='$Maxima',`Caracteristica`='',`FechaInspeccion`='$Fechacalibracion',`Frecuencia`='$Frecuencia',`FechaVencimiento`='$Fechavencida',`AreaProceso`='$Proceso',`Tipo`='$Tipo',`SubTipo`='$Subtipo',`NumSerie`='$Numserie',`AreaLinea`='$Linea',`AreaOperacion`='$Operacion',`Rango`='$Rango',`Ntarget`='$Target',`EstadoCalibracion`='$Estadocalibracion' WHERE `IdEquipo`='$Referencia'";
     $rsconsPro = mysqli_query($conexion, $consP);
     mysqli_close($conexion);
 
