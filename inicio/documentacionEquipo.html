@@ -143,7 +143,7 @@ session_start();
                 var newRow = $("<tr></tr>");
                 var idCell = $("<td></td>").text(data.data[i].IdDocumento);
                 var NombreCell = $("<td></td>").text(data.data[i].TipoDocumento);
-                var eliminarCell = $("<td></td>").html('<button onClick="eliminardocumento('+data.data[i].IdDocumento+')" className="button primary"> Eliminar</button>');
+                var eliminarCell = $("<td></td>").html('<button onClick="eliminardocumento('+data.data[i].IdDocumento+')" class="btn btn-danger"> Eliminar</button>');
                 var documentoCell = $("<td></td>").html("<a class='button primary' href='documentacion/"+document.getElementById("referencia").value+"/"+data.data[i].Nombre+"'>"+data.data[i].Nombre+"</a>");
 
                 newRow.append(idCell);
