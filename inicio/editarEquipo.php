@@ -201,6 +201,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         <div class="col-6 col-12-xsmall">
             <ul class="actions stacked" style="text-align: center">
                 <li><a class="button solid" onclick="testActualizacion()">Guardar Cambio</a></li>
+                <li><a class="button solid" onclick="eliminarequipo()">Eliminar equipo</a></li>
             </ul>
         </div>
 
@@ -608,6 +609,35 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             .catch(function (err) {
                 console.log(err);
             });
+    }
+    function eliminarequipo() {
+
+        var ID;
+        ID = document.getElementById("referencia").value;
+
+        const data = new FormData();
+
+        data.append('id', ID);
+
+        fetch('dao/daoBorrarequipo.php', {
+            method: 'POST',
+            body: data
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    throw "Error";
+                }
+            })
+            .then(function (texto) {
+                console.log(texto);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+
     }
 
 
