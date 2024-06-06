@@ -209,7 +209,8 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <BUTTON onclick="testActualizacion()" class="button primary">Guardar Cambio</BUTTON>
             </center>
         </div>
-
+<p></p>
+        <p></p>
         <div class="col-12 col-12-xsmall">
             <center>
                 <BUTTON onclick="eliminarequipo()" class="button primary">Eliminar Equipo</BUTTON>
