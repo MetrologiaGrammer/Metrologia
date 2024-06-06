@@ -202,14 +202,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
 
         <div class="col-12 col-12-xsmall">
             <center>
-                <BUTTON onclick="testActualizacion()" class="button danger">Guardar Cambio</BUTTON>
+                <BUTTON onclick="testActualizacion()" class="button primary">Guardar Cambio</BUTTON>
             </center>
         </div>
         <p></p>
         <p></p>
         <div class="col-12 col-12-xsmall">
             <center>
-                <BUTTON onclick="eliminarequipo()" class="button primary">Eliminar Equipo</BUTTON>
+                <BUTTON onclick="eliminarequipo()" type="button" class="btn btn-danger">Eliminar Equipo</BUTTON>
             </center>
         </div>
 
