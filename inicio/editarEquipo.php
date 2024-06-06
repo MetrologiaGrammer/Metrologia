@@ -198,18 +198,14 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
                     <center><img id="imagenUbicacion" src="images/" alt="" style="width: 70%"/></center>
 
-        <div class="col-6 col-12-xsmall">
-            <ul class="actions stacked" style="text-align: center">
-                <li><a class="button solid" onclick="testActualizacion()">Guardar Cambio</a></li>
-            </ul>
-        </div>
+        <p></p>
 
         <div class="col-12 col-12-xsmall">
             <center>
-                <BUTTON onclick="testActualizacion()" class="button primary">Guardar Cambio</BUTTON>
+                <BUTTON onclick="testActualizacion()" class="button danger">Guardar Cambio</BUTTON>
             </center>
         </div>
-<p></p>
+        <p></p>
         <p></p>
         <div class="col-12 col-12-xsmall">
             <center>
