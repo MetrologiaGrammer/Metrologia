@@ -201,13 +201,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         <div class="col-6 col-12-xsmall">
             <ul class="actions stacked" style="text-align: center">
                 <li><a class="button solid" onclick="testActualizacion()">Guardar Cambio</a></li>
-                <li><BUTTON class="btn btn-danger onclick="eliminarequipo()">Eliminar Equipo</BUTTON></li>
             </ul>
-            <BUTTON class="btn btn-danger onclick="eliminarequipo()">Eliminar Equipo</BUTTON>
         </div>
         <div class="col-12 col-12-xsmall">
             <center>
-                <BUTTON onclick="Buscarequipo()" class="button primary"> Buscar Equipo</BUTTON>
+                <BUTTON onclick="eliminarequipo()" class="button primary"> Buscar Equipo</BUTTON>
             </center>
         </div>
         <center><img id="carga" src="images/carga.gif" style="display: none;width: 50%;"></center>
