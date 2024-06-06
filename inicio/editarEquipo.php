@@ -205,7 +205,11 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
             </ul>
             <BUTTON class="btn btn-danger onclick="eliminarequipo()">Eliminar Equipo</BUTTON>
         </div>
-
+        <div class="col-12 col-12-xsmall">
+            <center>
+                <BUTTON onclick="Buscarequipo()" class="button primary"> Buscar Equipo</BUTTON>
+            </center>
+        </div>
         <center><img id="carga" src="images/carga.gif" style="display: none;width: 50%;"></center>
 
 
