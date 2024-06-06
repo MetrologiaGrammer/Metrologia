@@ -208,7 +208,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
         <p></p>
         <div class="col-6 col-12-xsmall">
             <ul class="actions stacked" style="text-align: center">
-                <li><a class="btn btn-primary" onclick="eliminarequipo()" role="button">Eliminar Equipo</a></li>
+                <li><a class="button solid" onclick="eliminarequipo()">Eliminar Equipo</a></li>
             </ul>
         </div>
 
