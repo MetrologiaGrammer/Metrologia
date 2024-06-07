@@ -14,28 +14,35 @@ function Contador($fechaCalibracion,$fechaVencimiento){
 
     $conex=$con->conectar();
 
-    $query = "
-            SELECT 
-                `IdEquipo`,
-                `Tipo`,
-                `AreaProceso`,
-                `AreaLinea`,
-                `FechaInspeccion`,
-                `FechaVencimiento`,
-                `EspMin`,
-                `EstadoCalibracion`,
-                CASE 
-                    WHEN `EstadoCalibracion` = 0 THEN '<span class=\"badge badge-pill badge-primary\" style=\"background: goldenrod;\">On time</span>'
-                    WHEN `EstadoCalibracion` = 1 THEN '<span class=\"badge badge-pill badge-success\" style=\"background: green;\">Completed</span>'
-                    WHEN `EstadoCalibracion` = 2 THEN '<span class=\"badge badge-pill badge-warning\" style=\"background: goldenrod;\">On time</span>'
-                    ELSE '<span class=\"badge badge-pill badge-danger\" style=\"background: red;\">late</span>'
-                END AS `EstatusCalibracion`,
-                CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/index.html?ID=', `IdEquipo`, '\" class=\"btn btn-info\">Document</a>') AS boton ,
-                CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/consultaEquipo.html?ID=', `IdEquipo`, '\" class=\"btn btn-secondary\">Information</a>') AS boton2 
-            FROM 
-                `Equipo` 
-            WHERE 
-                1=1 ";
+    $query = "SELECT 
+    E.`IdEquipo`,
+    E.`Tipo`,
+    E.`AreaProceso`,
+    E.`AreaLinea`,
+    E.`FechaInspeccion`,
+    E.`FechaVencimiento`,
+    E.`EspMin`,
+    E.`EstadoCalibracion`,
+    CASE 
+        WHEN E.`EstadoCalibracion` = 0 THEN '<span class=\"badge badge-pill badge-primary\" style=\"background: goldenrod;\">On time</span>'
+        WHEN E.`EstadoCalibracion` = 1 THEN '<span class=\"badge badge-pill badge-success\" style=\"background: green;\">Completed</span>'
+        WHEN E.`EstadoCalibracion` = 2 THEN '<span class=\"badge badge-pill badge-warning\" style=\"background: goldenrod;\">On time</span>'
+        ELSE '<span class=\"badge badge-pill badge-danger\" style=\"background: red;\">late</span>'
+    END AS `EstatusCalibracion`,
+    CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/index.html?ID=', E.`IdEquipo`, '\" class=\"btn btn-info\">Document</a>') AS boton ,
+    CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/consultaEquipo.html?ID=', E.`IdEquipo`, '\" class=\"btn btn-secondary\">Information</a>') AS boton2,
+    H.`Linea` as `AreaLineaHistorial`,
+    H.`AreaProceso` as `AreaProcesoHistorial`
+FROM 
+    `Equipo` E
+LEFT JOIN (
+    SELECT `IdEquipo`, `Linea`,`AreaProceso`, MAX(`Fecha`) as MaxFecha
+    FROM `Historialcambios`
+    GROUP BY `IdEquipo`
+) H ON E.`IdEquipo` = H.`IdEquipo`
+
+WHERE 
+    1=1;";
 
     if ($fechaCalibracion != "n"){
         $query=$query." and FechaInspeccion = '$fechaCalibracion' ";
