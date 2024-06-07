@@ -209,10 +209,12 @@
 		});
 	}
 	function buscarQR(id) {
+				document.getElementById("estudio").src = "Estudios/"+id+".pdf"
 
-		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoDocumentos.php?referencia=' + id, function (data) {
-			document.getElementById("estudio").src = "documentacion/"+id.toUpperCase()+"/"+data.data[0].Nombre;
-		});
+
+
+
+
 
 		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia=' + id, function (data) {
 			document.getElementById("codigo").value = data.data[0].IdEquipo;
