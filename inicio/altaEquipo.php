@@ -48,7 +48,6 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                     <select name="demo-category" id="referencia" onchange="buscarId()">
                         <option value="">- REFERENCIA -</option>
                         <option value="ER">ER-000 Equipo de Referencia</option>
-                        <option value="MAP">MAP-000 Manteminiento preventivo</option>
                         <option value="IM">IM-000 Calibración Interna</option>
                         <option value="EM">EM-000 Calibración Externa</option>
                         <option value="GA">GA-000 Gage Por Atributos</option>
@@ -57,6 +56,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         <option value="FA">FA-000 Fixture Por Atributos</option>
                         <option value="FV">FV-000 Fixture Por Variables</option>
                         <option value="FAV">FAV-000 Fixture por Variables y Atributos</option>
+                        <option value="MR">MR-000 Master De Referencia</option>
                         <option value="MPI">MPI-000 Master De Piel</option>
                         <option value="MAF">MAF-000 Master De Alfombra</option>
                         <option value="MCR">MCR-000 Master De Cromo</option>
