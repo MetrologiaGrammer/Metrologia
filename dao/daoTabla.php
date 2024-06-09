@@ -35,9 +35,13 @@ function Contador($fechaCalibracion,$fechaVencimiento){
 FROM 
     `Equipo` E
 LEFT JOIN (
-    SELECT `IdEquipo`, `AreaProceso`,`Linea`, MAX(`Fecha`) as MaxFecha
+    SELECT H1.`IdEquipo`, H1.`AreaProceso`, H1.`Linea`
+    FROM `Historialcambios` H1
+INNER JOIN (
+    SELECT `IdEquipo`, MAX(`IdHistorial`) as MaxIdHistorial
     FROM `Historialcambios`
     GROUP BY `IdEquipo`
+    ) H2 ON H1.`IdEquipo` = H2.`IdEquipo` AND H1.`IdHistorial` = H2.MaxIdHistorial
 ) H ON E.`IdEquipo` = H.`IdEquipo`
 WHERE 
     `Status`= 'Activo';";
