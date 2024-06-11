@@ -56,19 +56,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         <option value="FA">FA-000 Fixture Por Atributos</option>
                         <option value="FV">FV-000 Fixture Por Variables</option>
                         <option value="FAV">FAV-000 Fixture por Variables y Atributos</option>
-                        <option value="MR">MR-000 Master De Referencia</option>
-                        <option value="MPI">MPI-000 Master De Piel</option>
-                        <option value="MAF">MAF-000 Master De Alfombra</option>
-                        <option value="MCR">MCR-000 Master De Cromo</option>
-                        <option value="MPL">MPL-000 Master De Plastico</option>
-                        <option value="MAF">MAF-000 Master De Alfombra</option>
-                        <option value="MHI">MHI-000 MAaster De Hilo</option>
-                        <option value="MTE">MTE-000 Master De Tela</option>
-                        <option value="MZI">MZI-000 Master De Zipper</option>
-                        <option value="MVI">MVI-000 Master De Vinir</option>
-                        <option value="MR">MR-000 Master De Color</option>
-                        <option value="MAL">MAL-000 Master De Aluminio</option>
-                        <option value="MNY">MNY-000 Master De Aluminio</option>
+
                     </select>
                 </div>
             </div>
