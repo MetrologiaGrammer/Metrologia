@@ -44,7 +44,7 @@ INNER JOIN (
     ) H2 ON H1.`IdEquipo` = H2.`IdEquipo` AND H1.`IdHistorial` = H2.MaxIdHistorial
 ) H ON E.`IdEquipo` = H.`IdEquipo`
 WHERE 
-    `Status`= 'Activo';";
+    `Status`= 'Activo'";
 
     if ($fechaCalibracion != "n"){
         $query=$query." and FechaInspeccion = '$fechaCalibracion' ";
