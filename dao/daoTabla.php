@@ -17,6 +17,7 @@ function Contador($fechaCalibracion,$fechaVencimiento){
     $query = "SELECT 
     E.`IdEquipo`,
     E.`Tipo`,
+    E.`AreaProceso`,
     E.`AreaLinea`,
     E.`AreaOperacion`,
     E.`FechaInspeccion`,
