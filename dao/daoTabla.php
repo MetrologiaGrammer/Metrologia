@@ -18,6 +18,7 @@ function Contador($fechaCalibracion,$fechaVencimiento){
     E.`IdEquipo`,
     E.`Tipo`,
     E.`AreaLinea`,
+    E.`AreaOperacion`,
     E.`FechaInspeccion`,
     E.`FechaVencimiento`,
     E.`EspMin`,
@@ -31,11 +32,12 @@ function Contador($fechaCalibracion,$fechaVencimiento){
     CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/index.html?ID=', E.`IdEquipo`, '\" class=\"btn btn-info\">Document</a>') AS boton ,
     CONCAT('<a href=\"https://arketipo.mx/Metrologia/inicio/consultaEquipo.html?ID=', E.`IdEquipo`, '\" class=\"btn btn-secondary\">Information</a>') AS boton2,
     COALESCE(H.`AreaProceso`, E.`AreaProceso`) as `AreaProceso`,
-    COALESCE(H.`Linea`, E.`AreaLinea`) as `Linea`
+    COALESCE(H.`Linea`, E.`AreaLinea`) as `Linea`,
+    COALESCE(H.`Operacion`, E.`AreaOperacion`) as `Operacion`
 FROM 
     `Equipo` E
 LEFT JOIN (
-    SELECT H1.`IdEquipo`, H1.`AreaProceso`, H1.`Linea`
+    SELECT H1.`IdEquipo`, H1.`AreaProceso`, H1.`Linea`,H1.`Operacion`
     FROM `Historialcambios` H1
 INNER JOIN (
     SELECT `IdEquipo`, MAX(`IdHistorial`) as MaxIdHistorial
