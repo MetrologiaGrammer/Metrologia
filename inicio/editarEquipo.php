@@ -190,6 +190,7 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <label style="text-align: center;font-size: 18px">Estatus de calibracion</label>
                 <input type="email" name="demo-email" id="estatuscalibracion" value="" placeholder="ESTATUS">
             </div>
+
                     </div>
                     <!---->
                     <div class="col-12 col-12-xsmall">
