@@ -178,15 +178,13 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                 <input type="email" name="demo-email" id="observaciones" value="" placeholder="OBSERVACIONES">
             </div>
 
-            <hr>
-            <p> </p>
+            <h3>
                 Ingresa el estatus de calibración:
+            </h3>
             <p> </p>
-                Ingresa 1 si el proceso de calibración está completado.
-            <p> </p>
-                Ingrese 2 si el proceso de calibración está en proceso.
-            <p> </p>
-                Ingrese 3 si el proceso de calibración ya está vencido.
+                Ingresa 1 si el proceso de calibración está completado, Ingrese 2 si el proceso de calibración está en proceso, Ingrese 3 si el proceso de calibración ya está vencido.
+
+
 
 
             <div id="fileStatuscalibracion" class="col-12 col-12-xsmall">
