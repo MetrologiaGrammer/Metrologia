@@ -118,77 +118,76 @@
 			</div>
 		</div>
 
+		<!--
+                <H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
+                <hr>
+                <center><img id="imagenUbicacion"  alt="" style="width: 70%"/></center>
+                <p></p>
+                <div class="col-12 col-12-xsmall">
+                    <ul class="actions stacked" style="text-align: center">
+                         <a class="button solid" onclick="desocultar()">Reportar</a></li>
+                    </ul>
+                </div>
+                <center><img id="carga" src="images/carga.gif" style="display: none;width: 50%;"></center>
 
-		<H2>REFERENCIA DE LA UBICACION EN FOTOS</H2>
-		<hr>
-		<center><img id="imagenUbicacion"  alt="" style="width: 70%"/></center>
-		<p></p>
-		<div class="col-12 col-12-xsmall">
-			<ul class="actions stacked" style="text-align: center">
-				 <a class="button solid" onclick="desocultar()">Reportar</a></li>
-			</ul>
-		</div>
-		<center><img id="carga" src="images/carga.gif" style="display: none;width: 50%;"></center>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div id="contenidoReporte" style="display: none">
 
-		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-body">
-						<div id="contenidoReporte" style="display: none">
+                                    <hr>
+                                    <p>
+                                        REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
+                                        DESCRIBELO EN EL CUADRO.
+                                    </p>
 
-							<hr>
-							<p>
-								REPORTA EL PROBLEMA CON ALGUNAS SUGERENCIAS EN EL BOTON DESLIZABLE O
-								DESCRIBELO EN EL CUADRO.
-							</p>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" >REFERENCIA</span>
+                                        <input type="text" id="referen" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" >NOMINA</span>
+                                        <input type="text" id="nomina" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                                    <p></p>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" >REPORTE DE ETIQUETA</span>
+                                        <select id="etiqueta" class="form-select" aria-label="Default select example">
+                                            <option selected value="N/A">Open this select menu</option>
+                                            <option value="ETIQUETA DAÑADA">ETIQUETA DAÑADA</option>
+                                            <option value="NO TIENE ETIQUETA">NO TIENE ETIQUETA</option>
+                                            <option value="NO SE LOGRA LEER EL QR">NO SE LOGRA LEER EL QR</option>
+                                        </select>
+                                    </div>
+                                    <p></p>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" >REPORTAR EQUIPO</span>
+                                        <select id="equipo" class="form-select" aria-label="Default select example">
+                                            <option selected value="N/A">Open this select menu</option>
+                                            <option value="EQUIPO DAÑADO">EQUIPO DAÑADO</option>
+                                            <option value="CALIBRACION VENCIDA">CALIBRACION VENCIDA</option>
+                                            <option value="EQUIPO EXTRAVIADO">EQUIPO EXTRAVIADO</option>
+                                        </select>
+                                    </div>
+                                    <p></p>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
+                                        <input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                                    <p></p>
+                                    <div class="col-12 col-12-xsmall">
+                                        <ul class="actions stacked" style="text-align: center">
+                                            <li><a class="button solid" onclick="Reporte()">ENVIAR REPORTE</a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-							<div class="input-group mb-3">
-								<span class="input-group-text" >REFERENCIA</span>
-								<input type="text" id="referen" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-							</div>
-							<div class="input-group mb-3">
-								<span class="input-group-text" >NOMINA</span>
-								<input type="text" id="nomina" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-							</div>
-							<p></p>
-							<div class="input-group mb-3">
-								<span class="input-group-text" >REPORTE DE ETIQUETA</span>
-								<select id="etiqueta" class="form-select" aria-label="Default select example">
-									<option selected value="N/A">Open this select menu</option>
-									<option value="ETIQUETA DAÑADA">ETIQUETA DAÑADA</option>
-									<option value="NO TIENE ETIQUETA">NO TIENE ETIQUETA</option>
-									<option value="NO SE LOGRA LEER EL QR">NO SE LOGRA LEER EL QR</option>
-								</select>
-							</div>
-							<p></p>
-							<div class="input-group mb-3">
-								<span class="input-group-text" >REPORTAR EQUIPO</span>
-								<select id="equipo" class="form-select" aria-label="Default select example">
-									<option selected value="N/A">Open this select menu</option>
-									<option value="EQUIPO DAÑADO">EQUIPO DAÑADO</option>
-									<option value="CALIBRACION VENCIDA">CALIBRACION VENCIDA</option>
-									<option value="EQUIPO EXTRAVIADO">EQUIPO EXTRAVIADO</option>
-								</select>
-							</div>
-							<p></p>
-							<div class="input-group mb-3">
-								<span class="input-group-text" >DESCRIPCION DEL PROBLEMA</span>
-								<input type="text" id="descproblema" name="usuario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-							</div>
-							<p></p>
-							<div class="col-12 col-12-xsmall">
-								<ul class="actions stacked" style="text-align: center">
-									<li><a class="button solid" onclick="Reporte()">ENVIAR REPORTE</a>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
+        -->
 	</section>
 </div>
 </section>
