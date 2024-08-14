@@ -106,10 +106,7 @@
 				<input type="text" name="demo-email" id="vencimiento" value="" placeholder="Vencimiento"disabled>
 			</div>
 
-			<div id="filapiezas" class="col-6 col-12-xsmall">
-				<label style="text-align: center;font-size: 18px">Cantidad de piezas</label>
-				<input type="text" name="demo-email" id="piezas" value="" placeholder="Piezas"disabled>
-			</div>
+
 			<div id="filaingreso" class="col-6 col-12-xsmall">
 				<label style="text-align: center;font-size: 18px">Fecha de ingreso</label>
 				<input type="text" name="demo-email" id="ingreso" value="" placeholder="Ingreso"disabled>
@@ -321,11 +318,7 @@
 						document.getElementById("numtarget").value = data.data[0].NumTarget;
 					}
 
-					if (data.data[0].CanPiezas == "") {
-						document.getElementById("filapiezas").style.display = 'none';
-					} else {
-						document.getElementById("piezas").value = data.data[0].CanPiezas;
-					}
+
 
 					if (data.data[0].Comentario == "") {
 						document.getElementById("filacomentario").style.display = 'none';
@@ -439,11 +432,6 @@
 						document.getElementById("numtarget").value = data.data[0].NumTarget;
 					}
 
-					if (data.data[0].CanPiezas == "") {
-						document.getElementById("filapiezas").style.display = 'none';
-					} else {
-						document.getElementById("piezas").value = data.data[0].CanPiezas;
-					}
 
 					if (data.data[0].Comentario == "") {
 						document.getElementById("filacomentario").style.display = 'none';
