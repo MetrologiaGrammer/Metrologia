@@ -244,193 +244,111 @@
 
 	function buscarQR(id) {
 
-		var proceso,linea;
+			$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
+				document.getElementById("codigo").value = data.data[0].IdReferencia;
 
-		$.getJSON('https://arketipo.mx/Metrologia/inicio/dao/daoconsulta.php?referencia='+id, function (data) {
+				if(data.data[0].Status == "Baja"){
 
-		document.getElementById("codigo").value = data.data[0].IdEquipo;
+					alert("El master está dado de baja, verificar con el laboratorio de metrología");
+				}else {
 
-			if(data.data[0].Status == "Baja"){
-
-						alert("El equipo está dado de baja, verificar con el laboratorio de metrología");
-			}else {
-
-				if (data.data[0].Tipo == "") {
-					document.getElementById("filaTipo").style.display = 'none';
-				} else {
-					document.getElementById("tipo").value = data.data[0].Tipo;
-
-					if (data.data[0].Tipo == "ESCALA") {
-						document.getElementById("imagenEquipo").src = "images/ER-.jpg";
+					if (data.data[0].NumParte == "") {
+						document.getElementById("filanumparte").style.display = 'none';
 					} else {
-						document.getElementById("imagenEquipo").src = "images/" + data.data[0].IdEquipo + ".jpg"
+						document.getElementById("numparte").value = data.data[0].NumParte;
 					}
-				}
+
+					if (data.data[0].Plataforma == "") {
+						document.getElementById("filaplataforma").style.display = 'none';
+					} else {
+						document.getElementById("plataforma").value = data.data[0].Plataforma;
+					}
+
+					if (data.data[0].Cliente == "") {
+						document.getElementById("filacliente").style.display = 'none';
+					} else {
+						document.getElementById("cliente").value = data.data[0].Cliente;
+					}
+
+					if (data.data[0].Vendedor == "") {
+						document.getElementById("filavendedor").style.display = 'none';
+					} else {
+						document.getElementById("vendedor").value = data.data[0].Cliente;
+					}
 
 
-				if (data.data[0].SubTipo == "") {
-					document.getElementById("filaSerie").style.display = 'none';
-				} else {
-					document.getElementById("subtipo").value = data.data[0].SubTipo;
-				}
+					if (data.data[0].Material == "") {
+						document.getElementById("filamaterial").style.display = 'none';
+					} else {
+						document.getElementById("material").value = data.data[0].Material;
+					}
 
-				if (data.data[0].AreaProceso == "") {
-					document.getElementById("filaProceso").style.display = 'none';
-				} else {
-					proceso = data.data[0].AreaProceso;
-				}
-
-				if (data.data[0].AreaLinea == "") {
-					document.getElementById("filaLinea").style.display = 'none';
-				} else {
-					linea = data.data[0].AreaLinea;
-				}
-
-
-				if (data.data[0].AreaOperacion == "") {
-					document.getElementById("filaOperacion").style.display = 'none';
-				} else {
-					document.getElementById("Operacion").value = data.data[0].AreaOperacion;
-				}
+					if (data.data[0].NombColor == "") {
+						document.getElementById("filanombcolor").style.display = 'none';
+					} else {
+						document.getElementById("nombcolor").value = data.data[0].NombColor;
+					}
+					if (data.data[0].Grabado == "") {
+						document.getElementById("filagrabado").style.display = 'none';
+					} else {
+						document.getElementById("grabado").value = data.data[0].Grabado;
+					}
 
 
-				if (data.data[0].NombrePersona == "") {
-					document.getElementById("filaNomina").style.display = 'none';
-				} else {
-					document.getElementById("nresponsable").value = data.data[0].NombrePersona;
-				}
-				if (data.data[0].NominaPersona == "") {
-					document.getElementById("filaPersona").style.display = 'none';
-				} else {
-					document.getElementById("nomresponsable").value = data.data[0].NominaPersona;
-				}
+					if (data.data[0].CodColor == "") {
+						document.getElementById("filacodcolor").style.display = 'none';
+					} else {
+						document.getElementById("codcolor").value = data.data[0].CodColor;
+					}
 
 
+					if (data.data[0].Status == "") {
+						document.getElementById("filastatus").style.display = 'none';
+					} else {
+						document.getElementById("status").value = data.data[0].Status;
+					}
 
 
+					if (data.data[0].Ingreso == "") {
+						document.getElementById("filaingreso").style.display = 'none';
+					} else {
+						document.getElementById("ingreso").value = data.data[0].Ingreso;
+					}
 
-				if (data.data[0].FechaInspeccion == "") {
-					document.getElementById("filaFechaverificacion").style.display = 'none';
-				} else {
-					document.getElementById("fechacalibracion").value = data.data[0].FechaInspeccion;
-				}
+					if (data.data[0].NumTarget == "") {
+						document.getElementById("filanumtarget").style.display = 'none';
+					} else {
+						document.getElementById("numtarget").value = data.data[0].NumTarget;
+					}
 
-				if (data.data[0].FechaVencimiento == "") {
-					document.getElementById("filaFechavencida").style.display = 'none';
-				} else {
-					document.getElementById("fechavencida").value = data.data[0].FechaVencimiento;
-				}
+					if (data.data[0].CanPiezas == "") {
+						document.getElementById("filapiezas").style.display = 'none';
+					} else {
+						document.getElementById("piezas").value = data.data[0].CanPiezas;
+					}
 
-				if (data.data[0].NumSerie == "") {
-					document.getElementById("filaSerie").style.display = 'none';
-				} else {
-					document.getElementById("numserie").value = data.data[0].NumSerie;
-				}
+					if (data.data[0].Comentario == "") {
+						document.getElementById("filacomentario").style.display = 'none';
+					} else {
+						document.getElementById("comentario").value = data.data[0].Comentario;
+					}
 
-				if (data.data[0].NumParte == "") {
-					document.getElementById("filaParte").style.display = 'none';
-				} else {
-					document.getElementById("numparte").value = data.data[0].NumParte;
-				}
+					if (data.data[0].Verificacion == "") {
+						document.getElementById("filaverificacion").style.display = 'none';
+					} else {
+						document.getElementById("verificacion").value = data.data[0].Verificacion;
+					}
+					if (data.data[0].Frecuencia == "") {
+						document.getElementById("filafrecuencia").style.display = 'none';
+					} else {
+						document.getElementById("frecuencia").value = data.data[0].Frecuencia;
+					}
 
-				if (data.data[0].Resolucion == "") {
-					document.getElementById("filaResolucion").style.display = 'none';
-				} else {
-					document.getElementById("resolucion").value = data.data[0].Resolucion;
-				}
-
-				if (data.data[0].Nominal == "") {
-					document.getElementById("filaNominal").style.display = 'none';
-				} else {
-					document.getElementById("nominal").value = data.data[0].Nominal;
-				}
-				if (data.data[0].EspMin == "") {
-					document.getElementById("filaEspMin").style.display = 'none';
-				} else {
-					document.getElementById("minima").value = data.data[0].EspMin;
-				}
-				if (data.data[0].EspMax == "") {
-					document.getElementById("filaEspMax").style.display = 'none';
-				} else {
-					document.getElementById("maxima").value = data.data[0].EspMax;
-				}
-
-				if (data.data[0].Rango == "") {
-					document.getElementById("filaRango").style.display = 'none';
-				} else {
-					document.getElementById("rango").value = data.data[0].Rango;
-				}
-				if (data.data[0].Status == "") {
-					document.getElementById("filaStatus").style.display = 'none';
-				} else {
-					document.getElementById("status").value = data.data[0].Status;
-				}
-				if (data.data[0].CentroCosto == "") {
-					document.getElementById("filaCentrocosto").style.display = 'none';
-				} else {
-					document.getElementById("centrocosto").value = data.data[0].CentroCosto;
-				}
-				if (data.data[0].CodigoCosto == "") {
-					document.getElementById("filaCodigocosto").style.display = 'none';
-				} else {
-					document.getElementById("codigocosto").value = data.data[0].CodigoCosto;
-				}
-
-				if (data.data[0].Ntarget == "") {
-					document.getElementById("filaTarget").style.display = 'none';
-				} else {
-					document.getElementById("target").value = data.data[0].Ntarget;
-				}
-
-				if (data.data[0].CodColor == "") {
-					document.getElementById("filaCodigocolor").style.display = 'none';
-				} else {
-					document.getElementById("codigoColor").value = data.data[0].CodColor;
-				}
-
-				if (data.data[0].ClienteMaster == "") {
-					document.getElementById("filaCliente").style.display = 'none';
-				} else {
-					document.getElementById("cliente").value = data.data[0].ClienteMaster;
-				}
-
-				if (data.data[0].PlataformaMaster == "") {
-					document.getElementById("filaPlataforma").style.display = 'none';
-				} else {
-					document.getElementById("plataforma").value = data.data[0].PlataformaMaster;
-				}
-
-				if (data.data[0].VendedorMaster == "") {
-					document.getElementById("filaVendedormaster").style.display = 'none';
-				} else {
-					document.getElementById("vendedor").value = data.data[0].VendedorMaster;
-				}
-
-				if (data.data[0].NombreColorMaster == "") {
-					document.getElementById("filaColormaster").style.display = 'none';
-				} else {
-					document.getElementById("color").value = data.data[0].NombreColorMaster;
-				}
-
-				if (data.data[0].NumColorMaster == "") {
-					document.getElementById("filaNumcolor").style.display = 'none';
-				} else {
-					document.getElementById("numColor").value = data.data[0].NumColorMaster;
-				}
-
-				if (data.data[0].Observaciones == "") {
-					document.getElementById("filaObservaciones").style.display = 'none';
-				} else {
-					document.getElementById("observaciones").value = data.data[0].Observaciones;
-				}
-
-				if (data.data[0].Frecuencia == "") {
-					document.getElementById("filaFrecuencia").style.display = 'none';
-				} else {
-					document.getElementById("frecuencia").value = data.data[0].Frecuencia;
-				}
-
-				consultaFoto(id, proceso, linea);
+					if (data.data[0].Vencimiento == "") {
+						document.getElementById("filavencimiento").style.display = 'none';
+					} else {
+						document.getElementById("vencimiento").value = data.data[0].Vencimiento;
+					}
 			}
 		});
 	}
