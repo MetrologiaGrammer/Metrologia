@@ -56,10 +56,12 @@ if ($_SESSION["nomina"] == "" && $_SESSION["nomina"] == null) {
                         <option value="FA">FA-000 Fixture Por Atributos</option>
                         <option value="FV">FV-000 Fixture Por Variables</option>
                         <option value="FAV">FAV-000 Fixture por Variables y Atributos</option>
-
+                        <option value="PR">PR-000 Estudios para personal</option>
                     </select>
                 </div>
             </div>
+
+
 
             <div class="col-6 col-12-xsmall">
                 <label style="text-align: center">Id Referencia</label>
